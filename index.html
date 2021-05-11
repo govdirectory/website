@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400" rel="stylesheet">
+  <title>govdirectory.org</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(-45deg, #07a799, #23a6d5, #219c56, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      color: #fff;
+      font-family: Rubik, sans-serif;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      box-sizing: border-box;
+      padding: 0px 10px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 10vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    p {
+      line-height: 1.55;
+      color: rgba(255, 255, 255, .9);
+      font-weight: 400;
+      font-size: clamp(1rem, 3vw, 2rem);
+    }
+
+    a {
+      color: #fff;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @media (prefers-reduced-motion) {
+      body {
+        animation: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>govdirectory.org</h1>
+    <p>Watch this space while <a href="https://ainali.com/">Jan Ainali</a> and <a href="https://byabbe.se/">Albin Larsson</a> think about it.</p>
+  </div>
+</body>
+
+</html>
