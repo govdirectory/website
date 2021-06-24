@@ -9,6 +9,10 @@ The goal is for this directory to be useful to journalists, web-archivists, rese
 - You can already help the project by improving data about public agencies on [Wikidata](https://wikidata.org). Not only do we need all of them added, we also need to be able to differentiate active ones (in contrast to historic agencies). Other basic properties we need are in which country they operate and the online platforms they are on. If possible, and/or relevant, make clear which administrative level they are on (state, regional, local etc.) or what type of agency it is (like environmental protection or taxes).
 - You can also help by [telling us](https://github.com/govdirectory/website/discussions) how you would like to use a resource like this.
 
+## Code of conduct
+
+Please adhere to this project's [code of conduct](CODE_OF_CONNDUCT.md).
+
 ## Contact
 
 Besides pinging us in [issues](https://github.com/govdirectory/website/issues), [pull requests](https://github.com/govdirectory/website/pulls) and [discussions](https://github.com/govdirectory/website/discussions), you can also reach us on Twitter where we are [@Jan_Ainali](https://twitter.com/Jan_Ainali/) and [@AlbinPCLarsson](https://twitter.com/AlbinPCLarsson).
