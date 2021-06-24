@@ -19,4 +19,4 @@ This project has been accepted in the [Unlock accelerator program](https://www.w
 
 ## License
 
-This repository and all contributions to it is licensed under the [CC0 1.0 Universal public domain dedication](LICENSE).
+This repository and all contributions made to it are licensed under the [CC0 1.0 Universal public domain dedication](LICENSE) if not otherwise stated within a file or directory.
