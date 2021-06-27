@@ -6,12 +6,9 @@ The goal is for this directory to be useful to journalists, web-archivists, rese
 
 ## How you can help
 
-- You can already help the project by improving data about public agencies on [Wikidata](https://wikidata.org). Not only do we need all of them added, we also need to be able to differentiate active ones (in contrast to historic agencies). Other basic properties we need are in which country they operate and the online platforms they are on. If possible, and/or relevant, make clear which administrative level they are on (state, regional, local etc.) or what type of agency it is (like environmental protection or taxes).
-- You can also help by [telling us](https://github.com/govdirectory/website/discussions) how you would like to use a resource like this.
+We are looking for people like you to [contribute](CONTRIBUTING.md) to this project by suggesting improvements and helping develop it. Get started by reading our [contributors guide](CONTRIBUTING.md).
 
-## Code of conduct
-
-Please adhere to this project's [code of conduct](CODE_OF_CONNDUCT.md).
+Please note that this project is developed with a [code of conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms. Please be lovely to all other community members.
 
 ## Contact
 
