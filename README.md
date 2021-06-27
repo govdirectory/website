@@ -1,3 +1,4 @@
+<!-- SPDX-License-Identifier: CC0-1.0 -->
 # Govdirectory
 
 Govdirectory aims to become a global directory of government agencies and their online presence by utilizing Wikidata.
