@@ -17,14 +17,14 @@ You don't need to change any of our code or documentation to be a contributor!
 
 If you want to add to the documentation or code of one of our projects you should make a pull request.
 
-If you never used GitHub, get up to speed with [Understanding the GitHub flow](https://guides.github.com/introduction/flow/) or follow one of the great free interactive courses in the [GitHub learning lab](https://lab.github.com/) on working with GitHub and working with MarkDown, the syntax this project's documentation is in.
+If you never used GitHub, get up to speed with one of the great free interactive courses in the [GitHub learning lab](https://lab.github.com/) on working with GitHub and working with MarkDown, the syntax this project's documentation is in.
 
 This project is [licensed CC-0](LICENSE.md), which essentially means that the project, along with your contributions is in the public domain in whatever jurisdiction possible, and everyone can do whatever they want with it.
 
 ### 1. Make your changes
 
-This project uses the [GitFlow branching model and workflow](https://nvie.com/posts/a-successful-git-branching-model/).
-When you've forked this repository, please make sure to create a feature branch following the GitFlow model.
+In this project we use branches for changes and don't usually commit direct to the main branch.
+When you've forked this repository, please make sure to create a feature branch.
 
 Add your changes in commits [with a message that explains them](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
 Document choices or decisions you make in the commit message, this will enable everyone to be informed of your choices in the future.
