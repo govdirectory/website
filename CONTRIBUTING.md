@@ -9,7 +9,7 @@ If you're not comfortable with those features of GitHub, you can also just [star
 ## Problems, suggestions and questions in issues
 
 Please help development by reporting problems, suggesting changes and asking questions.
-To do this, you can [create a GitHub issue](https://help.github.com/articles/creating-an-issue/) for this project in the [GitHub Issues for the website](https://github.com/govdirectory/website/issues).
+To do this, you can [create a GitHub issue](https://help.github.com/articles/creating-an-issue/) for this project in the [GitHub Issues for the website](https://github.com/govdirectory/website/issues/new).
 
 You don't need to change any of our code or documentation to be a contributor!
 
