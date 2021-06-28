@@ -1,4 +1,3 @@
-<!-- SPDX-License-Identifier: CC0-1.0 -->
 # Contributing to Govdirectory
 
 🙇‍♀️ Thank you for contributing!
