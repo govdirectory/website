@@ -4,6 +4,7 @@ SELECT DISTINCT
   ?orgDescription
   ?typeLabel
   (SAMPLE(?website) AS ?officialWebsite) # note that SAMPLE in Blazegraph always picks the first object
+  (SAMPLE(?email) AS ?officialEmail)
 WHERE {
   VALUES ?type {
     wd:Q68295960 # Swedish government agency(förvaltningsmyndighet) (249)
