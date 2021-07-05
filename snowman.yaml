@@ -1,0 +1,4 @@
+sparql_client:
+  endpoint: "https://query.wikidata.org/sparql"
+  http_headers: 
+    User-Agent: "govdirectory.org build configuration example https://github.com/govdirectory/website/issues"

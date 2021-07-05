@@ -1,0 +1,7 @@
+<h2>Social media</h2>
+<ul>
+    {{ range . }}
+       {{/* one will need to split urls as it can be a comma seperated list */}}
+        <li><a href="{{ .url_list }}">{{ .issuerLabel }}</a></li> 
+    {{ end }}
+</ul>

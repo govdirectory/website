@@ -1,0 +1,15 @@
+
+{{ template "layout" . }}
+
+{{ define "title" }}{{ .orgLabel }}{{ end }}
+
+{{ define "header" }}
+<h1>{{ .orgLabel }}</h1>
+<p>{{ .orgDescription }}</p>
+{{ end }}
+
+{{ define "main" }}
+{{ template "social-table.html" query "account-data" .qid.String }}
+{{ end }}
+
+{{ define "javascript" }}{{""}}{{ end }}

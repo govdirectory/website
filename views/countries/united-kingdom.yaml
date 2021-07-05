@@ -1,0 +1,3 @@
+output: "united-kingdom/{{qid}}/index.html"
+query: "generators/united-kingdom.rq"
+template: "org.html"

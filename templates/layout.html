@@ -1,0 +1,32 @@
+{{ define "layout" }}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ block "title" . }}{{ end }}</title>
+
+    <link rel="stylesheet" href="thirdparty/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <header>
+        {{ block "header" . }}{{ end }}
+    </header>
+    <div class="container">
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+    </div>
+
+    <footer>
+        Footer content
+    </footer>
+
+    {{ block "javascript" . }}{{ end }}
+</body>
+
+</html>
+{{ end }}

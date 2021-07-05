@@ -1,0 +1,17 @@
+SELECT DISTINCT ?qid ?orgLabel ?orgDescription ?website ?typeLabel WHERE {
+  VALUES ?type {
+    wd:Q2500378 # department of the United Kingdom Government (21)
+  }
+
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 wd:Q145 .
+  OPTIONAL { ?org wdt:P856 ?website }
+  OPTIONAL { ?org wdt:P968 ?email }
+
+  MINUS { ?org wdt:P576 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,[AUTO_LANGUAGE]". }
+} ORDER BY ?type

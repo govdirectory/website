@@ -1,0 +1,6 @@
+SELECT * WHERE {
+    VALUES (?name ?safeName ?description) {
+        ('Sweden' 'sweden' 'Current content include municipalities, regional councils, and the courts of appeal.')
+        ('United Kingdom' 'united-kingdom' 'Current content only includes ministerial departments.')
+    }
+}

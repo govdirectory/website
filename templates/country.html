@@ -1,0 +1,18 @@
+
+{{ template "layout" . }}
+
+{{ define "title" }}{{ .orgLabel }}{{ end }}
+
+{{ define "header" }}
+<h1>{{ .name }}</h1>
+<p>{{ .description }}</p>
+{{ end }}
+
+{{ define "main" }}
+{{/* # replace this hack which currently is used to merge strings */}}
+{{ $queryPath := replace "generators/hej" "hej" .safeName.String 1 }}
+
+{{ template "org-table.html" query $queryPath .safeName.String }}
+{{ end }}
+
+{{ define "javascript" }}{{""}}{{ end }}
