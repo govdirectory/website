@@ -1,0 +1,18 @@
+
+{{ template "layout" . }}
+
+{{ define "title" }}List of countries{{ end }}
+
+{{ define "header" }}
+<h1>Countries</h1>
+{{ end }}
+
+{{ define "main" }}
+<ul>
+    {{ range . }}
+    <li><a href="/{{ .safeName }}">{{ .name }}</a></li>
+    {{ end }}
+</ul>
+{{ end }}
+
+{{ define "javascript" }}{{""}}{{ end }}
