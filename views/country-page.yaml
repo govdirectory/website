@@ -1,3 +1,3 @@
 output: "{{safeName}}/index.html"
 query: "countries.rq"
-template: "country.html"
+template: "country-page.html"
