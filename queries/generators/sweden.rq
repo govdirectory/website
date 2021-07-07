@@ -5,7 +5,10 @@ SELECT DISTINCT
   ?typeLabel
   (SAMPLE(?website) AS ?officialWebsite) # note that SAMPLE in Blazegraph always picks the first object
   (SAMPLE(?email) AS ?officialEmail)
+  ?countryURL
 WHERE {
+  BIND("sweden" AS ?countryURL)
+
   VALUES ?type {
     wd:Q68295960 # Swedish government agency(förvaltningsmyndighet) (249)
     wd:Q107407151 # Swedish government agency(myndighet under riksdagen) (5)
@@ -30,5 +33,5 @@ WHERE {
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv" }
 }
-GROUP BY ?qid ?orgLabel ?orgDescription ?typeLabel
+GROUP BY ?qid ?orgLabel ?orgDescription ?typeLabel ?countryURL
 ORDER BY ?type

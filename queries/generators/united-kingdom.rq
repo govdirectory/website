@@ -1,4 +1,6 @@
-SELECT DISTINCT ?qid ?orgLabel ?orgDescription ?website ?typeLabel WHERE {
+SELECT DISTINCT ?qid ?orgLabel ?orgDescription ?website ?typeLabel ?countryURL WHERE {
+  BIND("united-kingdom" AS ?countryURL)
+
   VALUES ?type {
     wd:Q2500378 # department of the United Kingdom Government (21)
   }

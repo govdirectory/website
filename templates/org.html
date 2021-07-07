@@ -3,6 +3,8 @@
 
 {{ define "title" }}{{ .orgLabel }}{{ end }}
 
+{{ define "canonical" }}/{{ .countryURL }}/{{ .qid }}/{{ end }}
+
 {{ define "header" }}
     <h1>{{ .orgLabel }}</h1>
     <p>{{ .orgDescription }}</p>
