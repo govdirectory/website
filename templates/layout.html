@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ block "title" . }}{{ end }}</title>
+
+    <link rel="stylesheet" href="/main.css">
 </head>
 
 <body>
@@ -17,7 +19,7 @@
         </ul>
     </nav>
 
-    <header>
+    <header class="container">
         {{ block "header" . }}{{ end }}
     </header>
     <div class="container">

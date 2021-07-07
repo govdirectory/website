@@ -1,0 +1,63 @@
+/* RESET */
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* NAV */
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* FOOTER */
+
+footer ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* TABLE */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+/* LAYOUT */
+
+.container {
+    width: 100%;
+    margin: 0 1em;
+}
+
+/* #TODO review break points */
+@media screen and (min-width: 600px) {
+    .container {
+        width: 600px;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+        width: 800px;
+        margin: auto;
+    }
+}
