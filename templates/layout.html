@@ -1,0 +1,48 @@
+{{ define "layout" }}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ block "title" . }}{{ end }}</title>
+
+    <link rel="canonical" href="https://www.govdirectory.org{{ block "canonical" . }}{{ end }}">
+
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/countries/">Countries</a></li>
+        </ul>
+    </nav>
+
+    <header class="container">
+        {{ block "header" . }}{{ end }}
+    </header>
+    <div class="container">
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+    </div>
+
+    <footer>
+        <p>Govdirectory - a crowdsourced and fact checked directory of official governmental online accounts and services. Supported through Wikimedia Deutschland's <a href="https://www.wikimedia.de/unlock/">Unlock Accelerator</a>.</p>
+        <div>
+            <ul>
+                <li><a href="https://www.wikidata.org/wiki/Wikidata:Gov_Directory">Wikidata</a></li>
+                <li><a href="https://github.com/govdirectory">GitHub</a></li>
+                <li><a href="https://twitter.com/govdirectory">Twitter</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    {{ block "javascript" . }}{{ end }}
+</body>
+
+</html>
+{{ end }}

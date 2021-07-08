@@ -1,0 +1,37 @@
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?typeLabel
+  (SAMPLE(?website) AS ?officialWebsite) # note that SAMPLE in Blazegraph always picks the first object
+  (SAMPLE(?email) AS ?officialEmail)
+  ?countryURL
+WHERE {
+  BIND("sweden" AS ?countryURL)
+
+  VALUES ?type {
+    wd:Q68295960 # Swedish government agency(förvaltningsmyndighet) (249)
+    wd:Q107407151 # Swedish government agency(myndighet under riksdagen) (5)
+    wd:Q127448 # municipality of Sweden (290)
+    wd:Q1754161 # regional council in Sweden (20)
+    wd:Q341627 # court of appeal(hovrätten) (6)
+    wd:Q196321 # county administrative board (21)
+    wd:Q10397683 # AP-fund (6)
+    wd:Q59603261 # state-ownded enterprise (3)
+    wd:Q10330441 # state level departments (11)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 wd:Q34 .
+  OPTIONAL { ?org wdt:P856 ?website }
+  OPTIONAL { ?org wdt:P968 ?email }
+  
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?item wdt:P1366 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv" }
+}
+GROUP BY ?qid ?orgLabel ?orgDescription ?typeLabel ?countryURL
+ORDER BY ?qid

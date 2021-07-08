@@ -1,0 +1,23 @@
+
+{{ template "layout" . }}
+
+{{ define "title" }}{{ .orgLabel }}{{ end }}
+
+{{ define "canonical" }}/{{ .countryURL }}/{{ .qid }}/{{ end }}
+
+{{ define "header" }}
+    <h1>{{ .orgLabel }}</h1>
+    <p>{{ .orgDescription }}</p>
+{{ end }}
+
+{{ define "main" }}
+    {{ $socialAccounts := query "account-data" .qid.String }}
+
+    {{ if $socialAccounts }}
+        {{ template "social-table.html" $socialAccounts }}
+    {{ else }}
+        <p>No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/{{ .qid }}">Wikidata</a>.</p>
+    {{ end }}
+{{ end }}
+
+{{ define "javascript" }}{{""}}{{ end }}

@@ -1,0 +1,15 @@
+<h2>Social media</h2>
+
+<table>
+    <tr>
+      <th>Platform</th>
+      <th>Account</th>
+    </tr>
+
+    {{ range . }}
+    <tr>
+        <td>{{ .issuerLabel }}</td>
+        <td><a href="{{ .url_list }}">{{ .url_list }}</a></td>
+    </tr>
+    {{ end }}
+</table>

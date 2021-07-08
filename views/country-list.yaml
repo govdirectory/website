@@ -1,0 +1,3 @@
+output: "countries/index.html"
+query: "countries.rq"
+template: "country-list.html"

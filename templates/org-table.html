@@ -1,0 +1,15 @@
+<h2>Public bodies</h2>
+
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+    </tr>
+
+    {{ range . }}
+    <tr>
+        <td><a href="{{ .qid }}">{{ .orgLabel }}</a></td>
+        <td>{{ .typeLabel }}</td>
+    </tr>
+    {{ end }}
+</table>

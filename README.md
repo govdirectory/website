@@ -10,7 +10,20 @@ The goal is for this directory to be useful to journalists, web-archivists, rese
 
 ## Install
 
-Not installable yet, since we're still in a concept phase.
+### Prerequisites
+
+ - [Snowman](https://github.com/glaciers-in-archives/snowman)
+ - A local WDQS instance or a Snowman cache directory.
+
+GovDirectory is a static site meaning that it already has all of its pages generated when a visitor visits. GovDirectory uses [Snowman](https://github.com/glaciers-in-archives/snowman) and SPARQL to do this. Because each **initial** build of Snowman issues thousands (yes thousands) of SPARQL queries one should never run it against `query.wikidata.org` but rather against a local WDQS instance.
+
+Having installed Snowman and poulated WDQS instance with data you can run Snowman to build the site after you have update `snowman.yaml` to point to the URL of your WDQS instance.
+
+```
+snowman build
+```
+
+To learn more about Snowman and its concepts [check out its readme](https://github.com/glaciers-in-archives/snowman#readme).
 
 ## Usage
 
