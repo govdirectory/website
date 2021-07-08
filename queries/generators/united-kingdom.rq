@@ -1,4 +1,12 @@
-SELECT DISTINCT ?qid ?orgLabel ?orgDescription ?website ?typeLabel ?countryURL WHERE {
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?typeLabel
+  (SAMPLE(?website) AS ?officialWebsite) # note that SAMPLE in Blazegraph always picks the first object
+  (SAMPLE(?email) AS ?officialEmail)
+  ?countryURL
+  WHERE {
   BIND("united-kingdom" AS ?countryURL)
 
   VALUES ?type {
@@ -16,4 +24,6 @@ SELECT DISTINCT ?qid ?orgLabel ?orgDescription ?website ?typeLabel ?countryURL W
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,[AUTO_LANGUAGE]". }
-} ORDER BY ?type
+}
+GROUP BY ?qid ?orgLabel ?orgDescription ?typeLabel ?countryURL
+ORDER BY ?qid

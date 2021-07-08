@@ -34,4 +34,4 @@ WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv" }
 }
 GROUP BY ?qid ?orgLabel ?orgDescription ?typeLabel ?countryURL
-ORDER BY ?type
+ORDER BY ?qid
