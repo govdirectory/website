@@ -5,10 +5,26 @@
 We love issues and pull requests from everyone.
 If you're not comfortable with those features of GitHub, you can also just [start a discussion](https://github.com/govdirectory/website/discussions).
 
+## Direction
+
+When contributing, it might be helpful to know what we want this tool to be.
+We have defined our **vision** as:
+
+>Our vision is a world where people are empowered to engage with their government to ensure responsive, inclusive, participatory and representative decision-making at all levels.
+
+and we also have set a **mission** to:
+
+>We will enable a community powered directory where the online presence of every public organization is easily findable, queryable and trustworthy.
+
+We hope that will help you contribute meaningfully.
+As a more detailed help, and to see what we already have planned, checkout our [roadmap](https://github.com/orgs/govdirectory/projects/2) and [milestones](https://github.com/govdirectory/website/milestones).
+
 ## Problems, suggestions and questions in issues
 
 Please help development by reporting problems, suggesting changes and asking questions.
 To do this, you can [create a GitHub issue](https://help.github.com/articles/creating-an-issue/) for this project in the [GitHub Issues for the website](https://github.com/govdirectory/website/issues/new).
+
+In particular, we use the tags [good first issue](https://github.com/govdirectory/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) so that you can see where you can start and [help wanted](https://github.com/govdirectory/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) where we still need input.
 
 You don't need to change any of our code or documentation to be a contributor!
 

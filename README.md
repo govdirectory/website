@@ -33,6 +33,8 @@ Not usable yet, since we're still in a concept phase.
 
 This project has been accepted in the [Unlock accelerator program](https://www.wikimedia.de/unlock/) program ([original application](https://www.wikidata.org/wiki/User:Ainali/Social_media_for_public_organizations/Unlock)).
 
+During the accelerator, we have defined a Minimale Vialble Prodcut (MVP) to: "As an MVP we want to create a working website where people can search, filter and add data about Swedish public institutions and their social media accounts."
+
 ## Maintainers
 
 * [Abbe98](https://github.com/Abbe98)
