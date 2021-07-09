@@ -1,22 +1,26 @@
 SELECT DISTINCT
   ?issuerLabel
-  ?property
-  # if multiple usernames for the same platform have the same rank we merge them into a comma seperated list
-  (GROUP_CONCAT(DISTINCT ?url; separator=",") AS ?url_list)
+  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata
+  ?url
+  ?verified
 WHERE {
   ?property wdt:P31 wd:Q105388954 ;
             wikibase:directClaim ?wdt ;
+            wikibase:claim ?wdtClaim ;
             wdt:P1630 ?formatter ;
             # we use issuer label instead of property description, to just get the platform name
             wdt:P2378 ?issuer . # Wikidata item of this property?
 
-  wd:{{.}} ?wdt ?value .
+  wd:{{.}} ?wdt ?value ;
+              ?wdtClaim ?statement .
+  
+  OPTIONAL { ?statement pq:P1552 ?quality }
+  
+  BIND(IF(BOUND(?quality), IF(?quality = wd:Q28378282, True, False), False) AS ?verified)
 
   BIND(IRI(CONCAT(SUBSTR(?formatter, 1, STRLEN(?formatter) -2), ?value)) AS ?url)
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
 }
-# we include the property as we can use it to link directly to the relevant statement in Wikidata
-GROUP BY ?issuerLabel ?property
 # we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of "importance" we have
 ORDER BY ?property

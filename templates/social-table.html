@@ -9,7 +9,7 @@
     {{ range . }}
     <tr>
         <td>{{ .issuerLabel }}</td>
-        <td><a href="{{ .url_list }}">{{ .url_list }}</a></td>
+        <td><a href="{{ .url }}">{{ .url }}{{ if eq .verified.String "true" }} (verified){{ end }}</a></td>
     </tr>
     {{ end }}
 </table>
