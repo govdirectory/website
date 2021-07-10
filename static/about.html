@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <title>About Govdirectory</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<ul class="nav" id="navbar">
+  <li><a href="https://govdirectory.org"><img aria-hidden="true" src="logo-white.svg" width="20px">&nbsp;Govdirectory</a></li>
+  <li><a href="https://govdirectory.org/about.html">About</a></li>
+</ul>
+<div class="splash">
+<div>
+<img aria-hidden="true" src="logo-white.svg" width="150px" class="header-img">
+<h1>Govdirectory</h1>
+    <p>A crowdsourced and fact checked directory of official governmental online accounts and services.</p>
+    </div>
+</div>
+<div class="content">
+<h2>Vision</h2>
+<p class="content">Our vision is a world where people are empowered to engage with their government to ensure responsive, inclusive, participatory and representative decision-making at all levels.</p>
+</div>
+<div class="subject">
+<div class="col">
+  <h2>Mission</h2>
+  <p class="subject">We will enable a community powered directory where the online presence of every public organization is easily findable, queryable and trustworthy.</p>
+</div>
+</div>
+<div class="content">
+<h2>Support</h2>
+<p class="content">This project is supported through Wikimedia Deutschland's <a href="https://www.wikimedia.de/unlock/" class="dark-link">Unlock Accelerator.</a></p>
+</div>
+<footer>
+    <div class="footer-table">
+      <div class="column">
+        <p class="footer-header"><a href="https://govdirectory.org">Govdirectory</a></p>
+        <ul class="list-unstyled">
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="https://twitter.com/govdirectory">Twitter</a></li>
+
+        </ul>
+
+        <p><a href="https://govdirectory.org">
+            <img class="footer-image" aria-hidden="true" src="logo-white.svg" alt="" width="50px">
+          </a>
+        </p>
+      </div>
+      <div class="column">
+        <p class="footer-header">Join the community</p>
+        <ul class="list-unstyled">
+
+          <li><a href="https://github.com/govdirectory">Github</a></li>
+
+          <li><a href="https://www.wikidata.org/wiki/Wikidata:Gov_Directory">Improve the data</a></li>
+
+        </ul>
+      </div>
+      <div class="column">
+        <p class="footer-header">License information</p>
+        <ul class="list-unstyled">
+
+          <li>All data is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license" class="light-link">CC0 1.0 Universal</a>.</li>
+          <li>For images and other resources, see <a href="https://github.com/govdirectory/website/blob/main/LICENSE" rel="license" class="light-link">LICENSE</a>.</li>
+        </ul>
+       <div class="footer-end">
+      <a title="Powered by Wikidata" href="https://www.wikidata.org">
+        <img aria-hidden="true" class="white-bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wikidata_Stamp_Rec_Light.svg/120px-Wikidata_Stamp_Rec_Light.svg.png"></a>
+    </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+</html>
