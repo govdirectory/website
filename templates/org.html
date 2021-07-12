@@ -3,9 +3,10 @@
 
 {{ define "title" }}{{ .orgLabel }}{{ end }}
 
-{{ define "canonical" }}/{{ .countryURL }}/{{ .qid }}/{{ end }}
+{{ define "canonical" }}/{{ template "get-country-url.html" .country }}/{{ .qid }}/{{ end }}
 
 {{ define "header" }}
+<a href="/{{ template "get-country-url.html" .country }}/">{{ template "get-country-name.html" .country }}</a>
     <h1>{{ .orgLabel }}</h1>
     <p>{{ .orgDescription }}</p>
 {{ end }}
