@@ -11,6 +11,7 @@ body {
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 h1 {
@@ -112,39 +113,41 @@ h2 {
 
 /* NAV */
 
+nav {
+    background-color: #00264d;
+    position: sticky;
+    top:0;
+    height: 70px;
+}
+
 nav ul {
     display: flex;
     justify-content: space-around;
+    height: 100%;
 }
 
-.nav {
-    overflow: hidden;
-    background-color: #00264d;
-    border-width:0 0;
-    list-style:none;
-    margin:0;
-    padding:0;
-    text-align:center;
-    position: sticky;
-    top:0;
+nav li {
+    display: block;
+    height: 100%;
 }
 
-.nav a {
-    display: inline-block;
+nav a {
+    line-height: 70px;
     text-align: center;
-    padding: 20px 16px 14px;
     color: #FFF;
     text-decoration: none;
     font-size: 17px;
+    padding: 0px 20px;
+    display: inline-block;
 }
 
-.nav a:hover {
+nav img {
+    margin-right: 4px;
+}
+
+nav a:hover {
     background-color: #107FC9;
     color: #FFF;
-}
-
-.nav li{
-    display:inline;
 }
 
 
