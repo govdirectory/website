@@ -16,9 +16,35 @@
 
     {{ if $socialAccounts }}
         {{ template "social-table.html" $socialAccounts }}
+        <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#">Download</a>
     {{ else }}
         <p>No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/{{ .qid }}">Wikidata</a>.</p>
     {{ end }}
 {{ end }}
 
-{{ define "javascript" }}{{""}}{{ end }}
+{{ define "javascript" }}
+<script>
+const dataTable = document.querySelector('table');
+
+let csv = '"Platform","Account link",\n';
+Array.from(dataTable.children[0].children).forEach((row, index) => {
+    if (index === 0) return; // header
+    const columns = Array.from(row.children);
+    let rowCSV = '';
+    columns.forEach((column, innerIndex) => {
+        let value;
+        if (column.children[0] && column.children[0].nodeName === 'A') {
+            value = column.children[0].href;
+        } else {
+            value = column.innerText;
+        }
+
+        rowCSV += '"' + value + '",';
+    });
+    csv += rowCSV + '\n';
+});
+
+const downloadElm = document.querySelector('#download');
+downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+</script>
+{{ end }}
