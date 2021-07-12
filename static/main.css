@@ -44,43 +44,24 @@ h2 {
     color: #000;
 }
 
+.bg-grey {
+    background-color: #eee;
+}
+
+.center-text {
+    text-align: center;
+}
+
 
 /* SECTIONS FOR CONTENT */
 
-.content{
+section {
     line-height: 1.55;
     color: #000;
     font-weight: 400;
-    font-size: clamp(1rem, 1vw, 1rem);
-    background-color: #FFF;
+    font-size: 17px;
     padding: 50px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
-
-.content, .subject p {
-    padding-bottom:10px;
-}
-
-.subject {
-    line-height: 1.55;
-    color: #000;
-    font-weight: 400;
-    font-size: clamp(1rem, 1vw, 1rem);
-    background-color: #EEE;
-    padding: 50px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.subject,.content,.col a {
-    color: #000;
-    text-decoration:none;
-}
-
 
 /* SPLASH FOREGROUND OF ANIMATION */
 
