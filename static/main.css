@@ -117,12 +117,19 @@ nav ul {
     justify-content: space-around;
 }
 
-#navbar {
+.nav {
     overflow: hidden;
     background-color: #00264d;
+    border-width:0 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+    position: sticky;
+    top:0;
 }
 
-#navbar a {
+.nav a {
     display: inline-block;
     text-align: center;
     padding: 20px 16px 14px;
@@ -131,27 +138,9 @@ nav ul {
     font-size: 17px;
 }
 
-#navbar a:hover {
+.nav a:hover {
     background-color: #107FC9;
     color: #FFF;
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.sticky + .content {
-    padding-top: 60px;
-}
-
-.nav{
-    border-width:0px 0;
-    list-style:none;
-    margin:0;
-    padding:0;
-    text-align:center;
 }
 
 .nav li{

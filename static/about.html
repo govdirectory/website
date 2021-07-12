@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<ul class="nav" id="navbar">
+<ul class="nav">
   <li><a href="https://govdirectory.org"><img aria-hidden="true" src="logo-white.svg" width="20px">&nbsp;Govdirectory</a></li>
   <li><a href="https://govdirectory.org/about.html">About</a></li>
 </ul>
@@ -75,19 +75,5 @@
     </div>
     </div>
   </footer>
-<script>
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
 </body>
 </html>
