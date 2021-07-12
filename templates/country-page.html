@@ -15,6 +15,32 @@
 {{ $queryPath := replace "generators/hej" "hej" .safeName.String 1 }}
 
 {{ template "org-table.html" query $queryPath .safeName.String }}
+<a id="download" download="{{ .name }}.csv" href="#">Download</a>
 {{ end }}
 
-{{ define "javascript" }}{{""}}{{ end }}
+{{ define "javascript" }}
+<script>
+const dataTable = document.querySelector('table');
+
+let csv = '"Name","Type",\n';
+Array.from(dataTable.children[0].children).forEach((row, index) => {
+    if (index === 0) return; // header
+    const columns = Array.from(row.children);
+    let rowCSV = '';
+    columns.forEach((column, innerIndex) => {
+        let value;
+        if (column.children[0] && column.children[0].nodeName === 'A') {
+            value = column.children[0].href;
+        } else {
+            value = column.innerText;
+        }
+
+        rowCSV += '"' + value + '",';
+    });
+    csv += rowCSV + '\n';
+});
+
+const downloadElm = document.querySelector('#download');
+downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+</script>
+{{ end }}
