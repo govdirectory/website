@@ -16,7 +16,7 @@
 
     {{ if $socialAccounts }}
         {{ template "social-table.html" $socialAccounts }}
-        <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#">Download</a>
+        <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#" class="need-js">Download</a>
     {{ else }}
         <p>No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/{{ .qid }}">Wikidata</a>.</p>
     {{ end }}

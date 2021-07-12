@@ -15,7 +15,7 @@
 {{ $queryPath := replace "generators/hej" "hej" .safeName.String 1 }}
 
 {{ template "org-table.html" query $queryPath .safeName.String }}
-<a id="download" download="{{ .name }}.csv" href="#">Download</a>
+<a id="download" download="{{ .name }}.csv" href="#" class="need-js">Download</a>
 {{ end }}
 
 {{ define "javascript" }}
