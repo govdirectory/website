@@ -1,0 +1,2 @@
+output: "about/index.html"
+template: "about.html"

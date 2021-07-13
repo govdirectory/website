@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ block "title" . }}{{ end }}</title>
 
-    <link rel="canonical" href="https://www.govdirectory.org{{ block "canonical" . }}{{ end }}">
+    <link rel="canonical" href="https://www.govdirectory.org{{ block " canonical" . }}{{ end }}">
 
     <link rel="stylesheet" href="/main.css">
 
@@ -21,31 +21,67 @@
 </head>
 
 <body>
-    
+
     <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
+        <ul class="container">
+            <li><a href="/"><img aria-hidden="true" src="/logo-white.svg" width="20px">Govdirectory</a></li>
             <li><a href="/countries/">Countries</a></li>
+            <li><a href="/about/">About</a></li>
         </ul>
     </nav>
 
-    <header class="container">
-        {{ block "header" . }}{{ end }}
-    </header>
-    <div class="container">
+    {{ block "pre-main" . }}{{- "" -}}{{ end }}
+
+    <div class="{{ block "main-constraint-classes" . }}{{ end }}">
         <main>
             {{ block "main" . }}{{ end }}
         </main>
     </div>
 
     <footer>
-        <p>Govdirectory - a crowdsourced and fact checked directory of official governmental online accounts and services. Supported through Wikimedia Deutschland's <a href="https://www.wikimedia.de/unlock/">Unlock Accelerator</a>.</p>
-        <div>
-            <ul>
-                <li><a href="https://www.wikidata.org/wiki/Wikidata:Gov_Directory">Wikidata</a></li>
-                <li><a href="https://github.com/govdirectory">GitHub</a></li>
-                <li><a href="https://twitter.com/govdirectory">Twitter</a></li>
-            </ul>
+        <div class="footer-table">
+            <div class="column">
+                <p class="footer-header"><a href="/">Govdirectory</a></p>
+                <ul class="list-unstyled">
+
+                    <li><a href="/about/">About</a></li>
+
+                    <li><a href="https://twitter.com/govdirectory">Twitter</a></li>
+
+                </ul>
+
+                <p><a href="/">
+                        <img class="footer-image" aria-hidden="true" src="/logo-white.svg" alt="" width="50px">
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <p class="footer-header">Join the community</p>
+                <ul class="list-unstyled">
+
+                    <li><a href="https://github.com/govdirectory">Github</a></li>
+
+                    <li><a href="https://www.wikidata.org/wiki/Wikidata:Gov_Directory">Improve the data</a></li>
+
+                </ul>
+            </div>
+            <div class="column">
+                <p class="footer-header">License information</p>
+                <ul class="list-unstyled">
+
+                    <li>All data is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license"
+                            class="light-link">CC0 1.0 Universal</a>.</li>
+                    <li>For images and other resources, see <a
+                            href="https://github.com/govdirectory/website/blob/main/LICENSE" rel="license"
+                            class="light-link">LICENSE</a>.</li>
+                </ul>
+                <div class="footer-end">
+                    <a title="Powered by Wikidata" href="https://www.wikidata.org">
+                        <img aria-hidden="true" class="white-bg"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wikidata_Stamp_Rec_Light.svg/120px-Wikidata_Stamp_Rec_Light.svg.png"></a>
+                </div>
+            </div>
+        </div>
         </div>
     </footer>
 

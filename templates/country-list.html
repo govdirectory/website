@@ -1,14 +1,16 @@
-
 {{ template "layout" . }}
 
 {{ define "title" }}List of countries{{ end }}
+
 {{ define "canonical" }}/countries/{{ end }}
 
-{{ define "header" }}
-<h1>Countries</h1>
-{{ end }}
+{{ define "pre-main" }}{{ "" }}{{ end }}
+
+{{ define "main-constraint-classes" }}container{{ end }}
 
 {{ define "main" }}
+<h1>Countries</h1>
+
 <ul>
     {{ range . }}
     <li><a href="/{{ .safeName }}">{{ .name }}</a></li>

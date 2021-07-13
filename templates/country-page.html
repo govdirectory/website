@@ -5,12 +5,14 @@
 
 {{ define "canonical" }}/{{ .safeName }}/{{ end }}
 
-{{ define "header" }}
-<h1>{{ .name }}</h1>
-<p>{{ .description }}</p>
-{{ end }}
+{{ define "pre-main" }}{{ "" }}{{ end }}
+
+{{ define "main-constraint-classes" }}container{{ end }}
 
 {{ define "main" }}
+<h1>{{ .name }}</h1>
+<p>{{ .description }}</p>
+
 {{/* # replace this hack which currently is used to merge strings */}}
 {{ $queryPath := replace "generators/hej" "hej" .safeName.String 1 }}
 
