@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+{{- $metadata := metadata -}}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{{ $metadata.root_url }}</loc>
+    </url>
+    <url>
+        <loc>{{ $metadata.root_url }}about/</loc>
+    </url>
+    <url>
+        <loc>{{ $metadata.root_url }}countries/</loc>
+    </url>
+    {{- range . -}}
+    <url>
+        <loc>{{ $metadata.root_url }}{{ .safeName }}/</loc>
+    </url>
+    {{- end -}}
+       {{- range . -}}
+            {{- $country := .safeName.String -}}
+            {{- $queryPath := replace "generators/hej" "hej" $country 1 -}}
+            {{- $orgs := query $queryPath -}}
+            {{- range $orgs -}}
+    <url>
+        <loc>{{ $metadata.root_url }}{{ $country }}/{{ .qid }}/</loc>
+    </url>
+       {{- end -}}
+    {{- end -}}
+</urlset>
