@@ -2,6 +2,7 @@ SELECT DISTINCT
   ?qid
   ?orgLabel
   ?orgDescription
+  ?type
   ?typeLabel
   (SAMPLE(?website) AS ?officialWebsite) # note that SAMPLE in Blazegraph always picks the first object
   (SAMPLE(?email) AS ?officialEmail)
@@ -37,5 +38,5 @@ WHERE {
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv" }
 }
-GROUP BY ?qid ?orgLabel ?orgDescription ?typeLabel ?country
+GROUP BY ?qid ?orgLabel ?orgDescription ?type ?typeLabel ?country
 ORDER BY ?qid

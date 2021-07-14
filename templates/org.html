@@ -25,6 +25,22 @@
 {{ end }}
 
 {{ define "javascript" }}
+{{/* This ensures that links returned by SPARQL is not escaped as if this was HTML */}}
+{{ safe_html "<script" }} type="application/ld+json">
+{{- $socialAccounts := query "account-data" .qid.String -}}
+{{- $global := metadata }}
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "description": "{{ .orgDescription }}",
+  {{- if .email -}}"email": "{{ replace .email "mailto:" "" 1 }}",{{- end }}
+  additionalType": "{{ .type }}",
+  "url": "{{ $global.root_url }}{{ template "get-country-url.html" .country }}/{{ .qid }}",
+  "sameAs": [{{ if $socialAccounts }}{{ range $socialAccounts }}"{{ html .url}}",{{ end }}{{ end }}"http://wikidata.org/entity/{{ .qid }}"],
+  "name": "{{ .orgLabel }}"
+}
+</script>
+
 <script>
 const dataTable = document.querySelector('table');
 
