@@ -14,15 +14,14 @@
     <url>
         <loc>{{ $metadata.root_url }}{{ .safeName }}/</loc>
     </url>
-    {{- end -}}
+    {{ end -}}
        {{- range . -}}
             {{- $country := .safeName.String -}}
-            {{- $queryPath := replace "generators/hej" "hej" $country 1 -}}
-            {{- $orgs := query $queryPath -}}
-            {{- range $orgs -}}
+            {{- $orgs := query (join "" "generators/" $country) -}}
+            {{- range $orgs }}
     <url>
         <loc>{{ $metadata.root_url }}{{ $country }}/{{ .qid }}/</loc>
     </url>
-       {{- end -}}
-    {{- end -}}
+            {{- end -}}
+        {{- end -}}
 </urlset>

@@ -13,10 +13,7 @@
 <h1>{{ .name }}</h1>
 <p>{{ .description }}</p>
 
-{{/* # replace this hack which currently is used to merge strings */}}
-{{ $queryPath := replace "generators/hej" "hej" .safeName.String 1 }}
-
-{{ template "org-table.html" query $queryPath .safeName.String }}
+{{ template "org-table.html" query (join "" "generators/" .safeName.String) .safeName.String }}
 <a id="download" download="{{ .name }}.csv" href="#" class="need-js">Download</a>
 {{ end }}
 
