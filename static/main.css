@@ -152,37 +152,28 @@ footer {
     background-color: #00264d;
     color: #fff;
     padding: 1em;
+    height: 100%;
 }
 
-footer p {
-    font-weight: 100;
-    font-size: clamp(1rem, 1vw, 1rem);
+.footer-table {
+    display: grid;
+    grid-template-columns: auto;
 }
 
 footer a {
-    text-decoration:none;
+    text-decoration: none;
     color: #fff;
 }
 
 .footer-header {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-}
-
-.footer-table {
-    display: flex;
-    justify-content: space-around;
-    height: 30vh;
+    font-size: 1.5rem;
+    font-weight: 100;
 }
 
 .footer-end {
-    padding: 0;
-    height: 50px;
+    padding: 1em;
     display: flex;
-    justify-content: right;
-}
-
-.footer-image {
-    padding-bottom: 0px;
+    justify-content: space-between;
 }
 
 .white-bg {
@@ -254,6 +245,10 @@ table tr:nth-child(even){
     }
 
     .box-list {
+        grid-template-columns: auto auto auto;
+    }
+
+    .footer-table {
         grid-template-columns: auto auto auto;
     }
 }
