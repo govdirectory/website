@@ -11,7 +11,7 @@
 {{ define "main" }}
 <h1>Countries</h1>
 
-<ul>
+<ul class="box-list">
     {{ range . }}
     <li><a href="/{{ .safeName }}">{{ .name }}</a></li>
     {{ end }}

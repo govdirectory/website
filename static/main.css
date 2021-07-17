@@ -209,7 +209,30 @@ table tr:nth-child(even){
 
 .container {
     width: 100%;
-    margin: 0 1em;
+    padding: 0 1em;
+    box-sizing: border-box;
+}
+
+.box-list {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: auto;
+    margin: 1em 0;
+}
+
+.box-list li {
+    height: 100px;
+    line-height: 100px;
+    background: #107fc9;
+    border-radius: 3px;
+}
+
+.box-list a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 115%;
 }
 
 /* #TODO review break points */
@@ -218,12 +241,20 @@ table tr:nth-child(even){
         width: 600px;
         margin: auto;
     }
+
+    .box-list {
+        grid-template-columns: auto auto;
+    }
 }
 
 @media screen and (min-width: 800px) {
     .container {
         width: 800px;
         margin: auto;
+    }
+
+    .box-list {
+        grid-template-columns: auto auto auto;
     }
 }
 
