@@ -1,3 +1,4 @@
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
 SELECT DISTINCT
   ?issuerLabel
   ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata
@@ -5,14 +6,14 @@ SELECT DISTINCT
   ?verified
 WHERE {
   ?property wdt:P31 wd:Q105388954 ;
-            wikibase:directClaim ?wdt ;
-            wikibase:claim ?wdtClaim ;
+            wikibase:statementProperty ?propValuePredicate ;
+            wikibase:claim ?wdtClaimPredicate  ;
             wdt:P1630 ?formatter ;
             # we use issuer label instead of property description, to just get the platform name
-            wdt:P2378 ?issuer . # Wikidata item of this property?
+            wdt:P2378 ?issuer . # #56
 
-  wd:{{.}} ?wdt ?value ;
-              ?wdtClaim ?statement .
+  wd:{{.}} ?wdtClaimPredicate ?statement .
+  ?statement ?propValuePredicate ?value .
   
   OPTIONAL { ?statement pq:P1552 ?quality }
   
