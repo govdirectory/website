@@ -10,15 +10,37 @@
 {{ define "main-constraint-classes" }}container{{ end }}
 
 {{ define "main" }}
-<a class="btn" href="/{{ template "get-country-url.html" .country }}/">{{ template "get-country-name.html" .country }}</a>
-<h1>{{ .orgLabel }}</h1>
-<p>{{ .orgDescription }}</p>
+<div class="grid org-grid">
+    <header>
+        <a class="btn" href="/{{ template "get-country-url.html" .country }}/">{{ template "get-country-name.html" .country }}</a>
+        <h1>{{ .orgLabel }}</h1>
+        <p>{{ .orgDescription }}</p>
+    </header>
+    <aside class="center-text">
+        <div>
+            <h2>Found an error?</h2>
+            <a class="btn" href="https://www.wikidata.org/wiki/{{ .qid }}">Edit on Wikidata</a>
+        </div>
+        {{- if .officialEmail -}}
+        <div>
+            <h2>Email</h2>
+            <a class="btn" href="{{ .officialEmail }}">Send an email</a>
+        </div>
+        {{- end -}}
+        {{- if .citizensInitiativesURL -}}
+        <div>
+            <h2>Citizen's initiatives</h2>
+            <a class="btn" href="{{ .citizensInitiativesURL }}">Learn more</a>
+        </div>
+        {{- end -}}
+    </aside>
+</div>
 
     {{ $socialAccounts := query "account-data" .qid.String }}
 
     {{ if $socialAccounts }}
+    <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#" class="btn need-js">Download</a>
         {{ template "social-table.html" $socialAccounts }}
-        <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#" class="btn need-js">Download</a>
     {{ else }}
         <p>No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/{{ .qid }}">Wikidata</a>.</p>
     {{ end }}

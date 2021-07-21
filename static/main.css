@@ -11,14 +11,14 @@ ul {
     margin: 0;
 }
 
-h1 {
+.h1-lg {
     font-size: clamp(2rem, 10vw, 4rem);
     font-weight: 400;
     line-height: 1.15;
     margin: 0;
 }
 
-h2 {
+.h2-lg {
     font-size: clamp(2rem, 8vw, 3rem);
     font-weight: 400;
     line-height: 1.15;
@@ -196,6 +196,7 @@ table tr:nth-child(even){
     background-color: #f2f2f2;
 }
 
+
 /* BUTTONS */
 
 .btn {
@@ -203,8 +204,7 @@ table tr:nth-child(even){
     color: #fff;
     text-decoration: none;
     padding: 7px 21px;
-    height: 18px;
-    display: inline-block;
+    line-height: 18px;
     border-radius: 3px;
 }
 
@@ -212,12 +212,19 @@ table tr:nth-child(even){
     background: #107FC9;
 }
 
+
 /* LAYOUT */
 
 .container {
     width: 100%;
     padding: 0 1em;
     box-sizing: border-box;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: auto;
 }
 
 .box-list {
@@ -242,6 +249,16 @@ table tr:nth-child(even){
     font-size: 115%;
 }
 
+/* ORG SPECIFIC */
+
+.org-grid h2 {
+    text-align: left;
+}
+
+.org-grid div {
+    padding: 1em;
+}
+
 /* #TODO review break points */
 @media screen and (min-width: 600px) {
     .container {
@@ -251,6 +268,17 @@ table tr:nth-child(even){
 
     .box-list {
         grid-template-columns: auto auto;
+    }
+
+
+    .org-grid header {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .org-grid aside {
+        grid-column-start: 3;
+        grid-column-end: 4;
     }
 }
 

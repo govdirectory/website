@@ -6,12 +6,13 @@ SELECT DISTINCT
   ?typeLabel
   (SAMPLE(?website) AS ?officialWebsite) # note that SAMPLE in Blazegraph always picks the first object
   (SAMPLE(?email) AS ?officialEmail)
+  (SAMPLE(?citizensInitiatives ) AS ?citizensInitiativesURL)
   ?country
-  WHERE {
+WHERE {
   BIND(wd:Q145 AS ?country)
 
   VALUES ?type {
-    wd:Q2500378 # department of the United Kingdom Government (21)
+    wd:Q2500378 # department of the United Kingdom Government (23)
   }
 
   ?org wdt:P31 ?type .
@@ -19,6 +20,7 @@ SELECT DISTINCT
   ?org wdt:P17 ?country .
   OPTIONAL { ?org wdt:P856 ?website }
   OPTIONAL { ?org wdt:P968 ?email }
+  OPTIONAL { ?org wdt:P9732 ?citizensInitiatives }
 
   MINUS { ?org wdt:P576 [] }
 
