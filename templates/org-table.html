@@ -3,12 +3,14 @@
 <table>
     <tr>
       <th>Name</th>
+      <th>Quick Links</th>
       <th>Type</th>
     </tr>
 
     {{ range . }}
     <tr>
         <td><a href="{{ .qid }}">{{ .orgLabel }}</a></td>
+        <td>{{ template "social-icons.html" query "account-data.rq" .qid.String }}</td>
         <td>{{ .typeLabel }}</td>
     </tr>
     {{ end }}

@@ -1,0 +1,26 @@
+{{- $preview_count := 0 -}}
+{{- if len . -}}
+<ul>
+    {{- range . -}}
+        {{- if eq .property (uri "http://www.wikidata.org/entity/P2002") -}}{{/* Twitter */}}
+            {{- $preview_count = add1 $preview_count -}}
+            <li><a href="{{ .url }}">T</a></li>
+        {{- else if eq .property (uri "http://www.wikidata.org/entity/P2397") -}}{{/* YouTube */}}
+            {{- $preview_count = add1 $preview_count -}}
+            <li><a href="{{ .url }}">Y</a></li>
+        {{- else if eq .property (uri "http://www.wikidata.org/entity/P4264") -}}{{/* LinkedIn */}}
+            {{- $preview_count = add1 $preview_count -}}
+            <li><a href="{{ .url }}">L</a></li>
+        {{- else if eq .property (uri "http://www.wikidata.org/entity/P2013") -}}{{/* Facebook */}}
+            {{- $preview_count = add1 $preview_count -}}
+            <li><a href="{{ .url }}">F</a></li>
+        {{- else if eq .property (uri "http://www.wikidata.org/entity/P2003") -}}{{/* Instagram */}}
+            {{- $preview_count = add1 $preview_count -}}
+            <li><a href="{{ .url }}">I</a></li>
+        {{- end -}}
+    {{- end -}}
+    {{- if ne (sub (len .) $preview_count) 0 -}}
+        <li>+{{ sub (len .) $preview_count }}</li>
+    {{- end -}}
+</ul>
+{{- end -}}
