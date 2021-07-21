@@ -196,6 +196,22 @@ table tr:nth-child(even){
     background-color: #f2f2f2;
 }
 
+/* BUTTONS */
+
+.btn {
+    background: #00264d;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 21px;
+    height: 18px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.btn:hover, .btn:focus {
+    background: #107FC9;
+}
+
 /* LAYOUT */
 
 .container {

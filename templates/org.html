@@ -10,7 +10,7 @@
 {{ define "main-constraint-classes" }}container{{ end }}
 
 {{ define "main" }}
-<a href="/{{ template "get-country-url.html" .country }}/">{{ template "get-country-name.html" .country }}</a>
+<a class="btn" href="/{{ template "get-country-url.html" .country }}/">{{ template "get-country-name.html" .country }}</a>
 <h1>{{ .orgLabel }}</h1>
 <p>{{ .orgDescription }}</p>
 
@@ -18,7 +18,7 @@
 
     {{ if $socialAccounts }}
         {{ template "social-table.html" $socialAccounts }}
-        <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#" class="need-js">Download</a>
+        <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#" class="btn need-js">Download</a>
     {{ else }}
         <p>No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/{{ .qid }}">Wikidata</a>.</p>
     {{ end }}

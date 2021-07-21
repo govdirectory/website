@@ -13,8 +13,8 @@
 <h1>{{ .name }}</h1>
 <p>{{ .description }}</p>
 
+<a id="download" download="{{ .name }}.csv" href="#" class="btn need-js">Download</a>
 {{ template "org-table.html" query (join "" "generators/" .safeName.String) .safeName.String }}
-<a id="download" download="{{ .name }}.csv" href="#" class="need-js">Download</a>
 {{ end }}
 
 {{ define "javascript" }}
