@@ -12,11 +12,11 @@ WHERE {
 
   ?subPropertyStatement pq:P642 ?platform .
 
-  wd:Q508140 ?wdtClaimPredicate ?statement .
+  wd:{{.}} ?wdtClaimPredicate ?statement .
   ?statement ?propValuePredicate ?value .
-  
+
   OPTIONAL { ?statement pq:P1552 ?quality }
-  
+
   BIND(IF(BOUND(?quality), IF(?quality = wd:Q28378282, True, False), False) AS ?verified)
 
   BIND(IRI(CONCAT(SUBSTR(?formatter, 1, STRLEN(?formatter) -2), ?value)) AS ?url)
