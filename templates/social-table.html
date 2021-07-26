@@ -8,7 +8,7 @@
 
     {{ range . }}
     <tr>
-        <td>{{ .issuerLabel }}</td>
+        <td>{{ .platformLabel }}</td>
         <td><a href="{{ .url }}">{{ .url }}{{ if eq .verified.String "true" }} (verified){{ end }}</a></td>
     </tr>
     {{ end }}
