@@ -1,3 +1,4 @@
+# expected_result_count: 669
 SELECT DISTINCT
   ?qid
   ?orgLabel
