@@ -35,7 +35,7 @@ WHERE {
   OPTIONAL { ?org wdt:P9732 ?citizensInitiatives }
 
   MINUS { ?org wdt:P576 [] }
-  MINUS { ?item wdt:P1366 [] }
+  MINUS { ?org wdt:P1366 [] }
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
