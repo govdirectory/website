@@ -12,9 +12,9 @@
 <h1>Countries</h1>
 
 <ul class="box-list">
-    {{ range . }}
-    <li><a href="/{{ .safeName }}">{{ .name }}</a></li>
-    {{ end }}
+    {{- range . -}}
+        <li><a href="/{{ .safeName }}">{{ .name }}</a></li>
+    {{- end -}}
 </ul>
 {{ end }}
 

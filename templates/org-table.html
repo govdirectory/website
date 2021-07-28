@@ -5,11 +5,11 @@
       <th>Type</th>
     </tr>
 
-    {{ range . }}
+    {{- range . -}}
     <tr>
         <td><a href="{{ .qid }}">{{ .orgLabel }}</a></td>
         <td>{{ template "social-icons.html" query "account-data.rq" .qid.String }}</td>
         <td>{{ .typeLabel }}</td>
     </tr>
-    {{ end }}
+    {{ end -}}
 </table>
