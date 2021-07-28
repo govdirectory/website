@@ -174,6 +174,7 @@ footer a {
     padding: 1em;
     display: flex;
     justify-content: space-between;
+    margin-top: 1em !important; /* important needed as long as the target element got the container class */
 }
 
 .white-bg {
