@@ -50,7 +50,7 @@
 {{/* This ensures that links returned by SPARQL is not escaped as if this was HTML */}}
 {{ safe_html "<script" }} type="application/ld+json">
 {{- $socialAccounts := query "account-data" .qid.String -}}
-{{- $global := metadata }}
+{{- $global := config.Metadata }}
 {
   "@context": "https://schema.org",
   "@type": "Organization",
