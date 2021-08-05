@@ -23,22 +23,23 @@
 <script>
 const dataTable = document.querySelector('table');
 
-let csv = '"Name","Type",\n';
+let csv = '"Name","Govdirectory URL","Type","Accounts"\n';
 Array.from(dataTable.children[0].children).forEach((row, index) => {
     if (index === 0) return; // header
-    const columns = Array.from(row.children);
-    let rowCSV = '';
-    columns.forEach((column, innerIndex) => {
-        let value;
-        if (column.children[0] && column.children[0].nodeName === 'A') {
-            value = column.children[0].href;
-        } else {
-            value = column.innerText;
-        }
+    const name = row.children[0].innerText;
+    const qid = row.children[0].firstChild.href;
+    const type = row.children[2].innerText;
+    var accounts;
+    if (row.children[1].firstChild) {
+        accounts = Array.from(row.children[1].firstChild.children).map(item => {
+            return item.firstChild.href;
+        }).join('|');
+    } else {
+        accounts = '';
+    }
 
-        rowCSV += '"' + value + '",';
-    });
-    csv += rowCSV + '\n';
+    const csvRow = '"' + name + '","' + qid + '","' + type + '","' + accounts + '"\n';
+    csv += csvRow;
 });
 
 const downloadElm = document.querySelector('#download');
