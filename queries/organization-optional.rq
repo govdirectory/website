@@ -1,0 +1,40 @@
+SELECT
+  # note that SAMPLE in Blazegraph always picks the first object
+  (SAMPLE(?website) AS ?website)
+  (SAMPLE(?email) AS ?email)
+  (SAMPLE(?citizensInitiatives ) AS ?citizensInitiatives)
+  (SAMPLE(?regulatoryText ) AS ?regulatoryText)
+  (SAMPLE(?regulatoryTextTitle ) AS ?regulatoryTextTitle)
+  (SAMPLE(?personLabel) AS ?leadBy)
+  ?wikipedia
+WHERE {
+  BIND(wd:{{.}} AS ?org)
+
+  OPTIONAL { ?org wdt:P856 ?website }
+  OPTIONAL { ?org wdt:P968 ?email }
+  OPTIONAL { ?org wdt:P9732 ?citizensInitiatives }
+
+  OPTIONAL {
+    ?org wdt:P92 ?regulatoryTextItem .
+    ?regulatoryTextItem wdt:P953 ?regulatoryText ;
+                        wdt:P1476 ?regulatoryTextTitle .
+  }
+  
+  OPTIONAL {
+    ?org wdt:P2388|wdt:P1313 ?office .
+    ?positionStatement ps:P39 ?office .
+    ?person p:P39 ?positionStatement .
+    MINUS { ?positionStatement pq:P582 ?endtime }
+  }
+
+  OPTIONAL {
+    ?wikipedia schema:about ?org ;
+               schema:inLanguage "en" .
+  }
+
+  SERVICE wikibase:label {
+    # this might need to be updated when new countries are added
+    bd:serviceParam wikibase:language "en,sv" .
+    ?person rdfs:label ?personLabel .
+  }
+} GROUP BY ?wikipedia

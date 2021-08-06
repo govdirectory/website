@@ -10,27 +10,47 @@
 {{ define "main-constraint-classes" }}container{{ end }}
 
 {{ define "main" }}
+{{ $details := index (query "organization-optional" .qid.String) 0 }}
 <div class="grid org-grid">
     <header>
         <a class="btn" href="/{{ template "get-country-url.html" .country }}/">{{ template "get-country-name.html" .country }}</a>
         <h1>{{ .orgLabel }}</h1>
         <p>{{ .orgDescription }}</p>
+
+        <ul>
+            <li>Official website: {{ if $details.website -}}
+            <a href="{{ $details.website }}">{{ replace (replace $details.website.String "http://" "" 1) "https://" "" 1 }}</a>
+            {{- else -}} [missing data]
+            {{- end -}}</li>
+            <li>Lead by: {{ if $details.leadBy -}}
+                {{ $details.leadBy }}
+            {{- else -}}
+                [missing data]
+            {{- end -}}</li>
+            <li>Main regulatory text: {{ if $details.regulatoryText -}}
+                <a href="{{ $details.regulatoryText }}">{{ $details.regulatoryTextTitle }}</a>
+            {{- else -}}
+                [missing data]
+            {{- end -}}
+            </li>
+        </ul>
+
     </header>
     <aside class="center-text">
         <div>
             <h2>Found an error?</h2>
             <a class="btn" href="https://www.wikidata.org/wiki/{{ .qid }}">Edit on Wikidata</a>
         </div>
-        {{- if .officialEmail -}}
+        {{- if $details.email -}}
         <div>
             <h2>Email</h2>
-            <a class="btn" href="{{ .officialEmail }}">Send an email</a>
+            <a class="btn" href="{{ $details.email }}">Send an email</a>
         </div>
         {{- end -}}
-        {{- if .citizensInitiativesURL -}}
+        {{- if $details.citizensInitiatives -}}
         <div>
             <h2>Citizen's initiatives</h2>
-            <a class="btn" href="{{ .citizensInitiativesURL }}">Learn more</a>
+            <a class="btn" href="{{ $details.citizensInitiatives }}">Learn more</a>
         </div>
         {{- end -}}
     </aside>

@@ -28,9 +28,6 @@ SELECT DISTINCT
   ?orgDescription
   ?type
   ?typeLabel
-  (SAMPLE(?website) AS ?officialWebsite) # note that SAMPLE in Blazegraph always picks the first object
-  (SAMPLE(?email) AS ?officialEmail)
-  (SAMPLE(?citizensInitiatives ) AS ?citizensInitiativesURL)
   ?country
 WHERE {
   BIND(wd:Q34 AS ?country)
@@ -53,9 +50,6 @@ WHERE {
   ?org wdt:P31 ?type .
 
   ?org wdt:P17 ?country .
-  OPTIONAL { ?org wdt:P856 ?website }
-  OPTIONAL { ?org wdt:P968 ?email }
-  OPTIONAL { ?org wdt:P9732 ?citizensInitiatives }
 
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
@@ -64,7 +58,6 @@ WHERE {
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv" }
 }
-GROUP BY ?qid ?orgLabel ?orgDescription ?type ?typeLabel ?country
 ORDER BY ?qid
 ```
 
