@@ -201,11 +201,26 @@ footer {
 table {
     border-collapse: collapse;
     width: 100%;
+    text-align: left;
+}
+
+table a {
+    color: #000;
+    text-decoration: none;
+}
+
+table a:focus, table a:hover {
+    color: #000;
+    text-decoration: underline;
 }
 
 table td, table th {
-    border: 1px solid #ddd;
     padding: 8px;
+}
+
+table th {
+    font-size: 1.2rem;
+    font-weight: 100;
 }
 
 table tr:nth-child(even) {
