@@ -35,7 +35,7 @@ a, a:hover {
     text-decoration: none;
 }
 
-.dark-link {
+.dark-link, .dark-link:hover, .dark-link:focus {
     text-decoration: underline;
     color: #000;
 }
