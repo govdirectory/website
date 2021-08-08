@@ -6,11 +6,53 @@
 {{ define "canonical" }}/{{ .safeName }}/{{ end }}
 
 {{ define "main" }}
-<main class="container">
-    <h1>{{ .name }}</h1>
-    <p>{{ .description }}</p>
+<div class="container">
+    <header class="item">
+        <h1>{{ .name }}</h1>
+        <p>{{ .nativeLabel }}</p>
+        <p>{{ .description }}</p>
 
-    <a id="download" download="{{ .name }}.csv" href="#" class="btn need-js">Download</a>
+        <div class="header-lower">
+            <div class="infobox">
+                <ul>
+                    <li>Type of government: {{ if .typeOfGovList -}}
+                        {{- range $i, $type := (split .typeOfGovList.String ",") -}}
+                            {{- if $i -}}, {{ end -}}{{- $type -}}
+                        {{- end -}}
+                    {{- else -}} <span class="text-grey">[missing data]</span>
+                    {{- end -}}</li>
+                    <li>Head of state: {{ if .headOfStateLabel -}}
+                        {{ .headOfStateLabel }}
+                    {{- else -}} <span class="text-grey">[missing data]</span>
+                    {{- end -}}</li>
+                    <li>Head of government: {{ if .headOfGovLabel -}}
+                        {{ .headOfGovLabel }}
+                    {{- else -}} <span class="text-grey">[missing data]</span>
+                    {{- end -}}</li>
+                    <li>Official website: {{ if .website -}}
+                        <a href="{{ .website }}">{{ replace (replace .website.String "http://" "" 1) "https://" "" 1 }}</a>
+                    {{- else -}} <span class="text-grey">[missing data]</span>
+                    {{- end -}}</li>
+                </ul>
+            </div>
+
+            <div class="center-text action-boxes">
+                <div>
+                    <h2>Found an error?</h2>
+                    <a class="btn" href="{{ .uri }}">Edit on Wikidata</a>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<main>
+    <section class="bg-grey">
+        <div class="container move-away">
+            <h2 class="m0">Agencies</h2>
+            <a id="download" download="{{ .name }}.csv" href="#" class="btn need-js">Download</a>
+        </div>
+    </section>
 
     {{- template "org-table.html" query (join "" "generators/" .safeName.String) .safeName.String -}}
 </main>

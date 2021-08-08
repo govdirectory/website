@@ -129,15 +129,41 @@ The [`countries.rq`](https://github.com/govdirectory/website/blob/main/queries/c
  - The URL slug on which the country appears at on Govdirectory
  - A description of the content coverage
 
-The configuration example below illustrates the configuration for Sweden and the United Kingdom. To add a new country one would create an additional line similar to the two found at lines 3-4 in the example below.
+The configuration example below illustrates the configuration for Sweden and the United Kingdom. To add a new country one would create an additional line similar to the two found at lines 13-14 in the example below. The query will automatically include additional information.
 
 ```sparql
-SELECT * WHERE {
-    VALUES (?uri ?name ?safeName ?description) {
-        (wd:Q34 'Sweden' 'sweden' 'Current content include municipalities, regional councils, and the courts of appeal.')
-        (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content only includes ministerial departments.')
-    }
+SELECT
+  ?uri
+  ?name
+  ?safeName
+  ?description
+  (SAMPLE(?website) AS ?website)
+  (SAMPLE(?nativeLabel) AS ?nativeLabel)
+  (GROUP_CONCAT(DISTINCT ?typeOfGovLabel; separator=",") AS ?typeOfGovList)
+  ?headOfStateLabel
+  ?headOfGovLabel
+WHERE {
+  VALUES (?uri ?name ?safeName ?description) {
+    (wd:Q34 'Sweden' 'sweden' 'Current content include municipalities, regional councils, and the courts of appeal.')
+    (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content only includes ministerial departments.')
+  }
+  
+  OPTIONAL { ?uri wdt:P856 ?website }
+  OPTIONAL { ?uri wdt:P35 ?headOfState }
+  OPTIONAL { ?uri wdt:P6 ?headOfGov }
+  OPTIONAL { ?uri wdt:P122 ?typeOfGov }
+  OPTIONAL { ?uri wdt:P1705 ?nativeLabel }
+  
+  SERVICE wikibase:label {
+    # this might need to be updated when new countries are added
+    bd:serviceParam wikibase:language "en,sv" .
+    ?headOfState rdfs:label ?headOfStateLabel .
+    ?headOfGov rdfs:label ?headOfGovLabel .
+    ?typeOfGov rdfs:label ?typeOfGovLabel .
+  }
 }
+GROUP BY ?uri ?name ?safeName ?description ?headOfGovLabel ?headOfStateLabel
+
 ```
 
 Note that one can test the query in the Wikidata Query Service.
