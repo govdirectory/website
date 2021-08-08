@@ -4,7 +4,8 @@
 
 {{ define "canonical" }}/about/{{ end }}
 
-{{ define "pre-main" }}
+
+{{ define "main" }}
 <header class="splash">
   <div>
     <img aria-hidden="true" src="/logo-white.svg" width="150px">
@@ -12,29 +13,27 @@
     <p>A crowdsourced and fact checked directory of official governmental online accounts and services.</p>
   </div>
 </header>
-{{ end }}
 
-{{ define "main-constraint-classes" }}{{ "" }}{{ end }}
-
-{{ define "main" }}
-<section>
-  <div class="container center-text">
-    <h2 class="h2-lg">Vision</h2>
-    <p>Our vision is a world where people are empowered to engage with their government to ensure responsive, inclusive, participatory and representative decision-making at all levels.</p>
-  </div>
-</section>
-<section class="bg-grey">
-  <div class="container center-text">
-    <h2 class="h2-lg">Mission</h2>
-    <p>We will enable a community powered directory where the online presence of every public organization is easily findable, queryable and trustworthy.</p>
-  </div>
-</section>
-<section>
-  <div class="container center-text">
-    <h2 class="h2-lg">Support</h2>
-    <p class="content">This project is supported through Wikimedia Deutschland's <a href="https://www.wikimedia.de/unlock/" class="dark-link">Unlock Accelerator</a>.</p>
-  </div>
-</section>
+<main>
+  <section>
+    <div class="container center-text">
+      <h2 class="h2-lg">Vision</h2>
+      <p>Our vision is a world where people are empowered to engage with their government to ensure responsive, inclusive, participatory and representative decision-making at all levels.</p>
+    </div>
+  </section>
+  <section class="bg-grey">
+    <div class="container center-text">
+      <h2 class="h2-lg">Mission</h2>
+      <p>We will enable a community powered directory where the online presence of every public organization is easily findable, queryable and trustworthy.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container center-text">
+      <h2 class="h2-lg">Support</h2>
+      <p class="content">This project is supported through Wikimedia Deutschland's <a href="https://www.wikimedia.de/unlock/" class="dark-link">Unlock Accelerator</a>.</p>
+    </div>
+  </section>
+</main>
 {{ end }}
 
 {{ define "javascript" }}{{""}}{{ end }}

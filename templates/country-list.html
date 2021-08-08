@@ -4,18 +4,16 @@
 
 {{ define "canonical" }}/countries/{{ end }}
 
-{{ define "pre-main" }}{{ "" }}{{ end }}
-
-{{ define "main-constraint-classes" }}container{{ end }}
-
 {{ define "main" }}
-<h1>Countries</h1>
+<main class="container">
+    <h1>Countries</h1>
 
-<ul class="box-list">
-    {{- range . -}}
-        <li><a href="/{{ .safeName }}">{{ .name }}</a></li>
-    {{- end -}}
-</ul>
+    <ul class="box-list">
+        {{- range . -}}
+            <li><a href="/{{ .safeName }}">{{ .name }}</a></li>
+        {{- end -}}
+    </ul>
+</main>
 {{ end }}
 
 {{ define "javascript" }}{{""}}{{ end }}

@@ -7,77 +7,76 @@
 
 {{ define "pre-main" }}{{ "" }}{{ end }}
 
-{{ define "main-constraint-classes" }}{{ "" }}{{ end }}
-
 {{ define "main" }}
-{{ $details := index (query "organization-optional" .qid.String) 0 }}
-<div class="container">
-    <header class="item">
-        <div class="btn-list">
-            <a class="btn rounded" href="/{{ template "get-country-url.html" .country }}/">{{ template "get-country-name.html" .country }}</a>
-        </div>
-        <h1>{{ .orgLabel }}</h1>
-        <p>{{ .orgDescription }}</p>
+<main>
+    {{ $details := index (query "organization-optional" .qid.String) 0 }}
+    <div class="container">
+        <header class="item">
+            <div class="btn-list">
+                <a class="btn rounded" href="/{{ template "get-country-url.html" .country }}/">{{ template "get-country-name.html" .country }}</a>
+            </div>
+            <h1>{{ .orgLabel }}</h1>
+            <p>{{ .orgDescription }}</p>
 
-        <div class="header-lower">
-            <div class="infobox">
-                <ul>
-                    <li>Official website: {{ if $details.website -}}
-                    <a href="{{ $details.website }}">{{ replace (replace $details.website.String "http://" "" 1) "https://" "" 1 }}</a>
-                    {{- else -}} <span class="text-grey">[missing data]</span>
-                    {{- end -}}</li>
-                    <li>Lead by: {{ if $details.leadBy -}}
-                        {{ $details.leadBy }}
-                    {{- else -}} <span class="text-grey">[missing data]</span>
-                    {{- end -}}</li>
-                    <li>Main regulatory text: {{ if $details.regulatoryText -}}
-                        <a href="{{ $details.regulatoryText }}">{{ $details.regulatoryTextTitle }}</a>
-                    {{- else -}} <span class="text-grey">[missing data]</span>
+            <div class="header-lower">
+                <div class="infobox">
+                    <ul>
+                        <li>Official website: {{ if $details.website -}}
+                        <a href="{{ $details.website }}">{{ replace (replace $details.website.String "http://" "" 1) "https://" "" 1 }}</a>
+                        {{- else -}} <span class="text-grey">[missing data]</span>
+                        {{- end -}}</li>
+                        <li>Lead by: {{ if $details.leadBy -}}
+                            {{ $details.leadBy }}
+                        {{- else -}} <span class="text-grey">[missing data]</span>
+                        {{- end -}}</li>
+                        <li>Main regulatory text: {{ if $details.regulatoryText -}}
+                            <a href="{{ $details.regulatoryText }}">{{ $details.regulatoryTextTitle }}</a>
+                        {{- else -}} <span class="text-grey">[missing data]</span>
+                        {{- end -}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="center-text action-boxes">
+                    <div>
+                        <h2>Found an error?</h2>
+                        <a class="btn" href="https://www.wikidata.org/wiki/{{ .qid }}">Edit on Wikidata</a>
+                    </div>
+                    {{- if $details.email -}}
+                    <div>
+                        <h2>Email</h2>
+                        <a class="btn" href="{{ $details.email }}">Send an email</a>
+                    </div>
                     {{- end -}}
-                    </li>
-                </ul>
+                    {{- if $details.citizensInitiatives -}}
+                    <div>
+                        <h2>Citizen's initiatives</h2>
+                        <a class="btn" href="{{ $details.citizensInitiatives }}">Learn more</a>
+                    </div>
+                    {{- end -}}
+                </div>
             </div>
 
-            <div class="center-text action-boxes">
-                <div>
-                    <h2>Found an error?</h2>
-                    <a class="btn" href="https://www.wikidata.org/wiki/{{ .qid }}">Edit on Wikidata</a>
-                </div>
-                {{- if $details.email -}}
-                <div>
-                    <h2>Email</h2>
-                    <a class="btn" href="{{ $details.email }}">Send an email</a>
-                </div>
-                {{- end -}}
-                {{- if $details.citizensInitiatives -}}
-                <div>
-                    <h2>Citizen's initiatives</h2>
-                    <a class="btn" href="{{ $details.citizensInitiatives }}">Learn more</a>
-                </div>
-                {{- end -}}
-            </div>
-        </div>
-
-    </header>
-</div>
-
-{{ $socialAccounts := query "account-data" .qid.String }}
-
-<section class="bg-grey">
-    <div class="container move-away">
-        <h2 class="m0">Platforms and accounts</h2>
-        {{- if $socialAccounts -}}
-        <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#" class="btn need-js">Download</a>
-        {{- end -}}
+        </header>
     </div>
-</section>
 
-    
+    {{ $socialAccounts := query "account-data" .qid.String }}
+
+    <section class="bg-grey">
+        <div class="container move-away">
+            <h2 class="m0">Platforms and accounts</h2>
+            {{- if $socialAccounts -}}
+            <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#" class="btn need-js">Download</a>
+            {{- end -}}
+        </div>
+    </section>
+
     {{ if $socialAccounts }}
         {{ template "social-table.html" $socialAccounts }}
     {{ else }}
         <p>No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/{{ .qid }}">Wikidata</a>.</p>
     {{ end }}
+</main>
 {{ end }}
 
 {{ define "javascript" }}

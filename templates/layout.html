@@ -30,13 +30,7 @@
         </ul>
     </nav>
 
-    {{ block "pre-main" . }}{{ end }}
-
-    <div class="{{ block "main-constraint-classes" . }}{{ end }}">
-        <main>
-            {{ block "main" . }}{{ end }}
-        </main>
-    </div>
+    {{ block "main" . }}{{ end }}
 
     <footer>
         <div class="footer-table container">

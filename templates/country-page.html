@@ -5,18 +5,15 @@
 
 {{ define "canonical" }}/{{ .safeName }}/{{ end }}
 
-{{ define "pre-main" }}{{ "" }}{{ end }}
-
-{{ define "main-constraint-classes" }}container{{ end }}
-
 {{ define "main" }}
-<h1>{{ .name }}</h1>
-<p>{{ .description }}</p>
+<main class="container">
+    <h1>{{ .name }}</h1>
+    <p>{{ .description }}</p>
 
-<a id="download" download="{{ .name }}.csv" href="#" class="btn need-js">Download</a>
+    <a id="download" download="{{ .name }}.csv" href="#" class="btn need-js">Download</a>
 
-{{- template "org-table.html" query (join "" "generators/" .safeName.String) .safeName.String -}}
-
+    {{- template "org-table.html" query (join "" "generators/" .safeName.String) .safeName.String -}}
+</main>
 {{ end }}
 
 {{ define "javascript" }}
