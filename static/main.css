@@ -164,6 +164,15 @@ nav a:hover {
     color: #FFF;
 }
 
+/* LARGE CALL-OUT-BOX */
+
+.call-out {
+    background: #0d69a6;
+    font-size: 1.5rem;
+    padding: 1em;
+    color: #fff;
+    border-radius: 5px;
+}
 
 /* FOOTER */
 
