@@ -119,9 +119,9 @@ if (dataTable) {
         });
         csv += rowCSV + '\n';
     });
-}
 
-const downloadElm = document.querySelector('#download');
-downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    const downloadElm = document.querySelector('#download');
+    downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+}
 </script>
 {{ end }}
