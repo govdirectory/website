@@ -321,6 +321,11 @@ header.item {
 }
 
 /* #TODO review break points */
+
+.hide-mobile {
+    display: none;
+}
+
 @media screen and (min-width: 600px) {
     .container {
         width: 600px;
@@ -329,6 +334,10 @@ header.item {
 
     .box-list {
         grid-template-columns: auto auto;
+    }
+
+    .hide-mobile {
+        display: initial;
     }
 }
 
@@ -344,6 +353,10 @@ header.item {
 
     .footer-table {
         grid-template-columns: auto auto auto;
+    }
+
+    .hide-mobile {
+        display: initial;
     }
 }
 
