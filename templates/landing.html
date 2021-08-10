@@ -1,0 +1,28 @@
+{{ template "layout" . }}
+
+{{ define "title" }}About Govdirectory{{ end }}
+
+{{ define "canonical" }}/about/{{ end }}
+
+
+{{ define "main" }}
+<header class="splash">
+  <div>
+    <img aria-hidden="true" src="/logo-white.svg" width="150px">
+    <h1 class="lg-h1">Govdirectory</h1>
+    <p>A crowdsourced and fact checked directory of official governmental online accounts and services.</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container center-text">
+      <h2>Countries</h2>
+      <a href="sweden/" class="btn rounded">Sweden</a>
+      <a href="united-kingdom/" class="btn rounded">United Kingdom</a>
+    </div>
+  </section>
+</main>
+{{ end }}
+
+{{ define "javascript" }}{{""}}{{ end }}
