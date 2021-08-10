@@ -4,19 +4,19 @@
     {{- range . -}}
         {{- if eq .property (uri "http://www.wikidata.org/entity/P2002") -}}{{/* Twitter */}}
             {{- $preview_count = add1 $preview_count -}}
-            <li><a href="{{ .url }}">T</a></li>
+            <li><a title="Twitter" href="{{ .url }}"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li>
         {{- else if eq .property (uri "http://www.wikidata.org/entity/P2397") -}}{{/* YouTube */}}
             {{- $preview_count = add1 $preview_count -}}
-            <li><a href="{{ .url }}">Y</a></li>
+            <li><a title="YouTube" href="{{ .url }}"><img width="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li>
         {{- else if eq .property (uri "http://www.wikidata.org/entity/P4264") -}}{{/* LinkedIn */}}
             {{- $preview_count = add1 $preview_count -}}
-            <li><a href="{{ .url }}">L</a></li>
+            <li><a title="LinkedIn" href="{{ .url }}"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li>
         {{- else if eq .property (uri "http://www.wikidata.org/entity/P2013") -}}{{/* Facebook */}}
             {{- $preview_count = add1 $preview_count -}}
-            <li><a href="{{ .url }}">F</a></li>
+            <li><a title="Facebook" href="{{ .url }}"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li>
         {{- else if eq .property (uri "http://www.wikidata.org/entity/P2003") -}}{{/* Instagram */}}
             {{- $preview_count = add1 $preview_count -}}
-            <li><a href="{{ .url }}">I</a></li>
+            <li><a title="Instagram" href="{{ .url }}"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li>
         {{- end -}}
     {{- end -}}
     {{- if ne (sub (len .) $preview_count) 0 -}}
