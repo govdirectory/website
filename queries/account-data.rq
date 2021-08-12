@@ -3,6 +3,7 @@ SELECT DISTINCT
   ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata
   ?url
   ?verified
+  (?value AS ?account)
 WHERE {
   ?property wdt:P31 wd:Q105388954 ;
             wikibase:statementProperty ?propValuePredicate ;
