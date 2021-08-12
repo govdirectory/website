@@ -6,6 +6,7 @@ SELECT
   (SAMPLE(?regulatoryText ) AS ?regulatoryText)
   (SAMPLE(?regulatoryTextTitle ) AS ?regulatoryTextTitle)
   (SAMPLE(?personLabel) AS ?leadBy)
+  (SAMPLE(?parentOrg) AS ?parent)
   ?wikipedia
 WHERE {
   BIND(wd:{{.}} AS ?org)
@@ -19,7 +20,9 @@ WHERE {
     ?regulatoryTextItem wdt:P953 ?regulatoryText ;
                         wdt:P1476 ?regulatoryTextTitle .
   }
-  
+
+  OPTIONAL { ?org wdt:P749 ?parentOrg }
+
   OPTIONAL {
     ?org wdt:P2388|wdt:P1313 ?office .
     ?positionStatement ps:P39 ?office .

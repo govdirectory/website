@@ -8,11 +8,38 @@
 {{ define "pre-main" }}{{ "" }}{{ end }}
 
 {{ define "main" }}
-{{ $details := index (query "organization-optional" .qid.String) 0 }}
+{{- $details := index (query "organization-optional" .qid.String) 0 -}}
+
+{{/* Looks up the country safename / name */}}
+{{- $currentCountry := .country -}}
+{{- $currentCountrySafeName := false -}}
+{{- $currentCountryName := false -}}
+{{- $countries := query "countries" -}}
+{{- range $countries -}}
+  {{- if eq .uri $currentCountry -}}
+    {{- $currentCountrySafeName = .safeName -}}
+    {{- $currentCountryName = .name -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Checks if the parent org is returned by the country generator */}}
+{{- $parentOrgLabel := false -}}
+{{- $parentOrgQID := false -}}
+{{- if $details.parent -}}
+  {{- $parentOrgQID = (replace $details.parent.String "http://www.wikidata.org/entity/" "" 1) -}}
+  {{- $currentOrg := .qid -}}
+  {{- $allOrgs := query (join "" "generators/" $currentCountrySafeName.String) -}}
+  {{- range $allOrgs }}
+    {{- if eq $parentOrgQID .qid.String -}}
+        {{- $parentOrgLabel = .orgLabel -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 <div class="container">
     <header class="item">
         <div class="btn-list">
-            <a class="btn rounded" href="/{{ template "get-country-url.html" .country }}/">{{ template "get-country-name.html" .country }}</a>
+            <a class="btn rounded" href="/{{ $currentCountrySafeName }}/">{{ $currentCountryName }}</a>
         </div>
         <h1>{{ .orgLabel }}</h1>
         <p>{{ .orgDescription }}</p>
@@ -20,6 +47,9 @@
         <div class="header-lower">
             <div class="infobox">
                 <ul>
+                    {{- if $parentOrgLabel -}}
+                    <li>Parent organization: <a href="/{{ $currentCountrySafeName }}/{{ $parentOrgQID }}">{{ $parentOrgLabel }}</a></li>
+                    {{- end -}}
                     <li>Official website: {{ if $details.website -}}
                     <a href="{{ $details.website }}">{{ replace (replace $details.website.String "http://" "" 1) "https://" "" 1 }}</a>
                     {{- else -}} <span class="text-grey">[missing data]</span>
@@ -91,7 +121,7 @@
   "@type": "Organization",
   "description": "{{ .orgDescription }}",
   {{- if .email -}}"email": "{{ replace .email "mailto:" "" 1 }}",{{- end }}
-  additionalType": "{{ .type }}",
+  "additionalType": "{{ .type }}",
   "url": "{{ $global.root_url }}{{ template "get-country-url.html" .country }}/{{ .qid }}",
   "sameAs": [{{ if $socialAccounts }}{{ range $socialAccounts }}"{{ html .url}}",{{ end }}{{ end }}"http://wikidata.org/entity/{{ .qid }}"],
   "name": "{{ .orgLabel }}"
