@@ -75,9 +75,6 @@ The First line must be formatted like the one above, by stating the expected num
   ?orgDescription
   ?type
   ?typeLabel
-  (SAMPLE(?website) AS ?officialWebsite) # note that SAMPLE in Blazegraph always picks the first object
-  (SAMPLE(?email) AS ?officialEmail)
-  (SAMPLE(?citizensInitiatives ) AS ?citizensInitiativesURL)
   ?country
 ```
 
