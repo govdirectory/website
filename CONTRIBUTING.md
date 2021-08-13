@@ -47,6 +47,8 @@ Document choices or decisions you make in the commit message, this will enable e
 If you are adding code, make sure you've added and updated the relevant documentation and tests before you submit your pull request.
 Make sure to write tests that show the behavior of the newly added or changed code.
 
+For icons, we are using the libraries [Maki](https://labs.mapbox.com/maki-icons/) and [Temaki](https://ideditor.github.io/temaki/docs/) for a consistent style. If you can't find a usable icon in those sets, try to emulate their style or find other icons similar to it.
+
 ### 2. Pull request
 
 When submitting the pull request, please accompany it with a description of the problem you are trying to solve and the issue numbers that this pull request fixes.
