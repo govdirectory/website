@@ -1,0 +1,3 @@
+output: "greenland/{{qid}}/index.html"
+query: "generators/greenland.rq"
+template: "org.html"

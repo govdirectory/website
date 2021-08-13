@@ -12,8 +12,9 @@ WHERE {
   VALUES (?uri ?name ?safeName ?description) {
     (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included, however all might not have their account available.')
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content only includes ministerial departments.')
+    (wd:Q223 'Greenland' 'greenland' 'Current content only includes municipalities.')
   }
-  
+
   OPTIONAL { ?uri wdt:P856 ?website }
   OPTIONAL { ?uri wdt:P35 ?headOfState }
   OPTIONAL { ?uri wdt:P6 ?headOfGov }
