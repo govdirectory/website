@@ -70,7 +70,12 @@ Here is what we know that we need right now:
 1. Add all public agencies. You can start with the ones in you country. Public agencies are notable so you don't need to worry about that. Please add sources and/or external identifiers so that it is possible to verify their existence.
 2. Make sure it's possible to differentiate active agencies in contrast to historic agencies in a query.
 3. Add basic properties like country (P17) and which administrative level they are on (state, regional, local etc.). How this is modeled may vary by country. If possible add what type of agency it is (like environmental protection or taxes).
-4. Add the online platforms you can find for them. Common ones are YouTube channel (P2397), Facebook (P2013), Twitter (P2002), Instagram (P2003) and LinkedIn (P4264). But others that they are active on (that have properties in Wikidata) are also good to add.
+4. Add the online platforms you can find for them. Common ones are YouTube channel (P2397), Facebook (P2013), Twitter (P2002), Instagram (P2003) and LinkedIn (P4264). These are also the one that is shown with icons in the directory. But others that they are active on (that have properties in Wikidata) are also good to add and they will show on the institution page.
+
+## Add a country in the interface
+
+If the data of a country is of high quality it can be added to the directory.
+The guide [Add a country](ADD_A_COUNTRY.MD) gives instructions for how that is done.
 
 ## Feedback
 
