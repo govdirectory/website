@@ -81,7 +81,7 @@ The First line must be formatted like the one above, by stating the expected num
   ?country
 ```
 
-The section above illustrates which variables are expected by Govdirectory, one should not change these lines but they give one an insight into what is expected from the query. Note that although not all of the values above are mandatory the query still needs to return all the fields.
+The section above illustrates which variables are expected by Govdirectory, one should not change these lines but they give one an insight into what is expected from the query. All except `?orgDescription`, `?type`, and `?typeLabel` are mandatory.
 
 ```sparql
   BIND(wd:Q34 AS ?country)

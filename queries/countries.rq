@@ -10,7 +10,7 @@ SELECT
   ?headOfGovLabel
 WHERE {
   VALUES (?uri ?name ?safeName ?description) {
-    (wd:Q34 'Sweden' 'sweden' 'Current content include municipalities, regional councils, and the courts of appeal.')
+    (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included, however all might not have their account available.')
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content only includes ministerial departments.')
   }
   
