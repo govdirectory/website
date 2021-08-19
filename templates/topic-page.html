@@ -1,0 +1,79 @@
+
+{{ template "layout" . }}
+
+{{ define "title" }}{{ .name }}{{ end }}
+
+{{ define "canonical" }}/{{ .safeName }}/{{ end }}
+
+{{ define "main" }}
+<div class="container">
+    <header class="item">
+        <h1>{{ .name }}</h1>
+    </header>
+</div>
+
+<main>
+    <section class="bg-grey">
+        <div class="container move-away">
+            <h2 class="m0">Agencies</h2>
+            <a id="download" download="{{ .name }}.csv" href="#" class="btn need-js">Download</a>
+        </div>
+    </section>
+
+{{- $countries := query "countries" -}}
+{{- $topic := .class -}}
+
+    <table class="container">
+        <tr>
+          <th>Name</th>
+          <th>Platforms</th>
+          <th>Type</th>
+          <th>Country</th>
+        </tr>
+
+        {{- range $countries -}}
+            {{- $country := .safeName.String -}}
+            {{- $countryLabel := .name.String -}}
+            {{- $orgs := query (join "" "generators/" $country) -}}
+            {{- range $orgs -}}
+                {{- if eq $topic .cofog -}}
+                    <tr>
+                        <td><a href="/{{ $country }}/{{ .qid }}">{{ .orgLabel }}</a></td>
+                        <td>{{ template "social-icons.html" query "account-data.rq" .qid.String }}</td>
+                        <td>{{ .typeLabel }}</td>
+                        <td><a class="btn rounded" href="/{{ $country }}/">{{ $countryLabel }}</a></td>
+                    </tr>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    </table>
+</main>
+{{ end }}
+
+{{ define "javascript" }}
+<script>
+const dataTable = document.querySelector('table');
+
+let csv = '"Name","Govdirectory URL","Type","Accounts"\n';
+Array.from(dataTable.children[0].children).forEach((row, index) => {
+    if (index === 0) return; // header
+    const name = row.children[0].innerText;
+    const qid = row.children[0].firstChild.href;
+    const type = row.children[2].innerText;
+    var accounts;
+    if (row.children[1].firstChild) {
+        accounts = Array.from(row.children[1].firstChild.children).map(item => {
+            return item.firstChild.href;
+        }).join('|');
+    } else {
+        accounts = '';
+    }
+
+    const csvRow = '"' + name + '","' + qid + '","' + type + '","' + accounts + '"\n';
+    csv += csvRow;
+});
+
+const downloadElm = document.querySelector('#download');
+downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+</script>
+{{ end }}

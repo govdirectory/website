@@ -6,6 +6,7 @@ SELECT DISTINCT
   ?type
   ?typeLabel
   ?country
+  ?cofog
 WHERE {
   BIND(wd:Q34 AS ?country)
 
@@ -49,6 +50,11 @@ WHERE {
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P3999 [] }
+
+  OPTIONAL {
+    ?org wdt:P9798/wdt:P279* ?cofog .
+    MINUS { ?cofog wdt:P279 [] }
+  }
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv" }
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)

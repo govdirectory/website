@@ -1,0 +1,19 @@
+{{ template "layout" . }}
+
+{{ define "title" }}List of topics{{ end }}
+
+{{ define "canonical" }}/topics/{{ end }}
+
+{{ define "main" }}
+<main class="container">
+    <h1>Topics</h1>
+
+    <ul class="box-list">
+        {{- range . -}}
+            <li><a href="/{{ .safeName }}">{{ .name }}</a></li>
+        {{- end -}}
+    </ul>
+</main>
+{{ end }}
+
+{{ define "javascript" }}{{""}}{{ end }}
