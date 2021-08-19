@@ -326,6 +326,10 @@ header.item {
     padding: 2em;
 }
 
+.btn-list .btn {
+    margin-right: .5em;
+}
+
 /* #TODO review break points */
 
 .hide-mobile {
