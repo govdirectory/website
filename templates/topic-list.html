@@ -8,9 +8,16 @@
 <main class="container">
     <h1>Topics</h1>
 
-    <ul class="box-list">
+    <ul class="topic-list">
         {{- range . -}}
-            <li><a href="/{{ .safeName }}">{{ .name }}</a></li>
+            <li>
+                <a href="/{{ .safeName }}">
+                    <div>
+                        <img src="/topic-icons/{{ .safeName }}.svg"/>
+                    </div>
+                    <span>{{ .name }}</span>
+                </a>
+            </li>
         {{- end -}}
     </ul>
 </main>
