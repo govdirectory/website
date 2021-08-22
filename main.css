@@ -298,6 +298,33 @@ table ul li {
     font-size: 115%;
 }
 
+.topic-list {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.topic-list div {
+    background: #107fc9;
+    border-radius: 100%;
+    height: 100px;
+    text-align: center;
+    width: 100px;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.topic-list img {
+    height: 50px;
+    margin-top: 25px;
+}
+
+.topic-list a {
+    color: #000;
+}
+
 /* HEADER */
 
 header.item {
@@ -326,6 +353,10 @@ header.item {
     padding: 2em;
 }
 
+.btn-list .btn {
+    margin-right: .5em;
+}
+
 /* #TODO review break points */
 
 .hide-mobile {
@@ -340,6 +371,10 @@ header.item {
 
     .box-list {
         grid-template-columns: auto auto;
+    }
+
+    .topic-list {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .hide-mobile {
@@ -359,6 +394,10 @@ header.item {
 
     .box-list {
         grid-template-columns: auto auto auto;
+    }
+
+    .topic-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 
     .footer-table {
