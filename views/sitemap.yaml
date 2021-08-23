@@ -1,4 +1,0 @@
-output: "sitemap.xml"
-query: "countries.rq"
-template: "sitemap.xml"
-unsafe: true

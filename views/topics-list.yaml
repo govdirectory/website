@@ -1,3 +1,0 @@
-output: "topics/index.html"
-query: "topics.rq"
-template: "topic-list.html"

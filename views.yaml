@@ -1,0 +1,35 @@
+views:
+  - output: "about/index.html"
+    template: "about.html"
+  - output: "index.html"
+    template: "landing.html"
+
+  - output: "topics/index.html"
+    query: "topics.rq"
+    template: "topic-list.html"
+  - output: "{{safeName}}/index.html"
+    query: "topics.rq"
+    template: "topic-page.html"
+  - output: "countries/index.html"
+    query: "countries.rq"
+    template: "country-list.html"
+  - output: "{{safeName}}/index.html"
+    query: "countries.rq"
+    template: "country-page.html"
+
+  - output: "sitemap.xml"
+    query: "countries.rq"
+    template: "sitemap.xml"
+    unsafe: true
+
+# orgs
+
+  - output: "greenland/{{qid}}/index.html"
+    query: "generators/greenland.rq"
+    template: "org.html"
+  - output: "sweden/{{qid}}/index.html"
+    query: "generators/sweden.rq"
+    template: "org.html"
+  - output: "united-kingdom/{{qid}}/index.html"
+    query: "generators/united-kingdom.rq"
+    template: "org.html"

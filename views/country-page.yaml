@@ -1,3 +1,0 @@
-output: "{{safeName}}/index.html"
-query: "countries.rq"
-template: "country-page.html"

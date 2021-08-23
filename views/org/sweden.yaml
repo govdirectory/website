@@ -1,3 +1,0 @@
-output: "sweden/{{qid}}/index.html"
-query: "generators/sweden.rq"
-template: "org.html"
