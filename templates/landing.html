@@ -1,0 +1,50 @@
+{{ template "layout" . }}
+
+{{ define "title" }}Govdirectory{{ end }}
+
+{{ define "canonical" }}/{{ end }}
+
+
+{{ define "main" }}
+<header class="splash">
+  <div>
+    <img aria-hidden="true" src="/logo-white.svg" width="150px">
+    <h1 class="lg-h1">Govdirectory</h1>
+    <p>A crowdsourced and fact checked directory of official governmental online accounts and services.</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container center-text">
+      <h2>Explore by country</h2>
+      <div class="btn-list">
+        {{- $countries := query "countries" -}}
+        {{- range $countries -}}
+          <a href="{{ .safeName }}/" class="btn rounded">{{ .name }}</a>
+        {{- end -}}
+      </div>
+    </div>
+  </section>
+  <section class="bg-grey">
+    <div class="container center-text">
+      <h2>Explore by topic</h2>
+      {{- $topics := query "topics" -}}
+      <ul class="topic-list">
+        {{- range $topics -}}
+          <li>
+            <a href="/{{ .safeName }}">
+              <div>
+                <img src="/topic-icons/{{ .safeName }}.svg"/>
+              </div>
+              <span>{{ .name }}</span>
+            </a>
+          </li>
+        {{- end -}}
+      </ul>
+    </div>
+  </section>
+</main>
+{{ end }}
+
+{{ define "javascript" }}{{""}}{{ end }}
