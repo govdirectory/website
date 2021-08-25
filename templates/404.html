@@ -1,0 +1,53 @@
+{{ template "layout" . }}
+
+{{ define "title" }}404 Page missing{{ end }}
+
+{{ define "canonical" }}{{""}}{{ end }}
+
+
+{{ define "main" }}
+
+
+<main>
+  <section>
+    <div class="container center-text">
+      <h1>Page missing</h1>
+      <p>The page you were searching for is missing.</p>
+
+      <p id="looking">We are looking for it.</p>
+      <div id="hint"></div>
+      {{- template "spinner.html" -}}
+    </div>
+  </section>
+</main>
+{{ end }}
+
+{{ define "javascript" }}
+<script>
+  const spinnerElm = document.querySelector('.spinner');
+  const hintElm = document.querySelector('#hint');
+  const lookingElm = document.querySelector('#looking');
+
+  const currentLocation = window.location.toString();
+  const qidMatch = currentLocation.match(/(Q\d+)\/$/g);
+  let wikidataURL;
+  let text;
+  if (qidMatch && qidMatch[0]) {
+    wikidataURL = 'https://www.wikidata.org/wiki/' + qidMatch[0];
+    text = 'This page might exists in Wikidata.';
+    let aElm = document.createElement('A');
+    aElm.href = wikidataURL;
+    let textNode = document.createTextNode(text);
+    aElm.appendChild(textNode);
+    hintElm.appendChild(aElm);
+  } else {
+    text = 'We failed to find any trace of the page you were looking for.';
+    let pElm = document.createElement('P');
+    let textNode = document.createTextNode(text);
+    pElm.appendChild(textNode);
+    hintElm.appendChild(pElm);
+  }
+  spinnerElm.style.display = 'none';
+  lookingElm.style.display = 'none';
+</script>
+{{ end }}

@@ -3,6 +3,8 @@ views:
     template: "about.html"
   - output: "index.html"
     template: "landing.html"
+  - output: "404.html"
+    template: "404.html"
 
   - output: "topics/index.html"
     query: "topics.rq"
