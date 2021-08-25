@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 {{- $metadata := config.Metadata -}}
+{{- $topics := query "topics" -}}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>{{ $metadata.root_url }}</loc>
@@ -10,7 +11,15 @@
     <url>
         <loc>{{ $metadata.root_url }}countries/</loc>
     </url>
+    <url>
+        <loc>{{ $metadata.root_url }}topics/</loc>
+    </url>
     {{- range . -}}
+    <url>
+        <loc>{{ $metadata.root_url }}{{ .safeName }}/</loc>
+    </url>
+    {{ end -}}
+    {{- range $topics -}}
     <url>
         <loc>{{ $metadata.root_url }}{{ .safeName }}/</loc>
     </url>
