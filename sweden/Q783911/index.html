@@ -75,20 +75,35 @@
     <tr>
       <th>Platform</th>
       <th>Account</th>
-    </tr><tr>
+    </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td>Twitter</td>
         <td><a href="https://twitter.com/Forsvarsmakten">Forsvarsmakten (verified)</a></td>
     </tr>
-    <tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
         <td>YouTube</td>
         <td><a href="https://www.youtube.com/channel/UC9013JWZWntBD6Zy9mVJQpA">UC9013JWZWntBD6Zy9mVJQpA</a></td>
     </tr>
-    <tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
         <td>LinkedIn</td>
         <td><a href="https://www.linkedin.com/company/forsvarsmakten">forsvarsmakten</a></td>
     </tr>
     </table>
 
+    
+    <div class="container need-js"><div aria-hidden="true" class="spinner need-js">
+  <div class="dot1"></div>
+  <div class="dot2"></div>
+  <div class="dot3"></div>
+</div><details id="recent-details" style="display: none;">
+            <summary>Recently updated</summary>
+            <table>
+                <tr id="recent-accounts">
+                  <th>Platform</th>
+                  <th>Account</th>
+                </tr>
+            </table>
+        </details>
+    </div>
     
 </main>
 
@@ -143,7 +158,7 @@
 </script>
 
 <script>
-const dataTable = document.querySelector('table');
+const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
     let csv = '"Platform","Account link",\n';
@@ -166,6 +181,59 @@ if (dataTable) {
 
     const downloadElm = document.querySelector('#download');
     downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+}
+
+const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
+const wikidataEndpoint = 'https://www.wikidata.org/w/api.php?action=wbgetentities&origin=*&format=json&props=claims&ids=';
+const recentAccountsElm = document.querySelector('#recent-accounts');
+const spinnerElm = document.querySelector('.spinner');
+const recentContainerElm = document.querySelector('#recent-details');
+
+let existingTableText = null;
+if (document.querySelector('table.container')) {
+    existingTableText = document.querySelector('table.container').innerHTML;
+}
+
+const props = {
+    P2397: ['YouTube', 'https://www.youtube.com/channel/'],
+    P4264: ['LinkedIn', 'https://www.linkedin.com/company/'],
+    P2013: ['Facebook', 'https://www.facebook.com/'],
+    P2002: ['Twitter', 'https://twitter.com/'],
+    P2003: ['Instagram', 'https://www.instagram.com/'],
+    P2037: ['Github', 'https://github.com/'],
+    P4015: ['Vimeo', 'https://vimeo.com/'],
+    P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+};
+const propKeys = Object.keys(props);
+
+if (pageQID) {
+    fetch(wikidataEndpoint + pageQID)
+      .then(response => response.json())
+      .then(data => {
+          const claims = Object.keys(data.entities[pageQID].claims);
+          let updatedAny = false;
+          claims.forEach(claim => {
+            if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                const trElm = document.createElement('TR');
+                const tdNameElm = document.createElement('TD');
+                tdNameElm.innerText = props[claim][0];
+                const account = data.entities[pageQID].claims[claim][0].mainsnak.datavalue.value;
+                const tdLinkElm = document.createElement('TD');
+                const aElm = document.createElement('A');
+                aElm.innerText = account;
+                aElm.href = props[claim][1] + account;
+                tdLinkElm.appendChild(aElm);
+                trElm.appendChild(tdNameElm);
+                trElm.appendChild(tdLinkElm);
+                recentAccountsElm.after(trElm);
+                updatedAny = true;
+            }
+          });
+          if (updatedAny) {
+            recentContainerElm.style.display = 'block';
+          }
+          spinnerElm.style.display = 'none';
+      });
 }
 </script>
 

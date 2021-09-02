@@ -81,8 +81,11 @@
     </tr>
     </table>
 
-    
-</main>
+    <div aria-hidden="true" class="spinner need-js">
+  <div class="dot1"></div>
+  <div class="dot2"></div>
+  <div class="dot3"></div>
+</div></main>
 
 
     <footer>
@@ -158,6 +161,23 @@ if (dataTable) {
 
     const downloadElm = document.querySelector('#download');
     downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+}
+
+const pageQID = window.location.toString().match(/(Q\d+)\/$/g);
+const wikidataEndpoint = 'https://www.wikidata.org/w/api.php?action=wbgetentities&props=claims&ids=';
+const props = [
+    { 'P2397': 'YouTube' },
+    { '': 'LinkedIn' },
+    { '': 'Facebook' },
+    { '': 'Twitter' },
+    { '': 'Instagram' },
+    { '': 'Twitter' },
+    { '': 'Vimeo' },
+    { '': 'Flickr' },
+];
+
+if (pageQID && pageQID[0]) {
+
 }
 </script>
 

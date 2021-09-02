@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404 Page missing</title>
+
+    <link rel="canonical" href="https://www.govdirectory.org">
+
+    <link rel="stylesheet" href="/main.css">
+
+    <noscript>
+        <style>
+            .need-js {
+                display: none;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body>
+
+    <nav>
+        <ul class="container">
+            <li><a class="no-decoration" href="/"><img title="Home" src="/logo-white.svg" width="20px"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
+            <li><a class="no-decoration" href="/countries/">Countries</a></li>
+            <li><a class="no-decoration" href="/topics/">Topics</a></li>
+            <li><a class="no-decoration" href="/about/">About</a></li>
+        </ul>
+    </nav>
+
+    
+
+
+<main>
+  <section>
+    <div class="container center-text">
+      <h1>Page missing</h1>
+      <p>The page you were searching for is missing.</p>
+
+      <p class="need-js" id="looking">We are looking for it.</p>
+      <div class="need-js" id="hint"></div><div aria-hidden="true" class="spinner need-js">
+  <div class="dot1"></div>
+  <div class="dot2"></div>
+  <div class="dot3"></div>
+</div></div>
+  </section>
+</main>
+
+
+    <footer>
+        <div class="footer-table container">
+            <div class="column">
+                <p class="footer-header">Govdirectory</p>
+                <ul class="list-unstyled">
+
+                    <li><a class="no-decoration" href="/about/">About</a></li>
+
+                    <li><a class="no-decoration" href="https://twitter.com/govdirectory">Twitter</a></li>
+
+                </ul>
+            </div>
+            <div class="column">
+                <p class="footer-header">Join the community</p>
+                <ul class="list-unstyled">
+
+                    <li><a class="no-decoration" href="https://github.com/govdirectory">Github</a></li>
+
+                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:Gov_Directory">Improve the data</a></li>
+
+                </ul>
+            </div>
+            <div class="column">
+                <p class="footer-header">License information</p>
+                <ul class="list-unstyled">
+
+                    <li>All data is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0 1.0 Universal</a>.</li>
+                    <li>For images and other resources, see <a href="https://github.com/govdirectory/website#license" rel="license">Github</a>.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-end">
+            <a href="/"><img aria-hidden="true" src="/logo-white.svg" alt="" width="50px"></a>
+            <a title="Powered by Wikidata" href="https://www.wikidata.org"><img aria-hidden="true" class="white-bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wikidata_Stamp_Rec_Light.svg/120px-Wikidata_Stamp_Rec_Light.svg.png"></a>
+        </div>
+    </footer> 
+    
+<script>
+  const spinnerElm = document.querySelector('.spinner');
+  const hintElm = document.querySelector('#hint');
+  const lookingElm = document.querySelector('#looking');
+
+  const currentLocation = window.location.toString();
+  const qidMatch = currentLocation.match(/(Q\d+)\/$/g);
+  let wikidataURL;
+  let text;
+  if (qidMatch && qidMatch[0]) {
+    wikidataURL = 'https://www.wikidata.org/wiki/' + qidMatch[0];
+    text = 'This page might exists in Wikidata.';
+    let aElm = document.createElement('A');
+    aElm.href = wikidataURL;
+    let textNode = document.createTextNode(text);
+    aElm.appendChild(textNode);
+    hintElm.appendChild(aElm);
+  } else {
+    text = 'We failed to find any trace of the page you were looking for.';
+    let pElm = document.createElement('P');
+    let textNode = document.createTextNode(text);
+    pElm.appendChild(textNode);
+    hintElm.appendChild(pElm);
+  }
+  spinnerElm.style.display = 'none';
+  lookingElm.style.display = 'none';
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

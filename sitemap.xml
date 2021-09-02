@@ -7,6 +7,9 @@
     </url>
     <url>
         <loc>https://www.govdirectory.org/countries/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/topics/</loc>
     </url><url>
         <loc>https://www.govdirectory.org/sweden/</loc>
     </url>
@@ -15,6 +18,36 @@
     </url>
     <url>
         <loc>https://www.govdirectory.org/greenland/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/general-public-services/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/defense/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/public-order-safety/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/economic-affairs/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/environmental-protection/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/housing-community-amenities/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/health/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/recreation-culture-religion/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/education/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/social-protection/</loc>
     </url>
     
     <url>
@@ -37,6 +70,33 @@
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q33075659/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/sweden/Q101070007/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/sweden/Q108058370/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/sweden/Q108058371/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/sweden/Q108058368/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/sweden/Q108058375/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/sweden/Q18747057/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/sweden/Q19978223/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/sweden/Q29042839/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/sweden/Q64868083/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q97143442/</loc>
@@ -90,6 +150,9 @@
         <loc>https://www.govdirectory.org/sweden/Q3266836/</loc>
     </url>
     <url>
+        <loc>https://www.govdirectory.org/sweden/Q3357871/</loc>
+    </url>
+    <url>
         <loc>https://www.govdirectory.org/sweden/Q3359282/</loc>
     </url>
     <url>
@@ -99,6 +162,9 @@
         <loc>https://www.govdirectory.org/sweden/Q3375451/</loc>
     </url>
     <url>
+        <loc>https://www.govdirectory.org/sweden/Q3406485/</loc>
+    </url>
+    <url>
         <loc>https://www.govdirectory.org/sweden/Q3430725/</loc>
     </url>
     <url>
@@ -106,6 +172,9 @@
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q4411912/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/sweden/Q4577772/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q4579704/</loc>
@@ -318,22 +387,13 @@
         <loc>https://www.govdirectory.org/sweden/Q2983328/</loc>
     </url>
     <url>
-        <loc>https://www.govdirectory.org/sweden/Q3357871/</loc>
-    </url>
-    <url>
         <loc>https://www.govdirectory.org/sweden/Q3370919/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q3406485/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q3563936/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q4355568/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q4577772/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q4931380/</loc>
@@ -792,10 +852,10 @@
         <loc>https://www.govdirectory.org/sweden/Q80207151/</loc>
     </url>
     <url>
-        <loc>https://www.govdirectory.org/sweden/Q10444871/</loc>
+        <loc>https://www.govdirectory.org/sweden/Q101113144/</loc>
     </url>
     <url>
-        <loc>https://www.govdirectory.org/sweden/Q101113144/</loc>
+        <loc>https://www.govdirectory.org/sweden/Q10444871/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q470990/</loc>
@@ -837,6 +897,9 @@
         <loc>https://www.govdirectory.org/sweden/Q10526701/</loc>
     </url>
     <url>
+        <loc>https://www.govdirectory.org/sweden/Q6744411/</loc>
+    </url>
+    <url>
         <loc>https://www.govdirectory.org/sweden/Q10405300/</loc>
     </url>
     <url>
@@ -871,9 +934,6 @@
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q10516522/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q6744411/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q10517578/</loc>
@@ -1258,33 +1318,6 @@
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q27588394/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q108058364/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q108058370/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q108058371/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q108058368/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q108058375/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q108058372/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q108058373/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q108058366/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q108058367/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q776570/</loc>
@@ -2244,6 +2277,9 @@
         <loc>https://www.govdirectory.org/sweden/Q564652/</loc>
     </url>
     <url>
+        <loc>https://www.govdirectory.org/sweden/Q107157415/</loc>
+    </url>
+    <url>
         <loc>https://www.govdirectory.org/sweden/Q7654775/</loc>
     </url>
     <url>
@@ -2251,9 +2287,6 @@
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q10655176/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/sweden/Q107157415/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/united-kingdom/Q1143261/</loc>
