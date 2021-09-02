@@ -5,7 +5,7 @@
     </tr>
 
     {{- range . -}}
-    <tr>
+    <tr data-wd-prop="{{ .property }}">
         <td>{{ .platformLabel }}</td>
         <td><a href="{{ .url }}">{{ .account }}{{ if eq .verified.String "true" }} (verified){{ end }}</a></td>
     </tr>

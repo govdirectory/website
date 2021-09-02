@@ -360,18 +360,18 @@ header.item {
 /* SPINNER */
 
 .spinner {
-  margin: 100px auto 0;
-  width: 70px;
-  text-align: center;
+    margin: auto;
+    width: 70px;
+    text-align: center;
 }
 
 .spinner > div {
-  width: 18px;
-  height: 18px;
-  background-color: #333;
-  border-radius: 100%;
-  display: inline-block;
-  animation: dots 1.4s infinite ease-in-out both;
+    width: 18px;
+    height: 18px;
+    background-color: #333;
+    border-radius: 100%;
+    display: inline-block;
+    animation: dots 1.4s infinite ease-in-out both;
 }
 
 .spinner .dot1 { animation-delay: -0.32s; }
