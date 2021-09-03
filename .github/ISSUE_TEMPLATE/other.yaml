@@ -1,0 +1,14 @@
+name: Other
+description: If you are not sure if it's a feature, a bug or something else.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You can also start a [discussion](https://github.com/govdirectory/website/discussions).
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Be bold.
+    validations:
+      required: true

@@ -1,0 +1,25 @@
+name: Feature request
+description: File a feature request
+labels: [enhancement :1st_place_medal:]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request!
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: The feature
+      description: Tell us about the feature you would like to see!
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: Tell us how this feature would be useful to you.
+  - type: textarea
+    id: inspiration-examples
+    attributes:
+      label: Examples and inspiration
+      description: Are there other websites that have this feature? Share some links!
