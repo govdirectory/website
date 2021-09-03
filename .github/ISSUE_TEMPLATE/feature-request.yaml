@@ -1,6 +1,6 @@
 name: Feature request
 description: File a feature request
-labels: []
+labels: ["enhancement :1st_place_medal:"]
 body:
   - type: markdown
     attributes:
