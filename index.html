@@ -9,6 +9,23 @@
 
     <link rel="canonical" href="https://www.govdirectory.org/">
 
+    <link rel="preload" href="/ubuntu-regular.woff2" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: "Ubuntu";
+            src: url("/font/ubuntu-regular.woff2") format("woff2"),
+                 url("/font/ubuntu-regular.woff") format("woff"),
+                 url("/font/ubuntu-regular.ttf") format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Ubuntu";
+            src: url("/font/ubuntu-light.woff2") format("woff2"),
+                 url("/font/ubuntu-light.woff") format("woff"),
+                 url("/font/ubuntu-light.ttf") format("truetype");
+            font-weight: 100;
+        }
+    </style>
     <link rel="stylesheet" href="/main.css">
 
     <noscript>
@@ -35,7 +52,7 @@
 <header class="splash">
   <div>
     <img aria-hidden="true" src="/logo-white.svg" width="150px">
-    <h1 class="lg-h1">Govdirectory</h1>
+    <h1 class="h1-lg">Govdirectory</h1>
     <p>A crowdsourced and fact checked directory of official governmental online accounts and services.</p>
   </div>
 </header>
@@ -120,6 +137,34 @@
               <span>Social protection</span>
             </a>
           </li></ul>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="half">
+        <div class="center-text">
+          <img aria-hidden="true" src="community.svg" width="261" height="161"/>
+        </div>
+        <div>
+          <h2>Built by a community</h2>
+          <p>Support our efforts in creating transparency about governmental institutions and their activities online</p>
+          <a class="btn" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Learn more about the community</a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section class="bg-grey">
+    <div class="container">
+      <div class="half">
+        <div>
+          <h2>Data quality through constant curation</h2>
+          <p>Based on Wikipedia's sister project Wikidata the data is constantly fact checked by a rigorous and dedicated community. With the help of tools that help monitor changes in data and entering data correctly, collectively the data can be kept up to date and accurate.</p>
+        </div>
+        <div class="center-text">
+          <img aria-hidden="true" src="curation.svg" width="271" height="258"/>
+        </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>

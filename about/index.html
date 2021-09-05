@@ -9,6 +9,23 @@
 
     <link rel="canonical" href="https://www.govdirectory.org/about/">
 
+    <link rel="preload" href="/ubuntu-regular.woff2" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: "Ubuntu";
+            src: url("/font/ubuntu-regular.woff2") format("woff2"),
+                 url("/font/ubuntu-regular.woff") format("woff"),
+                 url("/font/ubuntu-regular.ttf") format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Ubuntu";
+            src: url("/font/ubuntu-light.woff2") format("woff2"),
+                 url("/font/ubuntu-light.woff") format("woff"),
+                 url("/font/ubuntu-light.ttf") format("truetype");
+            font-weight: 100;
+        }
+    </style>
     <link rel="stylesheet" href="/main.css">
 
     <noscript>
@@ -35,7 +52,7 @@
 <header class="splash">
   <div>
     <img aria-hidden="true" src="/logo-white.svg" width="150px">
-    <h1 class="lg-h1">Govdirectory</h1>
+    <h1 class="h1-lg">Govdirectory</h1>
     <p>A crowdsourced and fact checked directory of official governmental online accounts and services.</p>
   </div>
 </header>
