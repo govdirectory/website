@@ -3,12 +3,17 @@ body {
     margin: 0;
     font-family: "Ubuntu", sans-serif;
     color: #333;
+    font-size: .96em;
 }
 
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
 }
 
 .h1-lg {
@@ -74,7 +79,6 @@ a, a:hover {
 section {
     line-height: 1.55;
     color: #000;
-    font-size: 17px;
     padding: 50px 0;
 }
 
@@ -154,7 +158,7 @@ nav a {
     text-align: center;
     color: #FFF;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.1rem;
     padding: 0px 20px;
     display: inline-block;
 }
@@ -304,7 +308,7 @@ table ul li {
     text-align: center;
     text-decoration: none;
     color: #fff;
-    font-size: 115%;
+    font-size: 1.15rem;
 }
 
 .topic-list {
