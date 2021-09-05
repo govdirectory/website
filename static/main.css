@@ -253,6 +253,7 @@ table ul li {
     line-height: 18px;
     border-radius: 3px;
     display: inline-block;
+    margin-bottom: .5em;
 }
 
 .btn:hover, .btn:focus {
