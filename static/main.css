@@ -285,6 +285,11 @@ table ul li {
     grid-template-columns: auto;
 }
 
+.half {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .box-list {
     display: grid;
     grid-gap: 1em;
@@ -417,6 +422,10 @@ header.item {
 
     .action-boxes {
         grid-template-columns: auto auto;
+    }
+    
+    .half {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
