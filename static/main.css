@@ -1,7 +1,7 @@
 /* RESET */
 body {
     margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     color: #333;
 }
 
@@ -13,14 +13,12 @@ ul {
 
 .h1-lg {
     font-size: clamp(2rem, 10vw, 4rem);
-    font-weight: 400;
     line-height: 1.15;
     margin: 0;
 }
 
 .h2-lg {
     font-size: clamp(2rem, 8vw, 3rem);
-    font-weight: 400;
     line-height: 1.15;
     margin: 0;
     text-align:center;
@@ -28,7 +26,6 @@ ul {
 
 .h3-lg {
     font-size: clamp(2rem, 8vw, 2rem);
-    font-weight: 400;
     line-height: 1.15;
     margin: 0;
     text-align:center;
@@ -77,7 +74,6 @@ a, a:hover {
 section {
     line-height: 1.55;
     color: #000;
-    font-weight: 400;
     font-size: 17px;
     padding: 50px 0;
 }
