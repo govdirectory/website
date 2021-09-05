@@ -455,6 +455,13 @@ header.item {
     }
 }
 
+@media screen and (min-width: 1000px) {
+    .container {
+        width: 1000px;
+        margin: auto;
+    }
+}
+
 
 /* A11Y */
 
