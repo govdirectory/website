@@ -24,6 +24,7 @@
                  url("/font/ubuntu-light.woff") format("woff"),
                  url("/font/ubuntu-light.ttf") format("truetype");
             font-weight: 100;
+            font-display: swap;
         }
     </style>
     <link rel="stylesheet" href="/main.css">
@@ -51,7 +52,7 @@
     
 <header class="splash">
   <div>
-    <img aria-hidden="true" src="/logo-white.svg" width="150px">
+    <img aria-hidden="true" src="/logo-white.svg" width="142" height="171">
     <h1 class="h1-lg">Govdirectory</h1>
     <p>A crowdsourced and fact checked directory of official governmental online accounts and services.</p>
   </div>
@@ -206,6 +207,21 @@
             <a title="Powered by Wikidata" href="https://www.wikidata.org"><img aria-hidden="true" class="white-bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wikidata_Stamp_Rec_Light.svg/120px-Wikidata_Stamp_Rec_Light.svg.png"></a>
         </div>
     </footer> 
+    
+    
+    <script>
+        var _paq = window._paq = window._paq || [];
+         
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://matomo.wikimedia.se/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true; g.src=u+'matomo.js'; g.crossorigin='anonymous'; g.integrity='sha384-cSJphJnNwsYkHtzZm8XXKg9ciVULPVPzoWbz8JLquCzGklQl03pZgtKiMQWMRuWZ'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
     
 </body>
 
