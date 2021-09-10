@@ -78,6 +78,8 @@
                     {{- end -}}
                     </li>
                 </ul>
+                
+                {{ if $details.wikipedia }}<p><a href="{{ $details.wikipedia }}">Read more on Wikipedia.</a></p>{{ end }}
             </div>
 
             <div class="center-text action-boxes">

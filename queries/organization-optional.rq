@@ -32,7 +32,7 @@ WHERE {
 
   OPTIONAL {
     ?wikipedia schema:about ?org ;
-               schema:inLanguage "en" .
+               schema:isPartOf <https://en.wikipedia.org/> .
   }
 
   SERVICE wikibase:label {
