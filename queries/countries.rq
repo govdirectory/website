@@ -14,6 +14,7 @@ WHERE {
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content only includes ministerial departments.')
     (wd:Q223 'Greenland' 'greenland' 'Current content only includes municipalities.')
     (wd:Q35 'Denmark' 'denmark' 'Current content only includes municipalities and regions.')
+    (wd:W20 'Norway' 'norway' 'Current content only includes municipalities.')
   }
 
   OPTIONAL { ?uri wdt:P856 ?website }
