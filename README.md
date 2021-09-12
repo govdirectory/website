@@ -29,18 +29,24 @@ To learn more about Snowman and its concepts [check out its readme](https://gith
 
 Not usable yet, since we're still in a concept phase.
 
-## Unlock accelerator program
-
-This project has been accepted in the [Unlock accelerator program](https://www.wikimedia.de/unlock/) program ([original application](https://www.wikidata.org/wiki/User:Ainali/Social_media_for_public_organizations/Unlock)).
-
-During the accelerator, which ends in October, we have defined a Minimale Vialble Prodcut (MVP) to: "As an MVP we want to create a working website where people can search, filter and add data about Swedish and British public institutions and their social media accounts."
-
 ## Maintainers
 
 * [Abbe98](https://github.com/Abbe98)
 * [Ainali](https://github.com/Ainali)
 
 Besides pinging us in [issues](https://github.com/govdirectory/website/issues), [pull requests](https://github.com/govdirectory/website/pulls) and [discussions](https://github.com/govdirectory/website/discussions), you can also reach us on Twitter where we are [@Jan_Ainali](https://twitter.com/Jan_Ainali/) and [@AlbinPCLarsson](https://twitter.com/AlbinPCLarsson).
+
+## Acknowledgements
+
+### Unlock accelerator program
+
+This project has been accepted in the [Unlock accelerator program](https://www.wikimedia.de/unlock/) program ([original application](https://www.wikidata.org/wiki/User:Ainali/Social_media_for_public_organizations/Unlock)).
+
+During the accelerator, which ends in October, we have defined a Minimale Vialble Prodcut (MVP) to: "As an MVP we want to create a working website where people can search, filter and add data about Swedish and British public institutions and their social media accounts."
+
+### Matomo server
+
+[Wikimedia Sverige](https://github.com/Wikimedia-Sverige) is graciously providing us with Matomo analytics. [The dashboard](https://matomo.wikimedia.se/index.php?module=CoreHome&idSite=7) has been made publicly accessible.
 
 ## Contributing
 
