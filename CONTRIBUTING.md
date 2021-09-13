@@ -17,6 +17,7 @@ and we also have set a **mission** to:
 >We will enable a community powered directory where the online presence of every public organization is easily findable, queryable and trustworthy.
 
 We hope that will help you contribute meaningfully.
+To get an insight in how the website is already being used, see our [Matomo analytics](https://matomo.wikimedia.se/index.php?module=CoreHome&idSite=7).
 As a more detailed help, and to see what we already have planned, checkout our [roadmap](https://github.com/orgs/govdirectory/projects/2) and [milestones](https://github.com/govdirectory/website/milestones).
 
 ## Problems, suggestions and questions in issues
