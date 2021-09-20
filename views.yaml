@@ -41,3 +41,6 @@ views:
   - output: "norway/{{qid}}/index.html"
     query: "generators/norway.rq"
     template: "org.html"
+  - output: "ghana/{{qid}}/index.html"
+    query: "generators/ghana.rq"
+    template: "org.html"

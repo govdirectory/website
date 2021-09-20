@@ -1,0 +1,33 @@
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+  ?cofog
+WHERE {
+  BIND(wd:Q117 AS ?country)
+
+  VALUES ?type {
+    wd:Q545769 # district of Ghana (260)
+    wd:Q1052743 # region of Ghana (16)
+  }
+
+  ?org wdt:P31 ?type ;
+       wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P3999 [] }
+
+  OPTIONAL {
+    ?org wdt:P9798/wdt:P279* ?cofog .
+    MINUS { ?cofog wdt:P279 [] }
+  }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,ak". }
+}
+ORDER BY ?type ?topic
