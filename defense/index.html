@@ -63,10 +63,10 @@
             <h2 class="m0">Agencies</h2>
             <a id="download" download="Defense.csv" href="#" class="btn need-js">Download</a>
         </div>
-    </section><table class="container">
+    </section><table class="container js-sort-table">
         <tr>
           <th>Name</th>
-          <th>Platforms</th>
+          <th  class="js-sort-none">Platforms</th>
           <th>Type</th>
           <th>Country</th>
         </tr><tr>
@@ -220,6 +220,7 @@ Array.from(dataTable.children[0].children).forEach((row, index) => {
 const downloadElm = document.querySelector('#download');
 downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
 </script>
+<script src="/thirdparty/sort-table/sort-table.js"></script>
 
     
     <script>
