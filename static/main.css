@@ -100,19 +100,19 @@ section {
 
 .splash {
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: 100px 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    background: url('repeat-bg.svg');
+    background: url('header.jpg');
+    background-size: cover;
 }
 
 .splash p {
     line-height: 1.55;
     font-size: clamp(1.5rem, 4vw, 3rem);
-    margin-top: 0;
-    padding-bottom: 50px;
+    margin: 0;
     color: #FFF;
 }
 
@@ -190,7 +190,7 @@ nav a:hover {
 /* FOOTER */
 
 footer {
-    background-color: #E66A49;
+    background-color: #062B58;
     color: #fff;
     padding: 1em;
     height: 100%;
@@ -266,7 +266,7 @@ table ul li {
 }
 
 .btn:hover, .btn:focus {
-    background: #E66A49;
+    background: #094082;
     text-decoration: none;
 }
 
