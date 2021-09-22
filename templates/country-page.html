@@ -84,4 +84,5 @@ Array.from(dataTable.children[0].children).forEach((row, index) => {
 const downloadElm = document.querySelector('#download');
 downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
 </script>
+<script src="/thirdparty/sort-table/sort-table.js"></script>
 {{ end }}
