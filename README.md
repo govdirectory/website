@@ -44,6 +44,8 @@ This project has been accepted in the [Unlock accelerator program](https://www.w
 
 During the accelerator, which ends in October, we have defined a Minimale Vialble Prodcut (MVP) to: "As an MVP we want to create a working website where people can search, filter and add data about Swedish and British public institutions and their social media accounts."
 
+Specifically we want to acknowledge all the help our coach [Fabian Gampp](https://www.fabiangampp.de/) has given us. Besides general good mentorship, we wouldn't have had such a bold direction of the design of the website without him.
+
 ### Matomo server
 
 [Wikimedia Sverige](https://github.com/Wikimedia-Sverige) is graciously providing us with Matomo analytics. [The dashboard](https://matomo.wikimedia.se/index.php?module=CoreHome&idSite=7) has been made publicly accessible.
