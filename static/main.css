@@ -62,6 +62,18 @@ a, a:hover {
     text-align: center;
 }
 
+input {
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: .25rem;
+  margin-left: .5em;
+}
+
 .move-away * {
     float: left;
 }
