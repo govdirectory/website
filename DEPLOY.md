@@ -16,9 +16,9 @@ Github will now automatically deploy the site. It might take a while for the cha
 
 ## Partial deploys
 
-By default Snowman caches all data from the used SPARQL endpoint therefore, to update data one needs to clear the cache(`snowman cache --invalidate`) however, for a large site like Govdirectory we often want to update only partial parts of the site to decrease to load on the SPARQL endpoint and to decrease build times.
+By default Snowman caches all data from the used SPARQL endpoint. therefore, to update data one needs to clear the cache(`snowman cache --invalidate`). However, for a large site like Govdirectory we often want to update only partial parts of the site to decrease to load on the SPARQL endpoint and to decrease build times.
 
-### Update all data four a country
+### Update all data for a country
 
 Govdirectory contains a helper script to clear the cache for all agencies under a given country. The country argument should match the "safe-name" of the intended query.
 
