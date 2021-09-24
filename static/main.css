@@ -144,15 +144,14 @@ section {
   }
 }
 
-
-
 /* NAV */
 
 nav {
     background-color: #00264d;
     position: sticky;
-    top:0;
+    top: 0;
     height: 70px;
+    z-index: 1;
 }
 
 nav ul {
