@@ -55,6 +55,14 @@ a, a:hover {
     color: #000;
 }
 
+.padding {
+    padding: 2em;
+}
+
+.greyscale {
+    filter: grayscale(100%) opacity(80%);
+}
+
 .text-grey {
     color: #fcda02;
 }
@@ -427,7 +435,9 @@ header.item {
     .action-boxes {
         grid-template-columns: auto auto;
     }
-    
+}
+
+@media screen and (min-width: 650px) {
     .half {
         grid-template-columns: 1fr 1fr;
     }
