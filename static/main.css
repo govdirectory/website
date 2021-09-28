@@ -103,8 +103,7 @@ section {
     padding: 50px 0;
 }
 
-/* SPLASH FOREGROUND OF ANIMATION */
-
+/* MAIN HEADER */
 
 .splash {
     box-sizing: border-box;
@@ -123,12 +122,6 @@ section {
     margin: 0;
     color: #FFF;
 }
-
-.splash img {
-    padding-top: 50px;
-    padding-bottom: 30px;
-}
-
 
 @keyframes gradientBG {
   0% {
