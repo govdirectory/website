@@ -57,7 +57,7 @@
         </div>
     </section>
 
-    {{- template "org-table.html" query (join "" "generators/" .safeName.String) .safeName.String -}}
+    {{- include "org-table.html" (query (join "" "generators/" .safeName.String ".rq")) -}}
 </main>
 {{ end }}
 

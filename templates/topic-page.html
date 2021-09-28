@@ -23,7 +23,7 @@
         </div>
     </section>
 
-{{- $countries := query "countries" -}}
+{{- $countries := query "countries.rq" -}}
 {{- $topic := .class -}}
 
     <table class="container js-sort-table">
@@ -37,12 +37,12 @@
         {{- range $countries -}}
             {{- $country := .safeName.String -}}
             {{- $countryLabel := .name.String -}}
-            {{- $orgs := query (join "" "generators/" $country) -}}
+            {{- $orgs := query (join "" "generators/" $country ".rq") -}}
             {{- range $orgs -}}
                 {{- if eq $topic .cofog -}}
                     <tr>
                         <td><a href="/{{ $country }}/{{ .qid }}">{{ .orgLabel }}</a></td>
-                        <td>{{ template "social-icons.html" query "account-data.rq" .qid.String }}</td>
+                        <td>{{ include "components/social-icons.html" (query "account-data.rq" .qid.String) }}</td>
                         <td>{{ .typeLabel }}</td>
                         <td><a class="btn rounded" href="/{{ $country }}/">{{ $countryLabel }}</a></td>
                     </tr>

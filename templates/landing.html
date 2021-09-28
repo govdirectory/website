@@ -38,7 +38,7 @@
     <div class="container center-text">
       <h2>Explore by country</h2>
       <div class="btn-list">
-        {{- $countries := query "countries" -}}
+        {{- $countries := query "countries.rq" -}}
         {{- range $countries -}}
           <a href="{{ .safeName }}/" class="btn rounded">{{ .name }}</a>
         {{- end -}}
@@ -48,7 +48,7 @@
   <section class="bg-grey">
     <div class="container center-text">
       <h2>Explore by topic</h2>
-      {{- $topics := query "topics" -}}
+      {{- $topics := query "topics.rq" -}}
       <ul class="topic-list">
         {{- range $topics -}}
           <li>
