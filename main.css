@@ -36,6 +36,11 @@ h2 {
     text-align:center;
 }
 
+.body-lg-text {
+    font-size: clamp(2rem, 8vw, 2rem);
+    line-height: 1;
+}
+
 a, a:hover {
     text-decoration: underline;
     color: #FFF;
@@ -50,12 +55,28 @@ a, a:hover {
     color: #000;
 }
 
+.padding {
+    padding: 2em;
+}
+
+.greyscale {
+    filter: grayscale(100%) opacity(80%);
+}
+
 .text-grey {
     color: #fcda02;
 }
 
+.text-orange {
+    color: #E66A49;
+}
+
 .bg-grey {
-    background-color: #eee;
+    background-color: #F8F4ED;
+}
+
+.bg-orange {
+    background: #E66A49;
 }
 
 .center-text {
@@ -94,40 +115,25 @@ section {
     padding: 50px 0;
 }
 
-/* SPLASH FOREGROUND OF ANIMATION */
+/* MAIN HEADER */
 
 .splash {
-    background: linear-gradient(-45deg, #107FC9, #0A4F7D, #1277BA, #0170BA);
-    animation: gradientBG 20s ease infinite;
-    background-size: 400% 400%;
-    color: rgba(255, 255, 255, .9);
-}
-
-.splash div {
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: 100px 0;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    background: url('repeat-bg.svg');
+    background: url('header.jpg');
+    background-size: cover;
 }
 
 .splash p {
     line-height: 1.55;
-    font-size: clamp(1rem, 2.5vw, 2rem);
-    width: 50%;
-    margin-bottom: 0;
-    text-align: center;
-    padding-bottom: 50px;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin: 0;
+    color: #FFF;
 }
-
-.splash img {
-    padding-top: 50px;
-    padding-bottom: 30px;
-}
-
 
 @keyframes gradientBG {
   0% {
@@ -143,15 +149,14 @@ section {
   }
 }
 
-
-
 /* NAV */
 
 nav {
     background-color: #00264d;
     position: sticky;
-    top:0;
+    top: 0;
     height: 70px;
+    z-index: 1;
 }
 
 nav ul {
@@ -180,14 +185,14 @@ nav img {
 }
 
 nav a:hover {
-    background-color: #107FC9;
+    background-color: #E66A49;
     color: #FFF;
 }
 
 /* LARGE CALL-OUT-BOX */
 
 .call-out {
-    background: #0d69a6;
+    background: #E66A49;
     font-size: 1.5rem;
     padding: 1em;
     color: #fff;
@@ -197,7 +202,7 @@ nav a:hover {
 /* FOOTER */
 
 footer {
-    background-color: #00264d;
+    background-color: #062B58;
     color: #fff;
     padding: 1em;
     height: 100%;
@@ -251,7 +256,7 @@ table th {
 }
 
 table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #F8F4ED;
 }
 
 table ul li {
@@ -262,7 +267,7 @@ table ul li {
 /* BUTTONS */
 
 .btn {
-    background: #00264d;
+    background: #062B58;
     color: #fff;
     text-decoration: none;
     padding: 7px 21px;
@@ -273,7 +278,7 @@ table ul li {
 }
 
 .btn:hover, .btn:focus {
-    background: #107FC9;
+    background: #094082;
     text-decoration: none;
 }
 
@@ -311,7 +316,7 @@ table ul li {
 .box-list li {
     height: 100px;
     line-height: 100px;
-    background: #107fc9;
+    background: #E66A49;
     border-radius: 3px;
 }
 
@@ -332,7 +337,7 @@ table ul li {
 }
 
 .topic-list div {
-    background: #107fc9;
+    background: #E66A49;
     border-radius: 100%;
     height: 100px;
     text-align: center;
@@ -353,7 +358,7 @@ table ul li {
 /* HEADER */
 
 header.item {
-    background: #0d69a6;
+    background: #E66A49;
     margin-top: 2em;
     padding: 2em;
     color: #fff;
@@ -393,7 +398,7 @@ header.item {
 .spinner > div {
     width: 18px;
     height: 18px;
-    background-color: #333;
+    background-color: #E66A49;
     border-radius: 100%;
     display: inline-block;
     animation: dots 1.4s infinite ease-in-out both;
@@ -434,7 +439,9 @@ header.item {
     .action-boxes {
         grid-template-columns: auto auto;
     }
-    
+}
+
+@media screen and (min-width: 650px) {
     .half {
         grid-template-columns: 1fr 1fr;
     }
