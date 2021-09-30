@@ -123,6 +123,116 @@ section {
     color: #FFF;
 }
 
+.health {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: url('health.jpg');
+    background-size: cover;
+}
+
+.defense {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: url('defense.jpg');
+    background-size: cover;
+}
+
+.education {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: url('education.jpg');
+    background-size: cover;
+}
+
+.environmental-protection {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: url('environmental-protection.jpg');
+    background-size: cover;
+}
+
+.general-public-services {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: url('general-public-services.jpg');
+    background-size: cover;
+}
+
+.economic-affairs {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: url('economic-affairs.jpg');
+    background-size: cover;
+}
+
+.housing-community-amenities {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: url('housing-community-amenities.jpg');
+    background-size: cover;
+}
+
+.public-order-safety {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: url('public-order-safety.jpg');
+    background-size: cover;
+}
+
+.recreation-culture-religion {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: url('recreation-culture-religion.jpg');
+    background-size: cover;
+}
+
+.social-protection {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: url('social-protection.jpg');
+    background-size: cover;
+}
+
 @keyframes gradientBG {
   0% {
     background-position: 0% 0%
@@ -348,6 +458,16 @@ table ul li {
 header.item {
     background: #E66A49;
     margin-top: 2em;
+    padding: 2em;
+    color: #fff;
+    border-radius: 5px 5px 0px 0px;
+}
+
+header.topic {
+    background: #062B5899;
+    margin-top: 2em;
+    margin-left: 20%;
+    margin-right: 20%;
     padding: 2em;
     color: #fff;
     border-radius: 5px 5px 0px 0px;

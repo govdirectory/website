@@ -6,8 +6,8 @@
 {{ define "canonical" }}/{{ .safeName }}/{{ end }}
 
 {{ define "main" }}
-<div class="container">
-    <header class="item">
+<div class="{{ .safeName }}">
+    <header class="topic">
         <h1>{{ .name }}</h1>
     </header>
 </div>
