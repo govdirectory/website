@@ -44,3 +44,6 @@ views:
   - output: "ghana/{{qid}}/index.html"
     query: "generators/ghana.rq"
     template: "org.html"
+  - output: "germany/{{qid}}/index.html"
+    query: "generators/germany.rq"
+    template: "org.html"
