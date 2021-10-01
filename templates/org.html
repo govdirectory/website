@@ -68,6 +68,10 @@
                     <a href="{{ $details.website }}">{{ replace (replace $details.website.String "http://" "" 1) "https://" "" 1 }}</a>
                     {{- else -}} <span class="text-grey">[missing data]</span>
                     {{- end -}}</li>
+                    <li>Phone: {{ if $details.phone -}}
+                        <a href="tel:{{ $details.phone }}">{{ $details.phone }}</a>
+                    {{- else -}} <span class="text-grey">[missing data]</span>
+                    {{- end -}}</li>
                     <li>Led by: {{ if $details.leadBy -}}
                         {{ $details.leadBy }}
                     {{- else -}} <span class="text-grey">[missing data]</span>
