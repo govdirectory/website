@@ -20,9 +20,15 @@ WHERE {
     VALUES ?type {
       wd:Q3917681 # embassy (82)
     }
-    ?org wdt:P31 wd:Q3917681 ;
+    ?org wdt:P31 ?type ;
          wdt:P137 ?country .
-  }
+  } UNION {
+    VALUES ?type {
+      wd:Q192350 #ministry (16)
+      }
+      ?org wdt:P31/wdt:P279* ?type ;
+           wdt:P17 ?country .
+    }
 
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
