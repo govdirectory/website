@@ -47,3 +47,6 @@ views:
   - output: "germany/{{qid}}/index.html"
     query: "generators/germany.rq"
     template: "org.html"
+  - output: "south-africa/{{qid}}/index.html"
+    query: "generators/south-africa.rq"
+    template: "org.html"
