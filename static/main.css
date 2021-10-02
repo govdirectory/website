@@ -39,6 +39,7 @@ h2 {
 .body-lg-text {
     font-size: clamp(2rem, 8vw, 2rem);
     line-height: 1;
+    margin: auto;
 }
 
 a, a:hover {
@@ -77,6 +78,7 @@ a, a:hover {
 
 .bg-orange {
     background: #E66A49;
+    padding: 20px 0;
 }
 
 .center-text {
@@ -275,6 +277,7 @@ table ul li {
     border-radius: 3px;
     display: inline-block;
     margin-bottom: .5em;
+    margin-top: .5em;
 }
 
 .btn:hover, .btn:focus {
