@@ -29,10 +29,10 @@
         <loc>https://www.govdirectory.org/germany/</loc>
     </url>
     <url>
-        <loc>https://www.govdirectory.org/south-africa/</loc>
+        <loc>https://www.govdirectory.org/greenland/</loc>
     </url>
     <url>
-        <loc>https://www.govdirectory.org/greenland/</loc>
+        <loc>https://www.govdirectory.org/south-africa/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/general-public-services/</loc>
@@ -4902,6 +4902,21 @@
         <loc>https://www.govdirectory.org/germany/Q10562/</loc>
     </url>
     <url>
+        <loc>https://www.govdirectory.org/greenland/Q476233/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/greenland/Q478813/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/greenland/Q695387/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/greenland/Q44593337/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/greenland/Q44593409/</loc>
+    </url>
+    <url>
         <loc>https://www.govdirectory.org/south-africa/Q81725/</loc>
     </url>
     <url>
@@ -5698,19 +5713,4 @@
     </url>
     <url>
         <loc>https://www.govdirectory.org/south-africa/Q27161583/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/greenland/Q476233/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/greenland/Q478813/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/greenland/Q695387/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/greenland/Q44593337/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/greenland/Q44593409/</loc>
     </url></urlset>
