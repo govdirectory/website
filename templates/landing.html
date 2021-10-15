@@ -21,7 +21,7 @@
           Start the conversation now!
         </div>
         <div>
-          <div class="btn-list">
+          <div class="btn-list center-text">
             <a href="/countries/" class="btn">Explore by country</a>
             <a href="/topics/" class="btn">Explore by topic</a>
           </div>
@@ -35,10 +35,37 @@
     </div>
   </section>
   <section>
+    <div class="container">
+      <div class="half">
+        <div class="center-text">
+          <img class="greyscale" aria-hidden="true" src="factory.jpg" height="300"/>
+        </div>
+        <div class="padding">
+          <h2>"Who are the largest CO2 emitters in Sweden?"</h2>
+          <a class="btn" href="/countries/">Ask your own government!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section class="bg-grey">
+    <div class="container">
+      <div class="half">
+        <div class="padding">
+          <h2>"To which countries did Norway export war material to in 2020?"</h2>
+          <a class="btn" href="/countries/">Ask your own government!</a>
+        </div>
+        <div class="center-text">
+          <img class="greyscale" aria-hidden="true" src="helicopter.jpg" height="300"/>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
     <div class="container center-text">
       <h2>Explore by country</h2>
       <div class="btn-list">
-        {{- $countries := query "countries" -}}
+        {{- $countries := query "countries.rq" -}}
         {{- range $countries -}}
           <a href="{{ .safeName }}/" class="btn rounded">{{ .name }}</a>
         {{- end -}}
@@ -48,7 +75,7 @@
   <section class="bg-grey">
     <div class="container center-text">
       <h2>Explore by topic</h2>
-      {{- $topics := query "topics" -}}
+      {{- $topics := query "topics.rq" -}}
       <ul class="topic-list">
         {{- range $topics -}}
           <li>

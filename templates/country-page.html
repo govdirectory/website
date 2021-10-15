@@ -49,12 +49,15 @@
 <main>
     <section class="bg-grey">
         <div class="container move-away">
-            <h2 class="m0">Agencies</h2>
+            <div>
+                <h2 class="m0">Agencies</h2>
+                <input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" class="need-js"/>
+            </div>
             <a id="download" download="{{ .name }}.csv" href="#" class="btn need-js">Download</a>
         </div>
     </section>
 
-    {{- template "org-table.html" query (join "" "generators/" .safeName.String) .safeName.String -}}
+    {{- include "org-table.html" (query (join "" "generators/" .safeName.String ".rq")) -}}
 </main>
 {{ end }}
 
@@ -83,5 +86,16 @@ Array.from(dataTable.children[0].children).forEach((row, index) => {
 
 const downloadElm = document.querySelector('#download');
 downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+
+var filterInput = document.querySelector('#filter-input');
+var tbody = document.querySelector('tbody');
+filterInput.addEventListener('input', function(e) {
+    Array.from(tbody.rows).forEach(function(row) {
+        var textContent = row.textContent.toLowerCase();
+        var filter = e.target.value.toLowerCase();
+        row.style.display = textContent.includes(filter) ? '' : 'none';
+    });
+});
 </script>
+<script src="/thirdparty/sort-table/sort-table.js"></script>
 {{ end }}

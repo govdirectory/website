@@ -1,14 +1,14 @@
-<table class="container">
+<table class="container js-sort-table">
     <tr>
       <th>Name</th>
-      <th>Platforms</th>
+      <th class="js-sort-none">Platforms</th>
       <th>Type</th>
     </tr>
 
     {{- range . -}}
     <tr>
         <td><a href="{{ .qid }}">{{ .orgLabel }}</a></td>
-        <td>{{ template "social-icons.html" query "account-data.rq" .qid.String }}</td>
+        <td>{{ include "components/social-icons.html" (query "account-data.rq" .qid.String) }}</td>
         <td>{{ .typeLabel }}</td>
     </tr>
     {{ end -}}

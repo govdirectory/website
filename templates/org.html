@@ -3,18 +3,18 @@
 
 {{ define "title" }}{{ .orgLabel }}{{ end }}
 
-{{ define "canonical" }}/{{ template "get-country-url.html" .country }}/{{ .qid }}/{{ end }}
+{{ define "canonical" }}/{{ include "helpers/get-country-url.html" .country }}/{{ .qid }}/{{ end }}
 
 {{ define "pre-main" }}{{ "" }}{{ end }}
 
 {{ define "main" }}
-{{- $details := index (query "organization-optional" .qid.String) 0 -}}
+{{- $details := index (query "organization-optional.rq" .qid.String) 0 -}}
 
 {{/* Looks up the country safename / name */}}
 {{- $currentCountry := .country -}}
 {{- $currentCountrySafeName := false -}}
 {{- $currentCountryName := false -}}
-{{- $countries := query "countries" -}}
+{{- $countries := query "countries.rq" -}}
 {{- range $countries -}}
   {{- if eq .uri $currentCountry -}}
     {{- $currentCountrySafeName = .safeName -}}
@@ -28,7 +28,7 @@
 {{- if $details.parent -}}
   {{- $parentOrgQID = (replace $details.parent.String "http://www.wikidata.org/entity/" "" 1) -}}
   {{- $currentOrg := .qid -}}
-  {{- $allOrgs := query (join "" "generators/" $currentCountrySafeName.String) -}}
+  {{- $allOrgs := query (join "" "generators/" $currentCountrySafeName.String ".rq") -}}
   {{- range $allOrgs }}
     {{- if eq $parentOrgQID .qid.String -}}
         {{- $parentOrgLabel = .orgLabel -}}
@@ -40,7 +40,7 @@
 {{ $cofogSafeName := false }}
 {{- if .cofog -}}
     {{ $cofog := .cofog }}
-    {{- $topics := query "topics" -}}
+    {{- $topics := query "topics.rq" -}}
     {{- range $topics -}}
         {{- if eq $cofog .class -}}
             {{ $cofogLabel = .name }}
@@ -68,7 +68,11 @@
                     <a href="{{ $details.website }}">{{ replace (replace $details.website.String "http://" "" 1) "https://" "" 1 }}</a>
                     {{- else -}} <span class="text-grey">[missing data]</span>
                     {{- end -}}</li>
-                    <li>Lead by: {{ if $details.leadBy -}}
+                    <li>Phone: {{ if $details.phone -}}
+                        <a href="tel:{{ $details.phone }}">{{ $details.phone }}</a>
+                    {{- else -}} <span class="text-grey">[missing data]</span>
+                    {{- end -}}</li>
+                    <li>Led by: {{ if $details.leadBy -}}
                         {{ $details.leadBy }}
                     {{- else -}} <span class="text-grey">[missing data]</span>
                     {{- end -}}</li>
@@ -106,7 +110,7 @@
 </div>
 
 <main>
-    {{ $socialAccounts := query "account-data" .qid.String }}
+    {{ $socialAccounts := query "account-data.rq" .qid.String }}
 
     <section class="bg-grey">
         <div class="container move-away">
@@ -118,14 +122,14 @@
     </section>
 
     {{ if $socialAccounts }}
-        {{ template "social-table.html" $socialAccounts }}
+        {{ include "social-table.html" $socialAccounts }}
     {{ else }}
     <div class="container">
         <p class="call-out">No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/{{ .qid }}">Wikidata</a>.</p>
     </div>
     {{ end }}
     <div class="container need-js">
-        {{- template "spinner.html" -}}
+        {{- include "components/spinner.html" -}}
         <details id="recent-details" style="display: none;">
             <summary>Recently updated</summary>
             <table>
@@ -143,7 +147,7 @@
 {{ define "javascript" }}
 {{/* This ensures that links returned by SPARQL is not escaped as if this was HTML */}}
 {{ safe_html "<script" }} type="application/ld+json">
-{{- $socialAccounts := query "account-data" .qid.String -}}
+{{- $socialAccounts := query "account-data.rq" .qid.String -}}
 {{- $global := config.Metadata }}
 {
   "@context": "https://schema.org",
@@ -151,7 +155,7 @@
   "description": "{{ .orgDescription }}",
   {{- if .email -}}"email": "{{ replace .email "mailto:" "" 1 }}",{{- end }}
   {{- if .type -}}"additionalType": "{{ .type }}",{{- end }}
-  "url": "{{ $global.root_url }}{{ template "get-country-url.html" .country }}/{{ .qid }}",
+  "url": "{{ $global.root_url }}{{ include "helpers/get-country-url.html" .country }}/{{ .qid }}",
   "sameAs": [{{ if $socialAccounts }}{{ range $socialAccounts }}"{{ html .url}}",{{ end }}{{ end }}"http://wikidata.org/entity/{{ .qid }}"],
   "name": "{{ .orgLabel }}"
 }

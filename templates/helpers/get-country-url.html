@@ -1,6 +1,6 @@
 {{/* "Function" takes the Wikidata URI fo the country as input and "returns" the safeName */}}
 {{- $countryURI := . -}}
-{{- $countries := query "countries" -}}
+{{- $countries := query "countries.rq" -}}
 {{- range $countries -}}
   {{- if eq .uri $countryURI -}}
     {{- .safeName -}}

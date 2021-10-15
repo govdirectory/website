@@ -2,6 +2,7 @@ SELECT
   # note that SAMPLE in Blazegraph always picks the first object
   (SAMPLE(?website) AS ?website)
   (SAMPLE(?email) AS ?email)
+  (SAMPLE(?phone) AS ?phone)
   (SAMPLE(?citizensInitiatives ) AS ?citizensInitiatives)
   (SAMPLE(?regulatoryText ) AS ?regulatoryText)
   (SAMPLE(?regulatoryTextTitle ) AS ?regulatoryTextTitle)
@@ -28,6 +29,13 @@ WHERE {
     ?positionStatement ps:P39 ?office .
     ?person p:P39 ?positionStatement .
     MINUS { ?positionStatement pq:P582 ?endtime }
+  }
+
+  OPTIONAL {
+    ?org wdt:P1329 ?phone .
+    ?org p:P1329 ?phoneStatement .
+        ?phoneStatement (ps:P1329) [] .
+        FILTER(EXISTS { ?phoneStatement prov:wasDerivedFrom ?reference. })
   }
 
   OPTIONAL {
