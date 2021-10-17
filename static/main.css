@@ -368,6 +368,16 @@ header.item {
     border-radius: 5px 5px 0px 0px;
 }
 
+header.topic {
+    background: #062B5899;
+    margin-top: 2em;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 2em;
+    color: #fff;
+    border-radius: 5px 5px 0px 0px;
+}
+
 .header-lower {
     display: grid;
     grid-gap: 1em;
@@ -389,6 +399,68 @@ header.item {
 .btn-list .btn {
     margin-right: .5em;
 }
+
+/* TOPICS */
+
+.topic-background {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.topic-background.recreation-culture-religion {
+    background: url('recreation-culture-religion.jpg');
+    background-size: cover;
+}
+
+.topic-background.health {
+    background: url('health.jpg');
+    background-size: cover;
+}
+
+.topic-background.defense {
+    background: url('defense.jpg');
+    background-size: cover;
+}
+
+.topic-background.education {
+    background: url('education.jpg');
+    background-size: cover;
+}
+
+.topic-background.environmental-protection {
+    background: url('environmental-protection.jpg');
+    background-size: cover;
+}
+
+.topic-background.general-public-services {
+    background: url('general-public-services.jpg');
+    background-size: cover;
+}
+
+.topic-background.economic-affairs {
+    background: url('economic-affairs.jpg');
+    background-size: cover;
+}
+
+.topic-background.housing-community-amenities {
+    background: url('housing-community-amenities.jpg');
+    background-size: cover;
+}
+
+.topic-background.public-order-safety {
+    background: url('public-order-safety.jpg');
+    background-size: cover;
+}
+
+.topic-background.social-protection {
+    background: url('social-protection.jpg');
+    background-size: cover;
+}
+
 
 /* SPINNER */
 
