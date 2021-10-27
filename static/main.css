@@ -368,6 +368,16 @@ header.item {
     border-radius: 5px 5px 0px 0px;
 }
 
+header.topic {
+    background: #062B5899;
+    margin-top: 2em;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 2em;
+    color: #fff;
+    border-radius: 5px 5px 0px 0px;
+}
+
 .header-lower {
     display: grid;
     grid-gap: 1em;
@@ -389,6 +399,60 @@ header.item {
 .btn-list .btn {
     margin-right: .5em;
 }
+
+/* TOPICS */
+
+.topic-background {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.topic-background.recreation-culture-religion {
+    background-image: url('recreation-culture-religion.jpg');
+}
+
+.topic-background.health {
+    background-image: url('health.jpg');
+}
+
+.topic-background.defense {
+    background-image: url('defense.jpg');
+}
+
+.topic-background.education {
+    background-image: url('education.jpg');
+}
+
+.topic-background.environmental-protection {
+    background-image: url('environmental-protection.jpg');
+}
+
+.topic-background.general-public-services {
+    background-image: url('general-public-services.jpg');
+}
+
+.topic-background.economic-affairs {
+    background-image: url('economic-affairs.jpg');
+}
+
+.topic-background.housing-community-amenities {
+    background-image: url('housing-community-amenities.jpg');
+}
+
+.topic-background.public-order-safety {
+    background-image: url('public-order-safety.jpg');
+}
+
+.topic-background.social-protection {
+    background-image: url('social-protection.jpg');
+}
+
 
 /* SPINNER */
 
