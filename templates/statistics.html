@@ -1,0 +1,81 @@
+{{ template "layout" . }}
+
+{{ define "title" }}Statistics - Govdirectory{{ end }}
+
+{{ define "canonical" }}/stats/{{ end }}
+
+{{ define "main" }}
+{{- $org_count := 0 -}}
+{{- range . -}}
+    {{- $country := .safeName.String -}}
+    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+    {{- $org_count = add (len $orgs) $org_count -}}
+{{- end -}}
+
+{{- $social_count := 0 -}}
+{{- range . -}}
+    {{- $country := .safeName.String -}}
+    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+    {{- range $orgs -}}
+        {{ $social_count = add (len (query "account-data.rq" .qid.String)) $social_count }}
+    {{- end -}}
+{{- end -}}
+
+{{- $other_contact_points := 0 -}}
+{{- range . -}}
+    {{- $country := .safeName.String -}}
+    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+    {{- range $orgs -}}
+        {{- $org_details := index (query "organization-optional.rq" .qid.String) 0 -}}
+
+        {{- if $org_details.email -}}
+            {{- $other_contact_points = add1 $other_contact_points -}}
+        {{- end -}}
+
+        {{- if $org_details.website -}}
+            {{- $other_contact_points = add1 $other_contact_points -}}
+        {{- end -}}
+
+        {{- if $org_details.phone -}}
+            {{- $other_contact_points = add1 $other_contact_points -}}
+        {{- end -}}
+
+        {{- if $org_details.citizensInitiatives -}}
+            {{- $other_contact_points = add1 $other_contact_points -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+<main class="container">
+    <h1>Statistics</h1>
+    <p>Last updated {{ now.Format "2006-01-02" }}. Live website usage statitics are publicly accessible through <a class="dark-link" href="https://matomo.wikimedia.se/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#?idSite=7&period=day&date=yesterday&segment=&category=Dashboard_Dashboard&subcategory=1">Matomo</a>.</p>
+
+    <div class="grid number-container">
+        <div class="number">
+            <div>{{ len . }}</div>countries
+        </div>
+
+        <div class="number">
+            <div>{{ $org_count }}</div>organizations
+        </div>
+
+        <div class="number">
+            <div>{{ add $social_count $other_contact_points }}</div>contact points
+        </div>
+    </div>
+
+    <h2>Coverage overview</h2>
+
+    <table>
+        {{- range . -}}
+        <tr>
+            <th>{{ .name }}</th>
+            <td>{{ .description }}</td>
+        </tr>
+        {{- end -}}
+    </table>
+
+</main>
+{{ end }}
+
+{{ define "javascript" }}{{""}}{{ end }}

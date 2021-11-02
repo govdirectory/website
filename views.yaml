@@ -6,6 +6,10 @@ views:
   - output: "404.html"
     template: "404.html"
 
+  - output: "statistics/index.html"
+    query: "countries.rq"
+    template: "statistics.html"
+
   - output: "topics/index.html"
     query: "topics.rq"
     template: "topic-list.html"
