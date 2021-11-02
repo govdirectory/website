@@ -400,6 +400,21 @@ header.topic {
     margin-right: .5em;
 }
 
+/* STATISTICS */
+
+.number-container {
+    grid-template-columns: auto;
+}
+
+.number {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+.number div:first-child {
+    font-size: 4rem;
+}
+
 /* TOPICS */
 
 .topic-background {
@@ -505,6 +520,10 @@ header.topic {
 
     .action-boxes {
         grid-template-columns: auto auto;
+    }
+
+    .number-container {
+        grid-template-columns: auto auto auto;
     }
 }
 
