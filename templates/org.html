@@ -151,7 +151,7 @@
 {{- $global := config.Metadata }}
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "GovernmentOrganization",
   "description": "{{ .orgDescription }}",
   {{- if .email -}}"email": "{{ replace .email "mailto:" "" 1 }}",{{- end }}
   {{- if .type -}}"additionalType": "{{ .type }}",{{- end }}
