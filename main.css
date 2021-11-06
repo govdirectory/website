@@ -228,6 +228,10 @@ footer {
     margin-top: 1em !important; /* important needed as long as the target element got the container class */
 }
 
+footer li {
+    padding: 4px 0;
+}
+
 .white-bg {
     background-color:#FFF;
 }
