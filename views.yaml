@@ -9,6 +9,11 @@ views:
   - output: "statistics/index.html"
     query: "countries.rq"
     template: "statistics.html"
+    
+  - output: "statistics/statistics.svg"
+    query: "countries.rq"
+    template: "statistics.svg"
+    unsafe: true 
 
   - output: "topics/index.html"
     query: "topics.rq"
