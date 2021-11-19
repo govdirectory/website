@@ -386,6 +386,13 @@ header.item {
     margin-right: .5em;
 }
 
+.image-license {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+}
+
 /* SPINNER */
 
 .spinner {

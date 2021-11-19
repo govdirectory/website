@@ -29,6 +29,7 @@
 {{ define "main" }}
 <div class="country-container">
 	<div class="country">
+	    <span class="image-license"><a href="{{ .licenseURL }}">{{ .license }}</a> by {{ safe_html .artist.String }}</span>
 		<div class="container">
 			<header class="item">
 				<h1>{{ .name }}</h1>
