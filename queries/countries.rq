@@ -21,7 +21,7 @@ WHERE {
     (wd:Q20 'Norway' 'norway' 'Current content only includes municipalities and embassies.')
     (wd:Q117 'Ghana' 'ghana' 'Current content only includes regions and districts.')
     (wd:Q183 'Germany' 'germany' 'Current content only includes federated states and governmental districts.')
-    (wd:Q183 'South Africa' 'south-africa' 'Current content only includes provinces and municipalities.')
+    (wd:Q258 'South Africa' 'south-africa' 'Current content only includes provinces and municipalities.')
   }
 
   OPTIONAL { ?uri wdt:P856 ?website }

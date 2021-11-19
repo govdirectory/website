@@ -151,7 +151,7 @@
 {{- $global := config.Metadata }}
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "GovernmentOrganization",
   "description": "{{ .orgDescription }}",
   {{- if .email -}}"email": "{{ replace .email "mailto:" "" 1 }}",{{- end }}
   {{- if .type -}}"additionalType": "{{ .type }}",{{- end }}
@@ -226,6 +226,7 @@ if (pageQID) {
                 const aElm = document.createElement('A');
                 aElm.innerText = account;
                 aElm.href = props[claim][1] + account;
+                aElm.rel = 'nofollow';
                 tdLinkElm.appendChild(aElm);
                 trElm.appendChild(tdNameElm);
                 trElm.appendChild(tdLinkElm);
