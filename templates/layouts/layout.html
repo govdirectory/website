@@ -26,7 +26,6 @@
             font-weight: 100;
             font-display: swap;
         }
-        {{ block "countrystyle" . }}{{ end }}
     </style>
     <link rel="stylesheet" href="/main.css">
 
@@ -42,6 +41,8 @@
             }
         </style>
     </noscript>
+
+    {{ block "custom-head" . }}{{ end }}
 </head>
 
 <body>

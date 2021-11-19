@@ -3,15 +3,8 @@
 
 {{ define "title" }}{{ .name }}{{ end }}
 
-{{ define "countrystyle" }}
-.country-container {
-    width: 100%;
-    position: relative;
-    background-color: #062B58;
-    padding-top: 2em;
-    isolation: isolate;
-}
-
+{{ define "custom-head" }}
+<style>
 .country::after {
     content: "";
     position: absolute;
@@ -22,6 +15,7 @@
     filter: grayscale(100%);
     mix-blend-mode: overlay;
 }
+</style>
 {{ end }}
 
 {{ define "canonical" }}/{{ .safeName }}/{{ end }}

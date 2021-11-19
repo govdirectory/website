@@ -293,6 +293,14 @@ table ul li {
     border-radius: 20px;
 }
 
+/* COUNTRY SPECIFIC */
+
+.country-container {
+    position: relative;
+    padding-top: 2em;
+    isolation: isolate;
+    background-color: #062B58;
+}
 
 /* LAYOUT */
 
@@ -406,7 +414,7 @@ header.topic {
 .image-license {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 5px;
     color: #fff;
 }
 
