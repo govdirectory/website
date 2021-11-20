@@ -26,7 +26,7 @@ snowman build
 To easily check your changes, you can let Snowman serve the site for you.
 
 ```
-snowman serve
+snowman server
 ```
 
 To learn more about Snowman and its concepts [check out its readme](https://github.com/glaciers-in-archives/snowman#readme).
