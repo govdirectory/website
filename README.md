@@ -23,6 +23,12 @@ Having installed Snowman and populated a WDQS instance with data you can run Sno
 snowman build
 ```
 
+To easily check your changes, you can let Snowman serve the site for you.
+
+```
+snowman serve
+```
+
 To learn more about Snowman and its concepts [check out its readme](https://github.com/glaciers-in-archives/snowman#readme).
 
 ## Usage
