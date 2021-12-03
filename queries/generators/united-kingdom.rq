@@ -1,4 +1,4 @@
-# expected_result_count: 23
+# expected_result_count: 100
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -32,4 +32,4 @@ WHERE {
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
 }
-ORDER BY ?qid ?topic
+ORDER BY DESC(?type)
