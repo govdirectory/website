@@ -1,4 +1,4 @@
-# expected_result_count: 100
+# expected_result_count: 109
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -12,9 +12,10 @@ WHERE {
 
   VALUES ?type {
     wd:Q2500378 # department of the United Kingdom Government (23)
-    wd:Q21451686 # local authorities (32)
-    wd:Q83425186 # NHS boards (14)
-    wd:Q20667323 # Health and social care partnerships (31)
+    wd:Q21451686 # Scottish local authorities (32)
+    wd:Q83425186 # Scottish NHS boards (14)
+    wd:Q20667323 # Scottish Health and social care partnerships (31)
+    wd:Q108838260 # Scottish executive agencies (9)
   }
 
   ?org wdt:P31 ?type .
@@ -32,4 +33,4 @@ WHERE {
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
 }
-ORDER BY DESC(?type)
+ORDER BY ?type ?orgLabel
