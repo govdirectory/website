@@ -12,6 +12,9 @@ WHERE {
 
   VALUES ?type {
     wd:Q2500378 # department of the United Kingdom Government (23)
+    wd:Q21451686 # local authorities (32)
+    wd:Q83425186 # NHS boards (14)
+    wd:Q20667323 # Health and social care partnerships (31)
   }
 
   ?org wdt:P31 ?type .
