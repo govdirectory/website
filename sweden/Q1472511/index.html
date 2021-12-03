@@ -103,27 +103,27 @@
       <th>Account</th>
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td>Twitter</td>
-        <td><a href="https://twitter.com/StatsSweden">StatsSweden</a></td>
+        <td><a rel="nofollow" href="https://twitter.com/StatsSweden">StatsSweden</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td>Twitter</td>
-        <td><a href="https://twitter.com/SCB_nyheter">SCB_nyheter (verified)</a></td>
+        <td><a rel="nofollow" href="https://twitter.com/SCB_nyheter">SCB_nyheter (verified)</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
         <td>Instagram</td>
-        <td><a href="https://www.instagram.com/statistiska_centralbyran_scb">statistiska_centralbyran_scb</a></td>
+        <td><a rel="nofollow" href="https://www.instagram.com/statistiska_centralbyran_scb">statistiska_centralbyran_scb</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
         <td>Facebook</td>
-        <td><a href="https://www.facebook.com/statistiskacentralbyranscb">statistiskacentralbyranscb</a></td>
+        <td><a rel="nofollow" href="https://www.facebook.com/statistiskacentralbyranscb">statistiskacentralbyranscb</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2037">
         <td>GitHub</td>
-        <td><a href="https://github.com/statisticssweden">statisticssweden</a></td>
+        <td><a rel="nofollow" href="https://github.com/statisticssweden">statisticssweden</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
         <td>LinkedIn</td>
-        <td><a href="https://www.linkedin.com/company/scb">scb</a></td>
+        <td><a rel="nofollow" href="https://www.linkedin.com/company/scb">scb</a></td>
     </tr>
     </table>
 
@@ -163,7 +163,7 @@
                 <ul class="list-unstyled">
                     <li><a class="no-decoration" href="https://github.com/govdirectory">Github</a></li>
 
-                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:Gov_Directory">Improve the data</a></li>
+                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Improve the data</a></li>
 
                     <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory/Events">Events</a></li>
                 </ul>
@@ -260,6 +260,7 @@ if (pageQID) {
                 const aElm = document.createElement('A');
                 aElm.innerText = account;
                 aElm.href = props[claim][1] + account;
+                aElm.rel = 'nofollow';
                 tdLinkElm.appendChild(aElm);
                 trElm.appendChild(tdNameElm);
                 trElm.appendChild(tdLinkElm);

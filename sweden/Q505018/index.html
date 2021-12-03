@@ -105,31 +105,31 @@
       <th>Account</th>
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td>Twitter</td>
-        <td><a href="https://twitter.com/lundskommun">lundskommun</a></td>
+        <td><a rel="nofollow" href="https://twitter.com/lundskommun">lundskommun</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
         <td>Instagram</td>
-        <td><a href="https://www.instagram.com/lundskommun">lundskommun</a></td>
+        <td><a rel="nofollow" href="https://www.instagram.com/lundskommun">lundskommun</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
         <td>Facebook</td>
-        <td><a href="https://www.facebook.com/lundskommun">lundskommun</a></td>
+        <td><a rel="nofollow" href="https://www.facebook.com/lundskommun">lundskommun</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2037">
         <td>GitHub</td>
-        <td><a href="https://github.com/lundskommun">lundskommun</a></td>
+        <td><a rel="nofollow" href="https://github.com/lundskommun">lundskommun</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
         <td>YouTube</td>
-        <td><a href="https://www.youtube.com/channel/UCjsxH-V6UIqB1Q98gW0pBnA">UCjsxH-V6UIqB1Q98gW0pBnA</a></td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UCjsxH-V6UIqB1Q98gW0pBnA">UCjsxH-V6UIqB1Q98gW0pBnA</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
         <td>YouTube</td>
-        <td><a href="https://www.youtube.com/channel/UCeQ0TyLG5kIRvCr1wuD2yhA">UCeQ0TyLG5kIRvCr1wuD2yhA</a></td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UCeQ0TyLG5kIRvCr1wuD2yhA">UCeQ0TyLG5kIRvCr1wuD2yhA</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
         <td>LinkedIn</td>
-        <td><a href="https://www.linkedin.com/company/lunds-kommun">lunds-kommun</a></td>
+        <td><a rel="nofollow" href="https://www.linkedin.com/company/lunds-kommun">lunds-kommun</a></td>
     </tr>
     </table>
 
@@ -169,7 +169,7 @@
                 <ul class="list-unstyled">
                     <li><a class="no-decoration" href="https://github.com/govdirectory">Github</a></li>
 
-                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:Gov_Directory">Improve the data</a></li>
+                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Improve the data</a></li>
 
                     <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory/Events">Events</a></li>
                 </ul>
@@ -266,6 +266,7 @@ if (pageQID) {
                 const aElm = document.createElement('A');
                 aElm.innerText = account;
                 aElm.href = props[claim][1] + account;
+                aElm.rel = 'nofollow';
                 tdLinkElm.appendChild(aElm);
                 trElm.appendChild(tdNameElm);
                 trElm.appendChild(tdLinkElm);

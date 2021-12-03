@@ -102,23 +102,23 @@
       <th>Account</th>
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td>Twitter</td>
-        <td><a href="https://twitter.com/regionjkpg">regionjkpg</a></td>
+        <td><a rel="nofollow" href="https://twitter.com/regionjkpg">regionjkpg</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
         <td>Instagram</td>
-        <td><a href="https://www.instagram.com/regionjkpg">regionjkpg</a></td>
+        <td><a rel="nofollow" href="https://www.instagram.com/regionjkpg">regionjkpg</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
         <td>Facebook</td>
-        <td><a href="https://www.facebook.com/regionjonkopingslan">regionjonkopingslan</a></td>
+        <td><a rel="nofollow" href="https://www.facebook.com/regionjonkopingslan">regionjonkopingslan</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
         <td>YouTube</td>
-        <td><a href="https://www.youtube.com/channel/UCUK3j8f0XRS5TF0yvwRGEoA">UCUK3j8f0XRS5TF0yvwRGEoA</a></td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UCUK3j8f0XRS5TF0yvwRGEoA">UCUK3j8f0XRS5TF0yvwRGEoA</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
         <td>LinkedIn</td>
-        <td><a href="https://www.linkedin.com/company/regionjkpg">regionjkpg</a></td>
+        <td><a rel="nofollow" href="https://www.linkedin.com/company/regionjkpg">regionjkpg</a></td>
     </tr>
     </table>
 
@@ -158,7 +158,7 @@
                 <ul class="list-unstyled">
                     <li><a class="no-decoration" href="https://github.com/govdirectory">Github</a></li>
 
-                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:Gov_Directory">Improve the data</a></li>
+                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Improve the data</a></li>
 
                     <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory/Events">Events</a></li>
                 </ul>
@@ -255,6 +255,7 @@ if (pageQID) {
                 const aElm = document.createElement('A');
                 aElm.innerText = account;
                 aElm.href = props[claim][1] + account;
+                aElm.rel = 'nofollow';
                 tdLinkElm.appendChild(aElm);
                 trElm.appendChild(tdNameElm);
                 trElm.appendChild(tdLinkElm);
