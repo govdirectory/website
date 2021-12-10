@@ -58,7 +58,7 @@ WHERE {
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv" }
 }
-ORDER BY ?qid
+ORDER BY ?type ?orgLabel
 ```
 
 Now Let's go through the parts one likely want to adapt to the country one wants to add.
@@ -114,6 +114,12 @@ These values are all of the various "instance of"/types the various government o
 All government organizations in a country might not have a name in English and therefore one should configure one or more fallback languages. In the example above Swedish is set as a fallback language.
 
 Note that even with these changes in place one's query might still need additional information such as `MINUS` and `FILTER` clauses or triple patterns.
+
+Finally, make sure to give a decent sort order of the agencies. This may vary by country, but a decent start may be to order be type and then label.
+
+```sparql
+  ORDER BY ?type ?orgLabel
+```
 
 Note that one can test the query in the Wikidata Query Service. One can also find more examples of [country queries here](https://github.com/govdirectory/website/tree/main/queries).
 
