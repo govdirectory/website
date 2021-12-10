@@ -28,7 +28,7 @@ WHERE {
 			wd:Q55657615 wd:Q524778 wd:Q169180 # commissioners and ombudsmen (7)
 		}
 		?org wdt:P31 ?type ;
-	        wdt:P1001 wd:Q22.
+	        wdt:P1001 wd:Q22 .
 		MINUS { ?org wdt:P31 wd:Q5532360 }
 	}
 
