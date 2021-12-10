@@ -1,4 +1,4 @@
-# expected_result_count: 109
+# expected_result_count: 161
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -10,17 +10,27 @@ SELECT DISTINCT
 WHERE {
   BIND(wd:Q145 AS ?country)
 
-  VALUES ?type {
-    wd:Q2500378 # department of the United Kingdom Government (23)
-    wd:Q21451686 # Scottish local authorities (32)
-    wd:Q83425186 # Scottish NHS boards (14)
-    wd:Q20667323 # Scottish Health and social care partnerships (31)
-    wd:Q108838260 # Scottish executive agencies (9)
+  {
+	  VALUES ?type {
+		wd:Q2500378 # department of the United Kingdom Government (23)
+		wd:Q21451686 # Scottish local authorities (32)
+		wd:Q83425186 # Scottish NHS boards (14)
+		wd:Q20667323 # Scottish Health and social care partnerships (31)
+		wd:Q108838260 # Scottish executive agencies (9)
+	  }
+      ?org wdt:P31 ?type ;
+           wdt:P17 ?country .
   }
-
-  ?org wdt:P31 ?type .
-
-  ?org wdt:P17 ?country .
+  UNION
+  { # More Scottish organizations
+		VALUES ?type {
+			wd:Q3343298  # NDPBs (45)
+			wd:Q55657615 wd:Q524778 wd:Q169180 # commissioners and ombudsmen (7)
+		}
+		?org wdt:P31 ?type ;
+	        wdt:P1001 wd:Q22 .
+		MINUS { ?org wdt:P31 wd:Q5532360 }
+	}
 
   MINUS { ?org wdt:P576 [] }
 
