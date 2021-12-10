@@ -270,6 +270,18 @@ table ul li {
     margin-right: 3px;
 }
 
+table th:not(.js-sort-none)::after {
+    content: "◆";
+    padding-left: 3px;
+    font-size: 0.7em;
+    font-stretch: ultra-condensed;
+    line-height: 0.7em;
+}
+
+table th:not(.js-sort-none):hover {
+    cursor: pointer;
+}
+
 /* BUTTONS */
 
 .btn {
