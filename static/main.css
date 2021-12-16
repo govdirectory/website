@@ -305,6 +305,14 @@ table th:not(.js-sort-none):hover {
     border-radius: 20px;
 }
 
+/* COUNTRY SPECIFIC */
+
+.country-container {
+    position: relative;
+    padding-top: 2em;
+    isolation: isolate;
+    background-color: #062B58;
+}
 
 /* LAYOUT */
 
@@ -378,7 +386,6 @@ table th:not(.js-sort-none):hover {
 
 header.item {
     background: #E66A49;
-    margin-top: 2em;
     padding: 2em;
     color: #fff;
     border-radius: 5px 5px 0px 0px;
@@ -414,6 +421,13 @@ header.topic {
 
 .btn-list .btn {
     margin-right: .5em;
+}
+
+.image-license {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    color: #fff;
 }
 
 /* STATISTICS */
@@ -483,7 +497,6 @@ header.topic {
 .topic-background.social-protection {
     background-image: url('social-protection.jpg');
 }
-
 
 /* SPINNER */
 

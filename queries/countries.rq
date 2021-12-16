@@ -4,6 +4,10 @@ SELECT
   ?safeName
   ?description
   (SAMPLE(?website) AS ?website)
+  (SAMPLE(?banner) AS ?banner)
+  (SAMPLE(?license) AS ?license)
+  (SAMPLE(?licenseURL) AS ?licenseURL)
+  (SAMPLE(?artist) AS ?artist)
   (SAMPLE(?nativeLabel) AS ?nativeLabel)
   (GROUP_CONCAT(DISTINCT ?typeOfGovLabel; separator=",") AS ?typeOfGovList)
   ?headOfStateLabel
@@ -21,6 +25,7 @@ WHERE {
   }
 
   OPTIONAL { ?uri wdt:P856 ?website }
+  OPTIONAL { ?uri wdt:P948 ?banner }
   OPTIONAL { ?uri wdt:P35 ?headOfState }
   OPTIONAL { ?uri wdt:P6 ?headOfGov }
   OPTIONAL { ?uri wdt:P122 ?typeOfGov }
@@ -32,6 +37,22 @@ WHERE {
     ?headOfState rdfs:label ?headOfStateLabel .
     ?headOfGov rdfs:label ?headOfGovLabel .
     ?typeOfGov rdfs:label ?typeOfGovLabel .
+  }
+  
+  BIND(wikibase:decodeUri(STRAFTER(STR(?banner), "http://commons.wikimedia.org/wiki/Special:FilePath/")) AS ?filename)
+  
+  SERVICE wikibase:mwapi {
+    bd:serviceParam wikibase:endpoint "commons.wikimedia.org";
+                    wikibase:api "Generator";
+                    mwapi:generator "allpages";
+                    mwapi:prop "imageinfo";
+                    mwapi:iiprop "extmetadata";
+                    mwapi:gapfrom ?filename;
+                    mwapi:gapto ?filename;
+                    mwapi:gapnamespace "6".
+    ?license wikibase:apiOutput "imageinfo/ii/extmetadata/LicenseShortName/@value".
+    ?artist wikibase:apiOutput "imageinfo/ii/extmetadata/Artist/@value".
+    ?licenseURL wikibase:apiOutput "imageinfo/ii/extmetadata/LicenseUrl/@value".
   }
 }
 GROUP BY ?uri ?name ?safeName ?description ?headOfGovLabel ?headOfStateLabel
