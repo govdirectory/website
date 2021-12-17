@@ -116,7 +116,7 @@
         <div class="container move-away">
             <h2 class="m0">Platforms and accounts</h2>
             {{- if $socialAccounts -}}
-            <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#" class="btn need-js">Download</a>
+            <a id="download" download="{{ .orgLabel }} - {{ .qid }}.tsv" href="#" class="btn need-js">Download</a>
             {{- end -}}
         </div>
     </section>
@@ -165,11 +165,11 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let csv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account link",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; // header
         const columns = Array.from(row.children);
-        let rowCSV = '';
+        let rowTSV = '';
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
@@ -178,13 +178,13 @@ if (dataTable) {
                 value = column.innerText;
             }
 
-            rowCSV += '"' + value + '",';
+            rowTSV += '"' + value + '"\t';
         });
-        csv += rowCSV + '\n';
+        tsv += rowTSV + '\n';
     });
 
     const downloadElm = document.querySelector('#download');
-    downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
