@@ -1,4 +1,4 @@
-# expected_result_count: 161
+# expected_result_count: 223
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -30,6 +30,25 @@ WHERE {
 		?org wdt:P31 ?type ;
 	        wdt:P1001 wd:Q22 .
 		MINUS { ?org wdt:P31 wd:Q5532360 }
+	}
+	UNION
+	{ # Scottish courts (56)
+     VALUES ?type {
+       wd:Q109768640 # Sheriff district court (39)
+       wd:Q16988501 # Justice of the peace court (6)
+       wd:Q190752 # Supreme court (1)
+       wd:Q4959031 # Appelate court (1)
+       wd:Q7494979 # Sheriff court (6)
+       wd:Q41487 # Court (3)
+    }
+	  ?org wdt:P361 wd:Q4993654 ;
+         wdt:P31 ?type .
+	}
+	UNION
+	{ # Scottish public Corporations (6)
+	  ?org wdt:P31 wd:Q270791 ;
+         wdt:P127 wd:Q32521 ;
+         wdt:P31 ?type .
 	}
 
   MINUS { ?org wdt:P576 [] }
