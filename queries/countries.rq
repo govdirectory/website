@@ -11,7 +11,7 @@ SELECT
 WHERE {
   VALUES (?uri ?name ?safeName ?description) {
     (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included.')
-    (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments and Scottish exceutive agencies, local authorities, NHS boards, NDPBs, courts, public corporations, commisioners, ombudsmen and Health and social care partnerships.')
+    (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments and Scottish exceutive agencies, local authorities, NHS boards, NDPBs, courts, public corporations, tribunals, parole boards, Queen's printer, non-ministerial government departments, commissioners, ombudsmen and Health and social care partnerships.')
     (wd:Q223 'Greenland' 'greenland' 'Current content only includes municipalities.')
     (wd:Q35 'Denmark' 'denmark' 'Current content only includes municipalities and regions.')
     (wd:Q20 'Norway' 'norway' 'Current content only includes municipalities, ministries and embassies.')

@@ -1,4 +1,4 @@
-# expected_result_count: 223
+# expected_result_count: 237
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -26,10 +26,16 @@ WHERE {
 		VALUES ?type {
 			wd:Q3343298  # NDPBs (45)
 			wd:Q55657615 wd:Q524778 wd:Q169180 # commissioners and ombudsmen (7)
+            wd:Q3044788 # non-ministerial government departments (2)
+            wd:Q7139410 # parole board (1)
+            wd:Q1412224 # tribunal (10)
+            wd:Q16931297 # Queen's printer (1)
 		}
 		?org wdt:P31 ?type ;
-	        wdt:P1001 wd:Q22 .
+	       wdt:P1001 wd:Q22 .
 		MINUS { ?org wdt:P31 wd:Q5532360 }
+        MINUS { ?org wdt:P1001 wd:Q1156248 }
+        MINUS { ?org p:P1001 ?js. ?js pq:P582 [] }
 	}
 	UNION
 	{ # Scottish courts (56)
