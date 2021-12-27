@@ -47,7 +47,7 @@
 {{- end -}}
 <main class="container">
     <h1>Statistics</h1>
-    <p>Last updated {{ now.Format "2006-01-02" }}. Live website usage statitics are publicly accessible through <a class="dark-link" href="https://matomo.wikimedia.se/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#?idSite=7&period=day&date=yesterday&segment=&category=Dashboard_Dashboard&subcategory=1">Matomo</a>.</p>
+    <p>Last updated {{ now.Format "2006-01-02" }}. Live website usage statistics are publicly accessible through <a class="dark-link" href="https://matomo.wikimedia.se/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#?idSite=7&period=day&date=yesterday&segment=&category=Dashboard_Dashboard&subcategory=1">Matomo</a>.</p>
 
     <div class="grid number-container">
         <div class="number">
@@ -64,6 +64,7 @@
     </div>
 
     <h2>Coverage overview</h2>
+    <p>In the table below we have listed the types of organizations that are covered for each country. The amount of information about those organizations and contact points for them varies and is also improved over time.</p>
 
     <table>
         {{- range . -}}
