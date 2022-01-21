@@ -54,6 +54,7 @@
         <div class="btn-list">
             <a class="btn rounded" href="/{{ $currentCountrySafeName }}/">{{ $currentCountryName }}</a>
             {{- if .cofog -}}<a class="btn rounded" href="/{{ $cofogSafeName }}/">{{ $cofogLabel }}</a>{{- end -}}
+            <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/{{ .qid }}" title="Edit on Wikidata"><img src="/wikidata.svg" aria-hidden="true"></a>
         </div>
         <h1>{{ .orgLabel }}</h1>
         <p>{{ .orgDescription }}</p>
@@ -87,20 +88,14 @@
             </div>
 
             <div class="center-text action-boxes">
-                <div>
-                    <h2>Found an error?</h2>
-                    <a class="btn" href="https://www.wikidata.org/wiki/{{ .qid }}">Edit on Wikidata</a>
-                </div>
                 {{- if $details.email -}}
                 <div>
-                    <h2>Email</h2>
                     <a class="btn" href="{{ $details.email }}">Send an email</a>
                 </div>
                 {{- end -}}
                 {{- if $details.citizensInitiatives -}}
                 <div>
-                    <h2>Citizen's initiatives</h2>
-                    <a class="btn" href="{{ $details.citizensInitiatives }}">Learn more</a>
+                    <a class="btn" href="{{ $details.citizensInitiatives }}">Make a citizen's initiative</a>
                 </div>
                 {{- end -}}
             </div>
