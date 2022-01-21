@@ -13,7 +13,7 @@ WHERE {
     (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included, however all might not have their account available.')
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content only includes ministerial departments.')
     (wd:Q223 'Greenland' 'greenland' 'Current content only includes municipalities.')
-    (wd:Q35 'Denmark' 'denmark' 'Current content only includes municipalities and regions.')
+    (wd:Q35 'Denmark' 'denmark' 'Current content includes, ministries, regions and municipalities.')
     (wd:Q20 'Norway' 'norway' 'Current content only includes municipalities and embassies.')
     (wd:Q117 'Ghana' 'ghana' 'Current content only includes regions and districts.')
   }
