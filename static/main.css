@@ -416,6 +416,14 @@ header.topic {
     margin-right: .5em;
 }
 
+.btn-list .wikidata-btn {
+    background-color: #FFF;
+    float: right;
+    width: 18px;
+    height: 18px;
+    padding: 8px;
+}
+
 /* STATISTICS */
 
 .number-container {
