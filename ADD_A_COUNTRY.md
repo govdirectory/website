@@ -58,7 +58,7 @@ WHERE {
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv" }
 }
-ORDER BY ?qid
+ORDER BY ?type ?orgLabel
 ```
 
 Now Let's go through the parts one likely want to adapt to the country one wants to add.
@@ -115,6 +115,12 @@ All government organizations in a country might not have a name in English and t
 
 Note that even with these changes in place one's query might still need additional information such as `MINUS` and `FILTER` clauses or triple patterns.
 
+Finally, make sure to give a decent sort order of the agencies. This may vary by country, but a decent start may be to order be type and then label.
+
+```sparql
+  ORDER BY ?type ?orgLabel
+```
+
 Note that one can test the query in the Wikidata Query Service. One can also find more examples of [country queries here](https://github.com/govdirectory/website/tree/main/queries).
 
 ### The country configuration
@@ -167,7 +173,7 @@ Note that one can test the query in the Wikidata Query Service.
 
 ### Configuring the view
 
-Finally one only needs to tell the Govdirectory software about the new data. This is done in a "view" file. These files are small YAML files, here is an example:
+Finally one only needs to tell the Govdirectory software about the new data. This is done in Govdirectory's "views.yaml" file. Here is an example of such a section connecting the query and the template:
 
 ```yaml
 output: "sweden/{{qid}}/index.html"
@@ -175,7 +181,7 @@ query: "generators/sweden.rq"
 template: "org.html"
 ```
 
-All one needs to do here is to make a new file and replace "sweden"(in two places) with the URL slug of the country in question(as defined in one's country configuration). One can find more examples of [view configurations here](https://github.com/govdirectory/website/tree/main/views/org).
+All one needs to do here is to make section like the one above and "sweden"(in two places) with the URL slug of the country in question(as defined in one's country configuration). One can find more examples of [view configurations in the current "views.yaml" file](https://github.com/govdirectory/website/blob/main/views.yaml#L37).
 
 ### Get help
 

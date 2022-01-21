@@ -23,6 +23,12 @@ Having installed Snowman and populated a WDQS instance with data you can run Sno
 snowman build
 ```
 
+To easily check your changes, you can let Snowman serve the site for you.
+
+```
+snowman server
+```
+
 To learn more about Snowman and its concepts [check out its readme](https://github.com/glaciers-in-archives/snowman#readme).
 
 ## Usage
@@ -40,11 +46,11 @@ Besides pinging us in [issues](https://github.com/govdirectory/website/issues), 
 
 ### Unlock accelerator program
 
-This project has been accepted in the [Unlock accelerator program](https://www.wikimedia.de/unlock/) program ([original application](https://www.wikidata.org/wiki/User:Ainali/Social_media_for_public_organizations/Unlock)).
+This project participated in the [Unlock accelerator program](https://www.wikimedia.de/unlock/) program ([original application](https://www.wikidata.org/wiki/User:Ainali/Social_media_for_public_organizations/Unlock)).
 
-During the accelerator, which ends in October, we have defined a Minimale Viable Product (MVP) to: "As an MVP we want to create a working website where people can search, filter, and add data about Swedish and British public institutions and their social media accounts."
+During the accelerator, which ended in October 2021, we defined a Minimale Viable Product (MVP) to: "As an MVP we want to create a working website where people can search, filter, and add data about Swedish and British public institutions and their social media accounts."
 
-Specifically, we want to acknowledge all the help our coach [Fabian Gampp](https://www.fabiangampp.de/) has given us. Besides general good mentorship, we wouldn't have had such a bold direction of the design of the website without him.
+Specifically, we want to acknowledge all the help our coach [Fabian Gampp](https://www.fabiangampp.de/) gave to us. Besides general good mentorship, we wouldn't have had such a bold direction of the design of the website without him.
 
 ### Matomo server
 

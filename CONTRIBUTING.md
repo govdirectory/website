@@ -29,6 +29,10 @@ In particular, we use the tags [good first issue](https://github.com/govdirector
 
 You don't need to change any of our code or documentation to be a contributor!
 
+## Weekly collab hour
+
+Every Friday at 15.00 CEST we have an open session in [Jitsi](https://meet.jit.si/GovdirectoryCollabHour) where we hack and work on the data together. Everyone is welcome and it's open for questions.
+
 ## Documentation and code in pull requests
 
 If you want to add to the documentation or code of one of our projects you should make a pull request.

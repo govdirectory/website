@@ -54,6 +54,7 @@
         <div class="btn-list">
             <a class="btn rounded" href="/{{ $currentCountrySafeName }}/">{{ $currentCountryName }}</a>
             {{- if .cofog -}}<a class="btn rounded" href="/{{ $cofogSafeName }}/">{{ $cofogLabel }}</a>{{- end -}}
+            <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/{{ .qid }}" title="Edit on Wikidata"><img src="/wikidata.svg" aria-hidden="true"></a>
         </div>
         <h1>{{ .orgLabel }}</h1>
         <p>{{ .orgDescription }}</p>
@@ -66,6 +67,10 @@
                     {{- end -}}
                     <li>Official website: {{ if $details.website -}}
                     <a href="{{ $details.website }}">{{ replace (replace $details.website.String "http://" "" 1) "https://" "" 1 }}</a>
+                    {{- else -}} <span class="text-grey">[missing data]</span>
+                    {{- end -}}</li>
+                    <li>Phone: {{ if $details.phone -}}
+                        <a href="tel:{{ $details.phone }}">{{ $details.phone }}</a>
                     {{- else -}} <span class="text-grey">[missing data]</span>
                     {{- end -}}</li>
                     <li>Led by: {{ if $details.leadBy -}}
@@ -83,20 +88,19 @@
             </div>
 
             <div class="center-text action-boxes">
-                <div>
-                    <h2>Found an error?</h2>
-                    <a class="btn" href="https://www.wikidata.org/wiki/{{ .qid }}">Edit on Wikidata</a>
-                </div>
                 {{- if $details.email -}}
                 <div>
-                    <h2>Email</h2>
                     <a class="btn" href="{{ $details.email }}">Send an email</a>
+                </div>
+                {{- end -}}
+                {{- if $details.foiUrl -}}
+                <div>
+                    <a class="btn" href="{{ $details.foiUrl }}">Make a freedom of information request</a>
                 </div>
                 {{- end -}}
                 {{- if $details.citizensInitiatives -}}
                 <div>
-                    <h2>Citizen's initiatives</h2>
-                    <a class="btn" href="{{ $details.citizensInitiatives }}">Learn more</a>
+                    <a class="btn" href="{{ $details.citizensInitiatives }}">Make a citizen's initiative</a>
                 </div>
                 {{- end -}}
             </div>
@@ -112,7 +116,7 @@
         <div class="container move-away">
             <h2 class="m0">Platforms and accounts</h2>
             {{- if $socialAccounts -}}
-            <a id="download" download="{{ .orgLabel }} - {{ .qid }}.csv" href="#" class="btn need-js">Download</a>
+            <a id="download" download="{{ .orgLabel }} - {{ .qid }}.tsv" href="#" class="btn need-js">Download</a>
             {{- end -}}
         </div>
     </section>
@@ -130,8 +134,8 @@
             <summary>Recently updated</summary>
             <table>
                 <tr id="recent-accounts">
-                  <th>Platform</th>
-                  <th>Account</th>
+                  <th class="js-sort-none">Platform</th>
+                  <th  lass="js-sort-none">Account</th>
                 </tr>
             </table>
         </details>
@@ -147,7 +151,7 @@
 {{- $global := config.Metadata }}
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "GovernmentOrganization",
   "description": "{{ .orgDescription }}",
   {{- if .email -}}"email": "{{ replace .email "mailto:" "" 1 }}",{{- end }}
   {{- if .type -}}"additionalType": "{{ .type }}",{{- end }}
@@ -161,11 +165,11 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let csv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account link",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; // header
         const columns = Array.from(row.children);
-        let rowCSV = '';
+        let rowTSV = '';
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
@@ -174,13 +178,13 @@ if (dataTable) {
                 value = column.innerText;
             }
 
-            rowCSV += '"' + value + '",';
+            rowTSV += '"' + value + '"\t';
         });
-        csv += rowCSV + '\n';
+        tsv += rowTSV + '\n';
     });
 
     const downloadElm = document.querySelector('#download');
-    downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
@@ -222,6 +226,7 @@ if (pageQID) {
                 const aElm = document.createElement('A');
                 aElm.innerText = account;
                 aElm.href = props[claim][1] + account;
+                aElm.rel = 'nofollow';
                 tdLinkElm.appendChild(aElm);
                 trElm.appendChild(tdNameElm);
                 trElm.appendChild(tdLinkElm);

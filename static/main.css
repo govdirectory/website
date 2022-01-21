@@ -39,6 +39,7 @@ h2 {
 .body-lg-text {
     font-size: clamp(2rem, 8vw, 2rem);
     line-height: 1;
+    margin: auto;
 }
 
 a, a:hover {
@@ -77,6 +78,7 @@ a, a:hover {
 
 .bg-orange {
     background: #E66A49;
+    padding: 20px 0;
 }
 
 .center-text {
@@ -226,6 +228,10 @@ footer {
     margin-top: 1em !important; /* important needed as long as the target element got the container class */
 }
 
+footer li {
+    padding: 4px 0;
+}
+
 .white-bg {
     background-color:#FFF;
 }
@@ -264,6 +270,18 @@ table ul li {
     margin-right: 3px;
 }
 
+table th:not(.js-sort-none)::after {
+    content: "◆";
+    padding-left: 3px;
+    font-size: 0.7em;
+    font-stretch: ultra-condensed;
+    line-height: 0.7em;
+}
+
+table th:not(.js-sort-none):hover {
+    cursor: pointer;
+}
+
 /* BUTTONS */
 
 .btn {
@@ -275,6 +293,7 @@ table ul li {
     border-radius: 3px;
     display: inline-block;
     margin-bottom: .5em;
+    margin-top: .5em;
 }
 
 .btn:hover, .btn:focus {
@@ -365,6 +384,16 @@ header.item {
     border-radius: 5px 5px 0px 0px;
 }
 
+header.topic {
+    background: #062B5899;
+    margin-top: 2em;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 2em;
+    color: #fff;
+    border-radius: 5px 5px 0px 0px;
+}
+
 .header-lower {
     display: grid;
     grid-gap: 1em;
@@ -386,6 +415,83 @@ header.item {
 .btn-list .btn {
     margin-right: .5em;
 }
+
+.btn-list .wikidata-btn {
+    background-color: #FFF;
+    float: right;
+    width: 18px;
+    height: 18px;
+    padding: 8px;
+}
+
+/* STATISTICS */
+
+.number-container {
+    grid-template-columns: auto;
+}
+
+.number {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+.number div:first-child {
+    font-size: 4rem;
+}
+
+/* TOPICS */
+
+.topic-background {
+    box-sizing: border-box;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.topic-background.recreation-culture-religion {
+    background-image: url('recreation-culture-religion.jpg');
+}
+
+.topic-background.health {
+    background-image: url('health.jpg');
+}
+
+.topic-background.defense {
+    background-image: url('defense.jpg');
+}
+
+.topic-background.education {
+    background-image: url('education.jpg');
+}
+
+.topic-background.environmental-protection {
+    background-image: url('environmental-protection.jpg');
+}
+
+.topic-background.general-public-services {
+    background-image: url('general-public-services.jpg');
+}
+
+.topic-background.economic-affairs {
+    background-image: url('economic-affairs.jpg');
+}
+
+.topic-background.housing-community-amenities {
+    background-image: url('housing-community-amenities.jpg');
+}
+
+.topic-background.public-order-safety {
+    background-image: url('public-order-safety.jpg');
+}
+
+.topic-background.social-protection {
+    background-image: url('social-protection.jpg');
+}
+
 
 /* SPINNER */
 
@@ -438,6 +544,10 @@ header.item {
 
     .action-boxes {
         grid-template-columns: auto auto;
+    }
+
+    .number-container {
+        grid-template-columns: auto auto auto;
     }
 }
 

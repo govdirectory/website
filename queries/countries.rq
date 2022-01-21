@@ -10,12 +10,14 @@ SELECT
   ?headOfGovLabel
 WHERE {
   VALUES (?uri ?name ?safeName ?description) {
-    (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included, however all might not have their account available.')
-    (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content only includes ministerial departments.')
+    (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included.')
+    (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments and Scottish exceutive agencies, local authorities, NHS boards, NDPBs, courts, public corporations, tribunals, parole boards, Queen\'s printer, non-ministerial government departments, commissioners, ombudsmen and Health and social care partnerships.')
     (wd:Q223 'Greenland' 'greenland' 'Current content only includes municipalities.')
     (wd:Q35 'Denmark' 'denmark' 'Current content includes, ministries, regions and municipalities.')
-    (wd:Q20 'Norway' 'norway' 'Current content only includes municipalities and embassies.')
+    (wd:Q20 'Norway' 'norway' 'Current content only includes municipalities, ministries and embassies.')
     (wd:Q117 'Ghana' 'ghana' 'Current content only includes regions and districts.')
+    (wd:Q183 'Germany' 'germany' 'Current content only includes federated states and governmental districts.')
+    (wd:Q258 'South Africa' 'south-africa' 'Current content only includes provinces and municipalities.')
   }
 
   OPTIONAL { ?uri wdt:P856 ?website }

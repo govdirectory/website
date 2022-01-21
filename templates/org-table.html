@@ -7,7 +7,7 @@
 
     {{- range . -}}
     <tr>
-        <td><a href="{{ .qid }}">{{ .orgLabel }}</a></td>
+        <td><a href="{{ .qid }}/">{{ .orgLabel }}</a></td>
         <td>{{ include "components/social-icons.html" (query "account-data.rq" .qid.String) }}</td>
         <td>{{ .typeLabel }}</td>
     </tr>

@@ -1,13 +1,13 @@
 <table class="container">
     <tr>
-      <th>Platform</th>
-      <th>Account</th>
+      <th class="js-sort-none">Platform</th>
+      <th class="js-sort-none">Account</th>
     </tr>
 
     {{- range . -}}
     <tr data-wd-prop="{{ .property }}">
         <td>{{ .platformLabel }}</td>
-        <td><a href="{{ .url }}">{{ .account }}{{ if eq .verified.String "true" }} (verified){{ end }}</a></td>
+        <td><a rel="nofollow" href="{{ .url }}">{{ .account }}{{ if eq .verified.String "true" }} (verified){{ end }}</a></td>
     </tr>
     {{ end -}}
 </table>

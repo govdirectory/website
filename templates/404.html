@@ -33,9 +33,10 @@
   let wikidataURL;
   let text;
   if (qidMatch && qidMatch[0]) {
-    wikidataURL = 'https://www.wikidata.org/wiki/' + qidMatch[0];
+    wikidataURL = 'https://www.wikidata.org/wiki/' + qidMatch[0].slice(0, -1);
     text = 'This page might exists in Wikidata.';
     let aElm = document.createElement('A');
+    aElm.classList.add('dark-link');
     aElm.href = wikidataURL;
     let textNode = document.createTextNode(text);
     aElm.appendChild(textNode);

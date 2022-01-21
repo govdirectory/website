@@ -1,0 +1,154 @@
+{{- $org_count := 0 -}}
+{{- range . -}}
+    {{- $country := .safeName.String -}}
+    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+    {{- $org_count = add (len $orgs) $org_count -}}
+{{- end -}}
+
+{{- $social_count := 0 -}}
+{{- range . -}}
+    {{- $country := .safeName.String -}}
+    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+    {{- range $orgs -}}
+        {{ $social_count = add (len (query "account-data.rq" .qid.String)) $social_count }}
+    {{- end -}}
+{{- end -}}
+
+{{- $other_contact_points := 0 -}}
+{{- range . -}}
+    {{- $country := .safeName.String -}}
+    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+    {{- range $orgs -}}
+        {{- $org_details := index (query "organization-optional.rq" .qid.String) 0 -}}
+
+        {{- if $org_details.email -}}
+            {{- $other_contact_points = add1 $other_contact_points -}}
+        {{- end -}}
+
+        {{- if $org_details.website -}}
+            {{- $other_contact_points = add1 $other_contact_points -}}
+        {{- end -}}
+
+        {{- if $org_details.phone -}}
+            {{- $other_contact_points = add1 $other_contact_points -}}
+        {{- end -}}
+
+        {{- if $org_details.citizensInitiatives -}}
+            {{- $other_contact_points = add1 $other_contact_points -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="0 0 970 230"
+   fill="none"
+   stroke="none"
+   stroke-linecap="square"
+   stroke-miterlimit="10"
+   id="svg936"
+   width="970"
+   height="230"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs940" />
+  <clipPath
+     id="gf0a4970a95_1_214.0">
+    <path
+       d="M 0,0 H 960 V 540 H 0 Z"
+       clip-rule="nonzero"
+       id="path899" />
+  </clipPath>
+  <path
+     fill="#062b58"
+     d="M 0,0 H 970.00003 V 230 H 0 Z"
+     fill-rule="evenodd"
+     id="path902"
+     style="stroke-width:0.999998" />
+  <path
+     fill="#e66a49"
+     d="m 0,215 h 970 v 15 H 0 Z"
+     fill-rule="evenodd"
+     id="path904"
+     style="stroke-width:1" />
+  <path
+     fill="#e66a49"
+     d="m 74.742924,97.00001 v 0 c 0,-39.138242 32.904356,-70.866018 73.493916,-70.866018 v 0 c 19.49181,0 38.18527,7.466217 51.96806,20.756168 13.78279,13.289938 21.52587,31.315002 21.52587,50.10985 v 0 c 0,39.1382 -32.90434,70.866 -73.49393,70.866 v 0 c -40.58956,0 -73.493916,-31.7278 -73.493916,-70.866 z"
+     fill-rule="evenodd"
+     id="path914"
+     style="stroke-width:1" />
+  <path
+     fill="#e66a49"
+     d="m 411.50609,97.00001 v 0 c 0,-39.138242 32.90436,-70.866018 73.49389,-70.866018 v 0 c 19.49183,0 38.18526,7.466217 51.9681,20.756168 13.78271,13.289938 21.52582,31.315002 21.52582,50.10985 v 0 c 0,39.1382 -32.90433,70.866 -73.49392,70.866 v 0 c -40.58955,0 -73.49389,-31.7278 -73.49389,-70.866 z"
+     fill-rule="evenodd"
+     id="path926"
+     style="stroke-width:1" />
+  <path
+     fill="#e66a49"
+     d="m 748.26923,97.00001 v 0 c 0,-39.138242 32.90435,-70.866018 73.49392,-70.866018 v 0 c 19.49188,0 38.18532,7.466217 51.9681,20.756168 13.7828,13.289938 21.52586,31.315002 21.52586,50.10985 v 0 c 0,39.1382 -32.90437,70.866 -73.49396,70.866 v 0 c -40.58958,0 -73.49392,-31.7278 -73.49392,-70.866 z"
+     fill-rule="evenodd"
+     id="path930"
+     style="stroke-width:1" />
+  <text
+     xml:space="preserve"
+     style="font-size:37.3333px;line-height:125%;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0px;word-spacing:0px;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="147.72084"
+     y="109.95466"
+     id="text7095"><tspan
+       id="tspan7093"
+       x="147.72084"
+       y="109.95466"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none">{{ len . }}</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:37.3333px;line-height:125%;font-family:Montserrat;-inkscape-font-specification:Montserrat;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="486.224"
+     y="107.26666"
+     id="text10215"><tspan
+       id="tspan10213"
+       x="486.224"
+       y="107.26666"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none">{{ $org_count }}</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:37.3333px;line-height:125%;font-family:Montserrat;-inkscape-font-specification:Montserrat;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="821.85913"
+     y="106.96799"
+     id="text12029"><tspan
+       id="tspan12027"
+       x="821.85913"
+       y="106.96799"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none">{{ add $social_count $other_contact_points }}</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:21.3333px;line-height:125%;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0px;word-spacing:0px;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="147.72084"
+     y="196.47333"
+     id="text15805"><tspan
+       id="tspan15803"
+       x="147.72084"
+       y="196.47333"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none">COUNTRIES</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:21.3333px;line-height:125%;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0px;word-spacing:0px;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="484.71198"
+     y="196.47333"
+     id="text17771"><tspan
+       id="tspan17769"
+       x="484.71198"
+       y="196.47333"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none">ORGANIZATIONS</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:21.3333px;line-height:125%;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0px;word-spacing:0px;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="821.47516"
+     y="196.47333"
+     id="text18771"><tspan
+       id="tspan18769"
+       x="821.47516"
+       y="196.47333"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none">CONTACT POINTS</tspan></text>
+</svg>
