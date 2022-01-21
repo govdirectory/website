@@ -8,21 +8,13 @@ SELECT DISTINCT
   ?cofog
 WHERE {
   BIND(wd:Q35 AS ?country)
-
-  {
-    VALUES ?type {
-      wd:Q62326 # Region of Denmark (5)
-      wd:Q2177636 # Municipality of Denmark (98)
-    }
-    ?org wdt:P31 ?type ;
-         wdt:P17 ?country .
-  } UNION {
-    VALUES ?type {
-      wd:Q192350 # Ministry (18)
-    }
-    ?org wdt:P31/wdt:P279* ?type ;
-        wdt:P17 ?country .
+  VALUES ?type {
+    wd:Q62326 # Region of Denmark (5)
+    wd:Q2177636 # Municipality of Denmark (98)
+    wd:Q110636698 # Ministries (18)
   }
+  ?org wdt:P31 ?type ;
+       wdt:P17 ?country .
 
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
