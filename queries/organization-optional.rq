@@ -4,6 +4,7 @@ SELECT
   (SAMPLE(?email) AS ?email)
   (SAMPLE(?phone) AS ?phone)
   (SAMPLE(?citizensInitiatives ) AS ?citizensInitiatives)
+  (SAMPLE(?foiUrl) AS ?foiUrl)
   (SAMPLE(?regulatoryText ) AS ?regulatoryText)
   (SAMPLE(?regulatoryTextTitle ) AS ?regulatoryTextTitle)
   (SAMPLE(?personLabel) AS ?leadBy)
@@ -15,6 +16,7 @@ WHERE {
   OPTIONAL { ?org wdt:P856 ?website }
   OPTIONAL { ?org wdt:P968 ?email }
   OPTIONAL { ?org wdt:P9732 ?citizensInitiatives }
+  OPTIONAL { ?org wdt:P10214 ?foiUrl }
 
   OPTIONAL {
     ?org wdt:P92 ?regulatoryTextItem .
