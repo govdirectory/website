@@ -52,7 +52,7 @@
 
     <nav>
         <ul class="container">
-            <li><a class="no-decoration" href="/"><img title="Home" src="/logo-white.svg" width="20px"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
+            <li><a class="no-decoration" href="/"><img title="Home" src="/logo-white.svg" width="20" height="24"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
             <li><a class="no-decoration" href="/countries/">Countries</a></li>
             <li><a class="no-decoration" href="/topics/">Topics</a></li>
             <li><a class="no-decoration" href="/about/">About</a></li>
@@ -63,7 +63,8 @@
 <div class="container">
     <header class="item">
         <div class="btn-list">
-            <a class="btn rounded" href="/sweden/">Sweden</a></div>
+            <a class="btn rounded" href="/sweden/">Sweden</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q504676" title="Edit on Wikidata"><img src="/wikidata.svg" aria-hidden="true"></a>
+        </div>
         <h1>Norrköping Municipality</h1>
         <p>municipality in Östergötland County, Sweden</p>
 
@@ -78,16 +79,12 @@
                 <p><a href="https://en.wikipedia.org/wiki/Norrk%C3%B6ping_Municipality">Read more on Wikipedia.</a></p>
             </div>
 
-            <div class="center-text action-boxes">
-                <div>
-                    <h2>Found an error?</h2>
-                    <a class="btn" href="https://www.wikidata.org/wiki/Q504676">Edit on Wikidata</a>
-                </div><div>
-                    <h2>Email</h2>
+            <div class="center-text action-boxes"><div>
                     <a class="btn" href="mailto:norrkoping.kommun@norrkoping.se">Send an email</a>
                 </div><div>
-                    <h2>Citizen's initiatives</h2>
-                    <a class="btn" href="https://www.norrkoping.se/organisation/sa-fungerar-kommunen/kommunfullmaktige/medborgarforslag">Learn more</a>
+                    <a class="btn" href="https://handlingar.se/en/new/municipality_of_norrkoping">Make a freedom of information request</a>
+                </div><div>
+                    <a class="btn" href="https://www.norrkoping.se/organisation/sa-fungerar-kommunen/kommunfullmaktige/medborgarforslag">Make a citizen's initiative</a>
                 </div></div>
         </div>
 
@@ -99,7 +96,7 @@
 
     <section class="bg-grey">
         <div class="container move-away">
-            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Norrköping Municipality - Q504676.csv" href="#" class="btn need-js">Download</a></div>
+            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Norrköping Municipality - Q504676.tsv" href="#" class="btn need-js">Download</a></div>
     </section>
 
     
@@ -184,8 +181,8 @@
             </div>
         </div>
         <div class="container footer-end">
-            <a href="/"><img aria-hidden="true" src="/logo-white.svg" alt="" width="50px"></a>
-            <a title="Powered by Wikidata" href="https://www.wikidata.org"><img aria-hidden="true" class="white-bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wikidata_Stamp_Rec_Light.svg/120px-Wikidata_Stamp_Rec_Light.svg.png"></a>
+            <a title="Go to Govdirectory's main page" href="/"><img aria-hidden="true" src="/logo-white.svg" alt="" height="60" width="50"></a>
+            <a title="Powered by Wikidata" href="https://www.wikidata.org"><img aria-hidden="true" height="33" width="120" class="white-bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wikidata_Stamp_Rec_Light.svg/120px-Wikidata_Stamp_Rec_Light.svg.png"></a>
         </div>
     </footer> 
     
@@ -205,11 +202,11 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let csv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account link",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
-        let rowCSV = '';
+        let rowTSV = '';
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
@@ -218,13 +215,13 @@ if (dataTable) {
                 value = column.innerText;
             }
 
-            rowCSV += '"' + value + '",';
+            rowTSV += '"' + value + '"\t';
         });
-        csv += rowCSV + '\n';
+        tsv += rowTSV + '\n';
     });
 
     const downloadElm = document.querySelector('#download');
-    downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);

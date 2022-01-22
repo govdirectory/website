@@ -52,7 +52,7 @@
 
     <nav>
         <ul class="container">
-            <li><a class="no-decoration" href="/"><img title="Home" src="/logo-white.svg" width="20px"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
+            <li><a class="no-decoration" href="/"><img title="Home" src="/logo-white.svg" width="20" height="24"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
             <li><a class="no-decoration" href="/countries/">Countries</a></li>
             <li><a class="no-decoration" href="/topics/">Topics</a></li>
             <li><a class="no-decoration" href="/about/">About</a></li>
@@ -73,7 +73,7 @@
                 <h2 class="m0">Agencies</h2>
                 <input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" class="need-js"/>
             </div>
-            <a id="download" download="Social protection.csv" href="#" class="btn need-js">Download</a>
+            <a id="download" download="Social protection.tsv" href="#" class="btn need-js">Download</a>
         </div>
     </section><table class="container js-sort-table">
         <tr>
@@ -122,7 +122,7 @@
                         <td>Swedish government agency</td>
                         <td><a class="btn rounded" href="/sweden/">Sweden</a></td>
                     </tr><tr>
-                        <td><a href="/sweden/Q10670160">Skiljenämnden i vissa trygghetsfrågor</a></td>
+                        <td><a href="/sweden/Q10670160">Arbitration Tribunal for Occupational Injury Compensation</a></td>
                         <td></td>
                         <td>Swedish government agency</td>
                         <td><a class="btn rounded" href="/sweden/">Sweden</a></td>
@@ -182,15 +182,15 @@
             </div>
         </div>
         <div class="container footer-end">
-            <a href="/"><img aria-hidden="true" src="/logo-white.svg" alt="" width="50px"></a>
-            <a title="Powered by Wikidata" href="https://www.wikidata.org"><img aria-hidden="true" class="white-bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wikidata_Stamp_Rec_Light.svg/120px-Wikidata_Stamp_Rec_Light.svg.png"></a>
+            <a title="Go to Govdirectory's main page" href="/"><img aria-hidden="true" src="/logo-white.svg" alt="" height="60" width="50"></a>
+            <a title="Powered by Wikidata" href="https://www.wikidata.org"><img aria-hidden="true" height="33" width="120" class="white-bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wikidata_Stamp_Rec_Light.svg/120px-Wikidata_Stamp_Rec_Light.svg.png"></a>
         </div>
     </footer> 
     
 <script>
 const dataTable = document.querySelector('table');
 
-let csv = '"Name","Govdirectory URL","Type","Accounts"\n';
+let tsv = '"Name","Govdirectory URL","Type","Accounts"\n';
 Array.from(dataTable.children[0].children).forEach((row, index) => {
     if (index === 0) return; 
     const name = row.children[0].innerText;
@@ -205,12 +205,12 @@ Array.from(dataTable.children[0].children).forEach((row, index) => {
         accounts = '';
     }
 
-    const csvRow = '"' + name + '","' + qid + '","' + type + '","' + accounts + '"\n';
-    csv += csvRow;
+    const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + accounts + '"\n';
+    tsv += tsvRow;
 });
 
 const downloadElm = document.querySelector('#download');
-downloadElm.href = window.URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 
 var filterInput = document.querySelector('#filter-input');
 var tbody = document.querySelector('tbody');
