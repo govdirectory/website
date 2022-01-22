@@ -1,0 +1,45 @@
+# expected_result_count: 389
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q55 AS ?country)
+
+  VALUES ?type {
+    wd:Q3143387 # Ministries (12)
+    wd:Q4500821 # Appeals court (4)
+    wd:Q190752  # Supreme court (2)
+    wd:Q2125157 # District court (11)
+    wd:Q134390  # Provinces (12)
+    wd:Q2039348 # Municipalities (345)
+    wd:Q26934845 # Integral overseas territory (3)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P582 [] }
+  MINUS { 
+    ?org p:P31 ?inStatement .
+    ?inStatement pq:P582 [] .
+    MINUS { ?org p:P31 ?p.
+            ?p ps:P31 wd:Q2039348; pq:P580 ?start .
+            FILTER NOT EXISTS { ?p pq:P582 []}
+    }             
+  }
+  MINUS { ?org p:P31 ?p.
+            ?p ps:P31 wd:Q2039348; pq:P580 ?start .
+            FILTER ( ?start > NOW() )
+  }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl" }
+}
+ORDER BY ?type ?orgLabel

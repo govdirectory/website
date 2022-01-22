@@ -58,3 +58,6 @@ views:
   - output: "south-africa/{{qid}}/index.html"
     query: "generators/south-africa.rq"
     template: "org.html"
+  - output: "netherlands/{{qid}}/index.html"
+    query: "generators/netherlands.rq"
+    template: "org.html"
