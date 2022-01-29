@@ -61,3 +61,6 @@ views:
   - output: "netherlands/{{qid}}/index.html"
     query: "generators/netherlands.rq"
     template: "org.html"
+  - output: "finland/{{qid}}/index.html"
+    query: "generators/finland.rq"
+    template: "org.html"
