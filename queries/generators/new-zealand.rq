@@ -1,0 +1,36 @@
+# expected_result_count: 113
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+  ?cofog
+WHERE {
+  BIND(wd:Q664 AS ?country)
+
+    # agencies with country set to New Zealand
+    VALUES ?type {
+      wd:Q5283326 # district health board of New Zealand (20)
+      wd:Q8041036 # wānanga (3)
+      wd:Q1148315 # state-owned enterprise of New Zealand (12)
+      wd:Q65600637 # regional council of New Zealand (11)
+      wd:Q941036 # territorial authority of New Zealand (67)
+    }
+
+    ?org wdt:P31 ?type; wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P3999 [] }
+
+  OPTIONAL {
+    ?org wdt:P9798/wdt:P279* ?cofog .
+    MINUS { ?cofog wdt:P279 [] }
+  }
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mi" }
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+} ORDER BY ?typeLabel
