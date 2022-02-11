@@ -82,7 +82,7 @@ Here is what we know that we need right now:
 ## Add a country in the interface
 
 If the data of a country is of high quality it can be added to the directory.
-The guide [Add a country](ADD_A_COUNTRY.MD) gives instructions for how that is done.
+The guide [Add a country](ADD_A_COUNTRY.md) gives instructions for how that is done.
 
 ## Feedback
 
