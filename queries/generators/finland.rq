@@ -1,0 +1,26 @@
+# expected_result_count: 19
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q33 AS ?country)
+
+  VALUES ?type {
+    wd:Q193512 # Region (19)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,fi" }
+}
+ORDER BY ?type ?orgLabel
