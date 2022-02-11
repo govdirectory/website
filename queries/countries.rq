@@ -20,6 +20,7 @@ WHERE {
     (wd:Q258 'South Africa' 'south-africa' 'Current content only includes provinces and municipalities.')
     (wd:Q55 'Netherlands' 'netherlands' 'Current content includes ministries, courts, provincies and municipalities.')
     (wd:Q664 'New Zealand' 'new-zealand' 'Current content includes district health boards, wānangas, state-owned enterprises, regional councils and territorial authorities.')
+    (wd:Q33 'Finland' 'finland' 'Current content includes regions.')
   }
 
   OPTIONAL {
