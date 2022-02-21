@@ -1,3 +1,4 @@
+# expected_result_count: 322
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -10,6 +11,8 @@ WHERE {
   BIND(wd:Q258 AS ?country)
 
   VALUES ?type {
+    wd:Q98140118 # department of South Africa (44)
+    wd:Q5073533 # chapter nine institutions (12)
     wd:Q191093 # province of South Africa (9)
     wd:Q1589568 # district municipality (44)
     wd:Q1500352 # local municipality (205)
