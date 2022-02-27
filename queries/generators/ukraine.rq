@@ -1,0 +1,29 @@
+# expected_result_count: 47
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q212 AS ?country)
+
+  VALUES ?type {
+    wd:Q7878545 # ministries (20)
+    wd:Q3348196 # oblast (24)
+    wd:Q84823091 # region (1)
+    wd:Q5124045  # city with special status (2)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,uk" }
+}
+ORDER BY ?type ?orgLabel
