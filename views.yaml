@@ -73,3 +73,6 @@ views:
   - output: "russia/{{qid}}/index.html"
     query: "generators/russia.rq"
     template: "org.html"
+  - output: "east-timor/{{qid}}/index.html"
+    query: "generators/east-timor.rq"
+    template: "org.html"

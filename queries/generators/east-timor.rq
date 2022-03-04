@@ -1,0 +1,29 @@
+# expected_result_count: 553
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q574 AS ?country)
+
+  VALUES ?type {
+    wd:Q110813527 # ministries (20)
+    wd:Q741821 # municipalities (14)
+    wd:Q1512109 # administrative posts (67)
+    wd:Q22044663  # sucos (452)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,pt,tet,de" }
+}
+ORDER BY ?type ?orgLabel
