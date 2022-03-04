@@ -22,6 +22,7 @@ WHERE {
     (wd:Q664 'New Zealand' 'new-zealand' 'Current content includes district health boards, wānangas, state-owned enterprises, regional councils and territorial authorities.')
     (wd:Q33 'Finland' 'finland' 'Current content includes regions.')
     (wd:Q212 'Ukraine' 'ukraine' 'Current content includes ministries and first level administrative units')
+    (wd:Q159 'Russia' 'russia' 'Current content includes ministries.')
   }
 
   OPTIONAL {
