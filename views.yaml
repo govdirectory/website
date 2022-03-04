@@ -70,3 +70,6 @@ views:
   - output: "ukraine/{{qid}}/index.html"
     query: "generators/ukraine.rq"
     template: "org.html"
+  - output: "russia/{{qid}}/index.html"
+    query: "generators/russia.rq"
+    template: "org.html"
