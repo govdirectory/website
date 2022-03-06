@@ -23,7 +23,7 @@ WHERE {
     (wd:Q33 'Finland' 'finland' 'Current content includes regions.')
     (wd:Q212 'Ukraine' 'ukraine' 'Current content includes ministries and first level administrative units.')
     (wd:Q159 'Russia' 'russia' 'Current content includes the government and ministries.')
-    (wd:Q574 'East Timor' 'east-timor' 'Current content includes ministries, municipalities, administrative posts and sucos.')
+    (wd:Q574 'East Timor' 'east-timor' 'Current content includes ministries, municipalities, special administrative region, administrative posts and sucos.')
   }
 
   OPTIONAL {

@@ -11,7 +11,8 @@ WHERE {
 
   VALUES ?type {
     wd:Q110813527 # ministries (20)
-    wd:Q741821 # municipalities (14)
+    wd:Q741821 # municipalities (13)
+    wd:Q111127635 # special administrative region (1)
     wd:Q1512109 # administrative posts (67)
     wd:Q22044663  # sucos (452)
   }
