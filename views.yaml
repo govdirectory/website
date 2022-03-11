@@ -76,3 +76,6 @@ views:
   - output: "east-timor/{{qid}}/index.html"
     query: "generators/east-timor.rq"
     template: "org.html"
+  - output: "philippines/{{qid}}/index.html"
+    query: "generators/philippines.rq"
+    template: "org.html"
