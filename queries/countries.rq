@@ -50,3 +50,4 @@ WHERE {
   }
 }
 GROUP BY ?uri ?name ?safeName ?description ?headOfGovLabel ?headOfStateLabel
+ORDER BY ?name
