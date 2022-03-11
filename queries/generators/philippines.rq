@@ -1,0 +1,31 @@
+# expected_result_count: 266
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q928 AS ?country)
+
+  VALUES ?type {
+    wd:Q111188397 # executive department (22)
+    wd:Q24698 # region (17)
+    wd:Q24746  # province (81)
+    wd:Q106078286 # component city (108)
+    wd:Q29946056 # highly urbanized city (33)
+    wd:Q106079704 # independent component city (5)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,tl" }
+}
+ORDER BY ?type ?orgLabel
