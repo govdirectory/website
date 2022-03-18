@@ -11,7 +11,9 @@ WHERE {
 
   VALUES ?type {
     wd:Q1221156 # state of Germany (16)
-    wd:Q22721 # governmental districts (19)
+    wd:Q22721 # governmental districts (10)
+    wd:Q829277 # governmental districts of Nordrhein-Westfalen (5)
+    wd:Q42612577 # governmental districts of Baden-Württemberg (4)
   }
 
   ?org wdt:P31 ?type ;
