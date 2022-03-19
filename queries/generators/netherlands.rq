@@ -24,7 +24,12 @@ WHERE {
 
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
-  MINUS { ?org wdt:P582 [] }
+  MINUS { ?org wdt:P582 [] .
+          MINUS { ?org wdt:P582 ?ddate ;
+                       wdt:P580 ?idate .
+                  FILTER ( ?idate > ?ddate )
+               }
+        }
   MINUS { 
     ?org p:P31 ?inStatement .
     ?inStatement pq:P582 [] .
