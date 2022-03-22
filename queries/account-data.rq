@@ -20,7 +20,7 @@ WHERE {
 
   BIND(IF(BOUND(?quality), IF(?quality = wd:Q28378282, True, False), False) AS ?verified)
 
-  BIND(IRI(CONCAT(SUBSTR(?formatter, 1, STRLEN(?formatter) -2), ?value)) AS ?url)
+  BIND(IRI(REPLACE(?formatter, '\\$1', ?value)) AS ?url)
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
 }
