@@ -79,3 +79,6 @@ views:
   - output: "philippines/{{qid}}/index.html"
     query: "generators/philippines.rq"
     template: "org.html"
+  - output: "india/{{qid}}/index.html"
+    query: "generators/india.rq"
+    template: "org.html"

@@ -1,0 +1,33 @@
+# expected_result_count: 88
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+  ?cofog
+WHERE {
+  BIND(wd:Q668 AS ?country)
+  VALUES ?type {
+    wd:Q24952557 # union governement ministries (52)
+    wd:Q12443800 # states (28)
+    wd:Q467745 # union territories (8)
+  }
+  ?org wdt:P31 ?type ;
+       wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P3999 [] }
+
+  OPTIONAL {
+    ?org wdt:P9798/wdt:P279* ?cofog .
+    MINUS { ?cofog wdt:P279 [] }
+  }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+ORDER BY ?type ?topic
