@@ -1,0 +1,38 @@
+# expected_result_count: 862
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+   BIND(wd:Q31 AS ?country)
+
+  VALUES ?type {
+    wd:Q2288140 # Federal Scientific Institutes (13)
+    wd:Q107637441 # Public Institution of Social Security (12)
+    wd:Q1846372 # Federal Public Service (11)
+    wd:Q107637429 # federal ministry (1)
+    wd:Q21004446 # Public Planning Service (3)
+    wd:Q17373496 # language areas (4)
+    wd:Q89934 # communities (3)
+    wd:Q83057 # regions (4)
+    wd:Q83116 # extant provinces (10)
+    wd:Q2621126 # police zones (186)
+    wd:Q3575878 # emergency zones (34)
+    wd:Q493522 # municipalities (581)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P582 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl,fr" }
+}
+ORDER BY ?type ?orgLabel
