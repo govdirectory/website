@@ -1,0 +1,29 @@
+# expected_result_count: 34
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+   BIND(wd:Q16 AS ?country)
+
+  VALUES ?type {
+    wd:Q111190932 # Ministerial departments (21)
+    wd:Q11828004 # Provinces (10)
+    wd:Q9357527 # Territories (3)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P582 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,fr" }
+}
+ORDER BY ?type ?orgLabel

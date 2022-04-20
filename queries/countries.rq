@@ -27,6 +27,7 @@ WHERE {
     (wd:Q928 'Philippines' 'philippines' 'Current content includes departments, regions, provinces and cities.')
     (wd:Q668 'India' 'india' 'Current content includes ministries, states and union territories.')
     (wd:Q31 'Belgium' 'belgium' 'Current content includes federal scientific institutes, public institutions of social security, federal public sevices, public planning services, language areas, communities, regions, extant provinces, police zones, emergency zones and municipalities.')
+    (wd:Q16 'Canada' 'canada' 'Current content includes ministerial departments, provinces, and territories.')
   }
 
   OPTIONAL {
