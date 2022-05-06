@@ -13,6 +13,7 @@ WHERE {
     VALUES ?type {
       wd:Q755707 # Municipality of Norway (356)
       wd:Q109644271 # ministry of Norway (16)
+      wd:Q16973854 # district court (19)
     }
 
     ?org wdt:P31 ?type ;
