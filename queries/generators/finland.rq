@@ -1,4 +1,4 @@
-# expected_result_count: 19
+# expected_result_count: 31
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -11,6 +11,7 @@ WHERE {
 
   VALUES ?type {
     wd:Q193512 # Region (19)
+    wd:Q111669109 # Ministries (12)
   }
   ?org wdt:P31 ?type .
 
