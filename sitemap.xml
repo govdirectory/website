@@ -2640,9 +2640,6 @@
         <loc>https://www.govdirectory.org/belgium/Q9337/</loc>
     </url>
     <url>
-        <loc>https://www.govdirectory.org/belgium/Q83078/</loc>
-    </url>
-    <url>
         <loc>https://www.govdirectory.org/belgium/Q231/</loc>
     </url>
     <url>
@@ -6771,7 +6768,7 @@
         <loc>https://www.govdirectory.org/netherlands/Q835125/</loc>
     </url>
     <url>
-        <loc>https://www.govdirectory.org/netherlands/Q23991032/</loc>
+        <loc>https://www.govdirectory.org/netherlands/Q23987486/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/netherlands/Q9854/</loc>
@@ -8835,108 +8832,6 @@
         <loc>https://www.govdirectory.org/norway/Q10428388/</loc>
     </url>
     <url>
-        <loc>https://www.govdirectory.org/norway/Q25428806/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q41030999/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q42293305/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q42320251/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q45303406/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q48475310/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q52368284/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q56249968/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q56404228/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q56405258/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q56405940/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q56406057/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q60742846/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q60777023/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q60806432/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q61015259/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q63644915/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q65230514/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q80571266/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q80593157/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q80678654/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q1825/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q1881/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2229/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2232/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2236/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2241/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2245/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2272/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2290/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2308/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2326/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2354/</loc>
-    </url>
-    <url>
-        <loc>https://www.govdirectory.org/norway/Q2367/</loc>
-    </url>
-    <url>
         <loc>https://www.govdirectory.org/norway/Q2365/</loc>
     </url>
     <url>
@@ -9166,6 +9061,108 @@
     </url>
     <url>
         <loc>https://www.govdirectory.org/norway/Q62641/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q25428806/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q41030999/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q42293305/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q42320251/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q45303406/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q48475310/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q52368284/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q56249968/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q56404228/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q56405258/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q56405940/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q56406057/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q60742846/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q60777023/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q60806432/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q61015259/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q63644915/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q65230514/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q80571266/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q80593157/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q80678654/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q1825/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q1881/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2229/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2232/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2236/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2241/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2245/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2272/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2290/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2308/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2326/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2354/</loc>
+    </url>
+    <url>
+        <loc>https://www.govdirectory.org/norway/Q2367/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/philippines/Q43162/</loc>
@@ -12147,7 +12144,7 @@
         <loc>https://www.govdirectory.org/sweden/Q17643696/</loc>
     </url>
     <url>
-        <loc>https://www.govdirectory.org/sweden/Q18333490/</loc>
+        <loc>https://www.govdirectory.org/sweden/Q17665161/</loc>
     </url>
     <url>
         <loc>https://www.govdirectory.org/sweden/Q18333491/</loc>
