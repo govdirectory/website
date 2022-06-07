@@ -1,0 +1,34 @@
+# expected_result_count: 582
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q252 AS ?country)
+
+  VALUES ?type {
+    wd:Q17417403 # ministries (34)
+    wd:Q5098     # provinces / provinsi (34)
+    wd:Q4272761  # administrative city of Indonesia / kota (5)
+    wd:Q3199141  # city of Indonesia / kota (93)
+    wd:Q3191695  # regency / kabupaten (416)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P31 wd:Q3191695 ;
+               p:P31 ?inStatement .
+          ?inStatement pq:P582 [] .
+        }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,id,de" }
+}
+ORDER BY ?type ?orgLabel

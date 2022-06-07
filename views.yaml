@@ -88,3 +88,6 @@ views:
   - output: "canada/{{qid}}/index.html"
     query: "generators/canada.rq"
     template: "org.html"
+  - output: "indonesia/{{qid}}/index.html"
+    query: "generators/indonesia.rq"
+    template: "org.html"
