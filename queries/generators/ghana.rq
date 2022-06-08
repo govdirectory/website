@@ -1,3 +1,4 @@
+# expected_result_count: 277
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -10,7 +11,7 @@ WHERE {
   BIND(wd:Q117 AS ?country)
 
   VALUES ?type {
-    wd:Q545769 # district of Ghana (260)
+    wd:Q545769 # district of Ghana (261)
     wd:Q1052743 # region of Ghana (16)
   }
 
