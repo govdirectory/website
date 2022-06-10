@@ -76,6 +76,17 @@ a, a:hover {
     background-color: #F8F4ED;
 }
 
+.sticky-grey {
+    position: sticky;
+    top: 60px;
+    padding-bottom: 0px;
+}
+
+.sticky-grey .move-away {
+    display: inline-block;
+    width: 100% ;
+}
+
 .bg-orange {
     background: #E66A49;
     padding: 20px 0;
@@ -95,6 +106,7 @@ input {
   appearance: none;
   border-radius: .25rem;
   margin-left: .5em;
+  box-sizing: border-box;
 }
 
 .move-away * {
@@ -244,6 +256,12 @@ table {
     text-align: left;
 }
 
+table thead {
+		position: sticky;
+		top: 164px;
+		background: white;
+}
+
 table a {
     color: #000;
 }
@@ -288,12 +306,14 @@ table th:not(.js-sort-none):hover {
     background: #062B58;
     color: #fff;
     text-decoration: none;
+    text-align: center;
     padding: 7px 21px;
     line-height: 18px;
     border-radius: 3px;
     display: inline-block;
     margin-bottom: .5em;
     margin-top: .5em;
+    box-sizing: border-box;
 }
 
 .btn:hover, .btn:focus {
@@ -522,6 +542,21 @@ header.topic {
 
 .hide-mobile {
     display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .expand-mobile {
+        width: 100%;
+    }
+
+    .move-away *.expand-mobile {
+        float: unset;
+        margin-left: 0;
+    }
+
+    table thead {
+        top: 232px;
+    }
 }
 
 @media screen and (min-width: 600px) {
