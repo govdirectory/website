@@ -84,6 +84,7 @@ a, a:hover {
 
 .sticky-grey .move-away {
     display: inline-block;
+    width: 100% ;
 }
 
 .bg-orange {
