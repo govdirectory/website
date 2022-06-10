@@ -79,6 +79,7 @@ a, a:hover {
 .sticky-grey {
     position: sticky;
     top: 60px;
+    padding-bottom: 0px;
 }
 
 .sticky-grey .move-away {
