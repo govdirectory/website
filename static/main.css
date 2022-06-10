@@ -258,7 +258,7 @@ table {
 
 table thead {
 		position: sticky;
-		top: 160px;
+		top: 164px;
 		background: white;
 }
 
@@ -555,7 +555,7 @@ header.topic {
     }
 
     table thead {
-        top: 235px;
+        top: 232px;
     }
 }
 
