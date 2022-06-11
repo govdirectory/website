@@ -442,6 +442,7 @@ header.topic {
     width: 18px;
     height: 18px;
     padding: 8px;
+    box-sizing: content-box;
 }
 
 /* STATISTICS */
