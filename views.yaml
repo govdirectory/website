@@ -32,11 +32,8 @@ views:
     template: "sitemap.xml"
     unsafe: true
 
-  # orgs
+# orgs
 
-  - output: "singapore/{{qid}}/index.html"
-    query: "generators/singapore.rq"
-    template: "org.html"
   - output: "greenland/{{qid}}/index.html"
     query: "generators/greenland.rq"
     template: "org.html"
