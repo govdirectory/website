@@ -1,0 +1,29 @@
+# expected_result_count: 220
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q39 AS ?country)
+
+  VALUES ?type {
+    wd:Q113025511 # government agency of switzerland (72)
+    wd:Q113015553 # federal ministry of switzerland (6)
+    wd:Q23058 # canton of switzerland (26)
+    wd:Q113032545 # canton authorities (116)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de" }
+}
+ORDER BY ?type ?orgLabel
