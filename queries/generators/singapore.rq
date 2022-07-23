@@ -1,4 +1,4 @@
-# expected_result_count: 72
+# expected_result_count: 41
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -10,13 +10,12 @@ WHERE {
   BIND(wd:Q334 AS ?country)
 
   VALUES ?type {
-    wd:Q35749 # Parliament of Singapore
-    wd:Q7188 # Government of Singapore
-    wd:Q190752 # Supreme Court of Singapore
+    wd:Q35749 # Parliament of Singapore (1)
+    wd:Q7188 # Government of Singapore (1)
+    wd:Q190752 # Supreme Court of Singapore (1)
     wd:Q112818479 # Ministries (16)
     wd:Q3507268 # Town Councils (17)
     wd:Q4426538  # Community Development Council Districts (5)
-    wd:Q5163953 # Single Member Constituencies and Group Representation Constituencies (31)
   }
   ?org wdt:P31 ?type .
 
