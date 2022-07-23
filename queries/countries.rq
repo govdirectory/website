@@ -10,7 +10,6 @@ SELECT
   ?headOfGovLabel
 WHERE {
   VALUES (?uri ?name ?safeName ?description) {
-    (wd:Q334 'Singapore' 'singapore' 'Current content includes parliament, government, supreme court, ministries, town councils, community development council districts and constituencies.')
     (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included.')
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments and Scottish exceutive agencies, local authorities, NHS boards, NDPBs, courts, public corporations, tribunals, parole boards, Queen\'s printer, non-ministerial government departments, commissioners, ombudsmen and Health and social care partnerships.')
     (wd:Q223 'Greenland' 'greenland' 'Current content only includes municipalities.')
@@ -30,6 +29,8 @@ WHERE {
     (wd:Q31 'Belgium' 'belgium' 'Current content includes federal scientific institutes, public institutions of social security, federal public sevices, public planning services, language areas, communities, regions, extant provinces, police zones, emergency zones and municipalities.')
     (wd:Q16 'Canada' 'canada' 'Current content includes ministerial departments, provinces, and territories.')
     (wd:Q252 'Indonesia' 'indonesia' 'Current content includes ministries, provinces, cities and regencies.')
+    (wd:Q334 'Singapore' 'singapore' 'Current content includes parliament, government, supreme court, ministries, town councils, and community development council districts.')
+
   }
 
   OPTIONAL {
