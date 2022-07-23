@@ -1,0 +1,31 @@
+# expected_result_count: 41
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q334 AS ?country)
+
+  VALUES ?type {
+    wd:Q35749 # Parliament of Singapore (1)
+    wd:Q7188 # Government of Singapore (1)
+    wd:Q190752 # Supreme Court of Singapore (1)
+    wd:Q112818479 # Ministries (16)
+    wd:Q3507268 # Town Councils (17)
+    wd:Q4426538  # Community Development Council Districts (5)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,tl" }
+}
+ORDER BY ?type ?orgLabel
