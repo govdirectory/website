@@ -32,7 +32,7 @@ views:
     template: "sitemap.xml"
     unsafe: true
 
-  # orgs
+# orgs
 
   - output: "greenland/{{qid}}/index.html"
     query: "generators/greenland.rq"
