@@ -34,9 +34,6 @@ views:
 
   # orgs
 
-  - output: "singapore/{{qid}}/index.html"
-    query: "generators/singapore.rq"
-    template: "org.html"
   - output: "greenland/{{qid}}/index.html"
     query: "generators/greenland.rq"
     template: "org.html"
@@ -93,4 +90,7 @@ views:
     template: "org.html"
   - output: "indonesia/{{qid}}/index.html"
     query: "generators/indonesia.rq"
+    template: "org.html"
+  - output: "singapore/{{qid}}/index.html"
+    query: "generators/singapore.rq"
     template: "org.html"
