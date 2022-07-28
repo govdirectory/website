@@ -30,6 +30,7 @@ WHERE {
     (wd:Q16 'Canada' 'canada' 'Current content includes ministerial departments, provinces, and territories.')
     (wd:Q252 'Indonesia' 'indonesia' 'Current content includes ministries, provinces, cities and regencies.')
     (wd:Q32 'Luxembourg' 'luxembourg' 'Current content includes ministries, ministries departments, cantons and communes.')
+    (wd:Q334 'Singapore' 'singapore' 'Current content includes parliament, government, supreme court, ministries, town councils, and community development council districts.')
   }
 
   OPTIONAL {
