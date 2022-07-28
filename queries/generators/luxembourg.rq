@@ -1,0 +1,35 @@
+# expected_result_count: 138
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q32 AS ?country)
+
+  VALUES ?type {
+    wd:Q30744477 # ministries of Luxembourg (24)
+    wd:Q1146429 # cantons of Luxembourg (12)
+    wd:Q2919801  # all communes in Luxembourg (102)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  MINUS {
+    ?org wdt:P31 wd:Q2919801;
+    p:P31 [
+      pq:P582 ?end
+    ].
+  }
+  
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de" }
+}
+ORDER BY ?type ?orgLabel

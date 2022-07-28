@@ -91,3 +91,6 @@ views:
   - output: "indonesia/{{qid}}/index.html"
     query: "generators/indonesia.rq"
     template: "org.html"
+  - output: "luxembourg/{{qid}}/index.html"
+    query: "generators/luxembourg.rq"
+    template: "org.html"
