@@ -69,7 +69,7 @@
     <table>
         {{- range . -}}
         <tr>
-            <th class="js-sort-none">{{ .name }}</th>
+            <th class="js-sort-none"><a href="../{{ .safeName }}/">{{ .name }}</a></th>
             <td>{{ .description }}</td>
         </tr>
         {{- end -}}
