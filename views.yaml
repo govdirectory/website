@@ -32,6 +32,11 @@ views:
     template: "sitemap.xml"
     unsafe: true
 
+  - output: "map.json"
+    query: "countries.rq"
+    template: "map-data.json"
+    unsafe: true
+
 # orgs
 
   - output: "greenland/{{qid}}/index.html"
