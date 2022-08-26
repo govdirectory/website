@@ -8,6 +8,7 @@ SELECT
   (GROUP_CONCAT(DISTINCT ?typeOfGovLabel; separator=",") AS ?typeOfGovList)
   ?headOfStateLabel
   ?headOfGovLabel
+  ?geoshape
 WHERE {
   VALUES (?uri ?name ?safeName ?description) {
     (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included.')
@@ -46,7 +47,9 @@ WHERE {
   OPTIONAL { ?uri wdt:P6 ?headOfGov }
   OPTIONAL { ?uri wdt:P122 ?typeOfGov }
   OPTIONAL { ?uri wdt:P1705 ?nativeLabel }
-  
+
+  ?uri wdt:P3896 ?geoshape .
+
   SERVICE wikibase:label {
     # this might need to be updated when new countries are added
     bd:serviceParam wikibase:language "en,sv" .
@@ -55,5 +58,5 @@ WHERE {
     ?typeOfGov rdfs:label ?typeOfGovLabel .
   }
 }
-GROUP BY ?uri ?name ?safeName ?description ?headOfGovLabel ?headOfStateLabel
+GROUP BY ?uri ?name ?safeName ?description ?headOfGovLabel ?headOfStateLabel ?geoshape
 ORDER BY ?name
