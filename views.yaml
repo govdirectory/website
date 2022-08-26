@@ -36,6 +36,8 @@ views:
     query: "countries.rq"
     template: "map-data.json"
     unsafe: true
+  - output: "countries/map/index.html"
+    template: "countries-map.html"
 
 # orgs
 

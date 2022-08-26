@@ -1,19 +1,30 @@
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-crossorigin=""></script>
+{{ template "layout" . }}
 
-<div id="map" style="height: 100vh; width: 100vw;"></div>
+{{ define "title" }}Map of countries{{ end }}
 
+{{ define "canonical" }}/countries/map/{{ end }}
+
+{{ define "main" }}
+<main class="container">
+    <h1>Map of countries</h1>
+    <noscript>
+        <p>This page requries JavaScript.</p>
+    </noscript>
+    <div id="map" style="height: 80vh; width: 100%;" class="need-js"></div>
+</main>
+{{ end }}
+
+{{ define "javascript" }}
+<link rel="stylesheet" href="/thirdparty/leaflet/leaflet-1.8.0.css"/>
+<script src="/thirdparty/leaflet/leaflet-1.8.0.js"></script>
 <script>
-const map = L.map('map').setView([0, 0], 2);
+const map = L.map('map', {attributionControl: false}).setView([0, 0], 2);
+L.control.attribution({prefix: ''}).addTo(map);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-fetch('map.json')
+fetch('/map.json')
   .then(response => response.json())
   .then(data => {
     data.forEach(country => {
@@ -26,13 +37,18 @@ fetch('map.json')
           const geojson = pageData.data;
           const geojsonLayer = L.geoJson(geojson, {
             style: function (feature) {
-              return {color: '#ff0000'};
+              return {color: '#E66A49'};
             },
             onEachFeature: function (feature, layer) {
-              layer.bindPopup('<b><a href="' + country[0] + '">' + country[2] + '</a></b><p>' + country[3] + '</p>');
+              layer.bindPopup('<b><a href="/' + country[0] + '/">' + country[2] + '</a></b><p>' + country[3] + '</p>');
             }
           }).addTo(map);
+        })
+        .catch(error => {
+          const mapElement = document.getElementById('map');
+          mapElement.innerHTML = '<p>Error loading map data.</p>';
         });
     });
   });
 </script>
+{{ end }}
