@@ -6,8 +6,10 @@
 
 {{ define "main" }}
 <main class="container">
-    <h1>Countries</h1>
-
+    <div>
+        <a href="map/" class="btn right">View on a map</a>
+        <h1>Countries</h1>
+    </div>
     <ul class="box-list">
         {{- range . -}}
             <li><a href="/{{ .safeName }}/">{{ .name }}</a></li>
