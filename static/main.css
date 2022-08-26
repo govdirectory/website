@@ -326,6 +326,11 @@ table th:not(.js-sort-none):hover {
     border-radius: 20px;
 }
 
+.btn.right {
+    float: right;
+    margin: 0em;
+}
+
 
 /* LAYOUT */
 
