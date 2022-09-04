@@ -1,0 +1,170 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Map of countries</title>
+
+    <link rel="canonical" href="https://www.govdirectory.org/countries/map/">
+
+    <link rel="preload" href="/font/ubuntu-regular.woff2" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: "Ubuntu";
+            src: url("/font/ubuntu-regular.woff2") format("woff2"),
+                 url("/font/ubuntu-regular.woff") format("woff"),
+                 url("/font/ubuntu-regular.ttf") format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Ubuntu";
+            src: url("/font/ubuntu-light.woff2") format("woff2"),
+                 url("/font/ubuntu-light.woff") format("woff"),
+                 url("/font/ubuntu-light.ttf") format("truetype");
+            font-weight: 100;
+            font-display: swap;
+        }
+    </style>
+    <link rel="stylesheet" href="/main.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta property="og:image" content="/og-banner.jpg" />
+    <meta property="og:image:width" content="628" />
+    <meta property="og:image:height" content="1200" />
+
+    <noscript>
+        <style>
+            .need-js {
+                display: none;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body>
+
+    <nav>
+        <ul class="container">
+            <li><a class="no-decoration" href="/"><img title="Home" src="/logo-white.svg" width="20" height="24"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
+            <li><a class="no-decoration" href="/countries/">Countries</a></li>
+            <li><a class="no-decoration" href="/topics/">Topics</a></li>
+            <li><a class="no-decoration" href="/about/">About</a></li>
+        </ul>
+    </nav>
+
+    
+<main class="container">
+    <h1>Map of countries</h1>
+    <noscript>
+        <p>This page requries JavaScript.</p>
+    </noscript>
+    <div id="map" style="height: 80vh; width: 100%;" class="need-js"></div>
+</main>
+
+
+    <footer>
+        <div class="footer-table container">
+            <div class="column">
+                <p class="footer-header">Govdirectory</p>
+                <ul class="list-unstyled">
+                    <li><a class="no-decoration" href="/about/">About</a></li>
+
+                    <li><a class="no-decoration" href="https://twitter.com/govdirectory">Twitter</a></li>
+
+                    <li><a class="no-decoration" href="/statistics/">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <p class="footer-header">Join the community</p>
+                <ul class="list-unstyled">
+                    <li><a class="no-decoration" href="https://github.com/govdirectory">Github</a></li>
+
+                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Improve the data</a></li>
+
+                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory/Events">Events</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <p class="footer-header">License information</p>
+                <ul class="list-unstyled">
+
+                    <li>All data is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0 1.0 Universal</a>.</li>
+                    <li>For images and other resources, see <a href="https://github.com/govdirectory/website#license" rel="license">Github</a>.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-end">
+            <a title="Go to Govdirectory's main page" href="/"><img aria-hidden="true" src="/logo-white.svg" alt="" height="60" width="50"></a>
+            <a title="Powered by Wikidata" href="https://www.wikidata.org"><img aria-hidden="true" height="33" width="120" class="white-bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wikidata_Stamp_Rec_Light.svg/120px-Wikidata_Stamp_Rec_Light.svg.png"></a>
+        </div>
+    </footer> 
+    
+<link rel="stylesheet" href="/thirdparty/leaflet/leaflet-1.8.0.css"/>
+<script src="/thirdparty/leaflet/leaflet-1.8.0.js"></script>
+<script>
+const map = L.map('map', {attributionControl: false}).setView([0, 0], 2);
+L.control.attribution({prefix: ''}).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+fetch('/map.json')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(country => {
+      const dataUrl = 'https://commons.wikimedia.org/w/api.php?format=json&action=query&titles=' + country[1].replace('http://commons.wikimedia.org/data/main/', '') + '&prop=revisions&rvprop=content&origin=*&maxage=3600'
+      fetch( dataUrl)
+        .then(response => response.json())
+        .then(data => {
+          const containerData = data.query.pages[Object.keys(data.query.pages)[0]].revisions[0]['*'];
+          const pageData = JSON.parse(containerData);
+          const geojson = pageData.data;
+          const geojsonLayer = L.geoJson(geojson, {
+            style: function (feature) {
+              return {color: '#E66A49'};
+            },
+            onEachFeature: function (feature, layer) {
+              layer.bindPopup('<b><a href="/' + country[0] + '/">' + country[2] + '</a></b><p>' + country[3] + '</p>');
+            }
+          }).addTo(map);
+        })
+        .catch(error => {
+          const mapElement = document.getElementById('map');
+          mapElement.innerHTML = '<p>Error loading map data.</p>';
+        });
+    });
+  });
+</script>
+
+    
+    <script>
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://matomo.wikimedia.se/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true; g.src=u+'matomo.js'; g.crossorigin='anonymous'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

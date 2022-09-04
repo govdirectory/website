@@ -170,7 +170,8 @@ nav {
     position: sticky;
     top: 0;
     height: 70px;
-    z-index: 1;
+    /* higher than leaflet's controls */
+    z-index: 4000;
 }
 
 nav ul {
@@ -323,6 +324,11 @@ table th:not(.js-sort-none):hover {
 
 .btn.rounded {
     border-radius: 20px;
+}
+
+.btn.right {
+    float: right;
+    margin: 0em;
 }
 
 
