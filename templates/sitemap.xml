@@ -15,6 +15,9 @@
         <loc>{{ $metadata.root_url }}countries/</loc>
     </url>
     <url>
+        <loc>{{ $metadata.root_url }}countries/map/</loc>
+    </url>
+    <url>
         <loc>{{ $metadata.root_url }}topics/</loc>
     </url>
     {{- range . -}}
