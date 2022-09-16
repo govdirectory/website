@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+crossorigin=""></script>
+
+<div id="map" style="height: 100vh; width: 100vw;"></div>
+
+<script>
+const map = L.map('map').setView([0, 0], 2);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+fetch('map.json')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(country => {
+        const dataUrl = 'https://commons.wikimedia.org/w/api.php?format=json&action=query&titles=' + country[1].replace('http://commons.wikimedia.org/data/main/', '') + '&prop=revisions&rvprop=content&origin=*&maxage=3600'
+        fetch( dataUrl)
+          .then(response => response.json())
+          .then(data => {
+            const containerData = data.query.pages[Object.keys(data.query.pages)[0]].revisions[0]['*'];
+            const pageData = JSON.parse(containerData);
+            const geojson = pageData.data;
+            const geojsonLayer = L.geoJson(geojson, {
+              style: function (feature) {
+                return {color: '#ff0000'};
+              },
+              onEachFeature: function (feature, layer) {
+                layer.bindPopup('<b><a href="' + country[0] + '">' + country[2] + '</a></b><p>' + country[3] + '</p>');
+              }
+            }).addTo(map);
+          });
+    });
+  });
+</script>
