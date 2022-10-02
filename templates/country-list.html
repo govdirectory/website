@@ -13,7 +13,7 @@
     </div>
     <ul class="box-list">
         {{- range . -}}
-            <li><a href="/{{ .safeName }}/">{{ .name }}</a></li>
+            <li lang="{{ .name.Lang }}"><a href="/{{ .safeName }}/">{{ .name }}</a></li>
         {{- end -}}
     </ul>
     <p class="call-out">Would you like to see more countries added? <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Help us get the data in shape here.</a></p>
