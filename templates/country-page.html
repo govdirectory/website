@@ -8,7 +8,7 @@
 {{ define "main" }}
 <div class="container">
     <header class="item">
-        <h1>{{ .name }}</h1>
+        <h1 lang="{{ .name.Lang }}">{{ .name }}</h1>
         <p>{{ .nativeLabel }}</p>
         <p>{{ .description }}</p>
 
