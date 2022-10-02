@@ -57,8 +57,8 @@
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/{{ .qid }}" title="Edit on Wikidata"><img src="/wikidata.svg" aria-hidden="true"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+{{`{{`}}Q|{{ .qid }}{{`}}`}}&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img src="/flag.svg" aria-hidden="true"></a>
         </div>
-        <h1>{{ .orgLabel }}</h1>
-        <p>{{ .orgDescription }}</p>
+        <h1 lang="{{ .orgLabel.Lang }}">{{ .orgLabel }}</h1>
+        <p lang="{{ .orgDescription.Lang }}">{{ .orgDescription }}</p>
 
         <div class="header-lower">
             <div class="infobox">
