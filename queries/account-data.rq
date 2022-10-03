@@ -17,7 +17,7 @@ WHERE {
   ?statement ?propValuePredicate ?value .
 
   OPTIONAL { ?statement pq:P1552 ?quality }
-
+  MINUS { ?statement pq:P582 [] }
   BIND(IF(BOUND(?quality), IF(?quality = wd:Q28378282, True, False), False) AS ?verified)
 
   BIND(IRI(REPLACE(?formatter, '\\$1', ?value)) AS ?url)
