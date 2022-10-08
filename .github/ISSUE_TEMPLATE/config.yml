@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Report a data error
-    url: https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Rep%20ort+of+data+error&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template
+    url: https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Report+a+data+error&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template
     about: Found incorrect information? Please let us know.
   - name: Discuss the website
     url: https://github.com/govdirectory/website/discussions
