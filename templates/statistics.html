@@ -70,7 +70,7 @@
         {{- range . -}}
         <tr>
             <th class="js-sort-none"><a href="../{{ .safeName }}/">{{ .name }}</a></th>
-            <td>{{ .description }}</td>
+            <td lang="{{ .description.Lang }}">{{ .description }}</td>
         </tr>
         {{- end -}}
     </table>

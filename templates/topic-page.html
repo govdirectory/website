@@ -8,7 +8,7 @@
 {{ define "main" }}
 <div class="topic-background {{ .safeName }}">
     <header class="topic">
-        <h1>{{ .name }}</h1>
+        <h1 lang="{{ .name.Lang }}">{{ .name }}</h1>
     </header>
 </div>
 
@@ -43,9 +43,9 @@
             {{- range $orgs -}}
                 {{- if eq $topic .cofog -}}
                     <tr>
-                        <td><a href="/{{ $country }}/{{ .qid }}">{{ .orgLabel }}</a></td>
+                        <td lang="{{ .orgLabel.Lang }}"><a href="/{{ $country }}/{{ .qid }}">{{ .orgLabel }}</a></td>
                         <td>{{ include "components/social-icons.html" (query "account-data.rq" .qid.String) }}</td>
-                        <td>{{ .typeLabel }}</td>
+                        <td lang="{{ .typeLabel.Lang }}">{{ .typeLabel }}</td>
                         <td><a class="btn rounded" href="/{{ $country }}/">{{ $countryLabel }}</a></td>
                     </tr>
                 {{- end -}}

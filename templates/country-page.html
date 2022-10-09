@@ -8,9 +8,9 @@
 {{ define "main" }}
 <div class="container">
     <header class="item">
-        <h1>{{ .name }}</h1>
-        <p>{{ .nativeLabel }}</p>
-        <p>{{ .description }}</p>
+        <h1 lang="{{ .name.Lang }}">{{ .name }}</h1>
+        <p lang="{{ .nativeLabel.Lang }}">{{ .nativeLabel }}</p>
+        <p lang="{{ .description.Lang }}">{{ .description }}</p>
 
         <div class="header-lower">
             <div class="infobox">
@@ -49,14 +49,14 @@
 <main>
     <section class="bg-grey sticky-grey">
         <div class="container">
-						<div class="move-away">
-								<div class="expand-mobile">
-										<h2 class="m0 expand-mobile">Agencies</h2>
-										<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" class="need-js expand-mobile"/>
-								</div>
-								<a id="download" download="{{ .name }}.tsv" href="#" class="btn need-js expand-mobile">Download (as TSV)</a>
-						</div>
-				</div>
+			<div class="move-away">
+					<div class="expand-mobile">
+							<h2 class="m0 expand-mobile">Agencies</h2>
+							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" class="need-js expand-mobile"/>
+					</div>
+					<a id="download" download="{{ .name }}.tsv" href="#" class="btn need-js expand-mobile">Download (as TSV)</a>
+			</div>
+	</div>
     </section>
 
     {{- include "org-table.html" (query (join "" "generators/" .safeName.String ".rq")) -}}
