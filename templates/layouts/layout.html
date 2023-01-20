@@ -43,6 +43,8 @@
     <meta name="generator" content="Snowman v{{ version }}">
     <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
 
+    {{ block "extra-head" . }}{{ end }}
+
     <noscript>
         <style>
             .need-js {
