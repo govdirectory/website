@@ -5,6 +5,10 @@
 
 {{ define "canonical" }}/{{ include "helpers/get-country-url.html" .country }}/{{ .qid }}/{{ end }}
 
+{{ define "extra-head" }}
+  <meta name="description" content="{{ .orgDescription }}">
+{{ end }}
+
 {{ define "main" }}
 {{- $details := index (query "organization-optional.rq" .qid.String) 0 -}}
 
