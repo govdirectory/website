@@ -1,4 +1,4 @@
-# expected_result_count: 411
+# expected_result_count: 408
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -18,7 +18,7 @@ WHERE {
     wd:Q2125157 # district court (11)
     wd:Q134390  # provinces (12)
     wd:Q702081 # water boards (21)
-    wd:Q2039348 # municipalities (345)
+    wd:Q2039348 # municipalities (342)
     wd:Q26934845 # integral overseas territory (3)
   }
   ?org wdt:P31 ?type .
