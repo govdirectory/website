@@ -1,10 +1,13 @@
 <table class="container js-sort-table">
+  <thead>
     <tr>
       <th>Name</th>
       <th class="js-sort-none">Platforms</th>
       <th>Type</th>
     </tr>
+  </thead>
 
+  <tbody id="mainOrgTable">
     {{- range . -}}
     <tr>
         <td lang="{{ .orgLabel.Lang }}"><a href="{{ .qid }}/">{{ .orgLabel }}</a></td>
@@ -12,4 +15,5 @@
         <td lang="{{ .typeLabel.Lang }}">{{ .typeLabel }}</td>
     </tr>
     {{ end -}}
+  </tbody>
 </table>
