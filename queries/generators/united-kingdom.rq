@@ -31,7 +31,7 @@ WHERE {
             wd:Q1412224 # tribunal (10)
             wd:Q16931297 # Queen's printer (1)
 		}
-		?org wdt:P31 ?type ;
+		?org wdt:P31 | wdt:P1454 ?type ;
 	       wdt:P1001 wd:Q22 .
 		MINUS { ?org wdt:P31 wd:Q5532360 }
         MINUS { ?org wdt:P1001 wd:Q1156248 }
