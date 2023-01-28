@@ -11,7 +11,7 @@ WHERE {
 
   VALUES ?type {
     wd:Q193512 # Region (19)
-    wd:Q111669109 # Ministries (12)
+    wd:Q10495402 # Ministries (12)
   }
   ?org wdt:P31 ?type .
 
