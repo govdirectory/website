@@ -1,4 +1,4 @@
-# expected_result_count: 408
+# expected_result_count: 413
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -31,6 +31,10 @@ WHERE {
     }
 
     BIND("cabinet of the King" AS ?typeLabel)
+  }
+  UNION {
+    ?org wdt:P361 wd:Q947233 . # high council of the state (5)
+    BIND("High Council of State" AS ?typeLabel)
   }
 
   MINUS { ?org wdt:P576 [] }
