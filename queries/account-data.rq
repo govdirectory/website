@@ -9,9 +9,7 @@ WHERE {
             wikibase:statementProperty ?propValuePredicate ;
             wikibase:claim ?wdtClaimPredicate  ;
             wdt:P1630 ?formatter ;
-            p:P1647 ?subPropertyStatement .
-
-  ?subPropertyStatement pq:P642 ?platform .
+            wdt:P9073 ?platform .
 
   wd:{{.}} ?wdtClaimPredicate ?statement .
   ?statement ?propValuePredicate ?value .
