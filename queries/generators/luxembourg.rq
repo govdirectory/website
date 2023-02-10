@@ -19,8 +19,15 @@ WHERE {
   ?org wdt:P17 ?country .
 
   MINUS { ?org wdt:P576 [] }
-  MINUS { ?org wdt:P1366 [] }
-
+  MINUS { ?org wdt:P571 ?startdate .
+         FILTER (?startdate > NOW()) # remove orgs with future start dates
+        }
+  MINUS { ?org wdt:P1366 []
+        MINUS { ?org p:P1366 ?s .
+               ?s pq:P585 ?replacedate
+               FILTER ( ?replacedate > NOW()) # do not remove orgs with future replace dates
+          }
+        }
   MINUS {
     ?org wdt:P31 wd:Q2919801;
     p:P31 [
