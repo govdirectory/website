@@ -34,10 +34,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#094082"/>
 
     <meta property="og:image" content="/og-banner.jpg" />
     <meta property="og:image:width" content="628" />
     <meta property="og:image:height" content="1200" />
+
+    <meta name="twitter:site" content="@govdirectory">
+    <meta name="generator" content="Snowman v0.3.0-development">
+    <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
+
+    
 
     <noscript>
         <style>
@@ -70,8 +77,8 @@
             <div class="infobox">
                 <ul>
                     <li>Type of government: parliamentary republic, representative democracy</li>
-                    <li>Head of state: Matamela Cyril Ramaphosa</li>
-                    <li>Head of government: Matamela Cyril Ramaphosa</li>
+                    <li>Head of state: Cyril Ramaphosa</li>
+                    <li>Head of government: Cyril Ramaphosa</li>
                     <li>Official website: <a href="https://www.gov.za/">www.gov.za/</a></li>
                 </ul>
             </div>
@@ -92,17 +99,21 @@
 			<div class="move-away">
 					<div class="expand-mobile">
 							<h2 class="m0 expand-mobile">Agencies</h2>
-							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" class="need-js expand-mobile"/>
+							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" aria-controls="mainOrgTable" class="need-js expand-mobile"/>
 					</div>
 					<a id="download" download="South Africa.tsv" href="#" class="btn need-js expand-mobile">Download (as TSV)</a>
 			</div>
 	</div>
     </section><table class="container js-sort-table">
+  <thead>
     <tr>
       <th>Name</th>
       <th class="js-sort-none">Platforms</th>
       <th>Type</th>
-    </tr><tr>
+    </tr>
+  </thead>
+
+  <tbody id="mainOrgTable"><tr>
         <td lang="en"><a href="Q1191459/">Department of Public Enterprises</a></td>
         <td></td>
         <td lang="en">department of the South African government</td>
@@ -124,7 +135,7 @@
     </tr>
     <tr>
         <td lang="en"><a href="Q98140210/">Department of Sports, Arts and Culture</a></td>
-        <td></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/ArtsCultureSA"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li></ul></td>
         <td lang="en">department of the South African government</td>
     </tr>
     <tr>
@@ -1712,7 +1723,8 @@
         <td></td>
         <td lang="en">local municipality</td>
     </tr>
-    </table>
+    </tbody>
+</table>
 </main>
 
 

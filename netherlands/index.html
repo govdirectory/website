@@ -34,10 +34,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#094082"/>
 
     <meta property="og:image" content="/og-banner.jpg" />
     <meta property="og:image:width" content="628" />
     <meta property="og:image:height" content="1200" />
+
+    <meta name="twitter:site" content="@govdirectory">
+    <meta name="generator" content="Snowman v0.3.0-development">
+    <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
+
+    
 
     <noscript>
         <style>
@@ -92,20 +99,49 @@
 			<div class="move-away">
 					<div class="expand-mobile">
 							<h2 class="m0 expand-mobile">Agencies</h2>
-							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" class="need-js expand-mobile"/>
+							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" aria-controls="mainOrgTable" class="need-js expand-mobile"/>
 					</div>
 					<a id="download" download="Netherlands.tsv" href="#" class="btn need-js expand-mobile">Download (as TSV)</a>
 			</div>
 	</div>
     </section><table class="container js-sort-table">
+  <thead>
     <tr>
       <th>Name</th>
       <th class="js-sort-none">Platforms</th>
       <th>Type</th>
-    </tr><tr>
+    </tr>
+  </thead>
+
+  <tbody id="mainOrgTable"><tr>
+        <td lang="en"><a href="Q1155243/">Council of State</a></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/RaadvanState"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/raadvanstate/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/raad-van-state/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
+        <td lang="">High Council of State</td>
+    </tr>
+    <tr>
         <td lang="en"><a href="Q1857094/">Kabinet van de Koning</a></td>
         <td><ul><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/kabinet-van-de-koning/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
         <td lang="">cabinet of the King</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q105626749/">Kanselarij der Nederlandse Orden</a></td>
+        <td></td>
+        <td lang="">High Council of State</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q116480828/">National Ombudsman</a></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/nat_ombudsman"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/nationaleombudsman/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/nationaleombudsman"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UCCgkEJsT1p6kX6in4v-NY8A"><img width="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/nationale-ombudsman/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
+        <td lang="">High Council of State</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q2041110/">Netherlands Court of Audit</a></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/rekenkamer"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/rekenkamer"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/algemene-rekenkamer/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
+        <td lang="">High Council of State</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q1371388/">States General</a></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/staten_generaal"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li></ul></td>
+        <td lang="">High Council of State</td>
     </tr>
     <tr>
         <td lang="en"><a href="Q772/">Drenthe</a></td>
@@ -169,7 +205,7 @@
     </tr>
     <tr>
         <td lang="en"><a href="Q1155243/">Council of State</a></td>
-        <td></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/RaadvanState"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/raadvanstate/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/raad-van-state/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
         <td lang="en">supreme court</td>
     </tr>
     <tr>
@@ -418,11 +454,6 @@
         <td lang="en">municipality of the Netherlands</td>
     </tr>
     <tr>
-        <td lang="en"><a href="Q462663/">Brielle</a></td>
-        <td></td>
-        <td lang="en">municipality of the Netherlands</td>
-    </tr>
-    <tr>
         <td lang="en"><a href="Q747999/">Bronckhorst</a></td>
         <td></td>
         <td lang="en">municipality of the Netherlands</td>
@@ -539,7 +570,7 @@
     </tr>
     <tr>
         <td lang="en"><a href="Q9999/">Dinkelland</a></td>
-        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/dinkellandinfo"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/gemeentedinkelland/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/gemeente.dinkelland"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UC4F0wOXIFEYLOtVgsLfglxA"><img width="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li></ul></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/dinkellandinfo"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/gemeentedinkelland/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/gemeente.dinkelland"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UC4F0wOXIFEYLOtVgsLfglxA"><img width="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li><li>+1</li></ul></td>
         <td lang="en">municipality of the Netherlands</td>
     </tr>
     <tr>
@@ -809,11 +840,6 @@
     </tr>
     <tr>
         <td lang="en"><a href="Q10005/">Hellendoorn</a></td>
-        <td></td>
-        <td lang="en">municipality of the Netherlands</td>
-    </tr>
-    <tr>
-        <td lang="en"><a href="Q826130/">Hellevoetsluis</a></td>
         <td></td>
         <td lang="en">municipality of the Netherlands</td>
     </tr>
@@ -1323,7 +1349,7 @@
         <td lang="en">municipality of the Netherlands</td>
     </tr>
     <tr>
-        <td lang="en"><a href="Q110423208/">Purmerend Municipality</a></td>
+        <td lang="en"><a href="Q110423208/">Purmerend</a></td>
         <td></td>
         <td lang="en">municipality of the Netherlands</td>
     </tr>
@@ -1683,6 +1709,11 @@
         <td lang="en">municipality of the Netherlands</td>
     </tr>
     <tr>
+        <td lang="en"><a href="Q106436626/">Voorne aan Zee</a></td>
+        <td></td>
+        <td lang="en">municipality of the Netherlands</td>
+    </tr>
+    <tr>
         <td lang="en"><a href="Q848324/">Voorschoten</a></td>
         <td></td>
         <td lang="en">municipality of the Netherlands</td>
@@ -1774,11 +1805,6 @@
     </tr>
     <tr>
         <td lang="en"><a href="Q753913/">Weststellingwerf</a></td>
-        <td></td>
-        <td lang="en">municipality of the Netherlands</td>
-    </tr>
-    <tr>
-        <td lang="en"><a href="Q935657/">Westvoorne</a></td>
         <td></td>
         <td lang="en">municipality of the Netherlands</td>
     </tr>
@@ -1898,62 +1924,57 @@
         <td lang="en">municipality of the Netherlands</td>
     </tr>
     <tr>
-        <td lang="nl"><a href="Q3077769/">Fort Bath</a></td>
+        <td lang="en"><a href="Q5731176/">Trial court Gelderland</a></td>
         <td></td>
-        <td lang="en">municipality of the Netherlands</td>
+        <td lang="en">Dutch court</td>
     </tr>
     <tr>
-        <td lang="en"><a href="Q2436620/">District Court of The Hague</a></td>
+        <td lang="en"><a href="Q14253249/">Trial court Limburg</a></td>
+        <td></td>
+        <td lang="en">Dutch court</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q2643494/">Trial court Netherlands Central</a></td>
+        <td></td>
+        <td lang="en">Dutch court</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q2910797/">Trial court Oost-Brabant</a></td>
+        <td></td>
+        <td lang="en">Dutch court</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q14253266/">Trial court Overijssel</a></td>
+        <td></td>
+        <td lang="en">Dutch court</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q2930113/">Trial court Rotterdam</a></td>
+        <td></td>
+        <td lang="en">Dutch court</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q2436620/">Trial court The Hague</a></td>
         <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/Haagserechtbank"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li></ul></td>
         <td lang="en">Dutch court</td>
     </tr>
     <tr>
-        <td lang="en"><a href="Q14253266/">Judicial Arrondissement Overijssel</a></td>
+        <td lang="en"><a href="Q2880571/">Trial court Zeeland-West-Brabant</a></td>
         <td></td>
         <td lang="en">Dutch court</td>
     </tr>
     <tr>
-        <td lang="nl"><a href="Q2260823/">Rechtbank Amsterdam</a></td>
+        <td lang="en"><a href="Q2691724/">trial Court for the Northern Netherlands</a></td>
         <td></td>
         <td lang="en">Dutch court</td>
     </tr>
     <tr>
-        <td lang="nl"><a href="Q5731176/">Rechtbank Gelderland</a></td>
+        <td lang="en"><a href="Q2260823/">trial court Amsterdam</a></td>
         <td></td>
         <td lang="en">Dutch court</td>
     </tr>
     <tr>
-        <td lang="nl"><a href="Q14253249/">Rechtbank Limburg</a></td>
-        <td></td>
-        <td lang="en">Dutch court</td>
-    </tr>
-    <tr>
-        <td lang="nl"><a href="Q2643494/">Rechtbank Midden-Nederland</a></td>
-        <td></td>
-        <td lang="en">Dutch court</td>
-    </tr>
-    <tr>
-        <td lang="nl"><a href="Q3983133/">Rechtbank Noord-Holland</a></td>
-        <td></td>
-        <td lang="en">Dutch court</td>
-    </tr>
-    <tr>
-        <td lang="nl"><a href="Q2691724/">Rechtbank Noord-Nederland</a></td>
-        <td></td>
-        <td lang="en">Dutch court</td>
-    </tr>
-    <tr>
-        <td lang="nl"><a href="Q2910797/">Rechtbank Oost-Brabant</a></td>
-        <td></td>
-        <td lang="en">Dutch court</td>
-    </tr>
-    <tr>
-        <td lang="nl"><a href="Q2930113/">Rechtbank Rotterdam</a></td>
-        <td></td>
-        <td lang="en">Dutch court</td>
-    </tr>
-    <tr>
-        <td lang="nl"><a href="Q2880571/">Rechtbank Zeeland-West-Brabant</a></td>
+        <td lang="en"><a href="Q3983133/">trial court North-Holland</a></td>
         <td></td>
         <td lang="en">Dutch court</td>
     </tr>
@@ -2033,24 +2054,24 @@
         <td lang="en">ministry of the Netherlands</td>
     </tr>
     <tr>
-        <td lang="en"><a href="Q16736461/">Netherlands. Gerechtshof (&#39;s-Hertogenbosch)</a></td>
+        <td lang="en"><a href="Q16736461/">Appellate court (&#39;s-Hertogenbosch)</a></td>
         <td></td>
-        <td lang="en">court</td>
+        <td lang="en">Court of Appeal</td>
     </tr>
     <tr>
-        <td lang="nl"><a href="Q13641774/">Gerechtshof Amsterdam</a></td>
+        <td lang="en"><a href="Q13641774/">Appellate court Amsterdam</a></td>
         <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/hofamsterdam"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/HetGerechtshofAmsterdam"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li></ul></td>
-        <td lang="en">court</td>
+        <td lang="en">Court of Appeal</td>
     </tr>
     <tr>
-        <td lang="nl"><a href="Q2599818/">Gerechtshof Arnhem-Leeuwarden</a></td>
+        <td lang="en"><a href="Q2599818/">Appellate court Arnhem-Leeuwarden</a></td>
         <td></td>
-        <td lang="en">court</td>
+        <td lang="en">Court of Appeal</td>
     </tr>
     <tr>
-        <td lang="nl"><a href="Q2412643/">Gerechtshof Den Haag</a></td>
+        <td lang="en"><a href="Q2412643/">Appellate court Den Haag</a></td>
         <td></td>
-        <td lang="en">court</td>
+        <td lang="en">Court of Appeal</td>
     </tr>
     <tr>
         <td lang="en"><a href="Q2553577/">Aa en Maas</a></td>
@@ -2157,7 +2178,8 @@
         <td></td>
         <td lang="en">water board in the Netherlands</td>
     </tr>
-    </table>
+    </tbody>
+</table>
 </main>
 
 

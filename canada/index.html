@@ -34,10 +34,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#094082"/>
 
     <meta property="og:image" content="/og-banner.jpg" />
     <meta property="og:image:width" content="628" />
     <meta property="og:image:height" content="1200" />
+
+    <meta name="twitter:site" content="@govdirectory">
+    <meta name="generator" content="Snowman v0.3.0-development">
+    <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
+
+    
 
     <noscript>
         <style>
@@ -92,17 +99,21 @@
 			<div class="move-away">
 					<div class="expand-mobile">
 							<h2 class="m0 expand-mobile">Agencies</h2>
-							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" class="need-js expand-mobile"/>
+							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" aria-controls="mainOrgTable" class="need-js expand-mobile"/>
 					</div>
 					<a id="download" download="Canada.tsv" href="#" class="btn need-js expand-mobile">Download (as TSV)</a>
 			</div>
 	</div>
     </section><table class="container js-sort-table">
+  <thead>
     <tr>
       <th>Name</th>
       <th class="js-sort-none">Platforms</th>
       <th>Type</th>
-    </tr><tr>
+    </tr>
+  </thead>
+
+  <tbody id="mainOrgTable"><tr>
         <td lang="en"><a href="Q1046164/">Agriculture and Agri-Food Canada</a></td>
         <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/AAFC_Canada"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/cdn_agriculture/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/CanadianAgriculture"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/aafc-aac/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
         <td lang="en">Canadian federal department</td>
@@ -114,17 +125,12 @@
     </tr>
     <tr>
         <td lang="en"><a href="Q85269208/">Department for Women and Gender Equality</a></td>
-        <td></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/WAGE_FEGC"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/women_canada_femmes/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/wage.fegc"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/status-of-women-canada/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
         <td lang="en">Canadian federal department</td>
     </tr>
     <tr>
         <td lang="en"><a href="Q1056951/">Department of Canadian Heritage</a></td>
         <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/CdnHeritage"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Twitter" href="https://twitter.com/patrimoinecdn"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/o_canadiana/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/Patrimoinecdn"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/canadian-heritage-patrimoine-canadien/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
-        <td lang="en">Canadian federal department</td>
-    </tr>
-    <tr>
-        <td lang="en"><a href="Q1191438/">Department of Finance Canada</a></td>
-        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/financecanada"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/FinanceCanada"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/finance-canada/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
         <td lang="en">Canadian federal department</td>
     </tr>
     <tr>
@@ -135,6 +141,11 @@
     <tr>
         <td lang="en"><a href="Q1191463/">Department of National Defence</a></td>
         <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/nationaldefence"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Twitter" href="https://twitter.com/nationaldefence"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/canadianforces/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li></ul></td>
+        <td lang="en">Canadian federal department</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q3251781/">Department of the Interior</a></td>
+        <td></td>
         <td lang="en">Canadian federal department</td>
     </tr>
     <tr>
@@ -272,7 +283,8 @@
         <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/yukongov"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Twitter" href="https://twitter.com/LeYukonFr"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/yukongov"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/LeYukonFr"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UCIVAbvMJHZa46JEjbDRRB3g"><img width="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/yukon-government/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
         <td lang="en">territory of Canada</td>
     </tr>
-    </table>
+    </tbody>
+</table>
 </main>
 
 

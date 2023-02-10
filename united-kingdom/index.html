@@ -34,10 +34,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#094082"/>
 
     <meta property="og:image" content="/og-banner.jpg" />
     <meta property="og:image:width" content="628" />
     <meta property="og:image:height" content="1200" />
+
+    <meta name="twitter:site" content="@govdirectory">
+    <meta name="generator" content="Snowman v0.3.0-development">
+    <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
+
+    
 
     <noscript>
         <style>
@@ -71,7 +78,7 @@
                 <ul>
                     <li>Type of government: constitutional monarchy</li>
                     <li>Head of state: Charles III</li>
-                    <li>Head of government: Liz Truss</li>
+                    <li>Head of government: Rishi Sunak</li>
                     <li>Official website: <a href="https://www.gov.uk/">www.gov.uk/</a></li>
                 </ul>
             </div>
@@ -92,17 +99,21 @@
 			<div class="move-away">
 					<div class="expand-mobile">
 							<h2 class="m0 expand-mobile">Agencies</h2>
-							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" class="need-js expand-mobile"/>
+							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" aria-controls="mainOrgTable" class="need-js expand-mobile"/>
 					</div>
 					<a id="download" download="United Kingdom.tsv" href="#" class="btn need-js expand-mobile">Download (as TSV)</a>
 			</div>
 	</div>
     </section><table class="container js-sort-table">
+  <thead>
     <tr>
       <th>Name</th>
       <th class="js-sort-none">Platforms</th>
       <th>Type</th>
-    </tr><tr>
+    </tr>
+  </thead>
+
+  <tbody id="mainOrgTable"><tr>
         <td lang="en"><a href="Q17507961/">Accountant in Bankruptcy</a></td>
         <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/aib_updates"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li></ul></td>
         <td lang="en">executive agency in the Scottish government</td>
@@ -405,7 +416,7 @@
     <tr>
         <td lang="en"><a href="Q104417453/">Queen&#39;s Printer for Scotland</a></td>
         <td></td>
-        <td lang="en">Queen&#39;s Printer</td>
+        <td lang="en">King&#39;s Printer</td>
     </tr>
     <tr>
         <td lang="en"><a href="Q109769518/">Justice of the Peace Court of Sheriffdom of Glasgow and Strathkelvin</a></td>
@@ -818,11 +829,6 @@
         <td lang="en">department of the United Kingdom Government</td>
     </tr>
     <tr>
-        <td lang="en"><a href="Q533601/">Government Equalities Office</a></td>
-        <td></td>
-        <td lang="en">department of the United Kingdom Government</td>
-    </tr>
-    <tr>
         <td lang="en"><a href="Q578269/">HM Treasury</a></td>
         <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/hmtreasury"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/hmtreasury"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li></ul></td>
         <td lang="en">department of the United Kingdom Government</td>
@@ -1000,6 +1006,11 @@
     <tr>
         <td lang="en"><a href="Q2051997/">National Galleries of Scotland</a></td>
         <td></td>
+        <td lang="en">non-departmental public body</td>
+    </tr>
+    <tr>
+        <td lang="en"><a href="Q1670994/">National Library of Scotland</a></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/natlibscot"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/natlibscot/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/NationalLibraryOfScotland"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UCqEjEs4oSyCyWe4m7J2wpJw"><img width="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/national-library-of-scotland/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li><li>+2</li></ul></td>
         <td lang="en">non-departmental public body</td>
     </tr>
     <tr>
@@ -1287,7 +1298,8 @@
         <td></td>
         <td lang="en">court</td>
     </tr>
-    </table>
+    </tbody>
+</table>
 </main>
 
 

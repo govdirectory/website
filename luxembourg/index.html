@@ -34,10 +34,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#094082"/>
 
     <meta property="og:image" content="/og-banner.jpg" />
     <meta property="og:image:width" content="628" />
     <meta property="og:image:height" content="1200" />
+
+    <meta name="twitter:site" content="@govdirectory">
+    <meta name="generator" content="Snowman v0.3.0-development">
+    <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
+
+    
 
     <noscript>
         <style>
@@ -92,17 +99,21 @@
 			<div class="move-away">
 					<div class="expand-mobile">
 							<h2 class="m0 expand-mobile">Agencies</h2>
-							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" class="need-js expand-mobile"/>
+							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" aria-controls="mainOrgTable" class="need-js expand-mobile"/>
 					</div>
 					<a id="download" download="Luxembourg.tsv" href="#" class="btn need-js expand-mobile">Download (as TSV)</a>
 			</div>
 	</div>
     </section><table class="container js-sort-table">
+  <thead>
     <tr>
       <th>Name</th>
       <th class="js-sort-none">Platforms</th>
       <th>Type</th>
-    </tr><tr>
+    </tr>
+  </thead>
+
+  <tbody id="mainOrgTable"><tr>
         <td lang="en"><a href="Q397678/">Canton of Capellen</a></td>
         <td></td>
         <td lang="en">canton of Luxembourg</td>
@@ -223,7 +234,7 @@
         <td lang="en">municipality of Luxembourg</td>
     </tr>
     <tr>
-        <td lang="en"><a href="Q895269/">Bous</a></td>
+        <td lang="en"><a href="Q116460013/">Bous-Waldbredimus</a></td>
         <td></td>
         <td lang="en">municipality of Luxembourg</td>
     </tr>
@@ -274,7 +285,7 @@
     </tr>
     <tr>
         <td lang="en"><a href="Q204317/">Echternach</a></td>
-        <td></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/VilleEchternach"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/villedechternach/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/villedechternach"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UC-JZZ_OLzfcy9lWQUqzwnxA"><img width="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li><li>+1</li></ul></td>
         <td lang="en">municipality of Luxembourg</td>
     </tr>
     <tr>
@@ -338,7 +349,7 @@
         <td lang="en">municipality of Luxembourg</td>
     </tr>
     <tr>
-        <td lang="en"><a href="Q986417/">Grosbous</a></td>
+        <td lang="en"><a href="Q116453518/">Groussbus-Wal</a></td>
         <td></td>
         <td lang="en">municipality of Luxembourg</td>
     </tr>
@@ -429,7 +440,7 @@
     </tr>
     <tr>
         <td lang="en"><a href="Q1842/">Luxembourg</a></td>
-        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/CityLuxembourg"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/villedeluxembourg/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/Ville.de.Luxembourg"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UCoyeReMRqQN-5R8QeAiAZpw"><img width="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li></ul></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/CityLuxembourg"><img width="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/villedeluxembourg/"><img width="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/Ville.de.Luxembourg"><img width="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UCoyeReMRqQN-5R8QeAiAZpw"><img width="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/ville-de-luxembourg/"><img width="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li><li>+1</li></ul></td>
         <td lang="en">municipality of Luxembourg</td>
     </tr>
     <tr>
@@ -623,17 +634,7 @@
         <td lang="en">municipality of Luxembourg</td>
     </tr>
     <tr>
-        <td lang="en"><a href="Q166320/">Wahl</a></td>
-        <td></td>
-        <td lang="en">municipality of Luxembourg</td>
-    </tr>
-    <tr>
         <td lang="en"><a href="Q1017412/">Waldbillig</a></td>
-        <td></td>
-        <td lang="en">municipality of Luxembourg</td>
-    </tr>
-    <tr>
-        <td lang="en"><a href="Q1017407/">Waldbredimus</a></td>
         <td></td>
         <td lang="en">municipality of Luxembourg</td>
     </tr>
@@ -792,7 +793,8 @@
         <td></td>
         <td lang="en">Ministry in the government of Luxembourg</td>
     </tr>
-    </table>
+    </tbody>
+</table>
 </main>
 
 
