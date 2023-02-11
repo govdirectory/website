@@ -5,6 +5,8 @@ views:
     template: "landing.html"
   - output: "404.html"
     template: "404.html"
+  - output: "tools.html"
+    template: "tools.html"
 
   - output: "statistics/index.html"
     query: "countries.rq"
