@@ -1,4 +1,4 @@
-# expected_result_count: 113
+# expected_result_count: 144
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -12,6 +12,7 @@ WHERE {
 
     # agencies with country set to New Zealand
     VALUES ?type {
+      wd:Q116973815 # public service departments (31)
       wd:Q5283326 # district health board of New Zealand (20)
       wd:Q8041036 # wānanga (3)
       wd:Q1148315 # state-owned enterprise of New Zealand (12)
