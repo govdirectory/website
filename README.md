@@ -33,7 +33,7 @@ To learn more about Snowman and its concepts [check out its readme](https://gith
 
 ## Usage
 
-Not usable yet, since we're still in a concept phase.
+Intended to be used through the website at [govdirectory.org](https://govdirectory.org).
 
 ## Maintainers
 
