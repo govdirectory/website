@@ -1,6 +1,6 @@
 # Govdirectory
 
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/govdirectory/website)
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 Website repository for Govdirectory - a crowdsourced and fact-checked directory of official governmental online accounts and services.
 
