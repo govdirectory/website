@@ -1,35 +1,41 @@
 # Govdirectory
 
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-
 Website repository for Govdirectory - a crowdsourced and fact-checked directory of official governmental online accounts and services.
 
 Govdirectory aims to become a global directory of government agencies and their online presence by utilizing Wikidata.
 Wikidatas community, sourceability, versioning, and potential custom tooling that we create will ensure that not only should the information be correct but when it isn't, because of vandalism or something else, users will be able, and suggested, to validate the information.
 The goal is for this directory to be useful to journalists, web-archivists, researchers and many others, certainly including regular citizens.
 
-## Install
+## Development setup
+
+Govdirectory is a static site meaning that it already has all of its pages generated when a visitor visits it. Govdirectory uses Snowman and SPARQL to do this.
+
+Because each initial build of Snowman issues thousands (yes thousands) of SPARQL queries one should never make an **initial** build against `query.wikidata.org` but rather against a local WDQS instance. However, because setting up a WDQS instance is nontrival we provide a copy of a [Snowman build cache directory](https://github.com/govdirectory/website-cache). If in use, this will ensure Snowman only queries Wikidata when a query is updated.
 
 ### Prerequisites
 
+ - [Git](https://git-scm.com/)
  - [Snowman](https://github.com/glaciers-in-archives/snowman)
- - A local Wikidata Query Service (WDQS) instance or a Snowman cache directory.
+ - **Optinally**: A local Wikidata Query Service (WDQS) instance 
 
-Govdirectory is a static site meaning that it already has all of its pages generated when a visitor visits. Govdirectory uses [Snowman](https://github.com/glaciers-in-archives/snowman) and SPARQL to do this. Because each **initial** build of Snowman issues thousands (yes thousands) of SPARQL queries one should never run it against `query.wikidata.org` but rather against a local WDQS instance. Here are [instructions on how to set that up](https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Standalone_service).
-
-Having installed Snowman and populated a WDQS instance with data you can run Snowman to build the site after you have update `snowman.yaml` to point to the URL of your WDQS instance.
-
+1\. Clone the project:
+```shell
+git clone https://github.com/govdirectory/website
 ```
-snowman build
+2\. Get a rencent build cache:
+```shell
+cd website
+git clone https://github.com/govdirectory/website-cache .snowman
+```
+3\. Build the website and run the development server:
+```shell
+snowman build && snowman server
 ```
 
-To easily check your changes, you can let Snowman serve the site for you.
+### Advanced topics
 
-```
-snowman server
-```
-
-To learn more about Snowman and its concepts [check out its readme](https://github.com/glaciers-in-archives/snowman#readme).
+ - [Setting up your own WDQS instance](https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Standalone_service)
+ - [Snowman: Working with cache](https://github.com/glaciers-in-archives/snowman#working-with-cache)
 
 ## Usage
 
