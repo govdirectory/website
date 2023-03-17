@@ -107,3 +107,6 @@ views:
   - output: "bermuda/{{qid}}/index.html"
     query: "generators/bermuda.rq"
     template: "org.html"
+  - output: "malaysia/{{qid}}/index.html"
+    query: "generators/malaysia.rq"
+    template: "org.html"
