@@ -1,0 +1,50 @@
+{{ template "layout" . }}
+
+{{ define "title" }}Govdirectory tools{{ end }}
+
+{{ define "canonical" }}/tools/{{ end }}
+
+
+{{ define "main" }}
+<header class="splash">
+  <div class="container">
+    <h1 class="h1-lg text-orange">Tools!</h1>
+    <p>Making your life easier<span class="text-orange">.</span></p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="half">
+        <div class="center-text">
+          <img aria-hidden="true" src="/community.svg" width="261" height="161"/>
+        </div>
+        <div>
+          <h2>Browser extension</h2>
+          <p>This browser extension helps you identify directly on a social media platform if that account also is in Govdirectory.</p>
+          <p><a href="https://github.com/govdirectory/browser-extension">Help improve it.</a>
+          <a class="btn" href="https://addons.mozilla.org/sv-SE/firefox/addon/government-account-indicator/">Firefox add-on</a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section class="bg-grey">
+    <div class="container">
+      <div class="half">
+        <div>
+          <h2>Do you have an ideal for a tool?</h2>
+          <p>Please let us know!</p>
+          <a class="btn" href="https://github.com/govdirectory/website/discussions/categories/ideas">Share your idea</a>
+        </div>
+        <div class="center-text">
+          <img aria-hidden="true" src="/curation.svg" width="271" height="258"/>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}
+
+{{ define "javascript" }}{{""}}{{ end }}
