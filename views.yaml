@@ -5,7 +5,7 @@ views:
     template: "landing.html"
   - output: "404.html"
     template: "404.html"
-  - output: "tools.html"
+  - output: "tools/index.html"
     template: "tools.html"
 
   - output: "statistics/index.html"

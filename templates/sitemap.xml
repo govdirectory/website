@@ -12,6 +12,9 @@
         <loc>{{ $metadata.root_url }}statistics/</loc>
     </url>
     <url>
+        <loc>{{ $metadata.root_url }}tools/</loc>
+    </url>
+    <url>
         <loc>{{ $metadata.root_url }}countries/</loc>
     </url>
     <url>
