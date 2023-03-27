@@ -30,6 +30,7 @@ WHERE {
     ?org wdt:P2388|wdt:P1313 ?office .
     ?positionStatement ps:P39 ?office .
     ?person p:P39 ?positionStatement .
+    ?person wdt:P31 wd:Q5 .
     MINUS { ?positionStatement pq:P582 ?endtime }
     MINUS { ?person wdt:P570 [] }
   }
