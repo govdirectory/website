@@ -74,6 +74,8 @@
                 <ul class="list-unstyled">
                     <li><a class="no-decoration" href="/about/">About</a></li>
 
+                    <li><a class="no-decoration" {{- if eq current_view.TemplateFile "landing.html" }} rel="me" {{ end -}} href="https://wikis.world/@govdirectory">Mastodon</a></li>
+
                     <li><a class="no-decoration" href="https://twitter.com/govdirectory">Twitter</a></li>
 
                     <li><a class="no-decoration" href="/statistics/">Statistics</a></li>
