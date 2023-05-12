@@ -466,6 +466,12 @@ header.topic {
     font-size: 4rem;
 }
 
+.timestamp {
+    text-align: right;
+    margin-top: 0.5;
+    margin-bottom: 0;
+  }
+
 /* TOPICS */
 
 .topic-background {
