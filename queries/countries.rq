@@ -34,6 +34,7 @@ WHERE {
     (wd:Q334 'Singapore' 'singapore' 'Current content includes parliament, government, supreme court, ministries, town councils and community development council districts.')
     (wd:Q23635 'Bermuda' 'bermuda' 'Current content includes ministries, parishes and municipalities.')
     (wd:Q833 'Malaysia' 'malaysia' 'Current content includes federal territories, ministries, states and districts.')
+    (wd:Q213 'Czech Republic' 'czech-republic' 'Current content includes ministries, regions and municipalities with expanded powers.')
   }
 
   OPTIONAL {
