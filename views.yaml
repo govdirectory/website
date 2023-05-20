@@ -112,3 +112,6 @@ views:
   - output: "malaysia/{{qid}}/index.html"
     query: "generators/malaysia.rq"
     template: "org.html"
+  - output: "czech-republic/{{qid}}/index.html"
+    query: "generators/czech-republic.rq"
+    template: "org.html"
