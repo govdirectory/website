@@ -1,0 +1,30 @@
+# expected_result_count: 112
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q837 AS ?country)
+
+  VALUES ?type {
+    wd:Q22049119 # province of Nepal (7)
+    wd:Q45113733 # provincial assemblies (7)
+    wd:Q2537537 # district of Nepal (77)
+    wd:Q119359264 # ministry of Nepal (21)
+  }
+
+  ?org wdt:P31 ?type ; wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P582 [] }
+
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,ne" }
+}
+ORDER BY ?type ?orgLabel
