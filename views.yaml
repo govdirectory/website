@@ -7,6 +7,8 @@ views:
     template: "404.html"
   - output: "tools/index.html"
     template: "tools.html"
+  - output: "standard-for-public-code/index.html"
+    template: "standard-for-public-code.html"
 
   - output: "statistics/index.html"
     query: "countries.rq"
