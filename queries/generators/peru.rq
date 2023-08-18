@@ -1,0 +1,23 @@
+# expected_result_count: 240
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q419 AS ?country)
+  VALUES ?type { 
+    wd:Q6017592 # ministries (19)
+    wd:Q861184 # regions (25)
+    wd:Q509686 # provinces (196) 
+  }
+  ?org wdt:P31 ?type .
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es" }
+}
+ORDER BY ?type ?orgLabel
