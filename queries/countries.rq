@@ -36,6 +36,7 @@ WHERE {
     (wd:Q833 'Malaysia' 'malaysia' 'Current content includes federal territories, ministries, states and districts.')
     (wd:Q213 'Czech Republic' 'czech-republic' 'Current content includes ministries, regions and municipalities with expanded powers.')
     (wd:Q837 'Nepal' 'nepal' 'Current content includes ministries, provinces, districts and provincial assemblies.')
+    (wd:Q419 'Peru' 'peru' 'Current content includes ministries, regions and provinces.')
   }
 
   OPTIONAL {

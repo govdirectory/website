@@ -120,3 +120,6 @@ views:
   - output: "nepal/{{qid}}/index.html"
     query: "generators/nepal.rq"
     template: "org.html"
+  - output: "peru/{{qid}}/index.html"
+    query: "generators/peru.rq"
+    template: "org.html"
