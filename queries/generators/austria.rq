@@ -1,0 +1,32 @@
+# expected_result_count: 2208
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q40 AS ?country)
+
+  VALUES ?type {
+   wd:Q18683469 # Austrian government federal ministry (Bundesministerium) (12)
+   wd:Q261543 # Austrian federated states (Bundeländer) (9)
+   wd:Q871419 #Austrian regional districts (94)
+   wd:Q667509 # municipality of Austria (2093)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P31 wd:Q19953632 }
+  MINUS { ?org wdt:P31 wd:Q15893266 }
+  MINUS { ?org p:P31 ?p. ?p pq:P582 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de" }
+}
+ORDER BY ?type ?orgLabel
