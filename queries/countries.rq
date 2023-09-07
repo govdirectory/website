@@ -37,6 +37,7 @@ WHERE {
     (wd:Q213 'Czech Republic' 'czech-republic' 'Current content includes ministries, regions and municipalities with expanded powers.')
     (wd:Q837 'Nepal' 'nepal' 'Current content includes ministries, provinces, districts and provincial assemblies.')
     (wd:Q419 'Peru' 'peru' 'Current content includes ministries, regions and provinces.')
+    (wd:40 'Austria' 'austria' 'Current content includes ministries, federated states, districts and municipalities.')
   }
 
   OPTIONAL {
@@ -57,7 +58,7 @@ WHERE {
 
   SERVICE wikibase:label {
     # this might need to be updated when new countries are added
-    bd:serviceParam wikibase:language "en,sv" .
+    bd:serviceParam wikibase:language "en,sv,de" .
     ?headOfState rdfs:label ?headOfStateLabel .
     ?headOfGov rdfs:label ?headOfGovLabel .
     ?typeOfGov rdfs:label ?typeOfGovLabel .
