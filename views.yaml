@@ -123,3 +123,6 @@ views:
   - output: "peru/{{qid}}/index.html"
     query: "generators/peru.rq"
     template: "org.html"
+  - output: "austria/{{qid}}/index.html"
+    query: "generators/austria.rq"
+    template: "org.html"
