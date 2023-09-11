@@ -1,0 +1,1600 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Standard for Public Code - Govdirectory</title>
+
+    <link rel="canonical" href="https://www.govdirectory.org/standard-for-public-code/">
+
+    <link rel="preload" href="/font/ubuntu-regular.woff2" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: "Ubuntu";
+            src: url("/font/ubuntu-regular.woff2") format("woff2"),
+                 url("/font/ubuntu-regular.woff") format("woff"),
+                 url("/font/ubuntu-regular.ttf") format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Ubuntu";
+            src: url("/font/ubuntu-light.woff2") format("woff2"),
+                 url("/font/ubuntu-light.woff") format("woff"),
+                 url("/font/ubuntu-light.ttf") format("truetype");
+            font-weight: 100;
+            font-display: swap;
+        }
+    </style>
+    <link rel="stylesheet" href="/main.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#094082"/>
+
+    <meta property="og:image" content="/og-banner.jpg" />
+    <meta property="og:image:width" content="628" />
+    <meta property="og:image:height" content="1200" />
+
+    <meta name="twitter:site" content="@govdirectory">
+    <meta name="generator" content="Snowman v0.4.0-development">
+    <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
+
+    
+
+    <noscript>
+        <style>
+            .need-js {
+                display: none;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body>
+
+    <nav>
+        <ul class="container">
+            <li><a class="no-decoration" href="/"><img title="Home" src="/logo-white.svg" width="20" height="24"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
+            <li><a class="no-decoration" href="/countries/">Countries</a></li>
+            <li><a class="no-decoration" href="/topics/">Topics</a></li>
+            <li><a class="no-decoration" href="/about/">About</a></li>
+        </ul>
+    </nav>
+
+    
+<main class="container">
+    <h1>Govdirectory and the Standard for Public Code version 0.7.0</h1>
+    
+<h2><a href="https://standard.publiccode.net/criteria/code-in-the-open.html" class="dark-link">Code in the open</a></h2>
+
+&#9745; criterion met.
+
+<table id="code-in-the-open" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+All source code for any policy in use (unless used for fraud detection) MUST be published and publicly accessible.
+</td>
+<td>
+No policy.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+All source code for any software in use (unless used for fraud detection) MUST be published and publicly accessible.
+</td>
+<td>
+All source code is available in GitHub.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase MUST NOT contain sensitive information regarding users, their organization or third parties.
+</td>
+<td>
+The content is coming from Wikidata.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Any source code not currently in use (such as new versions, proposals or older versions) SHOULD be published.
+</td>
+<td>
+All source code is available in GitHub.
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Documenting which source code or policy underpins any specific interaction the general public may have with an organization is OPTIONAL.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/bundle-policy-and-source-code.html" class="dark-link">Bundle policy and source code</a></h2>
+
+&#9745; criterion met.
+
+<table id="bundle-policy-and-source-code" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+N/A
+</td>
+<td>
+The codebase MUST include the policy that the source code is based on.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+N/A
+</td>
+<td>
+If a policy is based on source code, that source code MUST be included in the codebase, unless used for fraud detection.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+N/A
+</td>
+<td>
+Policy SHOULD be provided in machine readable and unambiguous formats.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+N/A
+</td>
+<td>
+Continuous integration tests SHOULD validate that the source code and the policy are executed coherently.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/make-the-codebase-reusable-and-portable.html" class="dark-link">Make the codebase reusable and portable</a></h2>
+
+&#9744; criterion met.
+
+<table id="make-the-codebase-reusable-and-portable" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+
+</td>
+<td>
+The codebase MUST be developed to be reusable in different contexts.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase MUST be independent from any secret, undisclosed, proprietary or non-open licensed code or services for execution and understanding.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The codebase SHOULD be in use by multiple parties.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The roadmap SHOULD be influenced by the needs of multiple parties.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The development of the codebase SHOULD be a collaboration between multiple parties.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Configuration SHOULD be used to make code adapt to context specific needs.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The codebase SHOULD be localizable.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Code and its documentation SHOULD NOT contain situation-specific information.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Codebase modules SHOULD be documented in such a way as to enable reuse in codebases in other contexts.
+</td>
+<td>
+Almost there, but could be improved.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The code SHOULD NOT require services or platforms available from only a single vendor.
+</td>
+<td>
+While Wikidata is primary, queries could be made to another Wikibase with replicated/mirrored data.
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/welcome-contributors.html" class="dark-link">Welcome contributors</a></h2>
+
+&#9744; criterion met.
+
+<table id="welcome-contributors" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase MUST allow anyone to submit suggestions for changes to the codebase.
+</td>
+<td>
+<a href="https://github.com/govdirectory/website/pulls">Pull requests</a> are open.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase MUST include contribution guidelines explaining what kinds of contributions are welcome and how contributors can get involved, for example in a `CONTRIBUTING` file.
+</td>
+<td>
+<a href="https://github.com/govdirectory/website/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The codebase MUST document the governance of the codebase, contributions and its community, for example in a `GOVERNANCE` file.
+</td>
+<td>
+There is a <a href="https://github.com/govdirectory/website#maintainers">maintainers</a> section, but it could be more explicit what it means.
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The contribution guidelines SHOULD document who is expected to cover the costs of reviewing contributions.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase SHOULD advertise the committed engagement of involved organizations in the development and maintenance.
+</td>
+<td>
+The <a href="https://github.com/govdirectory/website#maintainers">maintainers</a> section and <a href="https://github.com/govdirectory/website#acknowledgements">acknowledgements</a> section covers it.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase SHOULD have a publicly available roadmap.
+</td>
+<td>
+There is a <a href="https://github.com/orgs/govdirectory/projects/2">roadmap board</a> but it needs to be updated.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase SHOULD publish codebase activity statistics.
+</td>
+<td>
+<a href="https://github.com/govdirectory/website/pulse">GitHub pulse</a>
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Including a code of conduct for contributors in the codebase is OPTIONAL.
+</td>
+<td>
+<a href="https://github.com/govdirectory/website/blob/main/CODE_OF_CONDUCT.md">CODE OF CONDUCT</a>
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/make-contributing-easy.html" class="dark-link">Make contributing easy</a></h2>
+
+&#9744; criterion met.
+
+<table id="make-contributing-easy" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase MUST have a public issue tracker that accepts suggestions from anyone.
+</td>
+<td>
+<a href="https://github.com/govdirectory/website/issues">GitHub issues</a> are open and used.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The documentation MUST link to both the public issue tracker and submitted codebase changes, for example in a `README` file.
+</td>
+<td>
+GitHub
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase MUST have communication channels for users and developers, for example email lists.
+</td>
+<td>
+<a href="https://github.com/govdirectory/website/discussions">GitHub discussions</a>
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+There MUST be a way to report security issues for responsible disclosure over a closed channel.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The documentation MUST include instructions for how to report potentially security sensitive issues.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/maintain-version-control.html" class="dark-link">Maintain version control</a></h2>
+
+&#9744; criterion met.
+
+<table id="maintain-version-control" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+All files in the codebase MUST be version controlled.
+</td>
+<td>
+Git
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+All decisions MUST be documented in commit messages.
+</td>
+<td>
+In <a href="https://github.com/govdirectory/website/blob/main/CONTRIBUTING.md#1-make-your-changes">CONTRIBUTING</a> guidelines.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Every commit message MUST link to discussions and issues wherever possible.
+</td>
+<td>
+In <a href="https://github.com/govdirectory/website/blob/main/CONTRIBUTING.md#1-make-your-changes">CONTRIBUTING</a> guidelines.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase SHOULD be maintained in a distributed version control system.
+</td>
+<td>
+Git
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Contribution guidelines SHOULD require contributors to group relevant changes in commits.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Maintainers SHOULD mark released versions of the codebase, for example using revision tags or textual labels.
+</td>
+<td>
+Versions are not used yet.
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Contribution guidelines SHOULD encourage file formats where the changes within the files can be easily viewed and understood in the version control system.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+It is OPTIONAL for contributors to sign their commits and provide an email address, so that future contributors are able to contact past contributors with questions about their work.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/require-review-of-contributions.html" class="dark-link">Require review of contributions</a></h2>
+
+&#9744; criterion met.
+
+<table id="require-review-of-contributions" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+All contributions that are accepted or committed to release versions of the codebase MUST be reviewed by another contributor.
+</td>
+<td>
+In <a href="https://github.com/govdirectory/website/blob/main/CONTRIBUTING.md#3-improve">CONTRIBUTING</a> guidelines.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Reviews MUST include source, policy, tests and documentation.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Reviewers MUST provide feedback on all decisions to not accept a contribution.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The review process SHOULD confirm that a contribution conforms to the standards, architecture and decisions set out in the codebase in order to pass review.
+</td>
+<td>
+Needs to be documented.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Reviews SHOULD include running both the code and the tests of the codebase.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Contributions SHOULD be reviewed by someone in a different context than the contributor.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Version control systems SHOULD NOT accept non-reviewed contributions in release versions.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Reviews SHOULD happen within two business days.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Performing reviews by multiple reviewers is OPTIONAL.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/document-codebase-objectives.html" class="dark-link">Document codebase objectives</a></h2>
+
+&#9745; criterion met.
+
+<table id="document-codebase-objectives" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase MUST contain documentation of its objectives, like a mission and goal statement, that is understandable by developers and designers so that they can use or contribute to the codebase.
+</td>
+<td>
+In <a href="https://github.com/govdirectory/website/blob/main/CONTRIBUTING.md#direction">CONTRIBUTING</a> guidelines (and on <a href="https://www.govdirectory.org/about/">website</a>).
+</td>
+</tr>
+
+<tr>
+<td>
+N/A
+</td>
+<td>
+Codebase documentation SHOULD clearly describe the connections between policy objectives and codebase objectives.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Documenting the objectives of the codebase for the general public is OPTIONAL.
+</td>
+<td>
+On <a href="https://www.govdirectory.org/about/">website</a> and in <a href="https://github.com/govdirectory/website/tree/main#readme">README</a>.
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/document-the-code.html"  class="dark-link">Document the code</a></h2>
+
+&#9744; criterion met.
+
+<table id="document-the-code" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+All of the functionality of the codebase, policy as well as source, MUST be described in language clearly understandable for those that understand the purpose of the code.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The documentation of the codebase MUST contain a description of how to install and run the source code.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The documentation of the codebase MUST contain examples demonstrating the key functionality.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The documentation of the codebase SHOULD contain a high level description that is clearly understandable for a wide audience of stakeholders, like the general public and journalists.
+</td>
+<td>
+In <a href="https://github.com/govdirectory/website/tree/main#readme">README</a>, but can be clearer.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The documentation of the codebase SHOULD contain a section describing how to install and run a standalone version of the source code, including, if necessary, a test dataset.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The documentation of the codebase SHOULD contain examples for all functionality.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The documentation SHOULD describe the key components or modules of the codebase and their relationships, for example as a high level architectural diagram.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+There SHOULD be continuous integration tests for the quality of the documentation.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Including examples that make users want to immediately start using the codebase in the documentation of the codebase is OPTIONAL.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/use-plain-english.html" class="dark-link">Use plain English</a></h2>
+
+&#9744; criterion met.
+
+<table id="use-plain-english" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+All codebase documentation MUST be in English.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+All code MUST be in English, except where policy is machine interpreted as code.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+N/A
+</td>
+<td>
+All bundled policy not available in English MUST have an accompanying summary in English.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+N/A
+</td>
+<td>
+Any translation MUST be up to date with the English version and vice versa.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+There SHOULD be no acronyms, abbreviations, puns or legal/non-English/domain specific terms in the codebase without an explanation preceding it or a link to an explanation.
+</td>
+<td>
+Some acronyms used, need to be checked.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Documentation SHOULD aim for a lower secondary education reading level, as recommended by the <a href="https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=315#readable">Web Content Accessibility Guidelines 2</a>.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Providing a translation of any code, documentation or tests is OPTIONAL.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/use-open-standards.html" class="dark-link">Use open standards</a></h2>
+
+&#9744; criterion met.
+
+<table id="use-open-standards" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+For features of the codebase that facilitate the exchange of data the codebase MUST use an open standard that meets the <a href="https://opensource.org/osr">Open Source Initiative Open Standard Requirements</a>.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+N/A
+</td>
+<td>
+Any non-open standards used MUST be recorded clearly as such in the documentation.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Any standard chosen for use within the codebase MUST be listed in the documentation with a link to where it is available.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Any non-open standards chosen for use within the codebase MUST NOT hinder collaboration and reuse.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+If no existing open standard is available, effort SHOULD be put into developing one.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Open standards that are machine testable SHOULD be preferred over open standards that are not.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+N/A
+</td>
+<td>
+Non-open standards that are machine testable SHOULD be preferred over non-open standards that are not.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/use-continuous-integration.html" class="dark-link">Use continuous integration</a></h2>
+
+&#9744; criterion met.
+
+<table id="use-continuous-integration" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+
+</td>
+<td>
+All functionality in the source code MUST have automated tests.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Contributions MUST pass all automated tests before they are admitted into the codebase.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The codebase MUST have guidelines explaining how to structure contributions.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase MUST have active contributors who can review contributions.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Automated test results for contributions SHOULD be public.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The codebase guidelines SHOULD state that each contribution should focus on a single issue.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Source code test and documentation coverage SHOULD be monitored.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Testing policy and documentation for consistency with the source and vice versa is OPTIONAL.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Testing policy and documentation for style and broken links is OPTIONAL.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Testing the code by using examples in the documentation is OPTIONAL.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/publish-with-an-open-license.html" class="dark-link">Publish with an open license</a></h2>
+
+&#9744; criterion met.
+
+<table id="publish-with-an-open-license" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+All code and documentation MUST be licensed such that it may be freely reusable, changeable and redistributable.
+</td>
+<td>
+<a href="https://github.com/govdirectory/website/blob/main/LICENSE">CC0 1.0</a>
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Software source code MUST be licensed under an <a href="https://spdx.org/licenses/">OSI-approved or FSF Free/Libre license</a>.
+</td>
+<td>
+<a href="https://github.com/govdirectory/website/blob/main/LICENSE">CC0 1.0</a>
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+All code MUST be published with a license file.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Contributors MUST NOT be required to transfer copyright of their contributions to the codebase.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+All source code files in the codebase SHOULD include a copyright notice and a license header that are machine-readable.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Having multiple licenses for different types of code and documentation is OPTIONAL.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/make-the-codebase-findable.html" class="dark-link">Make the codebase findable</a></h2>
+
+&#9744; criterion met.
+
+<table id="make-the-codebase-findable" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+Ok
+</td>
+<td>
+The name of the codebase SHOULD be descriptive and free from acronyms, abbreviations, puns or organizational branding.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase SHOULD have a short description that helps someone understand what the codebase is for or what it does.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Maintainers SHOULD submit the codebase to relevant software catalogs.
+</td>
+<td>
+<a href="https://digitalpublicgoods.net/registry/govdirectory.html">Digital Public Goods Registry</a> and <a href="https://directory.civictech.guide/listing/govdirectory">Civic Tech Field Guide</a>.
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase SHOULD have a website which describes the problem the codebase solves using the preferred jargon of different potential users of the codebase (including technologists, policy experts and managers).
+</td>
+<td>
+<a href="https://www.govdirectory.org/">govdirectory.org</a>
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase SHOULD be findable using a search engine by codebase name.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase SHOULD be findable using a search engine by describing the problem it solves in natural language.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase SHOULD have a unique and persistent identifier where the entry mentions the major contributors, repository location and website.
+</td>
+<td>
+<a href="https://www.wikidata.org/entity/Q108109790">Wikidata: Q108109790</a>
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The codebase SHOULD include a machine-readable metadata description, for example in a <a href="https://github.com/publiccodeyml/publiccode.yml">publiccode.yml</a> file.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+A dedicated domain name for the codebase is OPTIONAL.
+</td>
+<td>
+<a href="https://www.govdirectory.org/">govdirectory.org</a>
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+Regular presentations at conferences by the community are OPTIONAL.
+</td>
+<td>
+<a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory/Events">Events listing</a>
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/use-a-coherent-style.html" class="dark-link">Use a coherent style</a></h2>
+
+&#9744; criterion met.
+
+<table id="use-a-coherent-style" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+
+</td>
+<td>
+The codebase MUST use a coding or writing style guide, either the codebase community's own or an existing one referred to in the codebase.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Contributions SHOULD pass automated tests on style.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The style guide SHOULD include expectations for inline comments and documentation for non-trivial sections.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Including expectations for <a href="https://standard.publiccode.net/criteria/use-plain-english.html">understandable English</a> in the style guide is OPTIONAL.
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<h2><a href="https://standard.publiccode.net/criteria/document-codebase-maturity.html" class="dark-link">Document codebase maturity</a></h2>
+
+&#9744; criterion met.
+
+<table id="document-codebase-maturity" style="width:100%">
+<tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
+<tr>
+<td>
+
+</td>
+<td>
+The codebase MUST be versioned.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+Ok
+</td>
+<td>
+The codebase MUST prominently document whether or not there are versions of the codebase that are ready to use.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+Codebase versions that are ready to use MUST only depend on versions of other codebases that are also ready to use.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The codebase SHOULD contain a log of changes from version to version, for example in the `CHANGELOG`.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+The method for assigning version identifiers SHOULD be documented.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+It is OPTIONAL to use semantic versioning.
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+</main>
+
+
+    <footer>
+        <div class="footer-table container">
+            <div class="column">
+                <p class="footer-header">Govdirectory</p>
+                <ul class="list-unstyled">
+                    <li><a class="no-decoration" href="/about/">About</a></li>
+
+                    <li><a class="no-decoration"href="https://wikis.world/@govdirectory">Mastodon</a></li>
+
+                    <li><a class="no-decoration" href="https://twitter.com/govdirectory">Twitter</a></li>
+
+                    <li><a class="no-decoration" href="/statistics/">Statistics</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <p class="footer-header">Join the community</p>
+                <ul class="list-unstyled">
+                    <li><a class="no-decoration" href="https://github.com/govdirectory">Github</a></li>
+
+                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Improve the data</a></li>
+
+                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory/Events">Events</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <p class="footer-header">License information</p>
+                <ul class="list-unstyled">
+
+                    <li>All data is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0 1.0 Universal</a>.</li>
+                    <li>For images and other resources, see <a href="https://github.com/govdirectory/website#license" rel="license">Github</a>.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-end">
+            <a title="Go to Govdirectory's main page" href="/"><img aria-hidden="true" src="/logo-white.svg" alt="" height="60" width="50"></a>
+            <div>
+                <a title="Digital Public Goods" href="https://digitalpublicgoods.net/registry/govdirectory.html"><img aria-hidden="true" height="33" width="69" src="/dpgbadge.svg"></a>
+                <a title="Powered by Wikidata" href="https://www.wikidata.org"><img aria-hidden="true" height="33" width="120" class="white-bg" src="/wikidatafooter.svg"></a>
+            </div>
+        </div>
+    </footer> 
+    
+    
+    <script>
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://matomo.wikimedia.se/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true; g.src=u+'matomo.js'; g.crossorigin='anonymous'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
