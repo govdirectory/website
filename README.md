@@ -8,15 +8,15 @@ The goal is for this directory to be useful to journalists, web-archivists, rese
 
 ## Development setup
 
-Govdirectory is a static site meaning that it already has all of its pages generated when a visitor visits it. Govdirectory uses Snowman and SPARQL to do this.
+Govdirectory is a static site meaning that it already has all of its pages generated when a visitor visits it. Govdirectory uses Snowman and [SPARQL](https://www.w3.org/TR/sparql11-query/) to do this.
 
-Because each initial build of Snowman issues thousands (yes thousands) of SPARQL queries one should never make an **initial** build against `query.wikidata.org` but rather against a local WDQS instance. However, because setting up a WDQS instance is nontrival we provide a copy of a [Snowman build cache directory](https://github.com/govdirectory/website-cache). If in use, this will ensure Snowman only queries Wikidata when a query is updated.
+Because each initial build of Snowman issues thousands (yes thousands) of SPARQL queries one should never make an **initial** build against `query.wikidata.org` but rather against a local Wikidata Query Service (WDQS) instance. However, because setting up a WDQS instance is nontrival we provide a copy of a [Snowman build cache directory](https://github.com/govdirectory/website-cache). If in use, this will ensure Snowman only queries Wikidata when a query is updated.
 
 ### Prerequisites
 
  - [Git](https://git-scm.com/)
  - [Snowman](https://github.com/glaciers-in-archives/snowman)
- - **Optinally**: A local Wikidata Query Service (WDQS) instance 
+ - **Optionally**: A local WDQS instance 
 
 1\. Clone the project:
 ```shell
