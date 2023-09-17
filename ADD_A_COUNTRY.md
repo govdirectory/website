@@ -84,7 +84,7 @@ The section above illustrates which variables are expected by Govdirectory, one 
   BIND(wd:Q34 AS ?country)
 ```
 
-This line connects the query to a country in Wikidata, it's used to connect this query to the country configuration. Update the Q-identifier.
+This line connects the query to a country in Wikidata, it's used to connect this query to the country configuration. Update the Wikidata identifier (Q-id).
 
 ```sparql
   VALUES ?type {
