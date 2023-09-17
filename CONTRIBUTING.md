@@ -52,7 +52,18 @@ Document choices or decisions you make in the commit message, this will enable e
 If you are adding code, make sure you've added and updated the relevant documentation and tests before you submit your pull request.
 Make sure to write tests that show the behavior of the newly added or changed code.
 
+#### Standards to follow
+
+These are the standards that Govdirectory uses.
+Please make sure that your contributions are aligned with them so that they can be merged more easily.
+
+* [Web Content Accessibility Guidelines 2.2](https://www.w3.org/TR/WCAG22/)
+* [Standard Readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md) (applicable for the README file only)
+* [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) extended format for dates (e.g. 2023-09-17)
+
 For icons, we are using the libraries [Maki](https://labs.mapbox.com/maki-icons/) and [Temaki](https://ideditor.github.io/temaki/docs/) for a consistent style. If you can't find a usable icon in those sets, try to emulate their style or find other icons similar to it.
+
+While we haven't committed to be fully compliant with the [Standard for Public Code](https://standard.publiccode.net) we would appreciate if contributions brings Govdirectory closer to meeting it rather than make it deviate further.
 
 ### 2. Pull request
 
