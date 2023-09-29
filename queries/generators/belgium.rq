@@ -30,7 +30,7 @@ UNION
 {
   VALUES ?type {
     wd:Q121856465 # delegations (8) ✔
-    wd:Q112307194 # general consulates (15) ✔
+    wd:Q112307194 # consulate generals (15) ✔
     wd:Q3917681 # embassies (83) ✔
 }
 ?org wdt:P31 ?type; wdt:P137 ?country .
