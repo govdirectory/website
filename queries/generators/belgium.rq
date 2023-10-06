@@ -37,9 +37,11 @@ UNION
 }
 UNION
 {
-  VALUES ?org {
-    wd:Q23043487 # Belgian Office Taipei (1) ✔
-}}
+  VALUES ?type {
+    wd:Q5244910 #  de facto embassy (1)
+  }
+  ?org wdt:P31 ?type; wdt:P17 wd:Q865; wdt:P137 ?country .
+}
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P582 [] }
