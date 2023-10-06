@@ -1,14 +1,14 @@
-# expected_result_count: 875
+# expected_result_count: 982
 SELECT DISTINCT
-  ?qid
-  ?orgLabel
-  ?orgDescription
-  ?type
-  ?typeLabel
-  ?country
+?qid
+?orgLabel
+?orgDescription
+?type
+?typeLabel
+?country
 WHERE {
    BIND(wd:Q31 AS ?country)
-
+{
   VALUES ?type {
     wd:Q2288140 # Federal Scientific Institutes (13)
     wd:Q107637441 # Public Institution of Social Security (12)
@@ -21,19 +21,33 @@ WHERE {
     wd:Q83057 # regions (4)
     wd:Q83116 # extant provinces (10)
     wd:Q2621126 # police zones (183)
-    wd:Q3575878 # emergency zones (34)
+    wd:Q3575878 # emergency zones (35)
     wd:Q493522 # municipalities (581)
+}
+?org wdt:P31 ?type; wdt:P17 ?country .
+}
+UNION
+{
+  VALUES ?type {
+    wd:Q121856465 # delegations (8) ✔
+    wd:Q112307194 # consulate generals (15) ✔
+    wd:Q3917681 # embassies (83) ✔
+}
+?org wdt:P31 ?type; wdt:P137 ?country .
+}
+UNION
+{
+  VALUES ?type {
+    wd:Q5244910 #  de facto embassy (1)
   }
-  ?org wdt:P31 ?type .
-
-  ?org wdt:P17 ?country .
-
+  ?org wdt:P31 ?type; wdt:P17 wd:Q865; wdt:P137 ?country .
+}
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P582 [] }
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl,fr" }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl,fr,de" }
 }
 ORDER BY ?type ?orgLabel
