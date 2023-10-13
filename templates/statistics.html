@@ -40,6 +40,10 @@
             {{- $other_contact_points = add1 $other_contact_points -}}
         {{- end -}}
 
+        {{- if $org_details.contactPage -}}
+            {{- $other_contact_points = add1 $other_contact_points -}}
+        {{- end -}}
+
         {{- if $org_details.citizensInitiatives -}}
             {{- $other_contact_points = add1 $other_contact_points -}}
         {{- end -}}
