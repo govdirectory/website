@@ -100,6 +100,11 @@
                     <a class="btn" href="{{ $details.email }}">Send an email</a>
                 </div>
                 {{- end -}}
+                {{- if $details.contactPage -}}
+                <div>
+                    <a class="btn" href="{{ $details.contactPage }}">Visit contact page</a>
+                </div>
+                {{- end -}}
                 {{- if $details.foiUrl -}}
                 <div>
                     <a class="btn" href="{{ $details.foiUrl }}">Make a freedom of information request</a>
