@@ -1,0 +1,28 @@
+# expected_result_count: 86
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q189 AS ?country)
+  VALUES ?type {
+    wd:Q119788347 # Icelandic ministry (12)
+    wd:Q955655 # Icelandic local municipality (64)
+    wd:Q190752 # Supreme court (1)
+    wd:Q4959031 # Appelate court (1)
+    wd:Q75029 # District courts (8)
+  }
+  ?org wdt:P31 ?type .
+  ?org wdt:P17 ?country .
+  
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,is" }
+}
+ORDER BY ?type ?orgLabel
