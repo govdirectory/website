@@ -25,7 +25,7 @@ WHERE {
       wd:Q190752 # supreme court (2) ✔
       wd:Q1289455 # administrative court of appeal (4) ✔
       wd:Q18292311 # migration court (4) ✔
-      wd:Q1053089 # regional rent tribunal (8) ✔
+      wd:Q10530889 # regional rent tribunal (8) ✔
     }
 
     ?org wdt:P31 ?type; wdt:P17 ?country .
