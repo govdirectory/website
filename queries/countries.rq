@@ -38,6 +38,7 @@ WHERE {
     (wd:Q837 'Nepal' 'nepal' 'Current content includes ministries, provinces, districts and provincial assemblies.')
     (wd:Q419 'Peru' 'peru' 'Current content includes ministries, regions and provinces.')
     (wd:Q40 'Austria' 'austria' 'Current content includes ministries, federated states, districts and municipalities.')
+    (wd:Q189 'Iceland' 'iceland' 'Current content includes ministries, courts and municipalities.')
   }
 
   OPTIONAL {
