@@ -144,7 +144,7 @@ section {
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    background: url('header.jpg');
+    background: url('header.webp');
     background-size: cover;
 }
 
@@ -492,43 +492,43 @@ header.topic {
 }
 
 .topic-background.recreation-culture-religion {
-    background-image: url('recreation-culture-religion.jpg');
+    background-image: url('recreation-culture-religion.webp');
 }
 
 .topic-background.health {
-    background-image: url('health.jpg');
+    background-image: url('health.webp');
 }
 
 .topic-background.defense {
-    background-image: url('defense.jpg');
+    background-image: url('defense.webp');
 }
 
 .topic-background.education {
-    background-image: url('education.jpg');
+    background-image: url('education.webp');
 }
 
 .topic-background.environmental-protection {
-    background-image: url('environmental-protection.jpg');
+    background-image: url('environmental-protection.webp');
 }
 
 .topic-background.general-public-services {
-    background-image: url('general-public-services.jpg');
+    background-image: url('general-public-services.webp');
 }
 
 .topic-background.economic-affairs {
-    background-image: url('economic-affairs.jpg');
+    background-image: url('economic-affairs.webp');
 }
 
 .topic-background.housing-community-amenities {
-    background-image: url('housing-community-amenities.jpg');
+    background-image: url('housing-community-amenities.webp');
 }
 
 .topic-background.public-order-safety {
-    background-image: url('public-order-safety.jpg');
+    background-image: url('public-order-safety.webp');
 }
 
 .topic-background.social-protection {
-    background-image: url('social-protection.jpg');
+    background-image: url('social-protection.webp');
 }
 
 
