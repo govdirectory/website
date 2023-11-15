@@ -1,0 +1,28 @@
+# expected_result_count: 92
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q233 AS ?country)
+
+  VALUES ?type {
+    wd:Q119774544 # Ministry of Malta (18)
+    wd:Q7309296 # region of Malta (6)
+    wd:Q719592 # local council of Malta (68)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mt" }
+}
+ORDER BY ?type ?orgLabel
