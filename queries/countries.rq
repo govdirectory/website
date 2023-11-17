@@ -39,6 +39,7 @@ WHERE {
     (wd:Q419 'Peru' 'peru' 'Current content includes ministries, regions and provinces.')
     (wd:Q40 'Austria' 'austria' 'Current content includes ministries, federated states, districts and municipalities.')
     (wd:Q189 'Iceland' 'iceland' 'Current content includes ministries, courts and municipalities.')
+    (wd:Q233 'Malta' 'malta' 'Current content includes ministries, regions and local councils.')
   }
 
   OPTIONAL {

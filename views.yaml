@@ -129,3 +129,7 @@ views:
   - output: "iceland/{{qid}}/index.html"
     query: "generators/iceland.rq"
     template: "org.html"
+  - output: "malta/{{qid}}/index.html"
+    query: "generators/malta.rq"
+    template: "org.html"
+
