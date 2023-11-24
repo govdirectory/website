@@ -10,7 +10,7 @@ WHERE {
   BIND(wd:Q223 AS ?country)
 
   VALUES ?type {
-    wd:Q16511251 # Municipality of Greenland (5)
+    wd:Q16423979 # Municipality of Greenland (5)
   }
 
   ?org wdt:P31 ?type ;
