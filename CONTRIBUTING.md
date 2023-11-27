@@ -63,6 +63,8 @@ Please make sure that your contributions are aligned with them so that they can 
 
 For icons, we are using the libraries [Maki](https://labs.mapbox.com/maki-icons/) and [Temaki](https://ideditor.github.io/temaki/docs/) for a consistent style. If you can't find a usable icon in those sets, try to emulate their style or find other icons similar to it.
 
+For static bitmap images, we prefer using the `.webp` file format to optimize and compress images efficiently. Please consider converting new images to the `.webp` format using tools like TinyPNG or similar. This helps ensure that static images are optimized for website usage from the start, contributing to a faster and more efficient browsing experience.
+
 While we haven't committed to be fully compliant with the [Standard for Public Code](https://standard.publiccode.net) we would appreciate if contributions brings Govdirectory closer to meeting it rather than make it deviate further.
 
 ### 2. Pull request
