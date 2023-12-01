@@ -1,0 +1,37 @@
+# expected_result_count: 203
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q1028 AS ?country)
+{ 
+  VALUES ?type {
+    wd:Q20390905 # ministries (19)
+    wd:Q845643   # regions (12)
+    wd:Q15629582 # provinces (62)
+    wd:Q15623950 # prefecture (13)
+  }
+  ?org wdt:P31 ?type .
+  ?org wdt:P17 ?country .
+} UNION {
+  VALUES ?type { 
+    wd:Q3917681 # embassies (97) 
+  }
+  ?org wdt:P31 ?type .
+  ?org wdt:P137 ?country .
+}
+  
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P3999 [] }
+  MINUS { ?org wdt:P31 wd:Q19953632. }
+  
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,fr" }
+}
+ORDER BY ?type ?orgLabel

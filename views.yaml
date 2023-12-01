@@ -132,4 +132,7 @@ views:
   - output: "malta/{{qid}}/index.html"
     query: "generators/malta.rq"
     template: "org.html"
+  - output: "morocco/{{qid}}/index.html"
+    query: "generators/morocco.rq"
+    template: "org.html"
 
