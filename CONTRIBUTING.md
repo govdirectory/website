@@ -74,6 +74,7 @@ When submitting the pull request, please accompany it with a description of the 
 ### 3. Improve
 
 All contributions have to be reviewed by someone.
+Currently, all reviewing maintainers are volunteers, and will review as fast as we can, but it might take up to a week before you get a reply.
 
 It could be that your contribution can be merged immediately by a maintainer.
 However, usually, a new pull request needs some improvements before it can be merged.
@@ -81,6 +82,9 @@ Other contributors (or helper robots) might have feedback.
 If this is the case the reviewing maintainer will help you improve your documentation and code.
 
 If your documentation and code have passed human review, it is merged.
+
+For reviewers: check that contributions conforms to the standards, over all architecture and other documented decisions, as well as that they are in scope of the project.
+Also check that new or modified queries yield expected results and that it renders well on the website.
 
 ## Improving data on Wikidata
 
