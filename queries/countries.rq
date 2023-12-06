@@ -57,7 +57,10 @@ WHERE {
   OPTIONAL { ?uri wdt:P1705 ?nativeLabel }
 
   ?uri wdt:P3896 ?geoshape .
-
+  OPTIONAL {
+    ?wikipedia schema:about ?org ;
+               schema:isPartOf <https://en.wikipedia.org/> .
+  }
   SERVICE wikibase:label {
     # this might need to be updated when new countries are added
     bd:serviceParam wikibase:language "en,sv,de" .
