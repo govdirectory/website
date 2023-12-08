@@ -58,7 +58,7 @@ WHERE {
 
   ?uri wdt:P3896 ?geoshape .
   OPTIONAL {
-    ?wikipedia schema:about ?org ;
+    ?wikipedia schema:about ?uri ;
                schema:isPartOf <https://en.wikipedia.org/> .
   }
   SERVICE wikibase:label {
