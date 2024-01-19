@@ -2,7 +2,6 @@ SELECT DISTINCT
   ?platformLabel
   ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata
   ?url
-  ?verified
   (?value AS ?account)
 WHERE {
   ?property wdt:P31 wd:Q105388954 ;
@@ -14,9 +13,7 @@ WHERE {
   wd:{{.}} ?wdtClaimPredicate ?statement .
   ?statement ?propValuePredicate ?value .
 
-  OPTIONAL { ?statement pq:P1552 ?quality }
   MINUS { ?statement pq:P582 [] }
-  BIND(IF(BOUND(?quality), IF(?quality = wd:Q28378282, True, False), False) AS ?verified)
 
   BIND(IRI(REPLACE(?formatter, '\\$1', ?value)) AS ?url)
 
