@@ -69,8 +69,7 @@
 const dataTable = document.querySelector('table');
 
 let tsv = '"Name"\t"Govdirectory URL"\t"Type"\t"Accounts"\n';
-Array.from(dataTable.children[0].children).forEach((row, index) => {
-    if (index === 0) return; // header
+Array.from(dataTable.children[1].children).forEach((row, index) => {
     const name = row.children[0].innerText;
     const qid = row.children[0].firstChild.href;
     const type = row.children[2].innerText;
