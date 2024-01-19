@@ -59,7 +59,7 @@
 
     <nav>
         <ul class="container">
-            <li><a class="no-decoration" href="/"><img title="Home" src="/logo-white.svg" width="20" height="24"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
+            <li><a class="no-decoration" href="/"><img loading="lazy" title="Home" src="/logo-white.svg" width="20" height="24"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
             <li><a class="no-decoration" href="/countries/">Countries</a></li>
             <li><a class="no-decoration" href="/topics/">Topics</a></li>
             <li><a class="no-decoration" href="/about/">About</a></li>
@@ -70,7 +70,7 @@
 <div class="container">
     <header class="item">
         <h1 lang="">Bermuda</h1>
-        <p lang=""></p>
+        <p lang="en">Bermuda</p>
         <p lang="">Current content includes ministries, parishes and municipalities.</p>
 
         <div class="header-lower">
@@ -90,7 +90,7 @@
                 </div>
             </div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2023-10-30">2023-10-30</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-01-19">2024-01-19</time>.</p>
     </header>
 </div>
 
@@ -131,7 +131,7 @@
     </tr>
     <tr>
         <td lang="en"><a href="Q113003573/">Ministry of Education of Bermuda</a></td>
-        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/moedbda"><img width="20" height="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/moedbda"><img width="20" height="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UCIXwvvZiabdUWnShewpjX7g"><img width="20" height="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li></ul></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/moedbda"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/moedbda"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UCIXwvvZiabdUWnShewpjX7g"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li></ul></td>
         <td lang="en">Ministry in Bermuda</td>
     </tr>
     <tr>
@@ -181,7 +181,7 @@
     </tr>
     <tr>
         <td lang="en"><a href="Q30985/">Hamilton</a></td>
-        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/citylifebda"><img width="20" height="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/citylifebda/"><img width="20" height="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/CityofHamiltonBDA"><img width="20" height="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UC9pTIiSNl170IsPgqK9vUZQ"><img width="20" height="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li></ul></td>
+        <td><ul><li><a rel="nofollow" title="Twitter" href="https://twitter.com/citylifebda"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/citylifebda"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/CityofHamiltonBDA"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="YouTube" href="https://www.youtube.com/channel/UC9pTIiSNl170IsPgqK9vUZQ"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li></ul></td>
         <td lang="en">municipality of Bermuda</td>
     </tr>
     <tr>
@@ -273,10 +273,10 @@
             </div>
         </div>
         <div class="container footer-end">
-            <a title="Go to Govdirectory's main page" href="/"><img aria-hidden="true" src="/logo-white.svg" alt="" height="60" width="50"></a>
+            <a title="Go to Govdirectory's main page" href="/"><img loading="lazy" aria-hidden="true" src="/logo-white.svg" alt="" height="60" width="50"></a>
             <div>
-                <a title="Digital Public Goods" href="https://digitalpublicgoods.net/registry/govdirectory.html"><img aria-hidden="true" height="33" width="69" src="/dpgbadge.svg"></a>
-                <a title="Powered by Wikidata" href="https://www.wikidata.org"><img aria-hidden="true" height="33" width="120" class="white-bg" src="/wikidatafooter.svg"></a>
+                <a title="Digital Public Goods" href="https://digitalpublicgoods.net/registry/govdirectory.html"><img loading="lazy" aria-hidden="true" height="33" width="69" src="/dpgbadge.svg"></a>
+                <a title="Powered by Wikidata" href="https://www.wikidata.org"><img loading="lazy" aria-hidden="true" height="33" width="120" class="white-bg" src="/wikidatafooter.svg"></a>
             </div>
         </div>
     </footer> 
@@ -285,8 +285,7 @@
 const dataTable = document.querySelector('table');
 
 let tsv = '"Name"\t"Govdirectory URL"\t"Type"\t"Accounts"\n';
-Array.from(dataTable.children[0].children).forEach((row, index) => {
-    if (index === 0) return; 
+Array.from(dataTable.children[1].children).forEach((row, index) => {
     const name = row.children[0].innerText;
     const qid = row.children[0].firstChild.href;
     const type = row.children[2].innerText;
