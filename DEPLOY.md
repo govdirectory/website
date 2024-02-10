@@ -2,7 +2,7 @@
 
 ## Overview
 
-Govdirectory is a static site, meaning that all files are generated pre-deployment. Govdriectory is generated using [Snowman](https://github.com/glaciers-in-archives/snowman) and its `build` command. Using the build command generates a `site` directory. This folder contains all files necessary for the govdirectory.org website.
+Govdirectory is a static site, meaning that all files are generated pre-deployment. Govdirectory is generated using [Snowman](https://github.com/glaciers-in-archives/snowman) and its `build` command. Using the build command generates a `site` directory. This folder contains all files necessary for the govdirectory.org website.
 
 Govdirectory is currently published using [Github Pages](https://pages.github.com/) and its source is the [`gh-pages` branch](https://github.com/govdirectory/website/tree/gh-pages) in this repository. To deploy the site:
 
@@ -26,4 +26,4 @@ Govdirectory contains a helper script to clear the cache for all agencies under 
 
 ### Update all data for a specific SPARQL query
 
-Sometimes you might need to only clear the cache for a specific query. How to do this is described in the [Snowman docummentation](https://github.com/glaciers-in-archives/snowman#invalidate-cache).
+Sometimes you might need to only clear the cache for a specific query. How to do this is described in the [Snowman documentation](https://github.com/glaciers-in-archives/snowman#invalidate-cache).
