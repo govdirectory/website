@@ -9,6 +9,7 @@ SELECT
   ?headOfStateLabel
   ?headOfGovLabel
   ?geoshape
+  ?wikipedia
 WHERE {
   VALUES (?uri ?name ?safeName ?description) {
     (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included.')
@@ -57,7 +58,10 @@ WHERE {
   OPTIONAL { ?uri wdt:P1705 ?nativeLabel }
 
   ?uri wdt:P3896 ?geoshape .
-
+  OPTIONAL {
+    ?wikipedia schema:about ?uri ;
+               schema:isPartOf <https://en.wikipedia.org/> .
+  }
   SERVICE wikibase:label {
     # this might need to be updated when new countries are added
     bd:serviceParam wikibase:language "en,sv,de" .
@@ -66,5 +70,5 @@ WHERE {
     ?typeOfGov rdfs:label ?typeOfGovLabel .
   }
 }
-GROUP BY ?uri ?name ?safeName ?description ?headOfGovLabel ?headOfStateLabel ?geoshape
+GROUP BY ?uri ?name ?safeName ?description ?headOfGovLabel ?headOfStateLabel ?geoshape ?wikipedia
 ORDER BY ?name

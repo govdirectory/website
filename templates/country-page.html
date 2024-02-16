@@ -34,6 +34,7 @@
                     {{- else -}} <span class="text-grey">[missing data]</span>
                     {{- end -}}</li>
                 </ul>
+                {{ if .wikipedia }}<p><a href="{{ .wikipedia }}">Read more on Wikipedia.</a></p>{{ end }}
             </div>
 
             <div class="center-text action-boxes">
