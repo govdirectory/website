@@ -1,5 +1,8 @@
 [
 {{- range $i, $m := $ -}}
+    {{- if ge (len (split $m.safeName "/")) 2 -}}
+        {{- continue -}}
+    {{- end -}}
     {{- if $i -}},{{- end -}}
     ["{{ $m.safeName}}", "{{ $m.geoshape }}", "{{ $m.name }}", "{{ $m.description }}"]
 {{- end -}}
