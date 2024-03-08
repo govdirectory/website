@@ -1,0 +1,70 @@
+# expected_result_count: 214
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+  ?cofog
+WHERE {
+  BIND(wd:Q145 AS ?country)
+
+  {
+	  VALUES ?type {
+		wd:Q21451686 # Scottish local authorities (32)
+		wd:Q83425186 # Scottish NHS boards (14)
+		wd:Q20667323 # Scottish Health and social care partnerships (31)
+		wd:Q108838260 # Scottish executive agencies (9)
+	  }
+      ?org wdt:P31 ?type ;
+           wdt:P17 ?country .
+  }
+  UNION
+  { # More Scottish organizations
+		VALUES ?type {
+			wd:Q3343298  # NDPBs (45)
+			wd:Q55657615 wd:Q524778 wd:Q169180 # commissioners and ombudsmen (7)
+            wd:Q3044788 # non-ministerial government departments (2)
+            wd:Q7139410 # parole board (1)
+            wd:Q1412224 # tribunal (10)
+            wd:Q16931297 # Queen's printer (1)
+		}
+		?org wdt:P31 | wdt:P1454 ?type ;
+	       wdt:P1001 wd:Q22 .
+		MINUS { ?org wdt:P31 wd:Q5532360 }
+        MINUS { ?org wdt:P1001 wd:Q1156248 }
+        MINUS { ?org p:P1001 ?js. ?js pq:P582 [] }
+	}
+	UNION
+	{ # Scottish courts (56)
+     VALUES ?type {
+       wd:Q109768640 # Sheriff district court (39)
+       wd:Q16988501 # Justice of the peace court (6)
+       wd:Q190752 # Supreme court (1)
+       wd:Q4959031 # Appelate court (1)
+       wd:Q7494979 # Sheriff court (6)
+       wd:Q41487 # Court (3)
+    }
+	  ?org wdt:P361 wd:Q4993654 ;
+         wdt:P31 ?type .
+	}
+	UNION
+	{ # Scottish public Corporations (6)
+	  ?org wdt:P31 wd:Q270791 ;
+         wdt:P127 wd:Q32521 ;
+         wdt:P31 ?type .
+	}
+
+  MINUS { ?org wdt:P576 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  OPTIONAL {
+    ?org wdt:P9798/wdt:P279* ?cofog .
+    MINUS { ?cofog wdt:P279 [] }
+  }
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+}
+ORDER BY ?type ?orgLabel
