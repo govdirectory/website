@@ -50,7 +50,7 @@
     {{ $country_orgs := query (join "" "generators/" .safeName.String ".rq") }}
     {{- if (index $country_orgs 0).federalSubjects -}}
     <details>
-        <summary><h2>Federal subjects</h2></summary>
+        <summary>Federal subjects</summary>
         <ul class="box-list">
             {{- range split (index $country_orgs 0).federalSubjects "," -}}
                 {{- $federal_subject_details := split . "|" -}}
