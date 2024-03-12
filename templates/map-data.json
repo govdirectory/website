@@ -1,5 +1,8 @@
 [
 {{- range $i, $m := $ -}}
+    {{- if contains $m.safeName "/" -}}
+        {{- continue -}}
+    {{- end -}}
     {{- if $i -}},{{- end -}}
     ["{{ $m.safeName}}", "{{ $m.geoshape }}", "{{ $m.name }}", "{{ $m.description }}"]
 {{- end -}}

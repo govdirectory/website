@@ -13,6 +13,9 @@
     </div>
     <ul class="box-list">
         {{- range . -}}
+        {{- if contains .safeName "/" -}}
+            {{- continue -}}
+        {{- end -}}
             <li lang="{{ .name.Lang }}"><a href="/{{ .safeName }}/">{{ .name }}</a></li>
         {{- end -}}
     </ul>
