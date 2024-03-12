@@ -7,7 +7,6 @@ SELECT DISTINCT
   ?typeLabel
   ?country
   ?cofog
-  ?federalSubjects
 WHERE {
   BIND(wd:Q145 AS ?country)
 
@@ -25,8 +24,6 @@ WHERE {
     ?org wdt:P9798/wdt:P279* ?cofog .
     MINUS { ?cofog wdt:P279 [] }
   }
-
-  BIND("Scotland|scotland" AS ?federalSubjects)
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
 }
