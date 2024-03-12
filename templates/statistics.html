@@ -12,6 +12,14 @@
     {{- $org_count = add (len $orgs) $org_count -}}
 {{- end -}}
 
+{{- $country_count := 0 -}}
+{{- range . -}}
+    {{- if contains .safeName "/" -}}
+        {{- continue -}}
+    {{- end -}}
+    {{- $country_count = add1 $country_count -}}
+{{- end -}}
+
 {{- $social_count := 0 -}}
 {{- range . -}}
     {{- $country := .safeName.String -}}
@@ -55,7 +63,7 @@
 
     <div class="grid number-container">
         <div class="number">
-            <div>{{ len . }}</div>countries
+            <div>{{ $country_count }}</div>countries
         </div>
 
         <div class="number">
