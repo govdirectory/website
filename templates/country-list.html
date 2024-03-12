@@ -13,7 +13,7 @@
     </div>
     <ul class="box-list">
         {{- range . -}}
-        {{- if ge (len (split .safeName "/")) 2 -}}
+        {{- if contains .safeName "/" -}}
             {{- continue -}}
         {{- end -}}
             <li lang="{{ .name.Lang }}"><a href="/{{ .safeName }}/">{{ .name }}</a></li>

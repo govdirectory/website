@@ -1,6 +1,6 @@
 [
 {{- range $i, $m := $ -}}
-    {{- if ge (len (split $m.safeName "/")) 2 -}}
+    {{- if contains $m.safeName "/" -}}
         {{- continue -}}
     {{- end -}}
     {{- if $i -}},{{- end -}}
