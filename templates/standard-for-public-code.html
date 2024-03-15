@@ -6,7 +6,7 @@
 
 {{ define "main" }}
 <main class="container">
-    <h1>Govdirectory and the Standard for Public Code version 0.7.1</h1>
+    <h1>Govdirectory and the Standard for Public Code version 0.8.0</h1>
     
 <h2><a href="https://standard.publiccode.net/criteria/code-in-the-open.html" class="dark-link">Code in the open</a></h2>
 
@@ -19,10 +19,10 @@
 Ok
 </td>
 <td>
-All source code for any policy in use (unless used for fraud detection) MUST be published and publicly accessible.
+All source code for any software in use (unless used for fraud detection) MUST be published and publicly accessible.
 </td>
 <td>
-No policy.
+All source code is available in GitHub.
 </td>
 </tr>
 
@@ -31,10 +31,10 @@ No policy.
 Ok
 </td>
 <td>
-All source code for any software in use (unless used for fraud detection) MUST be published and publicly accessible.
+All source code for any policy in use (unless used for fraud detection) MUST be published and publicly accessible.
 </td>
 <td>
-All source code is available in GitHub.
+No policy.
 </td>
 </tr>
 
@@ -111,7 +111,7 @@ If a policy is based on source code, that source code MUST be included in the co
 N/A
 </td>
 <td>
-Policy SHOULD be provided in machine readable and unambiguous formats.
+Policy SHOULD be provided in machine-readable and unambiguous formats.
 </td>
 <td>
 
@@ -820,10 +820,34 @@ Including examples that make users want to immediately start using the codebase 
 <tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
 <tr>
 <td>
-Ok
+
 </td>
 <td>
-All codebase documentation MUST be in English.
+The set of authoritative languages for codebase documentation MUST be documented.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+English MUST be one of the authoritative languages.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+N/A
+</td>
+<td>
+All codebase documentation MUST be up to date in all authoritative languages.
 </td>
 <td>
 
@@ -847,19 +871,7 @@ All source code MUST be in English, except where policy is machine interpreted a
 N/A
 </td>
 <td>
-All bundled policy not available in English MUST have an accompanying summary in English.
-</td>
-<td>
-
-</td>
-</tr>
-
-<tr>
-<td>
-N/A
-</td>
-<td>
-Any translation MUST be up to date with the English version and vice versa.
+All bundled policy MUST be available, or have a summary, in all authoritative languages.
 </td>
 <td>
 
@@ -871,7 +883,7 @@ Any translation MUST be up to date with the English version and vice versa.
 Ok
 </td>
 <td>
-There SHOULD be no acronyms, abbreviations, puns or legal/non-English/domain specific terms in the codebase without an explanation preceding it or a link to an explanation.
+There SHOULD be no acronyms, abbreviations, puns or legal/language/domain specific terms in the codebase without an explanation preceding it or a link to an explanation.
 </td>
 <td>
 
@@ -883,7 +895,7 @@ There SHOULD be no acronyms, abbreviations, puns or legal/non-English/domain spe
 Ok
 </td>
 <td>
-Documentation SHOULD aim for a lower secondary education reading level, as recommended by the <a href="https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=315#readable">Web Content Accessibility Guidelines 2</a>.
+Documentation SHOULD aim for a lower secondary education reading level, as recommended by the <a href="https://www.w3.org/WAI/WCAG22/quickref/?showtechniques=315#reading-level">Web Content Accessibility Guidelines 2</a>.
 </td>
 <td>
 
@@ -895,7 +907,7 @@ Documentation SHOULD aim for a lower secondary education reading level, as recom
 
 </td>
 <td>
-Providing a translation of any code, documentation or tests is OPTIONAL.
+Providing additional courtesy translations of any code, documentation or tests is OPTIONAL.
 </td>
 <td>
 
