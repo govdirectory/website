@@ -8,7 +8,7 @@
 Website repository for Govdirectory - a crowdsourced and fact-checked directory of official governmental online accounts and services.
 
 Govdirectory aims to become a global directory of government agencies and their online presence by utilizing Wikidata.
-Wikidatas community, sourceability, versioning, and potential custom tooling that we create will ensure that not only should the information be correct but when it isn't, because of vandalism or something else, users will be able, and suggested, to validate the information.
+Wikidata's community, sourceability, versioning, and potential custom tooling that we create will ensure that not only should the information be correct but when it isn't, because of vandalism or something else, users will be able, and suggested, to validate the information.
 The goal is for this directory to be useful to journalists, web-archivists, researchers and many others, certainly including regular citizens.
 
 ## Development setup
@@ -59,7 +59,7 @@ Besides pinging us in [issues](https://github.com/govdirectory/website/issues), 
 
 This project participated in the [Unlock accelerator program](https://www.wikimedia.de/unlock/) program ([original application](https://www.wikidata.org/wiki/User:Ainali/Social_media_for_public_organizations/Unlock)).
 
-During the accelerator, which ended in October 2021, we defined a Minimale Viable Product (MVP) to: "As an MVP we want to create a working website where people can search, filter, and add data about Swedish and British public institutions and their social media accounts."
+During the accelerator, which ended in October 2021, we defined a Minimal Viable Product (MVP) to: "As an MVP we want to create a working website where people can search, filter, and add data about Swedish and British public institutions and their social media accounts."
 
 Specifically, we want to acknowledge all the help our coach [Fabian Gampp](https://www.fabiangampp.de/) gave to us. Besides general good mentorship, we wouldn't have had such a bold direction of the design of the website without him.
 
