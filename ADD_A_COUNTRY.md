@@ -140,33 +140,49 @@ SELECT
   ?name
   ?safeName
   ?description
+  ?federalSubjects
   (SAMPLE(?website) AS ?website)
   (SAMPLE(?nativeLabel) AS ?nativeLabel)
   (GROUP_CONCAT(DISTINCT ?typeOfGovLabel; separator=",") AS ?typeOfGovList)
   ?headOfStateLabel
   ?headOfGovLabel
+  ?geoshape
+  ?wikipedia
 WHERE {
-  VALUES (?uri ?name ?safeName ?description) {
-    (wd:Q34 'Sweden' 'sweden' 'Current content include municipalities, regional councils, and the courts of appeal.')
-    (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content only includes ministerial departments.')
+  VALUES (?uri ?name ?safeName ?description ?federalSubjects) {
+    (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included.' '')
+    (wd:Q223 'Greenland' 'greenland' 'Current content includes municipalities.' '')
   }
-  
-  OPTIONAL { ?uri wdt:P856 ?website }
+
+  OPTIONAL {
+    ?uri wdt:P856 ?website .
+    ?uri wdt:P37 ?lang .
+    OPTIONAL {
+      ?uri p:P856 ?ws .
+      ?ws pq:P407 ?language .
+      FILTER (?language IN  (?lang, wd:Q1860 ))
+    }
+  }
   OPTIONAL { ?uri wdt:P35 ?headOfState }
   OPTIONAL { ?uri wdt:P6 ?headOfGov }
   OPTIONAL { ?uri wdt:P122 ?typeOfGov }
   OPTIONAL { ?uri wdt:P1705 ?nativeLabel }
-  
+
+  ?uri wdt:P3896 ?geoshape .
+  OPTIONAL {
+    ?wikipedia schema:about ?uri ;
+               schema:isPartOf <https://en.wikipedia.org/> .
+  }
   SERVICE wikibase:label {
     # this might need to be updated when new countries are added
-    bd:serviceParam wikibase:language "en,sv" .
+    bd:serviceParam wikibase:language "en,sv,de" .
     ?headOfState rdfs:label ?headOfStateLabel .
     ?headOfGov rdfs:label ?headOfGovLabel .
     ?typeOfGov rdfs:label ?typeOfGovLabel .
   }
 }
-GROUP BY ?uri ?name ?safeName ?description ?headOfGovLabel ?headOfStateLabel
-
+GROUP BY ?uri ?name ?safeName ?description ?federalSubjects ?headOfGovLabel ?headOfStateLabel ?geoshape ?wikipedia
+ORDER BY ?name
 ```
 
 Note that one can test the query in the Wikidata Query Service.
