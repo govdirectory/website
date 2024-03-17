@@ -51,7 +51,9 @@ Intended to be used through the website at [govdirectory.org](https://govdirecto
 * [Abbe98](https://github.com/Abbe98)
 * [Ainali](https://github.com/Ainali)
 
-Besides pinging us in [issues](https://github.com/govdirectory/website/issues), [pull requests](https://github.com/govdirectory/website/pulls) and [discussions](https://github.com/govdirectory/website/discussions), you can also reach us on Twitter where we are [@Jan_Ainali](https://twitter.com/Jan_Ainali/) and [@AlbinPCLarsson](https://twitter.com/AlbinPCLarsson).
+For now, the maintainers have the final say in all matters, but we are taking all opinions from contributors into consideration.
+When the community grows, we are planning to shift to a governance model with shared responsibilities.
+Besides pinging us in [issues](https://github.com/govdirectory/website/issues), [pull requests](https://github.com/govdirectory/website/pulls) and [discussions](https://github.com/govdirectory/website/discussions), you can also reach us on Mastodon where we are [@ainali](https://social.coop/@ainali) and [@abbe98](https://mastodon.social/@abbe98).
 
 ## Acknowledgements
 
