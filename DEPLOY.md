@@ -4,7 +4,7 @@
 
 Govdirectory is a static site, meaning that all files are generated pre-deployment. Govdirectory is generated using [Snowman](https://github.com/glaciers-in-archives/snowman) and its `build` command. Using the build command generates a `site` directory. This folder contains all files necessary for the govdirectory.org website.
 
-Govdirectory is currently published using [Github Pages](https://pages.github.com/) and its source is the [`gh-pages` branch](https://github.com/govdirectory/website/tree/gh-pages) in this repository. To deploy the site:
+Govdirectory is currently published using [GitHub Pages](https://pages.github.com/) and its source is the [`gh-pages` branch](https://github.com/govdirectory/website/tree/gh-pages) in this repository. To deploy the site:
 
  - Checkout the `gh-pages`.
  - Delete all the contents of that branch(if your are using your file manager, skip `.git`)
@@ -12,7 +12,7 @@ Govdirectory is currently published using [Github Pages](https://pages.github.co
  - Commit all files and changes.
  - Push your commit to origin.
 
-Github will now automatically deploy the site. It might take a while for the changes to go into effect.
+GitHub will now automatically deploy the site. It might take a while for the changes to go into effect.
 
 ## Partial deploys
 
