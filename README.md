@@ -4,6 +4,7 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme)
 [<img src="https://github.com/govdirectory/website/blob/main/static/dpgbadge.svg" width="69"/>](https://digitalpublicgoods.net/registry/govdirectory.html)
+[![Mastodon](https://fedi-badge.deno.dev/@govdirectory@wikis.world/followers.svg?style=flat)](https://wikis.world/@govdirectory)
 
 Website repository for Govdirectory - a crowdsourced and fact-checked directory of official governmental online accounts and services.
 
