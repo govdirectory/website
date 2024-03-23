@@ -73,6 +73,13 @@ When submitting the pull request, please accompany it with a description of the 
 
 ### 3. Improve
 
+#### Tests
+
+Tests must pass before your code will be merged.
+You can run them locally and find them in `scripts/tests`.
+
+#### Reviews
+
 All contributions have to be reviewed by someone.
 Currently, all reviewing maintainers are volunteers, and will review as fast as we can, but it might take up to a week before you get a reply.
 
