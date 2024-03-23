@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: CC0-1.0
+
+name: Test
+on:
+  - push
+  - pull_request
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  cibuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install-deps
+        run: >
+          sudo apt-get install -y
+          aspell
+          aspell-en
+      - run: ./scripts/tests/spell-check.sh
