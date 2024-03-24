@@ -40,7 +40,7 @@
     <meta property="og:image:height" content="1200" />
 
     <meta name="twitter:site" content="@govdirectory">
-    <meta name="generator" content="Snowman v0.5.0-development">
+    <meta name="generator" content="Snowman v0.6.0-development">
     <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
 
     
@@ -67,7 +67,7 @@
 
     
 <main class="container">
-    <h1>Govdirectory and the Standard for Public Code version 0.7.1</h1>
+    <h1>Govdirectory and the Standard for Public Code version 0.8.0</h1>
     
 <h2><a href="https://standard.publiccode.net/criteria/code-in-the-open.html" class="dark-link">Code in the open</a></h2>
 
@@ -80,10 +80,10 @@
 Ok
 </td>
 <td>
-All source code for any policy in use (unless used for fraud detection) MUST be published and publicly accessible.
+All source code for any software in use (unless used for fraud detection) MUST be published and publicly accessible.
 </td>
 <td>
-No policy.
+All source code is available in GitHub.
 </td>
 </tr>
 
@@ -92,10 +92,10 @@ No policy.
 Ok
 </td>
 <td>
-All source code for any software in use (unless used for fraud detection) MUST be published and publicly accessible.
+All source code for any policy in use (unless used for fraud detection) MUST be published and publicly accessible.
 </td>
 <td>
-All source code is available in GitHub.
+No policy.
 </td>
 </tr>
 
@@ -172,7 +172,7 @@ If a policy is based on source code, that source code MUST be included in the co
 N/A
 </td>
 <td>
-Policy SHOULD be provided in machine readable and unambiguous formats.
+Policy SHOULD be provided in machine-readable and unambiguous formats.
 </td>
 <td>
 
@@ -323,7 +323,7 @@ While Wikidata is primary, queries could be made to another Wikibase with replic
 
 <h2><a href="https://standard.publiccode.net/criteria/welcome-contributors.html" class="dark-link">Welcome contributors</a></h2>
 
-&#9744; criterion met.
+&#9745; criterion met.
 
 <table id="welcome-contributors" style="width:100%">
 <tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
@@ -353,13 +353,13 @@ The codebase MUST include contribution guidelines explaining what kinds of contr
 
 <tr>
 <td>
-
+Ok
 </td>
 <td>
 The codebase MUST document the governance of the codebase, contributions and its community, for example in a `GOVERNANCE` file.
 </td>
 <td>
-There is a <a href="https://github.com/govdirectory/website#maintainers">maintainers</a> section, but it could be more explicit what it means.
+In the <a href="https://github.com/govdirectory/website#maintainers">maintainers</a> section.
 </td>
 </tr>
 
@@ -695,7 +695,7 @@ Version control systems SHOULD NOT accept non-reviewed contributions in release 
 Reviews SHOULD happen within two business days.
 </td>
 <td>
-Too small comunity still, current ambition is a week.
+Too small community still, current ambition is a week.
 </td>
 </tr>
 
@@ -881,10 +881,34 @@ Including examples that make users want to immediately start using the codebase 
 <tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
 <tr>
 <td>
-Ok
+
 </td>
 <td>
-All codebase documentation MUST be in English.
+The set of authoritative languages for codebase documentation MUST be documented.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td>
+English MUST be one of the authoritative languages.
+</td>
+<td>
+
+</td>
+</tr>
+
+<tr>
+<td>
+N/A
+</td>
+<td>
+All codebase documentation MUST be up to date in all authoritative languages.
 </td>
 <td>
 
@@ -908,19 +932,7 @@ All source code MUST be in English, except where policy is machine interpreted a
 N/A
 </td>
 <td>
-All bundled policy not available in English MUST have an accompanying summary in English.
-</td>
-<td>
-
-</td>
-</tr>
-
-<tr>
-<td>
-N/A
-</td>
-<td>
-Any translation MUST be up to date with the English version and vice versa.
+All bundled policy MUST be available, or have a summary, in all authoritative languages.
 </td>
 <td>
 
@@ -932,7 +944,7 @@ Any translation MUST be up to date with the English version and vice versa.
 Ok
 </td>
 <td>
-There SHOULD be no acronyms, abbreviations, puns or legal/non-English/domain specific terms in the codebase without an explanation preceding it or a link to an explanation.
+There SHOULD be no acronyms, abbreviations, puns or legal/language/domain specific terms in the codebase without an explanation preceding it or a link to an explanation.
 </td>
 <td>
 
@@ -944,7 +956,7 @@ There SHOULD be no acronyms, abbreviations, puns or legal/non-English/domain spe
 Ok
 </td>
 <td>
-Documentation SHOULD aim for a lower secondary education reading level, as recommended by the <a href="https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=315#readable">Web Content Accessibility Guidelines 2</a>.
+Documentation SHOULD aim for a lower secondary education reading level, as recommended by the <a href="https://www.w3.org/WAI/WCAG22/quickref/?showtechniques=315#reading-level">Web Content Accessibility Guidelines 2</a>.
 </td>
 <td>
 
@@ -956,7 +968,7 @@ Documentation SHOULD aim for a lower secondary education reading level, as recom
 
 </td>
 <td>
-Providing a translation of any code, documentation or tests is OPTIONAL.
+Providing additional courtesy translations of any code, documentation or tests is OPTIONAL.
 </td>
 <td>
 
@@ -1547,7 +1559,7 @@ It is OPTIONAL to use semantic versioning.
             <div class="column">
                 <p class="footer-header">Join the community</p>
                 <ul class="list-unstyled">
-                    <li><a class="no-decoration" href="https://github.com/govdirectory">Github</a></li>
+                    <li><a class="no-decoration" href="https://github.com/govdirectory">GitHub</a></li>
 
                     <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Improve the data</a></li>
 
@@ -1559,7 +1571,7 @@ It is OPTIONAL to use semantic versioning.
                 <ul class="list-unstyled">
 
                     <li>All data is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0 1.0 Universal</a>.</li>
-                    <li>For images and other resources, see <a href="https://github.com/govdirectory/website#license" rel="license">Github</a>.</li>
+                    <li>For images and other resources, see <a href="https://github.com/govdirectory/website#license" rel="license">GitHub</a>.</li>
                 </ul>
             </div>
         </div>

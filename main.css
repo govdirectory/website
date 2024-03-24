@@ -47,6 +47,12 @@ a, a:hover {
     color: #FFF;
 }
 
+summary {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 1em 0 ;
+}
+
 .no-decoration, .no-decoration:hover, .no-decoration:focus {
     text-decoration: none;
 }
