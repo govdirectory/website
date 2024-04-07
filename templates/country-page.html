@@ -6,8 +6,14 @@
 {{ define "canonical" }}/{{ .safeName }}/{{ end }}
 
 {{ define "main" }}
+
+{{- $countryID := ( replace .uri.String "http://www.wikidata.org/entity/" "" 1 ) -}}
 <div class="container">
     <header class="item">
+            <div class="btn-list">
+                <a class="btn rounded wikidata-btn" href="{{ .uri }}" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true"></a>
+                <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+{{`{{`}}Q|{{ $countryID }}{{`}}`}}&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true"></a>
+            </div>
         <h1 lang="{{ .name.Lang }}">{{ .name }}</h1>
         <p lang="{{ .nativeLabel.Lang }}">{{ .nativeLabel }}</p>
         <p lang="{{ .description.Lang }}">{{ .description }}</p>
@@ -35,13 +41,6 @@
                     {{- end -}}</li>
                 </ul>
                 {{ if .wikipedia }}<p><a href="{{ .wikipedia }}">Read more on Wikipedia.</a></p>{{ end }}
-            </div>
-
-            <div class="center-text action-boxes">
-                <div>
-                    <h2>Found an error?</h2>
-                    <a class="btn" href="{{ .uri }}">Edit on Wikidata</a>
-                </div>
             </div>
         </div>
     <p class="timestamp">Data last updated <time datetime="{{ now.Format "2006-01-02" }}">{{ now.Format "2006-01-02" }}</time>.</p>
