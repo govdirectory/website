@@ -2,7 +2,7 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: website
+title: Govdirectory
 message: >-
   To reference the latest version of Govdirectory, please
   cite it as below
@@ -10,10 +10,24 @@ type: software
 authors:
   - given-names: Albin
     family-names: Larsson
+    orcid: 'https://orcid.org/0000-0002-7149-5210'
   - family-names: Ainali
     given-names: Jan
+    orcid: 'https://orcid.org/0000-0001-8747-1670'
+identifiers:
+  - type: other
+    value: Q108109790
+    description: Wikidata
+repository-code: 'https://github.com/govdirectory/website'
 url: 'https://www.govdirectory.org/'
 abstract: >-
   Govdirectory is a crowdsourced and fact-checked directory
   of official governmental online accounts and services
+keywords:
+  - social-media
+  - civictech
+  - wikidata
+  - government-data
+  - opengov
 license: CC0-1.0
+date-released: '2021-06-24'
