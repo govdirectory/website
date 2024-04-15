@@ -1,0 +1,19 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: website
+message: >-
+  To reference the latest version of Govdirectory, please
+  cite it as below
+type: software
+authors:
+  - given-names: Albin
+    family-names: Larsson
+  - family-names: Ainali
+    given-names: Jan
+url: 'https://www.govdirectory.org/'
+abstract: >-
+  Govdirectory is a crowdsourced and fact-checked directory
+  of official governmental online accounts and services
+license: CC0-1.0
