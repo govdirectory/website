@@ -1,0 +1,88 @@
+# This repository adheres to the publiccode.yml standard by including this
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/publiccodeyml/publiccode.yml
+
+publiccodeYmlVersion: "0.3"
+
+name: Govdirectory
+url: "https://github.com/govdirectory/website"
+landingURL: "https://www.govdirectory.org/"
+softwareType: standalone/web
+
+releaseDate: "2024-03-22"
+
+platforms:
+  - web
+categories:
+  - collaboration
+  - knowledge-management
+  - social-media-management
+  - data-collection
+  - data-visualization
+
+developmentStatus: stable
+roadmap: 'https://github.com/orgs/govdirectory/projects/2'
+dependsOn:
+  open:
+    - name: Snowman
+      optional: false
+      versionMin: "0.6.0"
+
+description:
+  en:
+    longDescription: Govdirectory is a crowdsourced and fact-checked directory of official governmental online accounts and services. Govdirectory aims to become a global directory of government agencies and their online presence by utilizing Wikidata. Wikidatas community, sourceability, versioning, and potential custom tooling that we create will ensure that not only should the information be correct but when it isn't, because of vandalism or something else, users will be able, and suggested, to validate the information. The goal is for this directory to be useful to journalists, web-archivists, researchers and many others, certainly including regular citizens.
+    shortDescription: Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services.
+  
+legal:
+    license: CC0-1.0
+    mainCopyrightOwner: Govdirectory
+    repoOwner: Govdirectory
+
+intendedAudience:
+  
+  countries:
+    - at
+    - be
+    - ca
+    - cz
+    - dk
+    - tl
+    - fi
+    - de
+    - gh
+    - gl
+    - is
+    - in
+    - id
+    - lu
+    - my
+    - mt
+    - ma
+    - np
+    - nl
+    - nz
+    - no
+    - pe
+    - ph
+    - ru
+    - sg
+    - za
+    - se
+    - ua
+    - gb
+  
+  scope:
+    - government
+    - local-authorities
+
+localisation:
+  availableLanguages:
+    - en
+  
+  localisationReady: false
+
+maintenance:
+  type: community
+  contacts:
+    - name: Albin Larsson
+    - name: Jan Ainali
