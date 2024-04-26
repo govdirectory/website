@@ -4,6 +4,9 @@ body {
     font-family: "Ubuntu", sans-serif;
     color: #333;
     font-size: .96em;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 ul {
@@ -233,7 +236,7 @@ footer {
     color: #fff;
     padding: 1em;
     height: 100%;
-    margin-top: 2em;
+    margin-top: auto;
 }
 
 .footer-table {
@@ -652,6 +655,7 @@ header.topic {
     .container {
         width: 1000px;
         margin: auto;
+        margin-top: 0%;
     }
 }
 
