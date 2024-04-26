@@ -1,0 +1,89 @@
+# This repository adheres to the publiccode.yml standard by including this
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/publiccodeyml/publiccode.yml
+
+publiccodeYmlVersion: "0.3"
+
+name: Govdirectory
+url: "https://github.com/govdirectory/website"
+landingURL: "https://www.govdirectory.org/"
+softwareType: standalone/web
+
+releaseDate: "1970-01-01"
+
+platforms:
+  - web
+categories:
+  - collaboration
+  - knowledge-management
+  - social-media-management
+  - data-collection
+  - data-visualization
+
+developmentStatus: stable
+roadmap: 'https://github.com/orgs/govdirectory/projects/2'
+dependsOn:
+  open:
+    - name: Snowman
+      optional: false
+      versionMin: "0.6.0"
+
+description:
+  en:
+  # TODO  longDescription: 
+    shortDescription: Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services.
+  
+legal:
+    license: CC0-1.0
+    mainCopyrightOwner: Govdirectory
+    repoOwner: Govdirectory
+
+intendedAudience:
+  
+  countries:
+    - at
+    - be
+    - ca
+    - cz
+    - dk
+    - tl
+    - fi
+    - de
+    - gh
+    - gl
+    - is
+    - in
+    - id
+    - lu
+    - my 
+    - mt
+    - ma
+    - np
+    - nl
+    - nz
+    - no
+    - pe
+    - ph
+    - ru
+    - sg
+    - za
+    - se
+    - ua
+    - gb
+  
+  scope:
+    - government
+    - local-authorities
+
+localisation:
+  availableLanguages:
+    - en
+  
+  localisationReady: false
+
+maintenance:
+  type: community
+  contacts:
+    - name: Albin Larsson    
+    - name: Jan Ainali
+      
