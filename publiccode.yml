@@ -30,7 +30,7 @@ dependsOn:
 
 description:
   en:
-    longDescription: Govdirectory is a crowdsourced and fact-checked directory of official governmental online accounts and services. Govdirectory aims to become a global directory of government agencies and their online presence by utilizing Wikidata. Wikidatas community, sourceability, versioning, and potential custom tooling that we create will ensure that not only should the information be correct but when it isn't, because of vandalism or something else, users will be able, and suggested, to validate the information. The goal is for this directory to be useful to journalists, web-archivists, researchers and many others, certainly including regular citizens.
+    longDescription: Govdirectory is a crowdsourced and fact-checked directory of official governmental online accounts and services. Govdirectory aims to become a global directory of government agencies and their online presence by utilizing Wikidata. Wikidata's community, sourceability, versioning, and potential custom tooling that we create will ensure that not only should the information be correct but when it isn't, because of vandalism or something else, users will be able, and suggested, to validate the information. The goal is for this directory to be useful to journalists, web-archivists, researchers and many others, certainly including regular citizens.
     shortDescription: Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services.
   
 legal:
