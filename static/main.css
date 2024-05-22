@@ -552,7 +552,7 @@ header.topic {
 .spinner > div {
     width: 18px;
     height: 18px;
-    background-color: #e56c4a;
+    background-color: #e66a49;
     border-radius: 100%;
     display: inline-block;
     animation: dots 1.4s infinite ease-in-out both;
