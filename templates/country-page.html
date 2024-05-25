@@ -82,21 +82,23 @@
 <script>
 const dataTable = document.querySelector('table');
 
-let tsv = '"Name"\t"Govdirectory URL"\t"Type"\t"Accounts"\n';
+let tsv = '"Name"\t"Govdirectory URL"\t"Type"\t"Website"\t"Accounts"\n';
 Array.from(dataTable.children[1].children).forEach((row, index) => {
     const name = row.children[0].innerText;
     const qid = row.children[0].firstChild.href;
     const type = row.children[2].innerText;
-    var accounts;
+    var website = '';
+    var accounts = '';
     if (row.children[1].firstChild) {
         accounts = Array.from(row.children[1].firstChild.children).map(item => {
+            if (item.firstChild.title === 'Website') {
+                website = item.firstChild.href;
+            }
             return item.firstChild.href;
         }).join('|');
-    } else {
-        accounts = '';
+        accounts = accounts.replace('||', '|');
     }
-
-    const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + accounts + '"\n';
+    const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + website + '"\t"' + accounts + '"\n';
     tsv += tsvRow;
 });
 

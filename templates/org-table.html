@@ -11,7 +11,7 @@
     {{- range . -}}
     <tr>
         <td lang="{{ .orgLabel.Lang }}"><a href="{{ .qid }}/">{{ .orgLabel }}</a></td>
-        <td>{{ include "components/social-icons.html" (query "account-data.rq" .qid.String) }}</td>
+        <td>{{ include "components/social-icons.html" .qid.String }}</td>
         <td lang="{{ .typeLabel.Lang }}">{{ .typeLabel }}</td>
     </tr>
     {{ end -}}
