@@ -44,7 +44,7 @@
                 {{- if eq $topic .cofog -}}
                     <tr>
                         <td lang="{{ .orgLabel.Lang }}"><a href="/{{ $country }}/{{ .qid }}">{{ .orgLabel }}</a></td>
-                        <td>{{ include "components/social-icons.html" (query "account-data.rq" .qid.String) }}</td>
+                        <td>{{ include "components/social-icons.html" .qid.String }}</td>
                         <td lang="{{ .typeLabel.Lang }}">{{ .typeLabel }}</td>
                         <td><a class="btn rounded" href="/{{ $country }}/">{{ $countryLabel }}</a></td>
                     </tr>
