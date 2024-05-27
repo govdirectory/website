@@ -25,8 +25,8 @@
             <li><a rel="nofollow" title="Instagram" href="{{ .url }}"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li>
         {{- end -}}
     {{- end -}}
-    {{- if ne (sub (len .) $preview_count) 0 -}}
-        <li>+{{ sub (len .) $preview_count }}</li>
+    {{- if ne (sub (len $socialAccounts) $preview_count) 0 -}}
+        <li>+{{ sub (len $socialAccounts) $preview_count }}</li>
     {{- end -}}
 </ul>
 {{- end -}}
