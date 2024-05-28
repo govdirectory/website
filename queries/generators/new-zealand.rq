@@ -1,4 +1,4 @@
-# expected_result_count: 124
+# expected_result_count: 167
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -17,6 +17,9 @@ WHERE {
       wd:Q1148315 # state-owned enterprise of New Zealand (12)
       wd:Q65600637 # regional council of New Zealand (11)
       wd:Q941036 # territorial authority of New Zealand (67)
+      wd:Q125959397 # Autonomous Crown Entity (16)
+      wd:Q126041101 # Independent Crown Entity (19)
+      wd:Q1141791 # Crown Research Institute (7)     
     }
 
     ?org wdt:P31 ?type; wdt:P17 ?country .
