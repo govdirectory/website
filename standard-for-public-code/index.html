@@ -9,7 +9,7 @@
 
     <link rel="canonical" href="https://www.govdirectory.org/standard-for-public-code/">
 
-    <link rel="preload" href="/font/ubuntu-regular.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="/font/ubuntu-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <style>
         @font-face {
             font-family: "Ubuntu";
@@ -58,7 +58,7 @@
 
     <nav>
         <ul class="container">
-            <li><a class="no-decoration" href="/"><img loading="lazy" title="Home" src="/logo-white.svg" width="20" height="24"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
+            <li><a class="no-decoration" href="/"><img loading="eager" title="Home" src="/logo-white.svg" width="20" height="24"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
             <li><a class="no-decoration" href="/countries/">Countries</a></li>
             <li><a class="no-decoration" href="/topics/">Topics</a></li>
             <li><a class="no-decoration" href="/about/">About</a></li>
@@ -89,7 +89,7 @@ All source code is available in GitHub.
 
 <tr>
 <td>
-Ok
+N/A
 </td>
 <td>
 All source code for any policy in use (unless used for fraud detection) MUST be published and publicly accessible.
@@ -201,13 +201,13 @@ Continuous integration tests SHOULD validate that the source code and the policy
 <tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
 <tr>
 <td>
-
+No
 </td>
 <td>
 The codebase MUST be developed to be reusable in different contexts.
 </td>
 <td>
-
+Govdirectory is optimized to be a one-site deployment.
 </td>
 </tr>
 
@@ -225,13 +225,13 @@ The codebase MUST be independent from any secret, undisclosed, proprietary or no
 
 <tr>
 <td>
-
+No
 </td>
 <td>
 The codebase SHOULD be in use by multiple parties.
 </td>
 <td>
-
+Govdirectory is optimized to be a one-site deployment so will likely not happen.
 </td>
 </tr>
 
@@ -261,13 +261,13 @@ The development of the codebase SHOULD be a collaboration between multiple parti
 
 <tr>
 <td>
-
+No
 </td>
 <td>
 Configuration SHOULD be used to make source code adapt to context specific needs.
 </td>
 <td>
-
+Govdirectory is optimized to be a one-site deployment so will likely not happen.
 </td>
 </tr>
 
@@ -279,7 +279,7 @@ Configuration SHOULD be used to make source code adapt to context specific needs
 The codebase SHOULD be localizable.
 </td>
 <td>
-
+Partly discussed in <a href="https://github.com/govdirectory/website/issues/27">issue #27</a>, it is a long-term ambition.
 </td>
 </tr>
 
@@ -463,7 +463,7 @@ Ok
 The codebase MUST have communication channels for users and developers, for example email lists.
 </td>
 <td>
-<a href="https://github.com/govdirectory/website/discussions">GitHub discussions</a>
+<a href="https://github.com/govdirectory/website/discussions">GitHub discussions</a> and <a href="https://www.wikidata.org/wiki/Wikidata_talk:WikiProject_Govdirectory">Wikidata talk page</a>
 </td>
 </tr>
 
@@ -875,7 +875,7 @@ Including examples that make users want to immediately start using the codebase 
 
 <h2><a href="https://standard.publiccode.net/criteria/use-plain-english.html" class="dark-link">Use plain English</a></h2>
 
-&#9745; criterion met.
+&#9744; criterion met.
 
 <table id="use-plain-english" style="width:100%">
 <tr><th class="js-sort-none">Meets</th><th class="js-sort-none">Requirement</th><th class="js-sort-none" style="width:25%">Notes and links</th></tr>
@@ -1030,10 +1030,10 @@ Any non-open standards chosen for use within the codebase MUST NOT hinder collab
 
 </td>
 </tr>
-N/A
+
 <tr>
 <td>
-
+N/A
 </td>
 <td>
 If no existing open standard is available, effort SHOULD be put into developing one.
@@ -1083,7 +1083,7 @@ Non-open standards that are machine testable SHOULD be preferred over non-open s
 All functionality in the source code MUST have automated tests.
 </td>
 <td>
-
+Doing full testing would require running all queries live towards Wikidata, and that is something we should be restrictive with. Instead we are pondering what tests could be meaningful and cheap and will add as we go.
 </td>
 </tr>
 
@@ -1179,7 +1179,7 @@ Testing policy and documentation for consistency with the source and vice versa 
 Testing policy and documentation for style and broken links is OPTIONAL.
 </td>
 <td>
-
+See [issue #289](https://github.com/govdirectory/website/issues/289)
 </td>
 </tr>
 
@@ -1235,7 +1235,7 @@ Ok
 All source code MUST be published with a license file.
 </td>
 <td>
-
+<a href="https://github.com/govdirectory/website/blob/main/LICENSE">LICENSE</a>
 </td>
 </tr>
 
@@ -1315,7 +1315,7 @@ Ok
 Maintainers SHOULD submit the codebase to relevant software catalogs.
 </td>
 <td>
-<a href="https://digitalpublicgoods.net/registry/govdirectory.html">Digital Public Goods Registry</a> and <a href="https://directory.civictech.guide/listing/govdirectory">Civic Tech Field Guide</a>.
+<a href="https://digitalpublicgoods.net/registry/govdirectory.html">Digital Public Goods Registry</a>, <a href="https://directory.civictech.guide/listing/govdirectory">Civic Tech Field Guide</a> and <a href="https://toolhub.wikimedia.org/tools/govdirectory">Toolhub</a>.
 </td>
 </tr>
 

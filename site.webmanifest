@@ -4,7 +4,7 @@
     "start_url": "https://www.govdirectory.org/",
     "display" :"standalone",
     "background_color": "#ffffff",
-    "theme_color": "#094082",
+    "theme_color": "#00264d",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
