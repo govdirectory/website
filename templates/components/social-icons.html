@@ -2,7 +2,7 @@
 {{- $details := index (query "organization-optional.rq" .) 0 -}}
 
 {{- $preview_count := 0 -}}
-{{- if len $socialAccounts -}}
+{{- if or (len $socialAccounts) $details.website -}}
 <ul>
     {{- if $details.website -}}
         <li><a rel="nofollow" title="Website" href="{{ $details.website }}"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/website.svg" /></a></li>
