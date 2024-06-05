@@ -18,6 +18,9 @@ Govdirectory is a static site meaning that it already has all of its pages gener
 
 Because each initial build of Snowman issues thousands (yes thousands) of SPARQL queries one should never make an **initial** build against `query.wikidata.org` but rather against a local Wikidata Query Service (WDQS) instance. However, because setting up a WDQS instance is nontrivial we provide a copy of a [Snowman build cache directory](https://github.com/govdirectory/website-cache). If in use, this will ensure Snowman only queries Wikidata when a query is updated.
 
+> [!TIP]
+> Some of the most common development commands are available through our [Justfile](https://github.com/casey/just)
+
 ### Prerequisites
 
  - [Git](https://git-scm.com/)
