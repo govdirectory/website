@@ -211,6 +211,7 @@ sweden
 synergize
 Temaki
 th
+timeit
 timor
 TinyPNG
 tl
