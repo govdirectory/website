@@ -8,9 +8,9 @@
         <li><a rel="nofollow" title="Website" href="{{ $details.website }}"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/website.svg" /></a></li>
     {{- end -}}
     {{- range $socialAccounts -}}
-        {{- if eq .property (uri "http://www.wikidata.org/entity/P2002") -}}{{/* Twitter */}}
+        {{- if eq .property (uri "http://www.wikidata.org/entity/P2002") -}}{{/* X */}}
             {{- $preview_count = add1 $preview_count -}}
-            <li><a rel="nofollow" title="Twitter" href="{{ .url }}"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/twitter.svg" /></a></li>
+            <li><a rel="nofollow" title="X" href="{{ .url }}"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/X.svg" /></a></li>
         {{- else if eq .property (uri "http://www.wikidata.org/entity/P2397") -}}{{/* YouTube */}}
             {{- $preview_count = add1 $preview_count -}}
             <li><a rel="nofollow" title="YouTube" href="{{ .url }}"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/youtube.svg" /></a></li>
