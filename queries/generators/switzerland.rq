@@ -1,0 +1,31 @@
+# expected_result_count: 2164
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q39 AS ?country)
+
+  VALUES ?type {
+    wd:Q113015553 # federal ministry of switzerland (7)
+    wd:Q23058 # canton of switzerland (26)
+    wd:Q70208 # municipality of Switzerland (2131)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P582 [] }
+  MINUS { ?org wdt:P571 ?date . FILTER (DATATYPE(?date) = xsd:dateTime && ?date > now()) }
+
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de" }
+}
+ORDER BY ?type ?orgLabel

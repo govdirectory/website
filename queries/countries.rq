@@ -42,6 +42,7 @@ WHERE {
     (wd:Q189 'Iceland' 'iceland' 'Current content includes ministries, courts and municipalities.' '')
     (wd:Q233 'Malta' 'malta' 'Current content includes ministries, regions and local councils.' '')
     (wd:Q1028 'Morocco' 'morocco' 'Current content includes ministries, embassies, regions, provinces and prefectures.' '')
+    (wd:Q39 'Switzerland' 'switzerland' 'Current content includes federal ministries, cantons and municipalities.' '')
 
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments.' 'Scotland|scotland')
     (wd:Q22 'Scotland' 'united-kingdom/scotland' 'Executive agencies, local authorities, NHS boards, NDPBs, courts, public corporations, tribunals, parole boards, Queen\'s printer, non-ministerial government departments, commissioners, ombudsmen and Health and social care partnerships.' '')
