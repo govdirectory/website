@@ -212,6 +212,7 @@ switzerland
 synergize
 Temaki
 th
+timeit
 timor
 TinyPNG
 tl
