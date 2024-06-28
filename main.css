@@ -364,6 +364,7 @@ table th:not(.js-sort-none):hover {
 .half {
     display: grid;
     grid-template-columns: 1fr;
+    align-content: center;
 }
 
 .box-list {
