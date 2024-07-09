@@ -17,6 +17,7 @@ CEST
 CET
 cff
 cffinit
+cameroon
 changelog
 CHANGELOG
 citizensInitiatives

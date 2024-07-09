@@ -71,6 +71,7 @@ intendedAudience:
     - ua
     - gb
     - ch
+    - cm
   
   scope:
     - government
