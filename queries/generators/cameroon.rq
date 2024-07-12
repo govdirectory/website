@@ -1,0 +1,25 @@
+# expected_result_count: 50
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q1009 AS ?country)
+  VALUES ?type {
+    wd:Q126947196 # ministries (37)
+    wd:Q869042 # regions (10)
+    wd:Q2570643 # senate (1)
+    wd:Q375928 # lower house (1)
+    wd:Q190752 # supreme court (1)   
+  }
+  ?org wdt:P31 ?type .
+  ?org wdt:P17 ?country .
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,fr" }
+}
+ORDER BY ?type ?orgLabel
