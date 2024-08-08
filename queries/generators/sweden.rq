@@ -14,7 +14,7 @@ WHERE {
     # agencies with country set to Sweden
     VALUES ?type {
       wd:Q68295960 # Swedish government agency (249) ✔
-      wd:Q107407151 # Swedish government agency (5) ✔
+      wd:Q107407151 # Swedish government agency under the parliament (5) ✔
       wd:Q127448 # municipality of Sweden (290) ✔
       wd:Q1754161 # regional council in Sweden (20) ✔
       wd:Q10397683 # AP-fund (6) ✔
