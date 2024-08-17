@@ -88,7 +88,7 @@
                     <a class="btn" href="mailto:podatelna@mesto-hranice.cz">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -97,13 +97,24 @@
 
     <section class="bg-grey">
         <div class="container move-away">
-            <h2 class="m0">Platforms and accounts</h2></div>
+            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Hranice - Q638306.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
     </section>
 
     
-    <div class="container">
-        <p class="call-out">No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/Q638306">Wikidata</a>.</p>
-    </div>
+        <table class="container">
+    <tr>
+      <th class="js-sort-none">Platform</th>
+      <th class="js-sort-none">Account</th>
+    </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2013">
+        <td lang="">Facebook</td>
+        <td><a rel="nofollow" href="https://www.facebook.com/hranicemesto">hranicemesto</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
+        <td lang="">YouTube</td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UCogWbLQFs6BgnVMeYXgzZaw">UCogWbLQFs6BgnVMeYXgzZaw</a></td>
+    </tr>
+    </table>
+
     
     <div class="container need-js"><div aria-hidden="true" class="spinner need-js">
   <div class="dot1"></div>
@@ -170,7 +181,7 @@
   "@type": "GovernmentOrganization",
   "description": "town in Moravia, Czech Republic","additionalType": "http://www.wikidata.org/entity/Q7819319",
   "url": "https://www.govdirectory.org/czech-republic/Q638306",
-  "sameAs": ["http://wikidata.org/entity/Q638306"],
+  "sameAs": ["https://www.facebook.com/hranicemesto","https://www.youtube.com/channel/UCogWbLQFs6BgnVMeYXgzZaw","http://wikidata.org/entity/Q638306"],
   "name": "Hranice"
 }
 </script>
@@ -231,7 +242,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

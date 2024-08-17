@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -106,10 +106,6 @@
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="">X</td>
         <td><a rel="nofollow" href="https://x.com/nhsforthvalley">nhsforthvalley</a></td>
-    </tr>
-    <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
-        <td lang="">X</td>
-        <td><a rel="nofollow" href="https://x.com/NHSForthValley">NHSForthValley</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
         <td lang="">Instagram</td>
@@ -187,7 +183,7 @@
   "@type": "GovernmentOrganization",
   "description": "Health Service board covering Falkirk, Stirling and Clackmannanshire areas of Scotland, UK","additionalType": "http://www.wikidata.org/entity/Q83425186",
   "url": "https://www.govdirectory.org/united-kingdom/Q6954136",
-  "sameAs": ["https://x.com/nhsforthvalley","https://x.com/NHSForthValley","https://www.instagram.com/nhsforthvalley/","https://www.facebook.com/nhsforthvalley","http://wikidata.org/entity/Q6954136"],
+  "sameAs": ["https://x.com/nhsforthvalley","https://www.instagram.com/nhsforthvalley/","https://www.facebook.com/nhsforthvalley","http://wikidata.org/entity/Q6954136"],
   "name": "NHS Forth Valley"
 }
 </script>
@@ -248,7 +244,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

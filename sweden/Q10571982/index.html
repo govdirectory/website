@@ -78,7 +78,7 @@
             <div class="infobox">
                 <ul><li>Parent organization: <a href="/sweden/Q1774229">Ministry of Finance</a></li><li>Official website: <a href="https://www.lansstyrelsen.se/ostergotland">www.lansstyrelsen.se/ostergotland</a></li>
                     <li>Phone: <a href="tel:&#43;46-10-223-50-00">&#43;46-10-223-50-00</a></li>
-                    <li>Led by: Carl Fredrik Graf</li>
+                    <li>Led by: <span class="text-grey">[missing data]</span></li>
                     <li>Main regulatory text: <a href="https://www.riksdagen.se/sv/dokument-lagar/dokument/_sfs-2017-868">Förordning (2017:868) med länsstyrelseinstruktion</a></li>
                 </ul>
                 
@@ -89,7 +89,7 @@
                     <a class="btn" href="mailto:ostergotland@lansstyrelsen.se">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -243,7 +243,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

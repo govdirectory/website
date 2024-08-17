@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -106,10 +106,6 @@
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="">X</td>
         <td><a rel="nofollow" href="https://x.com/DTIPhilippines">DTIPhilippines</a></td>
-    </tr>
-    <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
-        <td lang="">X</td>
-        <td><a rel="nofollow" href="https://x.com/DtiPhilippines">DtiPhilippines</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
         <td lang="">Instagram</td>
@@ -191,7 +187,7 @@
   "@type": "GovernmentOrganization",
   "description": "Philippine cabinet ministry for trade and commerce","additionalType": "http://www.wikidata.org/entity/Q111188397",
   "url": "https://www.govdirectory.org/philippines/Q3545667",
-  "sameAs": ["https://x.com/DTIPhilippines","https://x.com/DtiPhilippines","https://www.instagram.com/dti.philippines/","https://www.facebook.com/DTI.Philippines","https://www.youtube.com/channel/UCV-jm9mnPMRwhnTjTwSxizA","http://wikidata.org/entity/Q3545667"],
+  "sameAs": ["https://x.com/DTIPhilippines","https://www.instagram.com/dti.philippines/","https://www.facebook.com/DTI.Philippines","https://www.youtube.com/channel/UCV-jm9mnPMRwhnTjTwSxizA","http://wikidata.org/entity/Q3545667"],
   "name": "Department of Trade and Industry"
 }
 </script>
@@ -252,7 +248,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

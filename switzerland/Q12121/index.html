@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -106,6 +106,22 @@
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="">X</td>
         <td><a rel="nofollow" href="https://x.com/KantonLuzern">KantonLuzern</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
+        <td lang="">Instagram</td>
+        <td><a rel="nofollow" href="https://www.instagram.com/kantonluzern/">kantonluzern</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
+        <td lang="">Facebook</td>
+        <td><a rel="nofollow" href="https://www.facebook.com/KantonLuzern">KantonLuzern</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
+        <td lang="">YouTube</td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UCbMJiK6gyIK1IaF61_Y2oBg">UCbMJiK6gyIK1IaF61_Y2oBg</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
+        <td lang="">LinkedIn</td>
+        <td><a rel="nofollow" href="https://www.linkedin.com/company/kanton-luzern/">kanton-luzern</a></td>
     </tr>
     </table>
 
@@ -175,7 +191,7 @@
   "@type": "GovernmentOrganization",
   "description": "canton of Switzerland","additionalType": "http://www.wikidata.org/entity/Q23058",
   "url": "https://www.govdirectory.org/switzerland/Q12121",
-  "sameAs": ["https://x.com/KantonLuzern","http://wikidata.org/entity/Q12121"],
+  "sameAs": ["https://x.com/KantonLuzern","https://www.instagram.com/kantonluzern/","https://www.facebook.com/KantonLuzern","https://www.youtube.com/channel/UCbMJiK6gyIK1IaF61_Y2oBg","https://www.linkedin.com/company/kanton-luzern/","http://wikidata.org/entity/Q12121"],
   "name": "Lucerne"
 }
 </script>
@@ -236,7 +252,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

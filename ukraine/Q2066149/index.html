@@ -88,7 +88,7 @@
                     <a class="btn" href="mailto:admou@mil.gov.ua">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -120,6 +120,10 @@
     <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
         <td lang="">YouTube</td>
         <td><a rel="nofollow" href="https://www.youtube.com/channel/UCWRZ7gEgbry5FI2-46EX3jA">UCWRZ7gEgbry5FI2-46EX3jA</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
+        <td lang="">YouTube</td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UC9czaUKJ_YOY-NHu2_H8rWA">UC9czaUKJ_YOY-NHu2_H8rWA</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2847">
         <td lang="">Google&#43;</td>
@@ -201,7 +205,7 @@
   "@type": "GovernmentOrganization",
   "description": "Ukrainian government ministry responsible for military and national defense matters","additionalType": "http://www.wikidata.org/entity/Q7878545",
   "url": "https://www.govdirectory.org/ukraine/Q2066149",
-  "sameAs": ["https://x.com/DefenceU","https://www.instagram.com/ministry_of_defense_ua/","https://www.facebook.com/MinistryofDefence.UA","https://www.youtube.com/channel/UCWRZ7gEgbry5FI2-46EX3jA","https://web.archive.org/web/20190401000000/https://plus.google.com/111837803911487120346","https://www.flickr.com/people/ministryofdefenceua","https://t.me/ministry_of_defense_ua","http://wikidata.org/entity/Q2066149"],
+  "sameAs": ["https://x.com/DefenceU","https://www.instagram.com/ministry_of_defense_ua/","https://www.facebook.com/MinistryofDefence.UA","https://www.youtube.com/channel/UCWRZ7gEgbry5FI2-46EX3jA","https://www.youtube.com/channel/UC9czaUKJ_YOY-NHu2_H8rWA","https://web.archive.org/web/20190401000000/https://plus.google.com/111837803911487120346","https://www.flickr.com/people/ministryofdefenceua","https://t.me/ministry_of_defense_ua","http://wikidata.org/entity/Q2066149"],
   "name": "Ministry of Defence of Ukraine"
 }
 </script>
@@ -262,7 +266,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

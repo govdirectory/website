@@ -75,7 +75,7 @@
         </div>
         <h1 lang="">Kujalleq</h1><p lang="">southernmost municipality of Greenland</p><div class="header-lower">
             <div class="infobox">
-                <ul><li>Official website: <a href="https://www.kujalleq.gl">www.kujalleq.gl</a></li>
+                <ul><li>Official website: <a href="https://kujalleq.gl">kujalleq.gl</a></li>
                     <li>Phone: <a href="tel:&#43;299%2070%2041%2000%20Extention%206471">&#43;299 70 41 00 Extention 6471</a></li>
                     <li>Led by: <span class="text-grey">[missing data]</span></li>
                     <li>Main regulatory text: <span class="text-grey">[missing data]</span></li>
@@ -84,9 +84,11 @@
                 <p><a href="https://en.wikipedia.org/wiki/Kujalleq">Read more on Wikipedia.</a></p>
             </div>
 
-            <div class="center-text action-boxes"></div>
+            <div class="center-text action-boxes"><div>
+                    <a class="btn" href="mailto:kommune@kujalleq.gl">Send an email</a>
+                </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -244,7 +246,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -104,10 +104,6 @@
       <th class="js-sort-none">Platform</th>
       <th class="js-sort-none">Account</th>
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
-        <td lang="">X</td>
-        <td><a rel="nofollow" href="https://x.com/Arbeidsdep">Arbeidsdep</a></td>
-    </tr>
-    <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="">X</td>
         <td><a rel="nofollow" href="https://x.com/arbeidsdep">arbeidsdep</a></td>
     </tr>
@@ -187,7 +183,7 @@
   "@type": "GovernmentOrganization",
   "description": "Norwegian government department","additionalType": "http://www.wikidata.org/entity/Q109644271",
   "url": "https://www.govdirectory.org/norway/Q2608014",
-  "sameAs": ["https://x.com/Arbeidsdep","https://x.com/arbeidsdep","https://www.facebook.com/arbeidsdep","https://www.linkedin.com/company/arbeids--og-sosialdepartementet/","http://wikidata.org/entity/Q2608014"],
+  "sameAs": ["https://x.com/arbeidsdep","https://www.facebook.com/arbeidsdep","https://www.linkedin.com/company/arbeids--og-sosialdepartementet/","http://wikidata.org/entity/Q2608014"],
   "name": "Ministry of Labour and Social Inclusion of Norway"
 }
 </script>
@@ -248,7 +244,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

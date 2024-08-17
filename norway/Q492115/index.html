@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Randaberg</title>
+    <title>Randaberg Municipality</title>
 
     <link rel="canonical" href="https://www.govdirectory.org/norway/Q492115/">
 
@@ -73,7 +73,7 @@
             <a class="btn rounded" href="/norway/">Norway</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q492115" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q492115%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="">Randaberg</h1><p lang="">municipality in Rogaland, Norway</p><div class="header-lower">
+        <h1 lang="">Randaberg Municipality</h1><p lang="">municipality in Rogaland, Norway</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Official website: <a href="https://www.randaberg.kommune.no/">www.randaberg.kommune.no/</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -95,7 +95,7 @@
 
     <section class="bg-grey">
         <div class="container move-away">
-            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Randaberg - Q492115.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
+            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Randaberg Municipality - Q492115.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
     </section>
 
     
@@ -176,7 +176,7 @@
   "description": "municipality in Rogaland, Norway","additionalType": "http://www.wikidata.org/entity/Q755707",
   "url": "https://www.govdirectory.org/norway/Q492115",
   "sameAs": ["https://x.com/Randabergkommun","http://wikidata.org/entity/Q492115"],
-  "name": "Randaberg"
+  "name": "Randaberg Municipality"
 }
 </script>
 
@@ -236,7 +236,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

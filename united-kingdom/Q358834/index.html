@@ -77,7 +77,7 @@
             <div class="infobox">
                 <ul><li>Official website: <a href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office">www.gov.uk/government/organisations/foreign-commonwealth-development-office</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
-                    <li>Led by: David Cameron</li>
+                    <li>Led by: David Lammy</li>
                     <li>Main regulatory text: <span class="text-grey">[missing data]</span></li>
                 </ul>
                 
@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -106,10 +106,6 @@
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="">X</td>
         <td><a rel="nofollow" href="https://x.com/FCDOGovUK">FCDOGovUK</a></td>
-    </tr>
-    <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
-        <td lang="">X</td>
-        <td><a rel="nofollow" href="https://x.com/foreignoffice">foreignoffice</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
         <td lang="">Instagram</td>
@@ -199,7 +195,7 @@
   "@type": "GovernmentOrganization",
   "description": "Ministry of Foreign Affairs of the United Kingdom","additionalType": "http://www.wikidata.org/entity/Q2500378",
   "url": "https://www.govdirectory.org/united-kingdom/Q358834",
-  "sameAs": ["https://x.com/FCDOGovUK","https://x.com/foreignoffice","https://www.instagram.com/foreignanddevelopmentoffice/","https://www.facebook.com/foreignoffice","https://www.youtube.com/channel/UCWl6ZVke4P2GYpk6eq4BPIQ","https://www.flickr.com/people/10246637@N04","https://www.linkedin.com/company/foreign-commonwealth-and-development-office/","http://wikidata.org/entity/Q358834"],
+  "sameAs": ["https://x.com/FCDOGovUK","https://www.instagram.com/foreignanddevelopmentoffice/","https://www.facebook.com/foreignoffice","https://www.youtube.com/channel/UCWl6ZVke4P2GYpk6eq4BPIQ","https://www.flickr.com/people/10246637@N04","https://www.linkedin.com/company/foreign-commonwealth-and-development-office/","http://wikidata.org/entity/Q358834"],
   "name": "Foreign, Commonwealth and Development Office"
 }
 </script>
@@ -260,7 +256,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

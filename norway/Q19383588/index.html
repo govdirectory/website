@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -106,6 +106,14 @@
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="">X</td>
         <td><a rel="nofollow" href="https://x.com/NorwayInKenya">NorwayInKenya</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
+        <td lang="">Instagram</td>
+        <td><a rel="nofollow" href="https://www.instagram.com/norwayinkenya/">norwayinkenya</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
+        <td lang="">Facebook</td>
+        <td><a rel="nofollow" href="https://www.facebook.com/NorwayinKE">NorwayinKE</a></td>
     </tr>
     </table>
 
@@ -175,7 +183,7 @@
   "@type": "GovernmentOrganization",
   "description": "building in Kenya","additionalType": "http://www.wikidata.org/entity/Q3917681",
   "url": "https://www.govdirectory.org/norway/Q19383588",
-  "sameAs": ["https://x.com/NorwayInKenya","http://wikidata.org/entity/Q19383588"],
+  "sameAs": ["https://x.com/NorwayInKenya","https://www.instagram.com/norwayinkenya/","https://www.facebook.com/NorwayinKE","http://wikidata.org/entity/Q19383588"],
   "name": "Embassy of Norway, Nairobi"
 }
 </script>
@@ -236,7 +244,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

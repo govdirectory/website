@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -110,6 +110,14 @@
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
         <td lang="">Facebook</td>
         <td><a rel="nofollow" href="https://www.facebook.com/tradeindustryandfisheries">tradeindustryandfisheries</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P3267">
+        <td lang="">Flickr</td>
+        <td><a rel="nofollow" href="https://www.flickr.com/people/111929549@N03">111929549@N03</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
+        <td lang="">LinkedIn</td>
+        <td><a rel="nofollow" href="https://www.linkedin.com/company/ministry-of-trade-and-industry/">ministry-of-trade-and-industry</a></td>
     </tr>
     </table>
 
@@ -179,7 +187,7 @@
   "@type": "GovernmentOrganization",
   "description": "government ministry in Norway","additionalType": "http://www.wikidata.org/entity/Q109644271",
   "url": "https://www.govdirectory.org/norway/Q18177740",
-  "sameAs": ["https://x.com/NFdep","https://www.facebook.com/tradeindustryandfisheries","http://wikidata.org/entity/Q18177740"],
+  "sameAs": ["https://x.com/NFdep","https://www.facebook.com/tradeindustryandfisheries","https://www.flickr.com/people/111929549@N03","https://www.linkedin.com/company/ministry-of-trade-and-industry/","http://wikidata.org/entity/Q18177740"],
   "name": "Ministry of Trade, Industry and Fisheries"
 }
 </script>
@@ -240,7 +248,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

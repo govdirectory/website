@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -106,10 +106,6 @@
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P10152">
         <td lang="">Rutube</td>
         <td><a rel="nofollow" href="https://rutube.ru/channel/25547751/">25547751</a></td>
-    </tr>
-    <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
-        <td lang="">X</td>
-        <td><a rel="nofollow" href="https://x.com/MintransRF">MintransRF</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="">X</td>
@@ -211,7 +207,7 @@
   "@type": "GovernmentOrganization",
   "description": "organization","additionalType": "http://www.wikidata.org/entity/Q4481741",
   "url": "https://www.govdirectory.org/russia/Q1958537",
-  "sameAs": ["https://rutube.ru/channel/25547751/","https://x.com/MintransRF","https://x.com/mintransrf","https://www.instagram.com/mintransrussia/","https://www.facebook.com/MintransRussia","https://www.youtube.com/channel/UCeGmehbH4fPcKVxUFVtf3Cw","https://vk.com/mintransrussia","https://t.me/Mintrans_obratnaya_svyaz_bot","https://t.me/Mintrans_Russia","https://ok.ru/mintransrussia","http://wikidata.org/entity/Q1958537"],
+  "sameAs": ["https://rutube.ru/channel/25547751/","https://x.com/mintransrf","https://www.instagram.com/mintransrussia/","https://www.facebook.com/MintransRussia","https://www.youtube.com/channel/UCeGmehbH4fPcKVxUFVtf3Cw","https://vk.com/mintransrussia","https://t.me/Mintrans_obratnaya_svyaz_bot","https://t.me/Mintrans_Russia","https://ok.ru/mintransrussia","http://wikidata.org/entity/Q1958537"],
   "name": "Ministry of Transport of the Russian Federation"
 }
 </script>
@@ -272,7 +268,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

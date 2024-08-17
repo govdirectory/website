@@ -84,9 +84,11 @@
                 <p><a href="https://en.wikipedia.org/wiki/Rosport-Mompach">Read more on Wikipedia.</a></p>
             </div>
 
-            <div class="center-text action-boxes"></div>
+            <div class="center-text action-boxes"><div>
+                    <a class="btn" href="https://rosportmompach.lu/contact/contactez-nous/">Visit contact page</a>
+                </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -95,13 +97,28 @@
 
     <section class="bg-grey">
         <div class="container move-away">
-            <h2 class="m0">Platforms and accounts</h2></div>
+            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Rosport-Mompach - Q31734921.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
     </section>
 
     
-    <div class="container">
-        <p class="call-out">No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/Q31734921">Wikidata</a>.</p>
-    </div>
+        <table class="container">
+    <tr>
+      <th class="js-sort-none">Platform</th>
+      <th class="js-sort-none">Account</th>
+    </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2003">
+        <td lang="">Instagram</td>
+        <td><a rel="nofollow" href="https://www.instagram.com/gemeng_rouspertmompech/">gemeng_rouspertmompech</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
+        <td lang="">Facebook</td>
+        <td><a rel="nofollow" href="https://www.facebook.com/rosportmompach">rosportmompach</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
+        <td lang="">YouTube</td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UCd55XoW32J-c9AR6KTbxvSg">UCd55XoW32J-c9AR6KTbxvSg</a></td>
+    </tr>
+    </table>
+
     
     <div class="container need-js"><div aria-hidden="true" class="spinner need-js">
   <div class="dot1"></div>
@@ -168,7 +185,7 @@
   "@type": "GovernmentOrganization",
   "description": "municipality in Luxembourg","additionalType": "http://www.wikidata.org/entity/Q2919801",
   "url": "https://www.govdirectory.org/luxembourg/Q31734921",
-  "sameAs": ["http://wikidata.org/entity/Q31734921"],
+  "sameAs": ["https://www.instagram.com/gemeng_rouspertmompech/","https://www.facebook.com/rosportmompach","https://www.youtube.com/channel/UCd55XoW32J-c9AR6KTbxvSg","http://wikidata.org/entity/Q31734921"],
   "name": "Rosport-Mompach"
 }
 </script>
@@ -229,7 +246,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

@@ -76,7 +76,7 @@
         <h1 lang="">Consulate General of Belgium in Guangzhou</h1><p lang="">Belgian diplomatic mission</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Parent organization: <a href="/belgium/Q100272639">Embassy of Belgium, Beijing</a></li><li>Official website: <a href="https://china.diplomatie.belgium.be/nl/ambassade-en-consulaten/consulaat-generaal-guangzhou">china.diplomatie.belgium.be/nl/ambassade-en-consulaten/consulaat-generaal-guangzhou</a></li>
-                    <li>Phone: <a href="tel:&#43;86-20-387-723-51">&#43;86-20-387-723-51</a></li>
+                    <li>Phone: <a href="tel:&#43;86-20-387-723-56">&#43;86-20-387-723-56</a></li>
                     <li>Led by: <span class="text-grey">[missing data]</span></li>
                     <li>Main regulatory text: <span class="text-grey">[missing data]</span></li>
                 </ul>
@@ -88,7 +88,7 @@
                     <a class="btn" href="mailto:guangzhou@diplobel.fed.be">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -238,7 +238,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

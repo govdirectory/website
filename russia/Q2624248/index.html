@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -106,10 +106,6 @@
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P10152">
         <td lang="">Rutube</td>
         <td><a rel="nofollow" href="https://rutube.ru/channel/23644112/">23644112</a></td>
-    </tr>
-    <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
-        <td lang="">X</td>
-        <td><a rel="nofollow" href="https://x.com/minzdravsoc">minzdravsoc</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="">X</td>
@@ -207,7 +203,7 @@
   "@type": "GovernmentOrganization",
   "description": "Russian ministry","additionalType": "http://www.wikidata.org/entity/Q4481741",
   "url": "https://www.govdirectory.org/russia/Q2624248",
-  "sameAs": ["https://rutube.ru/channel/23644112/","https://x.com/minzdravsoc","https://x.com/MINZDRAV_RF","https://www.instagram.com/rosminzdrav.ru/","https://www.facebook.com/MinzdravRu","https://www.youtube.com/channel/UC89vvPtPH1AG50IMSWLD61g","https://vk.com/minzdravru","https://t.me/minzdrav_ru","https://ok.ru/minzdravru","http://wikidata.org/entity/Q2624248"],
+  "sameAs": ["https://rutube.ru/channel/23644112/","https://x.com/MINZDRAV_RF","https://www.instagram.com/rosminzdrav.ru/","https://www.facebook.com/MinzdravRu","https://www.youtube.com/channel/UC89vvPtPH1AG50IMSWLD61g","https://vk.com/minzdravru","https://t.me/minzdrav_ru","https://ok.ru/minzdravru","http://wikidata.org/entity/Q2624248"],
   "name": "Ministry of Healthcare of the Russian Federation"
 }
 </script>
@@ -268,7 +264,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

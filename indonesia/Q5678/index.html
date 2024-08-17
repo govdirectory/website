@@ -75,7 +75,7 @@
         </div>
         <h1 lang="">Aceh Tamiang</h1><p lang="">regency of Indonesia, on the island of Sumatra</p><div class="header-lower">
             <div class="infobox">
-                <ul><li>Official website: <span class="text-grey">[missing data]</span></li>
+                <ul><li>Official website: <a href="http://www.acehtamiangkab.go.id/">www.acehtamiangkab.go.id/</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
                     <li>Led by: <span class="text-grey">[missing data]</span></li>
                     <li>Main regulatory text: <span class="text-grey">[missing data]</span></li>
@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -229,7 +229,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

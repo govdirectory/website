@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -106,6 +106,10 @@
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="">X</td>
         <td><a rel="nofollow" href="https://x.com/BMWSB_Bund">BMWSB_Bund</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
+        <td lang="">Instagram</td>
+        <td><a rel="nofollow" href="https://www.instagram.com/bundesbauministerium/">bundesbauministerium</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
         <td lang="">YouTube</td>
@@ -183,7 +187,7 @@
   "@type": "GovernmentOrganization",
   "description": "oberste Bundesbehörde der Bundesrepublik Deutschland","additionalType": "http://www.wikidata.org/entity/Q896375",
   "url": "https://www.govdirectory.org/germany/Q110021824",
-  "sameAs": ["https://x.com/BMWSB_Bund","https://www.youtube.com/channel/UCXumOxIxIDGVmV2W_WZcYbA","https://fedirect.toolforge.org/?id=BMWSB_Bund@social.bund.de","http://wikidata.org/entity/Q110021824"],
+  "sameAs": ["https://x.com/BMWSB_Bund","https://www.instagram.com/bundesbauministerium/","https://www.youtube.com/channel/UCXumOxIxIDGVmV2W_WZcYbA","https://fedirect.toolforge.org/?id=BMWSB_Bund@social.bund.de","http://wikidata.org/entity/Q110021824"],
   "name": "Federal Ministry for Housing, Urban Development and Building"
 }
 </script>
@@ -244,7 +248,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

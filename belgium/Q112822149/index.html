@@ -88,7 +88,7 @@
                     <a class="btn" href="mailto:info@lamonnaie.be">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -120,6 +120,10 @@
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
         <td lang="">Facebook</td>
         <td><a rel="nofollow" href="https://www.facebook.com/LaMonnaieDeMunt">LaMonnaieDeMunt</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
+        <td lang="">YouTube</td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UC4p8p4g9Z2I64Y9gwerEvCQ">UC4p8p4g9Z2I64Y9gwerEvCQ</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
         <td lang="">LinkedIn</td>
@@ -193,7 +197,7 @@
   "@type": "GovernmentOrganization",
   "description": "Brusselian opera company","additionalType": "http://www.wikidata.org/entity/Q3356161",
   "url": "https://www.govdirectory.org/belgium/Q112822149",
-  "sameAs": ["https://www.youtube.com/@LaMonnaieDeMunt","https://x.com/LaMonnaieDeMunt","https://www.instagram.com/lamonnaie.demunt/","https://www.facebook.com/LaMonnaieDeMunt","https://www.linkedin.com/company/lamonnaiedemunt/","http://wikidata.org/entity/Q112822149"],
+  "sameAs": ["https://www.youtube.com/@LaMonnaieDeMunt","https://x.com/LaMonnaieDeMunt","https://www.instagram.com/lamonnaie.demunt/","https://www.facebook.com/LaMonnaieDeMunt","https://www.youtube.com/channel/UC4p8p4g9Z2I64Y9gwerEvCQ","https://www.linkedin.com/company/lamonnaiedemunt/","http://wikidata.org/entity/Q112822149"],
   "name": "The Mint"
 }
 </script>
@@ -254,7 +258,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

@@ -88,7 +88,7 @@
                     <a class="btn" href="mailto:humas@mail.kominfo.go.id">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -116,6 +116,10 @@
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
         <td lang="">Facebook</td>
         <td><a rel="nofollow" href="https://www.facebook.com/Kemkominfo">Kemkominfo</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
+        <td lang="">YouTube</td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UC6673kwtPekbPTJgRsTSizQ">UC6673kwtPekbPTJgRsTSizQ</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P7085">
         <td lang="">TikTok</td>
@@ -189,7 +193,7 @@
   "@type": "GovernmentOrganization",
   "description": "Ministry in Indonesia","additionalType": "http://www.wikidata.org/entity/Q17417403",
   "url": "https://www.govdirectory.org/indonesia/Q12490742",
-  "sameAs": ["https://www.youtube.com/@KemkominfoTV","https://x.com/kemkominfo","https://www.facebook.com/Kemkominfo","https://www.tiktok.com/@kemkominfo","http://wikidata.org/entity/Q12490742"],
+  "sameAs": ["https://www.youtube.com/@KemkominfoTV","https://x.com/kemkominfo","https://www.facebook.com/Kemkominfo","https://www.youtube.com/channel/UC6673kwtPekbPTJgRsTSizQ","https://www.tiktok.com/@kemkominfo","http://wikidata.org/entity/Q12490742"],
   "name": "Ministry of Communication and Information Technology"
 }
 </script>
@@ -250,7 +254,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

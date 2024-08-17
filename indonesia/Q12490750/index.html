@@ -88,7 +88,7 @@
                     <a class="btn" href="mailto:ppid@kemhan.go.id">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -120,6 +120,10 @@
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
         <td lang="">Facebook</td>
         <td><a rel="nofollow" href="https://www.facebook.com/KementerianPertahananRI">KementerianPertahananRI</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
+        <td lang="">YouTube</td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UCqMGBnj5W5Ye5mHp3gi80tg">UCqMGBnj5W5Ye5mHp3gi80tg</a></td>
     </tr>
     </table>
 
@@ -189,7 +193,7 @@
   "@type": "GovernmentOrganization",
   "description": "Indonesian ministry","additionalType": "http://www.wikidata.org/entity/Q17417403",
   "url": "https://www.govdirectory.org/indonesia/Q12490750",
-  "sameAs": ["https://www.youtube.com/@kemhan","https://x.com/Kemhan_RI","https://www.instagram.com/kemhanri/","https://www.facebook.com/KementerianPertahananRI","http://wikidata.org/entity/Q12490750"],
+  "sameAs": ["https://www.youtube.com/@kemhan","https://x.com/Kemhan_RI","https://www.instagram.com/kemhanri/","https://www.facebook.com/KementerianPertahananRI","https://www.youtube.com/channel/UCqMGBnj5W5Ye5mHp3gi80tg","http://wikidata.org/entity/Q12490750"],
   "name": "Ministry of Defense"
 }
 </script>
@@ -250,7 +254,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

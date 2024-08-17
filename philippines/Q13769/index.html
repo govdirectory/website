@@ -44,7 +44,7 @@
     <meta name="generator" content="Snowman v0.6.0-development">
     <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
 
-    <meta name="description" content="province in Northern Mindanao, Philippines">
+    <meta name="description" content="province of the Philippines">
 
     <noscript>
         <style>
@@ -73,7 +73,7 @@
             <a class="btn rounded" href="/philippines/">Philippines</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q13769" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q13769%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="">Camiguin</h1><p lang="">province in Northern Mindanao, Philippines</p><div class="header-lower">
+        <h1 lang="">Camiguin</h1><p lang="">province of the Philippines</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Official website: <a href="http://www.camiguin.gov.ph">www.camiguin.gov.ph</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -166,7 +166,7 @@
 {
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
-  "description": "province in Northern Mindanao, Philippines","additionalType": "http://www.wikidata.org/entity/Q24746",
+  "description": "province of the Philippines","additionalType": "http://www.wikidata.org/entity/Q24746",
   "url": "https://www.govdirectory.org/philippines/Q13769",
   "sameAs": ["http://wikidata.org/entity/Q13769"],
   "name": "Camiguin"
@@ -229,7 +229,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

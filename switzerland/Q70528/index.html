@@ -44,7 +44,7 @@
     <meta name="generator" content="Snowman v0.6.0-development">
     <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
 
-    <meta name="description" content="municipality bordering France in the canton of Valais in Switzerland">
+    <meta name="description" content="Swiss municipality in the canton of Valais bordering France">
 
     <noscript>
         <style>
@@ -73,7 +73,7 @@
             <a class="btn rounded" href="/switzerland/">Switzerland</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q70528" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q70528%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="">Saint-Gingolph</h1><p lang="">municipality bordering France in the canton of Valais in Switzerland</p><div class="header-lower">
+        <h1 lang="">Saint-Gingolph</h1><p lang="">Swiss municipality in the canton of Valais bordering France</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Official website: <a href="http://www.st-gingolph.ch">www.st-gingolph.ch</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
@@ -86,7 +86,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -166,7 +166,7 @@
 {
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
-  "description": "municipality bordering France in the canton of Valais in Switzerland","additionalType": "http://www.wikidata.org/entity/Q70208",
+  "description": "Swiss municipality in the canton of Valais bordering France","additionalType": "http://www.wikidata.org/entity/Q70208",
   "url": "https://www.govdirectory.org/switzerland/Q70528",
   "sameAs": ["http://wikidata.org/entity/Q70528"],
   "name": "Saint-Gingolph"
@@ -229,7 +229,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];

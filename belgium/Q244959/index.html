@@ -75,7 +75,7 @@
         </div>
         <h1 lang="">Baarle-Hertog</h1><p lang="">municipality in Antwerp, Belgium</p><div class="header-lower">
             <div class="infobox">
-                <ul><li>Official website: <a href="https://www.baarle-hertog.be/">www.baarle-hertog.be/</a></li>
+                <ul><li>Official website: <a href="https://baarle-hertog.be">baarle-hertog.be</a></li>
                     <li>Phone: <a href="tel:&#43;32-14-69-80-70">&#43;32-14-69-80-70</a></li>
                     <li>Led by: Frans De Bont</li>
                     <li>Main regulatory text: <span class="text-grey">[missing data]</span></li>
@@ -88,7 +88,7 @@
                     <a class="btn" href="mailto:gemeente@baarle-hertog.be">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-07-12">2024-07-12</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2024-08-17">2024-08-17</time>.</p>
     </header>
 </div>
 
@@ -242,7 +242,13 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
+            const isOldClaim = claim
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
+                
+                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
+                    return;
+                }
+
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
                 tdNameElm.innerText = props[claim][0];
