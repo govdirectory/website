@@ -55,7 +55,8 @@ Make sure to write tests that show the behavior of the newly added or changed co
 #### Standards to follow
 
 These are the standards that Govdirectory uses.
-Please make sure that your contributions are aligned with them so that they can be merged more easily.
+We encourage you to submit your contribution even if you are not sure it is fully compliant.
+We will work with you to make your contribution aligned before it is merged.
 
 * [Web Content Accessibility Guidelines 2.2](https://www.w3.org/TR/WCAG22/)
 * [Standard Readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md) (applicable for the README file only)
