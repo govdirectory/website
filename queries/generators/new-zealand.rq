@@ -14,7 +14,7 @@ WHERE {
     VALUES ?type {
       wd:Q116973815 # public service departments (32)
       wd:Q8041036 # wānanga (3)
-      wd:Q1148315 # state-owned enterprise of New Zealand (12)
+      wd:Q130420294 # state-owned enterprise of New Zealand (12)
       wd:Q65600637 # regional council of New Zealand (11)
       wd:Q941036 # territorial authority of New Zealand (67)
       wd:Q125959397 # Autonomous Crown Entity (16)
