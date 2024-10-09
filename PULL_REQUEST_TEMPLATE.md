@@ -23,7 +23,7 @@ Please **ensure** the following before submitting the PR:
 
 - [ ] I have **tested** the changes locally, and they work as expected.
 - [ ] The code follows the project's coding standards and conventions.
-- [ ] Any **query or database changes** have been verified and are working correctly.
+- [ ] Any **query changes** have been verified and are working correctly.
 - [ ] I have **updated relevant documentation** (if needed).
 - [ ] I have added unit **tests** or performed manual testing where necessary.
 - [ ] I have **mentioned** the person/team responsible for reviewing this PR. 
