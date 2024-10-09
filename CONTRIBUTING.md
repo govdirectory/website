@@ -71,7 +71,7 @@ While we haven't committed to be fully compliant with the [Standard for Public C
 
 ### 2. Pull request
 
-When submitting the pull request, please accompany it with a description of the problem you are trying to solve and the issue numbers that this pull request fixes. 
+When submitting the pull request, please accompany it with a description of the problem you are trying to solve and the issue numbers that this pull request fixes.
 
 ### 3. Improve
 
