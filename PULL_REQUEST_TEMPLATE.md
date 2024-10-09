@@ -32,7 +32,3 @@ Please **ensure** the following before submitting the PR:
 
 <!-- Attach screenshots if relevant. -->
 
-## Reviewer(s)
-
-<!-- Mention the relevant people or teams who should review this PR. -->
-@mention
