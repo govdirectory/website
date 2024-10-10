@@ -26,7 +26,6 @@ Please **ensure** the following before submitting the PR:
 - [ ] Any **query changes** have been verified and are working correctly.
 - [ ] I have **updated relevant documentation** (if needed).
 - [ ] I have added unit **tests** or performed manual testing where necessary.
-- [ ] I have **mentioned** the person/team responsible for reviewing this PR. 
 
 ## Screenshots (applicable to user interface changes)
 
