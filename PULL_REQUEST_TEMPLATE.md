@@ -28,7 +28,7 @@ Please **ensure** the following before submitting the PR:
 - [ ] I have added unit **tests** or performed manual testing where necessary.
 - [ ] I have **mentioned** the person/team responsible for reviewing this PR. 
 
-## Screenshots (applicable to UI changes)
+## Screenshots (applicable to user interface changes)
 
 <!-- Attach screenshots if relevant. -->
 
