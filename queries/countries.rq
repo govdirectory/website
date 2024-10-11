@@ -21,7 +21,7 @@ WHERE {
     (wd:Q183 'Germany' 'germany' 'Current content includes ministries, federated states and governmental districts.' '')
     (wd:Q258 'South Africa' 'south-africa' 'Current content includes departments, independent constitutional bodies, provinces and municipalities.' '')
     (wd:Q55 'Netherlands' 'netherlands' 'Current content includes ministries, courts, water boards, the Kings cabinet, provinces and municipalities.' '')
-    (wd:Q664 'New Zealand' 'new-zealand' 'Current content includes public service departments, wānangas, state-owned enterprises, regional councils, territorial authorities, autonomous crown entities, independent crown entities and crown research institutes.' '')
+    (wd:Q664 'New Zealand' 'new-zealand' 'Current content includes public service departments, departemental agencies, wānangas, state-owned enterprises, regional councils, territorial authorities, autonomous crown entities, independent crown entities and crown research institutes.' '')
     (wd:Q33 'Finland' 'finland' 'Current content includes ministries, regions and municipalities.' '')
     (wd:Q212 'Ukraine' 'ukraine' 'Current content includes ministries and first level administrative units.' '')
     (wd:Q159 'Russia' 'russia' 'Current content includes the government and ministries.' '')

@@ -1,4 +1,4 @@
-# expected_result_count: 167
+# expected_result_count: 174
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -13,6 +13,7 @@ WHERE {
     # agencies with country set to New Zealand
     VALUES ?type {
       wd:Q116973815 # public service departments (32)
+      wd:Q130137120 # departemental agencies (7)
       wd:Q8041036 # wānanga (3)
       wd:Q130420294 # state-owned enterprise of New Zealand (12)
       wd:Q65600637 # regional council of New Zealand (11)
