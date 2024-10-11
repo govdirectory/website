@@ -45,12 +45,13 @@ This project is [licensed CC-0](LICENSE.md), which essentially means that the pr
 
 In this project we use branches for changes and don't usually commit direct to the main branch.
 When you've forked this repository, please make sure to create a feature branch.
+- Create a [fork](https://github.com/govdirectory/website/fork) of the repository
+- Create or Use an existing feature branch to commit changes
+- Add your changes in commits with a useful commit [message](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
+    Include document choices or decisions you make in the commit message, this will enable everyone to be informed of your choices in the future.
 
-Add your changes in commits [with a message that explains them](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
-Document choices or decisions you make in the commit message, this will enable everyone to be informed of your choices in the future.
-
-If you are adding code, make sure you've added and updated the relevant documentation and tests before you submit your pull request.
-Make sure to write tests that show the behavior of the newly added or changed code.
+- If adding code, add and update the relevant **documentation** and tests before you submit your pull request.
+- Make sure to write tests that show the behavior of the newly added or changed code.
 
 #### Standards to follow
 
