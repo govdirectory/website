@@ -1,0 +1,4 @@
+SELECT DISTINCT * WHERE {
+  VALUES (?field) {
+  }
+}

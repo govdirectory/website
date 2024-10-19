@@ -26,7 +26,7 @@
     </section>
 
 {{- $countries := query "countries.rq" -}}
-{{- $topic := .class -}}
+{{- $topics := query (join "" "topics/" .safeName ".rq") -}}
 
     <table class="container js-sort-table">
         <tr>
@@ -40,14 +40,21 @@
             {{- $country := .safeName.String -}}
             {{- $countryLabel := .name.String -}}
             {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+            {{- $fieldOfWorks := split .fieldOfWork "," -}}
             {{- range $orgs -}}
-                {{- if eq $topic .cofog -}}
-                    <tr>
-                        <td lang="{{ .orgLabel.Lang }}"><a href="/{{ $country }}/{{ .qid }}">{{ .orgLabel }}</a></td>
-                        <td>{{ include "components/social-icons.html" .qid.String }}</td>
-                        <td lang="{{ .typeLabel.Lang }}">{{ .typeLabel }}</td>
-                        <td><a class="btn rounded" href="/{{ $country }}/">{{ $countryLabel }}</a></td>
-                    </tr>
+                {{/* check if any of the field of works match any of the topics */}}
+                {{- range $fieldOfWorks -}}
+                   {{- $orgWork := . -}}
+                    {{- range $topics -}}
+                        {{- if eq . $orgWork -}}
+                            <tr>
+                                <td lang="{{ .orgLabel.Lang }}"><a href="/{{ $country }}/{{ .qid }}">{{ .orgLabel }}</a></td>
+                                <td>{{ include "components/social-icons.html" .qid.String }}</td>
+                                <td lang="{{ .typeLabel.Lang }}">{{ .typeLabel }}</td>
+                                <td><a class="btn rounded" href="/{{ $country }}/">{{ $countryLabel }}</a></td>
+                            </tr>
+                        {{- end -}}
+                    {{- end -}}
                 {{- end -}}
             {{- end -}}
         {{- end -}}
