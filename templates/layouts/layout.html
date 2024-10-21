@@ -3,15 +3,14 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Govdirectory" />
+    <meta name="description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
     <title>{{ block "title" . }}{{ end }}</title>
 
-    <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
-    <link rel="stylesheet" href="/main.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <link rel="canonical" href="https://www.govdirectory.org{{ block "canonical" . }}{{ end }}">
+
     <link rel="preload" href="/font/ubuntu-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <style>
         @font-face {
@@ -30,14 +29,14 @@
             font-display: swap;
         }
     </style>
-<!-- General Meta Tags  -->
-    <meta charset="utf-8">
-    <meta name="generator" content="Snowman v{{ version }}">
+    <link rel="stylesheet" href="/main.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#00264d"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Govdirectory" />
-    <meta name="description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
-<!-- Open Graph Tags -->
+
     <meta property="og:image" content="/og-banner.jpg" />
     <meta property="og:image:width" content="628" />
     <meta property="og:image:height" content="1200" />
@@ -45,7 +44,7 @@
     <meta property="og:url" content="https://www.govdirectory.org/" />
     <meta property="og:title" content="Govdirectory" />
     <meta property="og:description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
-<!-- Twitter / X Tags-->
+
     <meta name="twitter:site" content="@govdirectory">
     <meta name="twitter:creator" content="@govdirectory">
     <meta property="twitter:card" content="summary_large_image" />
@@ -53,7 +52,9 @@
     <meta property="twitter:title" content="Govdirectory" />
     <meta property="twitter:description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
     <meta property="twitter:image" content="/og-banner.jpg" />
-<!-- Mastodon / Fediverse Tags -->
+    <meta name="generator" content="Snowman v{{ version }}">
+    <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
+
     <meta name="fediverse:creator" content="@govdirectory@wikis.world" />
 
     {{ block "extra-head" . }}{{ end }}
