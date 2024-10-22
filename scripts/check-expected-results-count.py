@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import glob
-import os
 import re
 
 import requests
@@ -28,9 +27,8 @@ def execute_sparql_query(endpoint, query):
 
 
 def verify_result_counts(folder_path, endpoint):
-    for filename in glob.iglob(folder_path + "**/*.rq", recursive=True):
-        file_path = os.path.join(folder_path, filename)
-        with open(file_path, "r") as file:
+    for filename in glob.iglob(folder_path + "**/**/*.rq", recursive=True):
+        with open(filename, "r") as file:
             content = file.read()
             expected_count = get_expected_count(content)
             if expected_count is not None:

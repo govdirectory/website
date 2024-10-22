@@ -249,3 +249,11 @@ yaml
 yml
 za
 zealand
+usr
+env
+os
+www
+urlencoded
+iglob
+RequestException
+str
