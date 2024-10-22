@@ -1,4 +1,4 @@
-# expected_result_count: 92
+# expected_result_count: 24
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -12,7 +12,6 @@ WHERE {
   VALUES ?type {
     wd:Q119774544 # Ministry of Malta (18)
     wd:Q7309296 # region of Malta (6)
-    wd:Q719592 # local council of Malta (68)
   }
   ?org wdt:P31 ?type .
 
