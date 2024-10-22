@@ -5,6 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Govdirectory" />
+    <meta name="description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
     <title>{{ block "title" . }}{{ end }}</title>
 
     <link rel="canonical" href="https://www.govdirectory.org{{ block "canonical" . }}{{ end }}">
@@ -38,10 +40,22 @@
     <meta property="og:image" content="/og-banner.jpg" />
     <meta property="og:image:width" content="628" />
     <meta property="og:image:height" content="1200" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.govdirectory.org/" />
+    <meta property="og:title" content="Govdirectory" />
+    <meta property="og:description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
 
     <meta name="twitter:site" content="@govdirectory">
+    <meta name="twitter:creator" content="@govdirectory">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.govdirectory.org/" />
+    <meta property="twitter:title" content="Govdirectory" />
+    <meta property="twitter:description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
+    <meta property="twitter:image" content="/og-banner.jpg" />
     <meta name="generator" content="Snowman v{{ version }}">
     <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
+
+    <meta name="fediverse:creator" content="@govdirectory@wikis.world" />
 
     {{ block "extra-head" . }}{{ end }}
 
