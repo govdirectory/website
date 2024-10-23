@@ -1,3 +1,4 @@
+# expected_result_count: 5
 SELECT DISTINCT
   ?qid
   ?orgLabel
