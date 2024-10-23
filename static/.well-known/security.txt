@@ -1,0 +1,5 @@
+Contact: https://github.com/govdirectory/website/security
+Preferred-Languages: en
+Canonical: https://govdirectory.org/.well-known/security.txt
+Policy: https://github.com/govdirectory/website/blob/main/SECURITY.md
+
