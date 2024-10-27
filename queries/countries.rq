@@ -40,7 +40,7 @@ WHERE {
     (wd:Q419 'Peru' 'peru' 'Current content includes ministries, regions and provinces.' '')
     (wd:Q40 'Austria' 'austria' 'Current content includes ministries, federated states, districts and municipalities.' '')
     (wd:Q189 'Iceland' 'iceland' 'Current content includes ministries, courts and municipalities.' '')
-    (wd:Q233 'Malta' 'malta' 'Current content includes ministries, regions and local councils.' '')
+    (wd:Q233 'Malta' 'malta' 'Current content includes ministries and regions.' '')
     (wd:Q1028 'Morocco' 'morocco' 'Current content includes ministries, embassies, regions, provinces and prefectures.' '')
     (wd:Q39 'Switzerland' 'switzerland' 'Current content includes federal ministries, cantons and municipalities.' '')
     (wd:Q1009 'Cameroon' 'cameroon' 'Current content includes ministries, regions, senate, lower house and supreme court.' '')
