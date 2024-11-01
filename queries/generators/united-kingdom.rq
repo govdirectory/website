@@ -1,4 +1,4 @@
-# expected_result_count: 23
+# expected_result_count: 24
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -11,7 +11,7 @@ WHERE {
   BIND(wd:Q145 AS ?country)
 
   VALUES ?type {
-    wd:Q2500378 # department of the United Kingdom Government (23)
+    wd:Q2500378 # department of the United Kingdom Government (24)
   }
   ?org wdt:P31 ?type ;
        wdt:P17 ?country .
