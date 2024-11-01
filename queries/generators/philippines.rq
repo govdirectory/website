@@ -1,4 +1,4 @@
-# expected_result_count: 266
+# expected_result_count: 271
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -11,9 +11,9 @@ WHERE {
 
   VALUES ?type {
     wd:Q111188397 # executive department (22)
-    wd:Q24698 # region (17)
-    wd:Q24746  # province (81)
-    wd:Q106078286 # component city (108)
+    wd:Q24698 # region (18)
+    wd:Q24746  # province (82)
+    wd:Q106078286 # component city (111)
     wd:Q29946056 # highly urbanized city (33)
     wd:Q106079704 # independent component city (5)
   }
@@ -22,7 +22,7 @@ WHERE {
   ?org wdt:P17 ?country .
 
   MINUS { ?org wdt:P576 [] }
-  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org p:P1366 ?r . MINUS { ?r pq:P582 [] } }
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
