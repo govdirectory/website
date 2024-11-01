@@ -1,4 +1,4 @@
-# expected_result_count: 34
+# expected_result_count: 33
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -10,7 +10,7 @@ WHERE {
    BIND(wd:Q16 AS ?country)
 
   VALUES ?type {
-    wd:Q111190932 # Ministerial departments (21)
+    wd:Q111190932 # Ministerial departments (20)
     wd:Q11828004 # Provinces (10)
     wd:Q9357527 # Territories (3)
   }
