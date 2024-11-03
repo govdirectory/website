@@ -1,3 +1,4 @@
+#Title: expected_result_count: 124
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -11,7 +12,7 @@ WHERE {
   VALUES ?type {
     wd:Q62326 # Region of Denmark (5)
     wd:Q2177636 # Municipality of Denmark (98)
-    wd:Q110636698 # Ministries (18)
+    wd:Q110636698 # Ministries (21)
   }
   ?org wdt:P31 ?type ;
        wdt:P17 ?country .
