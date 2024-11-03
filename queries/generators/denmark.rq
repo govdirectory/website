@@ -1,4 +1,4 @@
-#Title: expected_result_count: 124
+# expected_result_count: 124
 SELECT DISTINCT
   ?qid
   ?orgLabel
