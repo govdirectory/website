@@ -1,4 +1,4 @@
-# expected_result_count: 414
+# expected_result_count: 417
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -12,7 +12,7 @@ WHERE {
   {
   # agencies with country set to the Netherlands
   VALUES ?type {
-    wd:Q3143387 # ministries (12)
+    wd:Q3143387 # ministries (15)
     wd:Q4500821 # appeals court (4)
     wd:Q190752  # supreme court (2)
     wd:Q2125157 # district court (11)
@@ -37,7 +37,7 @@ WHERE {
     BIND("High Council of State" AS ?typeLabel)
   }
 
-  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P576 [] . MINUS { ?item rdf:type wdno:P576 } }
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P582 [] .
           MINUS { ?org wdt:P582 ?ddate ;
