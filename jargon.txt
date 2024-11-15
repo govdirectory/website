@@ -5,6 +5,8 @@ allOrgs
 analytics
 Albin
 Aotearoa
+argparse
+ArgumentParser
 Arial
 austria
 authorsFile
@@ -156,6 +158,7 @@ parentOrgLabel
 parentOrgLabel
 parentOrgLabel
 parentOrgQID
+pathlib
 pdf
 PDFs
 pe
