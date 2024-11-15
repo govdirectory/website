@@ -87,13 +87,24 @@ def verify_result_counts(path, endpoint):
                     )
                     stats["pass"] += 1
                 else:
-                    results.append(
+                    if actual_count < expected_count:
+                        results.append(
+				                    [
+				                        filepath,
+				                        "FAIL",
+				                        expected_count,
+				                        actual_count,
+				                        "Too few orgs found",
+				                    ]
+				                )
+                    else:
+                        results.append(
                         [
                             filepath,
                             "FAIL",
                             expected_count,
                             actual_count,
-                            "Count mismatch",
+                            "Too many orgs found",
                         ]
                     )
                     stats["fail"] += 1
