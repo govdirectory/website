@@ -1,3 +1,4 @@
+# expected_result_count: 475
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -11,8 +12,8 @@ WHERE {
 
   {
     VALUES ?type {
-      wd:Q755707 # Municipality of Norway (356)
-      wd:Q109644271 # ministry of Norway (16)
+      wd:Q755707 # Municipality of Norway (357)
+      wd:Q109644271 # ministry of Norway (17)
       wd:Q16973854 # district court (19)
     }
 
