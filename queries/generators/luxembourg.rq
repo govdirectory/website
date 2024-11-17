@@ -1,4 +1,4 @@
-# expected_result_count: 138
+# expected_result_count: 132
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -10,9 +10,9 @@ WHERE {
   BIND(wd:Q32 AS ?country)
 
   VALUES ?type {
-    wd:Q30744477 # ministries of Luxembourg (24)
+    wd:Q30744477 # ministries of Luxembourg (20)
     wd:Q1146429 # cantons of Luxembourg (12)
-    wd:Q2919801  # all communes in Luxembourg (102)
+    wd:Q2919801  # all communes in Luxembourg (100)
   }
   ?org wdt:P31 ?type .
 
