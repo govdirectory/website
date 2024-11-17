@@ -23,7 +23,7 @@ WHERE {
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P31 wd:Q19953632 }
   MINUS { ?org wdt:P31 wd:Q15893266 }
-  MINUS { ?org p:P31 ?p. ?p pq:P582 [] }
+  MINUS { ?org p:P31 ?p. ?p ps:P31 wd:Q667509; pq:P582 [] }
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
