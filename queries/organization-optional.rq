@@ -35,6 +35,7 @@ WHERE {
     ?person wdt:P31 wd:Q5 .
     MINUS { ?positionStatement pq:P582 ?endtime }
     MINUS { ?person wdt:P570 [] }
+    FILTER ( ?office != wd:Q30185 )
   }
 
   OPTIONAL {
