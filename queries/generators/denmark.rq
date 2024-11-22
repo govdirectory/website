@@ -20,6 +20,7 @@ WHERE {
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P3999 [] }
+  MINUS { ?org wdt:P571 ?start . FILTER (?start > NOW() ) }
 
   OPTIONAL {
     ?org wdt:P9798/wdt:P279* ?cofog .
