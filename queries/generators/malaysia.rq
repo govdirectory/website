@@ -1,4 +1,4 @@
-# expected_result_count: 204
+# expected_result_count: 205
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -10,10 +10,10 @@ WHERE {
   BIND(wd:Q833 AS ?country)
 
   VALUES ?type {
-    wd:Q111179247
-    wd:Q15063586
-    wd:Q1008803
-    wd:Q1994931
+    wd:Q111179247 # ministries (28)
+    wd:Q15063586  # state (13)
+    wd:Q1008803   # territory (3)
+    wd:Q1994931   # district (161)
   }
   ?org wdt:P31 ?type .
 
