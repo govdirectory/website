@@ -31,8 +31,7 @@ jobs:
     - name: Check changed .rq files
       id: check-files
       run: |
-        echo "Debugging CHANGED_FILES..."
-        echo "Comparing commits:"
+        echo "Queries to check:"
         git diff --name-only origin/main...HEAD -- '*.rq'
 
         # Get a list of .rq files changed in the PR
