@@ -22,7 +22,7 @@ jobs:
       id: check-files
       run: |
         # Get a list of .rq files changed in the PR
-        CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- '*.rq')
+        CHANGED_FILES=$(git diff --name-only origin/main...HEAD -- '*.rq')
         for file in $CHANGED_FILES; do
           echo "Running script on $file"
           python scripts/check-expected-results-count.py --path "$file"
