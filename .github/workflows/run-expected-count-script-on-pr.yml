@@ -12,17 +12,30 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Ensure full history is fetched
+
+    - name: Fetch default branch
+      run: git fetch origin main  # Adjust 'main' if your default branch is named differently
 
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
 
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
     - name: Check changed .rq files
       id: check-files
       run: |
+        echo "Queries to check:"
+        git diff --name-only origin/main...HEAD -- '*.rq'
+
         # Get a list of .rq files changed in the PR
-        CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- '*.rq')
+        CHANGED_FILES=$(git diff --name-only origin/main...HEAD -- '*.rq')
         for file in $CHANGED_FILES; do
           echo "Running script on $file"
           python scripts/check-expected-results-count.py --path "$file"
