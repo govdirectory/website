@@ -12,6 +12,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Ensure full history is fetched
+
+    - name: Fetch default branch
+      run: git fetch origin main  # Adjust 'main' if your default branch is named differently
 
     - name: Set up Python
       uses: actions/setup-python@v4
