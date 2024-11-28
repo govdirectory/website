@@ -1,4 +1,4 @@
-# expected_result_count: 766
+# expected_result_count: 775
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -13,13 +13,13 @@ WHERE {
   {
     # agencies with country set to Sweden
     VALUES ?type {
-      wd:Q68295960 # Swedish government agency (249) ✔
-      wd:Q107407151 # Swedish government agency under the parliament (5) ✔
+      wd:Q68295960 # Swedish government agency (254) ✔
+      wd:Q107407151 # Swedish government agency under the parliament (12) ✔
       wd:Q127448 # municipality of Sweden (290) ✔
       wd:Q1754161 # regional council in Sweden (20) ✔
       wd:Q10397683 # AP-fund (6) ✔
       wd:Q16296141 # state-owned enterprise (3) ✔
-      wd:Q10330441 # state level departments (11) ✔
+      wd:Q10330441 # state level departments (10) ✔
       wd:Q341627 # court of appeal (6) ✔
       wd:Q2065704 # tingsrätt (48) ✔
       wd:Q190752 # supreme court (2) ✔
@@ -34,7 +34,7 @@ WHERE {
     VALUES ?type {
       wd:Q108059166 # delegations (7) ✔
       wd:Q108058047 # general consulates (9) ✔
-      wd:Q3917681 # embassies (93) ✔
+      wd:Q3917681 # embassies (91) ✔
     }
 
     ?org wdt:P31 ?type; wdt:P137 ?country .
