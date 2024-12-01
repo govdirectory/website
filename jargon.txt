@@ -52,6 +52,8 @@ czech
 dataset
 de
 denmark
+department
+departments
 dependsOn
 deps
 der
@@ -209,6 +211,7 @@ SPARQL
 spdx
 src
 st
+state
 Sverige
 svg
 sweden
