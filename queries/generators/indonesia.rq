@@ -1,4 +1,4 @@
-# expected_result_count: 586
+# expected_result_count: 600
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -10,7 +10,7 @@ WHERE {
   BIND(wd:Q252 AS ?country)
 
   VALUES ?type {
-    wd:Q17417403 # ministries (34)
+    wd:Q17417403 # ministries (48)
     wd:Q5098     # provinces / provinsi (38)
     wd:Q4272761  # administrative city of Indonesia / kota (5)
     wd:Q3199141  # city of Indonesia / kota (93)
