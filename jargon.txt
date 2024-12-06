@@ -52,6 +52,8 @@ czech
 dataset
 de
 denmark
+department
+departments
 dependsOn
 deps
 der
@@ -100,12 +102,14 @@ http
 HTTPS
 iceland
 ICTs
+ie
 implementers
 india
 indonesia
 inlining
 intendedAudience
 io
+ireland
 javascript
 Jitsi
 json
@@ -209,6 +213,7 @@ SPARQL
 spdx
 src
 st
+state
 Sverige
 svg
 sweden
