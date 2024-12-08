@@ -50,6 +50,10 @@ a, a:hover {
     color: #fff;
 }
 
+hr {
+    color: inherit;
+}
+
 summary {
     font-size: 1.5rem;
     font-weight: 800;
@@ -452,6 +456,35 @@ header.topic {
     background: #00264d;
     border-radius: 5px;
     padding: 2em;
+    padding-bottom: calc(2em - 29px / 2); /* 29px is the height of the button excluding content */
+}
+
+.infobox .additional-info.collapsed {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.infobox .additional-info {
+    max-height: 1000px;
+    transition: max-height .8s;
+}
+
+.infobox button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.infobox button:hover {
+    /* bounce the icon slightly */
+    transform: translateY(2px);
+    transition: transform 0.2s;
 }
 
 .btn-list .btn {
