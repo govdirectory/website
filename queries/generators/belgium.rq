@@ -37,15 +37,9 @@ UNION
     wd:Q121856465 # delegations (8)
     wd:Q112307194 # consulate generals (15)
     wd:Q3917681 # embassies (83)
+    wd:Q5244910 #  de facto embassy (1)
 }
 ?org wdt:P31 ?type; wdt:P137 ?country .
-}
-UNION
-{
-  VALUES ?type {
-    wd:Q5244910 #  de facto embassy (1)
-  }
-  ?org wdt:P31 ?type; wdt:P17 wd:Q865; wdt:P137 ?country .
 }
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
@@ -56,4 +50,4 @@ UNION
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl,fr,de" }
 }
-ORDER BY ?type ?orgLabel
+ORDER BY ?typeLabel ?type
