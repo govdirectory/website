@@ -50,4 +50,4 @@ UNION
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl,fr,de" }
 }
-ORDER BY ?typeLabel ?type
+ORDER BY ?typeLabel ?orgLabel
