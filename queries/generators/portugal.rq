@@ -1,0 +1,38 @@
+# expected_result_count: 346
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+  ?cofog
+WHERE {
+  BIND(wd:Q45 AS ?country)
+
+  VALUES ?type {
+    wd:Q131467261 # ministries of Portugal (17)
+    wd:Q3032141 # districts of Portugal (18)
+    wd:Q2914565 # autonomous regions of Portugal (2)
+    wd:Q13217644 # municipalities of Portugal (308)
+    wd:Q37002670 # parliament (1)
+  }
+
+  ?org wdt:P31 ?type ;
+       wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P3999 [] }
+  MINUS { ?org p:P31 ?p . ?p pq:P582 ?edate . FILTER (DATATYPE(?edate) = xsd:dateTime && ?edate < now())}
+  
+  OPTIONAL {
+    ?org wdt:P9798/wdt:P279* ?cofog .
+    MINUS { ?cofog wdt:P279 [] }
+  }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,pt,mul". }
+}
+ORDER BY ?typeLabel ?topic

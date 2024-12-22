@@ -141,6 +141,9 @@ views:
   - output: "ireland/{{qid}}/index.html"
     query: "generators/ireland.rq"
     template: "org.html" 
+  - output: "portugal/{{qid}}/index.html"
+    query: "generators/portugal.rq"
+    template: "org.html" 
 
   - output: "united-kingdom/{{qid}}/index.html"
     query: "generators/united-kingdom.rq"
