@@ -171,8 +171,10 @@ ph
 philippines
 platformLabel
 png
+portugal
 pre
 proactiveness
+pt
 publiccode
 publiccodeYmlVersion
 qid
