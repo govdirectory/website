@@ -34,7 +34,7 @@ WHERE {
     MINUS { ?cofog wdt:P279 [] }
   }
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mi" }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mi,mul" }
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
 } ORDER BY ?typeLabel
