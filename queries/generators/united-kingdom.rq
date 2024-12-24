@@ -25,6 +25,6 @@ WHERE {
     MINUS { ?cofog wdt:P279 [] }
   }
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul" }
 }
 ORDER BY ?type ?orgLabel

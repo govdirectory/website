@@ -52,7 +52,7 @@ WHERE {
 
   SERVICE wikibase:label {
     # this might need to be updated when new countries are added
-    bd:serviceParam wikibase:language "en,sv" .
+    bd:serviceParam wikibase:language "en,sv,mul" .
     ?person rdfs:label ?personLabel .
   }
 } GROUP BY ?wikipedia

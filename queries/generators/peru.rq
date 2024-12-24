@@ -18,6 +18,6 @@ WHERE {
   MINUS { ?org wdt:P1366 [] }
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es" }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es,qu,ay,mul" }
 }
 ORDER BY ?type ?orgLabel
