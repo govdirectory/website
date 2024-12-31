@@ -19,7 +19,7 @@ WHERE { BIND(wd:Q211 AS ?country)
     VALUES ?type {
       wd:Q3917681 # embassy (38)
       wd:Q2360219 # permanent mission (7)
-      wd:Q7843791 # conulate (1)
+      wd:Q7843791 # consulate (1)
     }
     ?org wdt:P31 ?type ;
          wdt:P137 ?country .
