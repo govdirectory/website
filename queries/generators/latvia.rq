@@ -1,0 +1,37 @@
+# expected_result_count: 96
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+  ?cofog
+WHERE { BIND(wd:Q211 AS ?country)
+  {
+    VALUES ?type {
+      wd:Q3345345 # Municipality of Latvia (36)
+      wd:Q131579945 # ministry of Latvia (14)
+    }
+    ?org wdt:P31 ?type ;
+         wdt:P17 ?country .
+  } UNION {
+    VALUES ?type {
+      wd:Q3917681 # embassy (38)
+      wd:Q2360219 # permanent mission (7)
+      wd:Q7843791 # conulate (1)
+    }
+    ?org wdt:P31 ?type ;
+         wdt:P137 ?country .
+  }
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P3999 [] }
+  OPTIONAL {
+    ?org wdt:P9798/wdt:P279* ?cofog .
+    MINUS { ?cofog wdt:P279 [] }
+  }
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,lv,mul". }
+}
+ORDER BY ?type ?topic

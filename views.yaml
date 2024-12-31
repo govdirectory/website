@@ -143,7 +143,10 @@ views:
     template: "org.html" 
   - output: "portugal/{{qid}}/index.html"
     query: "generators/portugal.rq"
-    template: "org.html" 
+    template: "org.html"
+  - output: "latvia/{{qid}}/index.html"
+    query: "generators/latvia.rq"
+    template: "org.html"  
 
   - output: "united-kingdom/{{qid}}/index.html"
     query: "generators/united-kingdom.rq"
