@@ -116,6 +116,7 @@ json
 landingURL
 Larsson
 Latvia
+latvia
 leadBy
 Lectorate
 len
