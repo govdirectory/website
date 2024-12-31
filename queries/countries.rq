@@ -46,7 +46,7 @@ WHERE {
     (wd:Q1009 'Cameroon' 'cameroon' 'Current content includes ministries, regions, senate, lower house and supreme court.' '')
     (wd:Q27 'Ireland' 'ireland' 'Current content includes departments of state.' '')
     (wd:Q45 'Portugal' 'portugal' 'Current content includes ministries, districts, autonomous regions, municipalities and the parliament.' '')
-    (wd:Q211 'Latvia' 'latvia' 'Current content includes ministries,  municipalities and agencies abroad.' '')
+    (wd:Q211 'Latvia' 'latvia' 'Current content includes ministries, municipalities and agencies abroad.' '')
 
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments.' 'Scotland|scotland')
     (wd:Q22 'Scotland' 'united-kingdom/scotland' 'Executive agencies, local authorities, NHS boards, NDPBs, courts, public corporations, tribunals, parole boards, Queen\'s printer, non-ministerial government departments, commissioners, ombudsmen and Health and social care partnerships.' '')
