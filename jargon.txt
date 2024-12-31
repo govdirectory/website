@@ -115,6 +115,8 @@ Jitsi
 json
 landingURL
 Larsson
+Latvia
+latvia
 leadBy
 Lectorate
 len
@@ -129,6 +131,7 @@ localizable
 longDescription
 lu
 luxembourg
+lv
 mainCopyrightOwner
 Maki
 malaysia
