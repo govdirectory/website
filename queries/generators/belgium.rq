@@ -1,4 +1,4 @@
-# expected_result_count: 990
+# expected_result_count: 971
 SELECT DISTINCT
 ?qid
 ?orgLabel
@@ -18,11 +18,11 @@ WHERE {
     wd:Q21004446 # Public Planning Service (3)
     wd:Q17373496 # language areas (4)
     wd:Q89934 # communities (3)
-    wd:Q83057 # regions (4)
+    wd:Q83057 # regions (3)
     wd:Q83116 # extant provinces (10)
-    wd:Q2621126 # police zones (182)
+    wd:Q2621126 # police zones (178)
     wd:Q3575878 # emergency zones (35)
-    wd:Q493522 # municipalities (580)
+    wd:Q493522 # municipalities (565)
     wd:Q190752 # supreme court (2)
     wd:Q32766 # constitutional court (1)
     wd:Q2570643 # senate (1)
@@ -45,7 +45,7 @@ UNION
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P582 [] }
   MINUS { ?org wdt:P571 ?date . FILTER (DATATYPE(?date) = xsd:dateTime && ?date > now()) }
-
+  
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl,fr,de,mul" }
