@@ -1,4 +1,4 @@
-# expected_result_count: 990
+# expected_result_count: 972
 SELECT DISTINCT
 ?qid
 ?orgLabel
@@ -20,9 +20,9 @@ WHERE {
     wd:Q89934 # communities (3)
     wd:Q83057 # regions (4)
     wd:Q83116 # extant provinces (10)
-    wd:Q2621126 # police zones (182)
+    wd:Q2621126 # police zones (178)
     wd:Q3575878 # emergency zones (35)
-    wd:Q493522 # municipalities (580)
+    wd:Q493522 # municipalities (565)
     wd:Q190752 # supreme court (2)
     wd:Q32766 # constitutional court (1)
     wd:Q2570643 # senate (1)
