@@ -1,4 +1,4 @@
-# expected_result_count: 50
+# expected_result_count: 262
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -9,7 +9,8 @@ SELECT DISTINCT
   ?cofog
 WHERE {
   BIND(wd:Q183 AS ?country)
-
+{
+    # agencies with country set to Germany
   VALUES ?type {
     wd:Q1221156 # state of Germany (16)
     wd:Q896375 # federal ministry (15)
@@ -20,9 +21,19 @@ WHERE {
 
   ?org wdt:P31 ?type ;
        wdt:P17 ?country .
+} UNION {
+    # German agencies which does not necessarily have country set to Germany
+    VALUES ?type {
+      wd:Q3917681 # embassies (154)
+      wd:Q372690 # consulate generals (49)
+      wd:Q7843791 # consulats (7)
+      wd:Q5244910 # de facto embassies (2)
+    }
 
-  MINUS { ?org wdt:P576 [] }
-  MINUS { ?org wdt:P1366 [] }
+    ?org wdt:P31 ?type; wdt:P137 ?country .
+  }
+  MINUS { ?org wdt:P576 [] MINUS { ?org wdt:P31 wd:Q3917681 } } # To get the embassy in Yemen
+  MINUS { ?org wdt:P1366 [] MINUS { ?org wdt:P5817 wd:Q55654238 } } # To get the embassy in Belgrade
   MINUS { ?org wdt:P3999 [] }
 
   OPTIONAL {
