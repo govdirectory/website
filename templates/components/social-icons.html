@@ -23,6 +23,10 @@
         {{- else if eq .property (uri "http://www.wikidata.org/entity/P2003") -}}{{/* Instagram */}}
             {{- $preview_count = add1 $preview_count -}}
             <li><a rel="nofollow" title="Instagram" href="{{ .url }}"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li>
+        {{- else if eq .property (uri "http://www.wikidata.org/entity/P4033") -}}{{/* Mastodon */}}
+            {{- $preview_count = add1 $preview_count -}}
+            <li><a rel="nofollow" title="Mastodon" href="{{ .url }}"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/mastodon.svg" /></a></li>
+        
         {{- end -}}
     {{- end -}}
     {{- if ne (sub (len $socialAccounts) $preview_count) 0 -}}
