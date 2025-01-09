@@ -1,4 +1,4 @@
-# expected_result_count: 340
+# expected_result_count: 339
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -12,7 +12,7 @@ WHERE {
   VALUES ?type {
     wd:Q193512 # Region (19)
     wd:Q10495402 # Ministries (12)
-    wd:Q856076 # Municipalities (309)
+    wd:Q856076 # Municipalities (308)
   }
   ?org wdt:P31 ?type .
 
