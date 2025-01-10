@@ -93,10 +93,13 @@ Array.from(dataTable.children[1].children).forEach((row, index) => {
         accounts = Array.from(row.children[1].firstChild.children).map(item => {
             if (item.firstChild.title === 'Website') {
                 website = item.firstChild.href;
+                return;
             }
             return item.firstChild.href;
         }).join('|');
         accounts = accounts.replace('||', '|');
+        // remove trailing and leading pipes
+        accounts = accounts.replace(/^\|+|\|+$/g, '');
     }
     const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + website + '"\t"' + accounts + '"\n';
     tsv += tsvRow;
