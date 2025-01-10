@@ -177,7 +177,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; // header
         const columns = Array.from(row.children);
@@ -185,7 +185,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
