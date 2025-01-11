@@ -135,6 +135,18 @@ input {
     object-fit: contain;
 }
 
+.to-top-link {
+  margin-block-start: calc(100vh + 200px);
+  position: sticky;
+  bottom: 1rem;
+  left: 1rem;
+
+  background: #00264d;
+  color: #FFF;
+  padding: 7px 21px;
+  border-radius: 3px;
+  text-decoration: none;
+}
 
 /* SECTIONS FOR CONTENT */
 

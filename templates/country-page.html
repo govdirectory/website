@@ -75,6 +75,7 @@
 
     {{- $country_orgs := query (join "" "generators/" .safeName.String ".rq") -}}
     {{- include "org-table.html" $country_orgs -}}
+    <a href="#top" class="to-top-link">Back to top</a>
 </main>
 {{ end }}
 
