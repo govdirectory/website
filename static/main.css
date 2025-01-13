@@ -1,4 +1,17 @@
 /* RESET */
+:root {
+    --color-primary: #00264d;
+    --color-primary-dark: #062b58;
+    --color-primary-light: #094082;
+    --color-secondary: #e66a49;
+    --color-text: #333;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-grey: #f8f4ed;
+    --color-yellow: #fcda02;
+    --color-border: #ced4da;
+}
+
 body {
     margin: 0;
     font-family: "Ubuntu", sans-serif;
@@ -133,19 +146,6 @@ input {
 .landing-page-image {
     max-width: 100%;
     object-fit: contain;
-}
-
-:root {
-    --color-primary: #00264d;
-    --color-primary-dark: #062b58;
-    --color-primary-light: #094082;
-    --color-secondary: #e66a49;
-    --color-text: #333;
-    --color-black: #000;
-    --color-white: #fff;
-    --color-grey: #f8f4ed;
-    --color-yellow: #fcda02;
-    --color-border: #ced4da;
 }
 
 /* SECTIONS FOR CONTENT */
