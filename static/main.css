@@ -1,8 +1,21 @@
 /* RESET */
+:root {
+    --color-primary: #00264d;
+    --color-primary-dark: #062b58;
+    --color-primary-light: #094082;
+    --color-secondary: #e66a49;
+    --color-text: #333;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-grey: #f8f4ed;
+    --color-yellow: #fcda02;
+    --color-border: #ced4da;
+}
+
 body {
     margin: 0;
     font-family: "Ubuntu", sans-serif;
-    color: #333;
+    color: var(--color-text);
     font-size: .96em;
     min-height: 100vh;
     display: flex;
@@ -47,7 +60,7 @@ h2 {
 
 a, a:hover {
     text-decoration: underline;
-    color: #fff;
+    color: var(--color-white);
 }
 
 summary {
@@ -62,7 +75,7 @@ summary {
 
 .dark-link, .dark-link:hover, .dark-link:focus {
     text-decoration: underline;
-    color: #000;
+    color: var(--color-black);
 }
 
 .padding {
@@ -74,15 +87,15 @@ summary {
 }
 
 .text-grey {
-    color: #fcda02;
+    color: var(--color-yellow);
 }
 
 .text-orange {
-    color: #e66a49;
+    color: var(--color-secondary);
 }
 
 .bg-grey {
-    background-color: #f8f4ed;
+    background-color: var(--color-grey);
 }
 
 .sticky-grey {
@@ -97,7 +110,7 @@ summary {
 }
 
 .bg-orange {
-    background: #e66a49;
+    background: var(--color-secondary);
     padding: 20px 0;
 }
 
@@ -110,8 +123,8 @@ input {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: #fff;
-  border: 1px solid #ced4da;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
   appearance: none;
   border-radius: .25rem;
   margin-left: .5em;
@@ -135,12 +148,11 @@ input {
     object-fit: contain;
 }
 
-
 /* SECTIONS FOR CONTENT */
 
 section {
     line-height: 1.55;
-    color: #000;
+    color: var(--color-black);
     padding: 50px 0;
 }
 
@@ -161,7 +173,7 @@ section {
     line-height: 1.55;
     font-size: clamp(1.5rem, 4vw, 3rem);
     margin: 0;
-    color: #fff;
+    color: var(--color-white);
 }
 
 @keyframes gradientBG {
@@ -181,7 +193,7 @@ section {
 /* NAV */
 
 nav {
-    background-color: #00264d;
+    background-color: var(--color-primary);
     position: sticky;
     top: 0;
     height: 70px;
@@ -203,7 +215,7 @@ nav li {
 nav a {
     line-height: 70px;
     text-align: center;
-    color: #fff;
+    color: var(--color-white);
     text-decoration: none;
     font-size: 1.1rem;
     padding: 0 20px;
@@ -215,25 +227,25 @@ nav img {
 }
 
 nav a:hover {
-    background-color: #e66a49;
-    color: #fff;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
 }
 
 /* LARGE CALL-OUT-BOX */
 
 .call-out {
-    background: #e66a49;
+    background: var(--color-secondary);
     font-size: 1.5rem;
     padding: 1em;
-    color: #fff;
+    color: var(--color-white);
     border-radius: 5px;
 }
 
 /* FOOTER */
 
 footer {
-    background-color: #062b58;
-    color: #fff;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
     padding: 1em;
     height: 100%;
     margin-top: auto;
@@ -261,7 +273,7 @@ footer li {
 }
 
 .white-bg {
-    background-color: #fff;
+    background-color: var(--color-white);
 }
 
 /* TABLE */
@@ -275,15 +287,15 @@ table {
 table thead {
 		position: sticky;
 		top: 164px;
-		background: #fff;
+		background: var(--color-white);
 }
 
 table a {
-    color: #000;
+    color: var(--color-black);
 }
 
 table a:focus, table a:hover {
-    color: #000;
+    color: var(--color-black);
 }
 
 table td, table th {
@@ -296,7 +308,7 @@ table th {
 }
 
 table tr:nth-child(even) {
-    background-color: #f8f4ed;
+    background-color: var(--color-grey);
 }
 
 table ul li {
@@ -319,8 +331,8 @@ table th:not(.js-sort-none):hover {
 /* BUTTONS */
 
 .btn {
-    background: #062b58;
-    color: #fff;
+    background: var(--color-primary-dark);
+    color: var(--color-white);
     text-decoration: none;
     text-align: center;
     padding: 7px 21px;
@@ -333,7 +345,7 @@ table th:not(.js-sort-none):hover {
 }
 
 .btn:hover, .btn:focus {
-    background: #094082;
+    background: var(--color-primary-light);
     text-decoration: none;
 }
 
@@ -377,7 +389,7 @@ table th:not(.js-sort-none):hover {
 .box-list li {
     height: 100px;
     line-height: 100px;
-    background: #e66a49;
+    background: var(--color-secondary);
     border-radius: 3px;
 }
 
@@ -385,7 +397,7 @@ table th:not(.js-sort-none):hover {
     display: block;
     text-align: center;
     text-decoration: none;
-    color: #fff;
+    color: var(--color-white);
     font-size: 1.15rem;
 }
 
@@ -398,7 +410,7 @@ table th:not(.js-sort-none):hover {
 }
 
 .topic-list div {
-    background: #e66a49;
+    background: var(--color-secondary);
     border-radius: 100%;
     height: 100px;
     text-align: center;
@@ -413,16 +425,16 @@ table th:not(.js-sort-none):hover {
 }
 
 .topic-list a {
-    color: #000;
+    color: var(--color-black);
 }
 
 /* HEADER */
 
 header.item {
-    background: #e66a49;
+    background: var(--color-secondary);
     margin-top: 2em;
     padding: 2em;
-    color: #fff;
+    color: var(--color-white);
     border-radius: 5px 5px 0 0;
 }
 
@@ -432,7 +444,7 @@ header.topic {
     margin-left: 20%;
     margin-right: 20%;
     padding: 2em;
-    color: #fff;
+    color: var(--color-white);
     border-radius: 5px 5px 0 0;
 }
 
@@ -449,7 +461,7 @@ header.topic {
 }
 
 .infobox {
-    background: #00264d;
+    background: var(--color-primary);
     border-radius: 5px;
     padding: 2em;
 }
@@ -459,7 +471,7 @@ header.topic {
 }
 
 .btn-list .wikidata-btn {
-    background-color: #fff;
+    background-color: var(--color-white);
     float: right;
     width: 18px;
     height: 18px;
@@ -553,7 +565,7 @@ header.topic {
 .spinner > div {
     width: 18px;
     height: 18px;
-    background-color: #e66a49;
+    background-color: var(--color-secondary);
     border-radius: 100%;
     display: inline-block;
     animation: dots 1.4s infinite ease-in-out both;
