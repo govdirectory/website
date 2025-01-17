@@ -100,7 +100,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -131,7 +131,7 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/MOF_ua">MOF_ua</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/MOF_ua">MOF_ua</a></td>
     </tr>
     </table>
 
@@ -198,7 +198,7 @@
   "@type": "GovernmentOrganization",
   "description": "finance ministry of Ukraine","additionalType": "http://www.wikidata.org/entity/Q7878545",
   "url": "https://www.govdirectory.org/ukraine/Q4294799",
-  "sameAs": ["https://x.com/MinFin_Ukraine","https://www.facebook.com/minfin.gov.ua","https://www.youtube.com/channel/UCENYj0Snc2Xw_lQJbY-SJPg","https://t.me/MOF_ua","http://wikidata.org/entity/Q4294799"],
+  "sameAs": ["https://x.com/MinFin_Ukraine","https://www.facebook.com/minfin.gov.ua","https://www.youtube.com/channel/UCENYj0Snc2Xw_lQJbY-SJPg","https://t.me/s/MOF_ua","http://wikidata.org/entity/Q4294799"],
   "name": "Ministry of Finance of Ukraine"
 }
 </script>
@@ -207,7 +207,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -215,7 +215,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -249,6 +249,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

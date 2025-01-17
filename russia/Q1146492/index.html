@@ -100,7 +100,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -147,11 +147,11 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/mod_russia">mod_russia</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/mod_russia">mod_russia</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/mod_russia_en">mod_russia_en</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/mod_russia_en">mod_russia_en</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P4003">
         <td lang="">Facebook</td>
@@ -226,7 +226,7 @@
   "@type": "GovernmentOrganization",
   "description": "governing body of the Russian Armed Forces","additionalType": "http://www.wikidata.org/entity/Q4481741",
   "url": "https://www.govdirectory.org/russia/Q1146492",
-  "sameAs": ["https://rutube.ru/channel/24675435/","https://x.com/mod_russia","https://www.instagram.com/mil_ru/","https://www.facebook.com/1492252324350852","https://www.youtube.com/channel/UCQGqX5Ndpm4snE0NTjyOJnA","https://vk.com/mil","https://www.flickr.com/people/mod_russia","https://t.me/mod_russia","https://t.me/mod_russia_en","https://www.facebook.com/pages/Министерство-обороны-Российской-Федерации/1492252324350852","https://ok.ru/mil","http://wikidata.org/entity/Q1146492"],
+  "sameAs": ["https://rutube.ru/channel/24675435/","https://x.com/mod_russia","https://www.instagram.com/mil_ru/","https://www.facebook.com/1492252324350852","https://www.youtube.com/channel/UCQGqX5Ndpm4snE0NTjyOJnA","https://vk.com/mil","https://www.flickr.com/people/mod_russia","https://t.me/s/mod_russia","https://t.me/s/mod_russia_en","https://www.facebook.com/pages/Министерство-обороны-Российской-Федерации/1492252324350852","https://ok.ru/mil","http://wikidata.org/entity/Q1146492"],
   "name": "Ministry of Defense of the Russian Federation"
 }
 </script>
@@ -235,7 +235,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -243,7 +243,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -277,6 +277,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

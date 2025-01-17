@@ -58,7 +58,7 @@
 
     <meta name="fediverse:creator" content="@govdirectory@wikis.world" />
 
-    
+    <meta name="description" content="وزارة مغربية تشرف على قطاع التجهيز والماء والأرصاد الجوية">
 
     <noscript>
         <style>
@@ -87,7 +87,7 @@
             <a class="btn rounded" href="/morocco/">Morocco</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q108829759" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q108829759%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="">Ministry of Equipment and Water</h1><div class="header-lower">
+        <h1 lang="">Ministry of Equipment and Water</h1><p lang="">وزارة مغربية تشرف على قطاع التجهيز والماء والأرصاد الجوية</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Official website: <a href="http://www.equipement.gov.ma/">www.equipement.gov.ma/</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
@@ -102,7 +102,7 @@
                     <a class="btn" href="mailto:communication@mtpnet.gov.ma">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -202,7 +202,7 @@
 {
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
-  "description": "","additionalType": "http://www.wikidata.org/entity/Q20390905",
+  "description": "وزارة مغربية تشرف على قطاع التجهيز والماء والأرصاد الجوية","additionalType": "http://www.wikidata.org/entity/Q20390905",
   "url": "https://www.govdirectory.org/morocco/Q108829759",
   "sameAs": ["https://www.youtube.com/@ministeredelequipementetde1042","https://x.com/equipement_eau","https://www.instagram.com/equipement_eau/","https://www.facebook.com/equipement.eau.maroc","https://www.youtube.com/channel/UCBz_S42IrOw5QJh3C9Vckhw","http://wikidata.org/entity/Q108829759"],
   "name": "Ministry of Equipment and Water"
@@ -213,7 +213,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -221,7 +221,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -255,6 +255,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

@@ -89,7 +89,7 @@
         </div>
         <h1 lang="">Karlskrona Municipality</h1><p lang="">municipality in Blekinge County, Sweden</p><div class="header-lower">
             <div class="infobox">
-                <ul><li>Official website: <span class="text-grey">[missing data]</span></li>
+                <ul><li>Official website: <a href="https://www.karlskrona.se/">www.karlskrona.se/</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
                     <li>Led by: Emma Swahn Nilsson</li>
                     <li>Main regulatory text: <a href="https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/kommunallag-2017725_sfs-2017-725">Kommunallag (2017:725)</a></li>
@@ -104,7 +104,7 @@
                     <a class="btn" href="https://www.karlskrona.se/kommun-och-politik/kontakt-och-dialog/medborgarforslag/">Make a citizen's initiative</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -215,7 +215,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -223,7 +223,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -257,6 +257,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

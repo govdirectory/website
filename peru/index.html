@@ -101,7 +101,7 @@
                 <p><a href="https://en.wikipedia.org/wiki/Peru">Read more on Wikipedia.</a></p>
             </div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header></div>
 
 <main>
@@ -1202,127 +1202,127 @@
     <tr>
         <td lang=""><a href="Q201162/">Amazonas Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q205089/">Ancash Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q208185/">Apurimac Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q205068/">Arequipa Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q205112/">Ayacucho Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q205078/">Cajamarca Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q2071352/">Callao Region</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q205057/">Cuzco Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q505220/">Huancavelica Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q215221/">Huanuco Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q208186/">Ica Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q207973/">Junin Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q205126/">La Libertad Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q210061/">Lambayeque Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q211795/">Lima Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q200938/">Loreto Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q210896/">Madre de Dios Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q208182/">Moquegua Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q211208/">Pasco Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q208183/">Piura Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q205104/">Puno Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q211793/">San Martin Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q207413/">Tacna Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q209597/">Tumbes Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     <tr>
         <td lang=""><a href="Q207424/">Ucayali Department</a></td>
         <td></td>
-        <td lang="">region of Peru</td>
+        <td lang="">department of Peru</td>
     </tr>
     </tbody>
 </table>
@@ -1369,23 +1369,21 @@
 <script>
 const dataTable = document.querySelector('table');
 
-let tsv = '"Name"\t"Govdirectory URL"\t"Type"\t"Website"\t"Accounts"\n';
+let tsv = '"Name"\t"Govdirectory URL"\t"Type"\t"Website"\n';
 Array.from(dataTable.children[1].children).forEach((row, index) => {
     const name = row.children[0].innerText;
     const qid = row.children[0].firstChild.href;
     const type = row.children[2].innerText;
     var website = '';
-    var accounts = '';
     if (row.children[1].firstChild) {
-        accounts = Array.from(row.children[1].firstChild.children).map(item => {
+        Array.from(row.children[1].firstChild.children).map(item => {
             if (item.firstChild.title === 'Website') {
                 website = item.firstChild.href;
+                return;
             }
-            return item.firstChild.href;
-        }).join('|');
-        accounts = accounts.replace('||', '|');
+        });
     }
-    const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + website + '"\t"' + accounts + '"\n';
+    const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + website + '"\n"';
     tsv += tsvRow;
 });
 

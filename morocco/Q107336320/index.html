@@ -58,7 +58,7 @@
 
     <meta name="fediverse:creator" content="@govdirectory@wikis.world" />
 
-    
+    <meta name="description" content="منظمة مغربية">
 
     <noscript>
         <style>
@@ -87,7 +87,7 @@
             <a class="btn rounded" href="/morocco/">Morocco</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q107336320" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q107336320%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="">National Road Safety Agency</h1><div class="header-lower">
+        <h1 lang="">National Road Safety Agency</h1><p lang="">منظمة مغربية</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Official website: <a href="http://www.narsa.ma/">www.narsa.ma/</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
@@ -100,7 +100,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -122,7 +122,7 @@
         <td><a rel="nofollow" href="https://www.youtube.com/@NARSA20">NARSA20</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
-        <td lang="">Q918</td>
+        <td lang="">X</td>
         <td><a rel="nofollow" href="https://x.com/NARSA_ma">NARSA_ma</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
@@ -208,7 +208,7 @@
 {
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
-  "description": "","additionalType": "http://www.wikidata.org/entity/Q121614922",
+  "description": "منظمة مغربية","additionalType": "http://www.wikidata.org/entity/Q121614922",
   "url": "https://www.govdirectory.org/morocco/Q107336320",
   "sameAs": ["https://www.youtube.com/@NARSA20","https://x.com/NARSA_ma","https://www.instagram.com/narsamaroc/","https://www.facebook.com/NARSA20","https://www.youtube.com/channel/UCH5iVBqBVfx_acMGsPPXr8Q","https://www.pinterest.com/narsamaroc/","https://www.linkedin.com/company/narsa-maroc/","http://wikidata.org/entity/Q107336320"],
   "name": "National Road Safety Agency"
@@ -219,7 +219,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -227,7 +227,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -261,6 +261,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

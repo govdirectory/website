@@ -98,9 +98,11 @@
                 
             </div>
 
-            <div class="center-text action-boxes"></div>
+            <div class="center-text action-boxes"><div>
+                    <a class="btn" href="mailto:contact@aua.ma">Send an email</a>
+                </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -109,13 +111,20 @@
 
     <section class="bg-grey">
         <div class="container move-away">
-            <h2 class="m0">Platforms and accounts</h2></div>
+            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Agence Urbaine d&#39;Agadir - Q126953116.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
     </section>
 
     
-    <div class="container">
-        <p class="call-out">No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/Q126953116">Wikidata</a>.</p>
-    </div>
+        <table class="container">
+    <tr>
+      <th class="js-sort-none">Platform</th>
+      <th class="js-sort-none">Account</th>
+    </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2013">
+        <td lang="">Facebook</td>
+        <td><a rel="nofollow" href="https://www.facebook.com/AgenceUrbaineAgadir">AgenceUrbaineAgadir</a></td>
+    </tr>
+    </table>
+
     
     <div class="container need-js"><div aria-hidden="true" class="spinner need-js">
   <div class="dot1"></div>
@@ -179,7 +188,7 @@
   "@type": "GovernmentOrganization",
   "description": "","additionalType": "http://www.wikidata.org/entity/Q121614922",
   "url": "https://www.govdirectory.org/morocco/Q126953116",
-  "sameAs": ["http://wikidata.org/entity/Q126953116"],
+  "sameAs": ["https://www.facebook.com/AgenceUrbaineAgadir","http://wikidata.org/entity/Q126953116"],
   "name": "Agence Urbaine d&#39;Agadir"
 }
 </script>
@@ -188,7 +197,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -196,7 +205,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -230,6 +239,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

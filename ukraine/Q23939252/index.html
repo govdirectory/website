@@ -102,7 +102,7 @@
                     <a class="btn" href="mailto:info@minre.gov.ua">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -137,7 +137,7 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/minre_ua">minre_ua</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/minre_ua">minre_ua</a></td>
     </tr>
     </table>
 
@@ -204,7 +204,7 @@
   "@type": "GovernmentOrganization",
   "description": "Ukrainian government ministry","additionalType": "http://www.wikidata.org/entity/Q7878545",
   "url": "https://www.govdirectory.org/ukraine/Q23939252",
-  "sameAs": ["https://x.com/mtot_gov_ua","https://www.instagram.com/minreintegration/","https://www.facebook.com/MinistryforTOTandIDPs","https://www.youtube.com/channel/UCFfYjjJmVFDkE8LQEDloo5w","https://t.me/minre_ua","http://wikidata.org/entity/Q23939252"],
+  "sameAs": ["https://x.com/mtot_gov_ua","https://www.instagram.com/minreintegration/","https://www.facebook.com/MinistryforTOTandIDPs","https://www.youtube.com/channel/UCFfYjjJmVFDkE8LQEDloo5w","https://t.me/s/minre_ua","http://wikidata.org/entity/Q23939252"],
   "name": "Ministry for Reintegration of the Temporary Occupied Territories"
 }
 </script>
@@ -213,7 +213,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -221,7 +221,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -255,6 +255,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

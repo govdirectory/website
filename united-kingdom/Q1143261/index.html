@@ -100,7 +100,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -139,7 +139,7 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/UKMinistryofDefence">UKMinistryofDefence</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/UKMinistryofDefence">UKMinistryofDefence</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
         <td lang="">LinkedIn</td>
@@ -214,7 +214,7 @@
   "@type": "GovernmentOrganization",
   "description": "United Kingdom government department responsible for implementing the defence policy","additionalType": "http://www.wikidata.org/entity/Q2500378",
   "url": "https://www.govdirectory.org/united-kingdom/Q1143261",
-  "sameAs": ["https://x.com/DefenceHQ","https://www.instagram.com/ministryofdefence/","https://www.facebook.com/theministryofdefence","https://www.youtube.com/channel/UCsP4iQA05tA_F4lgCTlWBFw","https://www.flickr.com/people/48399297@N04","https://t.me/UKMinistryofDefence","https://www.linkedin.com/company/uk-ministry-of-defence/","https://www.tiktok.com/@ukgovministryofdefence","http://wikidata.org/entity/Q1143261"],
+  "sameAs": ["https://x.com/DefenceHQ","https://www.instagram.com/ministryofdefence/","https://www.facebook.com/theministryofdefence","https://www.youtube.com/channel/UCsP4iQA05tA_F4lgCTlWBFw","https://www.flickr.com/people/48399297@N04","https://t.me/s/UKMinistryofDefence","https://www.linkedin.com/company/uk-ministry-of-defence/","https://www.tiktok.com/@ukgovministryofdefence","http://wikidata.org/entity/Q1143261"],
   "name": "Ministry of Defence of the United Kingdom"
 }
 </script>
@@ -223,7 +223,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -231,7 +231,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -265,6 +265,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

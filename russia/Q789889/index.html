@@ -100,7 +100,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -167,15 +167,15 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/MID_Russia">MID_Russia</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/MID_Russia">MID_Russia</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/MFAPressService">MFAPressService</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/MFAPressService">MFAPressService</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/MFARussia">MFARussia</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/MFARussia">MFARussia</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P5163">
         <td lang="">Odnoklassniki</td>
@@ -250,7 +250,7 @@
   "@type": "GovernmentOrganization",
   "description": "Russian ministry","additionalType": "http://www.wikidata.org/entity/Q4481741",
   "url": "https://www.govdirectory.org/russia/Q789889",
-  "sameAs": ["https://rutube.ru/channel/23489815/","https://x.com/MID_RF","https://x.com/mae_rusia","https://x.com/russia_ar","https://x.com/mfa_russia","https://www.instagram.com/mid.rus/","https://www.facebook.com/MIDRussia","https://www.facebook.com/RussianFederationArabic","https://www.youtube.com/channel/UCrVo0BXjIUlZ-YylYF8oNxg","https://vk.com/mid","https://www.flickr.com/people/118859923@N02","https://weibo.com/ezhuhua","https://t.me/MID_Russia","https://t.me/MFAPressService","https://t.me/MFARussia","https://ok.ru/midrossii","https://www.tiktok.com/@midrussia","http://wikidata.org/entity/Q789889"],
+  "sameAs": ["https://rutube.ru/channel/23489815/","https://x.com/MID_RF","https://x.com/mae_rusia","https://x.com/russia_ar","https://x.com/mfa_russia","https://www.instagram.com/mid.rus/","https://www.facebook.com/MIDRussia","https://www.facebook.com/RussianFederationArabic","https://www.youtube.com/channel/UCrVo0BXjIUlZ-YylYF8oNxg","https://vk.com/mid","https://www.flickr.com/people/118859923@N02","https://weibo.com/ezhuhua","https://t.me/s/MID_Russia","https://t.me/s/MFAPressService","https://t.me/s/MFARussia","https://ok.ru/midrossii","https://www.tiktok.com/@midrussia","http://wikidata.org/entity/Q789889"],
   "name": "Ministry of Foreign Affairs of the Russian Federation"
 }
 </script>
@@ -259,7 +259,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -267,7 +267,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -301,6 +301,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

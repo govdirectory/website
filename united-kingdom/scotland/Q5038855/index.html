@@ -100,7 +100,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -109,13 +109,36 @@
 
     <section class="bg-grey">
         <div class="container move-away">
-            <h2 class="m0">Platforms and accounts</h2></div>
+            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Care Inspectorate - Q5038855.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
     </section>
 
     
-    <div class="container">
-        <p class="call-out">No social media accounts found! Know some? Add them to <a href="https://wikidata.org/wiki/Q5038855">Wikidata</a>.</p>
-    </div>
+        <table class="container">
+    <tr>
+      <th class="js-sort-none">Platform</th>
+      <th class="js-sort-none">Account</th>
+    </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2002">
+        <td lang="">X</td>
+        <td><a rel="nofollow" href="https://x.com/CareInspect">CareInspect</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
+        <td lang="">Instagram</td>
+        <td><a rel="nofollow" href="https://www.instagram.com/careinspectorate/">careinspectorate</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
+        <td lang="">Facebook</td>
+        <td><a rel="nofollow" href="https://www.facebook.com/careinspectorate">careinspectorate</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
+        <td lang="">YouTube</td>
+        <td><a rel="nofollow" href="https://www.youtube.com/channel/UCXichI9IKFuNdKr_BiINTWQ">UCXichI9IKFuNdKr_BiINTWQ</a></td>
+    </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
+        <td lang="">LinkedIn</td>
+        <td><a rel="nofollow" href="https://www.linkedin.com/company/care-inspectorate/">care-inspectorate</a></td>
+    </tr>
+    </table>
+
     
     <div class="container need-js"><div aria-hidden="true" class="spinner need-js">
   <div class="dot1"></div>
@@ -179,7 +202,7 @@
   "@type": "GovernmentOrganization",
   "description": "a Scottish scrutiny body which supports improvement","additionalType": "http://www.wikidata.org/entity/Q3343298",
   "url": "https://www.govdirectory.org/united-kingdom/Q5038855",
-  "sameAs": ["http://wikidata.org/entity/Q5038855"],
+  "sameAs": ["https://x.com/CareInspect","https://www.instagram.com/careinspectorate/","https://www.facebook.com/careinspectorate","https://www.youtube.com/channel/UCXichI9IKFuNdKr_BiINTWQ","https://www.linkedin.com/company/care-inspectorate/","http://wikidata.org/entity/Q5038855"],
   "name": "Care Inspectorate"
 }
 </script>
@@ -188,7 +211,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -196,7 +219,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -230,6 +253,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

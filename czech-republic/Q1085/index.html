@@ -89,7 +89,7 @@
         </div>
         <h1 lang="">Prague</h1><p lang="">capital city of the Czech Republic</p><div class="header-lower">
             <div class="infobox">
-                <ul><li>Official website: <a href="https://www.praha.eu">www.praha.eu</a></li>
+                <ul><li>Official website: <a href="https://praha.eu/">praha.eu/</a></li>
                     <li>Phone: <a href="tel:&#43;420%20800%20100%20000">&#43;420 800 100 000</a></li>
                     <li>Led by: Bohuslav Svoboda</li>
                     <li>Main regulatory text: <span class="text-grey">[missing data]</span></li>
@@ -102,7 +102,7 @@
                     <a class="btn" href="mailto:info@praha.eu">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -213,7 +213,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -221,7 +221,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -255,6 +255,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

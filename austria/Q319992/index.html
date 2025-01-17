@@ -102,7 +102,7 @@
                     <a class="btn" href="mailto:verwaltung@abfaltersbach.at">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -121,7 +121,7 @@
       <th class="js-sort-none">Account</th>
     </tr><tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/abfaltersbach">abfaltersbach</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/abfaltersbach">abfaltersbach</a></td>
     </tr>
     </table>
 
@@ -188,7 +188,7 @@
   "@type": "GovernmentOrganization",
   "description": "municipality in Lienz District, Tyrol, Austria","additionalType": "http://www.wikidata.org/entity/Q667509",
   "url": "https://www.govdirectory.org/austria/Q319992",
-  "sameAs": ["https://t.me/abfaltersbach","http://wikidata.org/entity/Q319992"],
+  "sameAs": ["https://t.me/s/abfaltersbach","http://wikidata.org/entity/Q319992"],
   "name": "Abfaltersbach"
 }
 </script>
@@ -197,7 +197,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -205,7 +205,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -239,6 +239,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

@@ -100,7 +100,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -139,7 +139,7 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/mintsifry">mintsifry</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/mintsifry">mintsifry</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P5163">
         <td lang="">Odnoklassniki</td>
@@ -210,7 +210,7 @@
   "@type": "GovernmentOrganization",
   "description": "Russian ministry","additionalType": "http://www.wikidata.org/entity/Q4481741",
   "url": "https://www.govdirectory.org/russia/Q4294667",
-  "sameAs": ["https://x.com/minsvyaz_news","https://www.instagram.com/mintsifry/","https://www.facebook.com/mintsifry","https://www.youtube.com/channel/UCPLNd82VhxI8cLvXct5w0ig","https://vk.com/mintsifry","https://t.me/mintsifry","https://ok.ru/group/70000000285244","http://wikidata.org/entity/Q4294667"],
+  "sameAs": ["https://x.com/minsvyaz_news","https://www.instagram.com/mintsifry/","https://www.facebook.com/mintsifry","https://www.youtube.com/channel/UCPLNd82VhxI8cLvXct5w0ig","https://vk.com/mintsifry","https://t.me/s/mintsifry","https://ok.ru/group/70000000285244","http://wikidata.org/entity/Q4294667"],
   "name": "Ministry of Digital Development, Communications and Mass Media of the Russian Federation"
 }
 </script>
@@ -219,7 +219,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -227,7 +227,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -261,6 +261,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

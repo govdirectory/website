@@ -102,7 +102,7 @@
                     <a class="btn" href="mailto:info@mkip.gov.ua">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -137,7 +137,7 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/mkipu">mkipu</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/mkipu">mkipu</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P7085">
         <td lang="">TikTok</td>
@@ -208,7 +208,7 @@
   "@type": "GovernmentOrganization",
   "description": "Ministry of Ukraine","additionalType": "http://www.wikidata.org/entity/Q7878545",
   "url": "https://www.govdirectory.org/ukraine/Q67121433",
-  "sameAs": ["https://x.com/MKIPUkraine","https://www.instagram.com/mkip_ukraine/","https://www.facebook.com/MKIPUkraine","https://www.youtube.com/channel/UCgLarZawhgHPjKy008t3Y2w","https://t.me/mkipu","https://www.tiktok.com/@mcip.ua","http://wikidata.org/entity/Q67121433"],
+  "sameAs": ["https://x.com/MKIPUkraine","https://www.instagram.com/mkip_ukraine/","https://www.facebook.com/MKIPUkraine","https://www.youtube.com/channel/UCgLarZawhgHPjKy008t3Y2w","https://t.me/s/mkipu","https://www.tiktok.com/@mcip.ua","http://wikidata.org/entity/Q67121433"],
   "name": "Ministry of Culture and Strategic Communications of Ukraine"
 }
 </script>
@@ -217,7 +217,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -225,7 +225,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -259,6 +259,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

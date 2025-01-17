@@ -102,7 +102,7 @@
                     <a class="btn" href="https://www.kuntalaisaloite.fi/fi/hae?municipalities=91">Make a citizen's initiative</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -145,7 +145,7 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/helsinki_chat">helsinki_chat</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/helsinki_chat">helsinki_chat</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
         <td lang="">LinkedIn</td>
@@ -216,7 +216,7 @@
   "@type": "GovernmentOrganization",
   "description": "capital and most populous city of Finland","additionalType": "http://www.wikidata.org/entity/Q856076",
   "url": "https://www.govdirectory.org/finland/Q1757",
-  "sameAs": ["https://x.com/helsinki","https://www.instagram.com/helsinki/","https://www.facebook.com/helsinginkaupunki","https://github.com/City-of-Helsinki","https://www.youtube.com/channel/UCzJFvpjRB62oRoep4oRgwjg","https://vk.com/helsinki_city","https://t.me/helsinki_chat","https://www.linkedin.com/company/helsinki/","http://wikidata.org/entity/Q1757"],
+  "sameAs": ["https://x.com/helsinki","https://www.instagram.com/helsinki/","https://www.facebook.com/helsinginkaupunki","https://github.com/City-of-Helsinki","https://www.youtube.com/channel/UCzJFvpjRB62oRoep4oRgwjg","https://vk.com/helsinki_city","https://t.me/s/helsinki_chat","https://www.linkedin.com/company/helsinki/","http://wikidata.org/entity/Q1757"],
   "name": "Helsinki"
 }
 </script>
@@ -225,7 +225,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -233,7 +233,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -267,6 +267,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

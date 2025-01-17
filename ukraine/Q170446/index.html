@@ -102,7 +102,7 @@
                     <a class="btn" href="mailto:mail@sm.gov.ua">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -129,7 +129,7 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/Sumy_news_ODA">Sumy_news_ODA</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/Sumy_news_ODA">Sumy_news_ODA</a></td>
     </tr>
     </table>
 
@@ -196,7 +196,7 @@
   "@type": "GovernmentOrganization",
   "description": "administrative division (oblast) in the north of Ukraine","additionalType": "http://www.wikidata.org/entity/Q3348196",
   "url": "https://www.govdirectory.org/ukraine/Q170446",
-  "sameAs": ["https://www.facebook.com/sumska.oda","https://www.youtube.com/channel/UCG7v_jkz2vm8j0nKoTf7MIQ","https://t.me/Sumy_news_ODA","http://wikidata.org/entity/Q170446"],
+  "sameAs": ["https://www.facebook.com/sumska.oda","https://www.youtube.com/channel/UCG7v_jkz2vm8j0nKoTf7MIQ","https://t.me/s/Sumy_news_ODA","http://wikidata.org/entity/Q170446"],
   "name": "Sumy Oblast"
 }
 </script>
@@ -205,7 +205,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -213,7 +213,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -247,6 +247,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

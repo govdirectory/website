@@ -462,7 +462,7 @@ Array.from(dataTable.children[0].children).forEach((row, index) => {
     var accounts;
     if (row.children[1].firstChild) {
         accounts = Array.from(row.children[1].firstChild.children).map(item => {
-            return item.firstChild.href;
+            return item.firstChild.href.split('/').pop();
         }).join('|');
     } else {
         accounts = '';

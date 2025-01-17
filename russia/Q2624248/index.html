@@ -100,7 +100,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -143,7 +143,7 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
         <td lang="">Telegram</td>
-        <td><a rel="nofollow" href="https://t.me/minzdrav_ru">minzdrav_ru</a></td>
+        <td><a rel="nofollow" href="https://t.me/s/minzdrav_ru">minzdrav_ru</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P5163">
         <td lang="">Odnoklassniki</td>
@@ -214,7 +214,7 @@
   "@type": "GovernmentOrganization",
   "description": "Russian ministry","additionalType": "http://www.wikidata.org/entity/Q4481741",
   "url": "https://www.govdirectory.org/russia/Q2624248",
-  "sameAs": ["https://rutube.ru/channel/23644112/","https://x.com/MINZDRAV_RF","https://www.instagram.com/rosminzdrav.ru/","https://www.facebook.com/MinzdravRu","https://www.youtube.com/channel/UC89vvPtPH1AG50IMSWLD61g","https://vk.com/minzdravru","https://t.me/minzdrav_ru","https://ok.ru/minzdravru","http://wikidata.org/entity/Q2624248"],
+  "sameAs": ["https://rutube.ru/channel/23644112/","https://x.com/MINZDRAV_RF","https://www.instagram.com/rosminzdrav.ru/","https://www.facebook.com/MinzdravRu","https://www.youtube.com/channel/UC89vvPtPH1AG50IMSWLD61g","https://vk.com/minzdravru","https://t.me/s/minzdrav_ru","https://ok.ru/minzdravru","http://wikidata.org/entity/Q2624248"],
   "name": "Ministry of Healthcare of the Russian Federation"
 }
 </script>
@@ -223,7 +223,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -231,7 +231,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -265,6 +265,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

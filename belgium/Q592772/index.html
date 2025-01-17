@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="Govdirectory" />
     <meta name="description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
-    <title>Polbruno Police Zone</title>
+    <title>PolBruno Police Zone</title>
 
     <link rel="canonical" href="https://www.govdirectory.org/belgium/Q592772/">
 
@@ -87,7 +87,7 @@
             <a class="btn rounded" href="/belgium/">Belgium</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q592772" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q592772%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="">Polbruno Police Zone</h1><p lang="">1 of 183 police zones in Belgium</p><div class="header-lower">
+        <h1 lang="">PolBruno Police Zone</h1><p lang="">1 of 183 police zones in Belgium</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Official website: <a href="http://www.polbruno.be/">www.polbruno.be/</a></li>
                     <li>Phone: <a href="tel:&#43;32-2-249-22-11">&#43;32-2-249-22-11</a></li>
@@ -102,7 +102,7 @@
                     <a class="btn" href="mailto:zpz.bruno@police.belgium.eu">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -111,7 +111,7 @@
 
     <section class="bg-grey">
         <div class="container move-away">
-            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Polbruno Police Zone - Q592772.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
+            <h2 class="m0">Platforms and accounts</h2><a id="download" download="PolBruno Police Zone - Q592772.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
     </section>
 
     
@@ -197,7 +197,7 @@
   "description": "1 of 183 police zones in Belgium","additionalType": "http://www.wikidata.org/entity/Q2621126",
   "url": "https://www.govdirectory.org/belgium/Q592772",
   "sameAs": ["https://www.instagram.com/pol.bruno.5344/","https://www.facebook.com/ZPZ5344","https://www.linkedin.com/company/polbruno/","http://wikidata.org/entity/Q592772"],
-  "name": "Polbruno Police Zone"
+  "name": "PolBruno Police Zone"
 }
 </script>
 
@@ -205,7 +205,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -213,7 +213,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -247,6 +247,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 

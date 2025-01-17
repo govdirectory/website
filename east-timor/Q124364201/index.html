@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="Govdirectory" />
     <meta name="description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
-    <title>Builaique</title>
+    <title>Q124364201</title>
 
     <link rel="canonical" href="https://www.govdirectory.org/east-timor/Q124364201/">
 
@@ -58,7 +58,7 @@
 
     <meta name="fediverse:creator" content="@govdirectory@wikis.world" />
 
-    <meta name="description" content="osttimoresischer Suco im Verwaltungsamt Baucau (Gemeinde Baucau)">
+    
 
     <noscript>
         <style>
@@ -87,7 +87,7 @@
             <a class="btn rounded" href="/east-timor/">East Timor</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q124364201" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q124364201%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="">Builaique</h1><p lang="">osttimoresischer Suco im Verwaltungsamt Baucau (Gemeinde Baucau)</p><div class="header-lower">
+        <h1 lang="">Q124364201</h1><div class="header-lower">
             <div class="infobox">
                 <ul><li>Official website: <span class="text-grey">[missing data]</span></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
@@ -100,7 +100,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2024-12-08">2024-12-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-01-17">2025-01-17</time>.</p>
     </header>
 </div>
 
@@ -177,10 +177,10 @@
 {
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
-  "description": "osttimoresischer Suco im Verwaltungsamt Baucau (Gemeinde Baucau)","additionalType": "http://www.wikidata.org/entity/Q22044663",
+  "description": "","additionalType": "http://www.wikidata.org/entity/Q22044663",
   "url": "https://www.govdirectory.org/east-timor/Q124364201",
   "sameAs": ["http://wikidata.org/entity/Q124364201"],
-  "name": "Builaique"
+  "name": "Q124364201"
 }
 </script>
 
@@ -188,7 +188,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account link",\n';
+    let tsv = '"Platform","Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; 
         const columns = Array.from(row.children);
@@ -196,7 +196,7 @@ if (dataTable) {
         columns.forEach((column, innerIndex) => {
             let value;
             if (column.children[0] && column.children[0].nodeName === 'A') {
-                value = column.children[0].href;
+                value = column.children[0].href.split("/").pop();
             } else {
                 value = column.innerText;
             }
@@ -230,6 +230,7 @@ const props = {
     P2037: ['Github', 'https://github.com/'],
     P4015: ['Vimeo', 'https://vimeo.com/'],
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
+    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
 const propKeys = Object.keys(props);
 
