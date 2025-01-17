@@ -79,12 +79,49 @@
     <p>In the table below we have listed the types of organizations that are covered for each country. The amount of information about those organizations and contact points for them varies and is also improved over time.</p>
 
     <table>
-        {{- range . -}}
         <tr>
-            <th class="js-sort-none"><a href="../{{ .safeName }}/">{{ .name }}</a></th>
+            <th class="js-sort-none">Country</th>
+            <th class="js-sort-none">Contains</th>
+            <th class="js-sort-none">Organizations</th>
+            <th class="js-sort-none">Contact points</th>
+        <tr>
+        {{- range . -}}
+        {{- $social_cp_count := 0 -}}
+        {{- $other_cp := 0 -}}
+        {{- $country_org_count := 0 -}}
+        {{- $country := .safeName.String -}}
+            {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+            {{- $country_org_count = add (len $orgs) $country_org_count -}}
+            {{- range $orgs -}}
+                {{ $social_cp_count = add (len (query "account-data.rq" .qid.String)) $social_cp_count }}
+                {{- $org_details := index (query "organization-optional.rq" .qid.String) 0 -}}
+
+                    {{- if $org_details.email -}}
+                        {{- $other_cp = add1 $other_cp -}}
+                    {{- end -}}
+
+                    {{- if $org_details.website -}}
+                        {{- $other_cp = add1 $other_cp -}}
+                    {{- end -}}
+
+                    {{- if $org_details.phone -}}
+                        {{- $other_cp = add1 $other_cp -}}
+                    {{- end -}}
+
+                    {{- if $org_details.contactPage -}}
+                        {{- $other_cp = add1 $other_cp -}}
+                    {{- end -}}
+
+                    {{- if $org_details.citizensInitiatives -}}
+                        {{- $other_cp = add1 $other_cp -}}
+                    {{- end -}}
+            {{- end -}}
+            <td lang="{{ .description.Lang }}"><a href="../{{ .safeName }}/">{{ .name }}</a></td>
             <td lang="{{ .description.Lang }}">{{ .description }}</td>
-        </tr>
+            <td>{{ $country_org_count }}</td>
+            <td>{{ add $social_cp_count $other_cp }}</td>
         {{- end -}}
+        </tr>
     </table>
 
 </main>
