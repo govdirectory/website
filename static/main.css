@@ -598,6 +598,12 @@ header.topic {
     table thead {
         top: 232px;
     }
+    table {
+        table-layout: fixed;
+    }
+    table td, table th {
+        text-wrap: balance;
+    }
 }
 
 @media screen and (min-width: 600px) {
