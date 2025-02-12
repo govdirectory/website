@@ -129,6 +129,7 @@ localisationReady
 localisedName
 localizable
 longDescription
+ltr
 lu
 luxembourg
 lv
