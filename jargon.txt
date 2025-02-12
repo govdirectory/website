@@ -114,6 +114,7 @@ javascript
 Jitsi
 json
 landingURL
+lang
 Larsson
 Latvia
 latvia
@@ -160,6 +161,7 @@ org
 orgDescription
 orgLabel
 orgs
+orientation
 OSI
 OSS
 parentOrgLabel
