@@ -10,6 +10,8 @@ WHERE {
             wdt:P1630 ?formatter ;
             wdt:P9073 ?platform .
 
+  MINUS { ?property wdt:P31 wd:Q60457486 }
+
   wd:{{.}} ?wdtClaimPredicate ?statement .
   ?statement ?propValuePredicate ?value .
 
