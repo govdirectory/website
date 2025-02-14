@@ -293,6 +293,7 @@ table td, table th {
 table th {
     font-size: 1.2rem;
     font-weight: 100;
+    vertical-align: top;
 }
 
 table tr:nth-child(even) {
