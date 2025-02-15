@@ -38,6 +38,7 @@ contactPage
 countryID
 countryLabel
 countryURI
+cp
 cron
 crowdsourced
 csv
