@@ -598,10 +598,13 @@ header.topic {
     table thead {
         top: 232px;
     }
+
     table {
         table-layout: fixed;
     }
-    table td, table th {
+
+    table td:not(.statitstics-table),
+    table th:not(.statitstics-table) {
         text-wrap: balance;
     }
 }
