@@ -305,6 +305,7 @@ table td, table th {
 table th {
     font-size: 1.2rem;
     font-weight: 100;
+    vertical-align: top;
 }
 
 table tr:nth-child(even) {
@@ -612,7 +613,7 @@ header.topic {
 @media screen and (min-width: 600px) {
     .container {
         width: 600px;
-        margin: auto;
+        margin: 0 auto;
     }
 
     .box-list {
@@ -645,7 +646,7 @@ header.topic {
 @media screen and (min-width: 800px) {
     .container {
         width: 800px;
-        margin: auto;
+        margin: 0 auto;
     }
 
     .box-list {
@@ -676,8 +677,7 @@ header.topic {
 @media screen and (min-width: 1000px) {
     .container {
         width: 1000px;
-        margin: auto;
-        margin-top: 0;
+        margin: 0 auto;
     }
 }
 
