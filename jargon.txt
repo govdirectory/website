@@ -43,6 +43,7 @@ cron
 crowdsourced
 csv
 CSV
+cu
 curation
 currentCountry
 currentCountryName
