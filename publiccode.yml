@@ -44,37 +44,38 @@ intendedAudience:
     - at
     - be
     - ca
-    - cz
-    - dk
-    - tl
-    - fi
-    - de
-    - gh
-    - gl
-    - is
-    - in
-    - id
-    - lu
-    - my
-    - mt
-    - ma
-    - np
-    - nl
-    - nz
-    - no
-    - pe
-    - ph
-    - ru
-    - sg
-    - za
-    - se
-    - ua
-    - gb
     - ch
     - cm
+    - cu
+    - cz
+    - de
+    - dk
+    - fi
+    - gb
+    - gh
+    - gl
+    - id
     - ie
-    - pt
+    - in
+    - is
+    - lu
     - lv
+    - ma
+    - mt
+    - my
+    - nl
+    - no
+    - np
+    - nz
+    - pe
+    - ph
+    - pt
+    - ru
+    - se
+    - sg
+    - tl
+    - ua
+    - za
   
   scope:
     - government
