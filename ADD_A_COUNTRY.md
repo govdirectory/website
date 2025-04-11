@@ -199,7 +199,7 @@ template: "org.html"
 
 All one needs to do here is to make section like the one above and "sweden"(in two places) with the URL slug of the country in question(as defined in one's country configuration). One can find more examples of [view configurations in the current "views.yaml" file](https://github.com/govdirectory/website/blob/main/views.yaml#L37).
 
-### Get help
+## Get help
 
  - [GitHub discussions forum](https://github.com/govdirectory/website/discussions)
  - [Wikidata](https://www.wikidata.org/wiki/Wikidata_talk:WikiProject_Govdirectory)
