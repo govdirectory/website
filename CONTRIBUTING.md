@@ -105,6 +105,19 @@ Here is what we know that we need right now:
 3. Add basic properties like country (P17) and which administrative level they are on (state, regional, local etc.). How this is modeled may vary by country. If possible add what type of agency it is (like environmental protection or taxes).
 4. Add the online platforms you can find for them. Common ones are YouTube channel (P2397), Facebook (P2013), Twitter (P2002), Instagram (P2003) and LinkedIn (P4264). These are also the one that is shown with icons in the directory. But others that they are active on (that have properties in Wikidata) are also good to add and they will show on the institution page.
 
+### Special data requirements
+
+Most data is pulled from Wikidata without any particular requirements, however, the data outlined below do come with additional requirements that contributors should be aware of:
+
+| Data | Requirement |
+|--------|--------|
+| Phone number | For a phone number to be displayed it must be supported by one or more references. |
+| Main regulatory text | For a main regulatory text to be displayed the item describing the regulatory text must have both _full work available online at_ and _title_ statements. | 
+
+You can test if an organization on Wikidata matches these requirements using the following SPARQL-query: 
+
+[organization-optional.rq](https://github.com/govdirectory/website/blob/main/queries/organization-optional.rq)
+
 ## Add a country in the interface
 
 If the data of a country is of high quality it can be added to the directory.
