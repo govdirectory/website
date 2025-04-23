@@ -73,6 +73,7 @@ endfor
 endif
 english
 eq
+european
 facto
 federalSubjects
 ffffff
