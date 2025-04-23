@@ -150,6 +150,9 @@ views:
   - output: "cuba/{{qid}}/index.html"
     query: "generators/cuba.rq"
     template: "org.html" 
+ -  output: "european-union/{{qid}}/index.html"
+    query: "generators/european-union.rq"
+    template: "org.html"
 
   - output: "united-kingdom/{{qid}}/index.html"
     query: "generators/united-kingdom.rq"
