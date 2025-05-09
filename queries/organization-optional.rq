@@ -46,6 +46,13 @@ WHERE {
   }
 
   OPTIONAL {
+    ?org wdt:P968 ?email .
+    ?org p:P968 ?emailStatement .
+        ?emailStatement (ps:P968) [] .
+        FILTER(EXISTS { ?emailStatement prov:wasDerivedFrom ?reference. })
+  }
+
+  OPTIONAL {
     ?wikipedia schema:about ?org ;
                schema:isPartOf <https://en.wikipedia.org/> .
   }
