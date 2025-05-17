@@ -26,7 +26,7 @@ WHERE {
     (wd:Q212 'Ukraine' 'ukraine' 'Current content includes ministries and first level administrative units.' '')
     (wd:Q159 'Russia' 'russia' 'Current content includes the government and ministries.' '')
     (wd:Q574 'East Timor' 'east-timor' 'Current content includes ministries, municipalities, special administrative region, administrative posts and sucos.' '')
-    (wd:Q928 'Philippines' 'philippines' 'Current content includes departments, regions, provinces and cities.' '')
+    (wd:Q928 'Philippines' 'philippines' 'Current content includes departments, regions, provinces, cities and municipalities.' '')
     (wd:Q668 'India' 'india' 'Current content includes ministries, states and union territories.' '')
     (wd:Q31 'Belgium' 'belgium' 'Current content includes federal scientific institutes, public institutions of social security, public interest organizations, federal public services, public planning services, agencies abroad, language areas, communities, regions, extant provinces, police zones, emergency zones and municipalities.' '')
     (wd:Q16 'Canada' 'canada' 'Current content includes ministerial departments, provinces and territories.' '')

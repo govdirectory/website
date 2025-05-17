@@ -1,4 +1,4 @@
-# expected_result_count: 271
+# expected_result_count: 1764
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -16,6 +16,7 @@ WHERE {
     wd:Q106078286 # component city (111)
     wd:Q29946056 # highly urbanized city (33)
     wd:Q106079704 # independent component city (5)
+    wd:Q24764 # Philippine municipality (1493)
   }
   ?org wdt:P31 ?type .
 
