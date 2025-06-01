@@ -56,7 +56,7 @@ WHERE {
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv" }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,sv" }
 }
 ORDER BY ?type ?orgLabel
 ```
@@ -108,7 +108,7 @@ These values are all of the various "instance of"/types the various government o
 
 
 ```sparql
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv" }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,sv" }
 ```
 
 All government organizations in a country might not have a name in English and therefore one should configure one or more fallback languages. In the example above Swedish is set as a fallback language.
