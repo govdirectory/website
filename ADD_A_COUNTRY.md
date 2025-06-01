@@ -175,7 +175,7 @@ WHERE {
   }
   SERVICE wikibase:label {
     # this might need to be updated when new countries are added
-    bd:serviceParam wikibase:language "en,sv,de" .
+    bd:serviceParam wikibase:language "en,mul,sv,de" .
     ?headOfState rdfs:label ?headOfStateLabel .
     ?headOfGov rdfs:label ?headOfGovLabel .
     ?typeOfGov rdfs:label ?typeOfGovLabel .
