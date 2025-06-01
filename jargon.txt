@@ -253,6 +253,8 @@ url
 URL
 URLs
 usedBy
+uruguay
+uy
 versionMin
 WDQS
 Wikibase
