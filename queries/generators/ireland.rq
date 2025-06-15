@@ -1,4 +1,4 @@
-# expected_result_count: 18
+# expected_result_count: 85
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -9,14 +9,19 @@ SELECT DISTINCT
   ?cofog
 WHERE {
   BIND(wd:Q27 AS ?country)
-
+  {
   VALUES ?type {
     wd:Q5260540 # Department of State (18)
   }
-
-  ?org wdt:P31 ?type ;
-       wdt:P17 ?country .
-
+  ?org wdt:P31 ?type; wdt:P17 ?country .
+}
+UNION
+{
+  VALUES ?type {
+    wd:Q3917681 # embassies (67)
+}
+?org wdt:P31 ?type; wdt:P137 ?country .
+}
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P3999 [] }
