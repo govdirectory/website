@@ -92,6 +92,20 @@
                 </ul>
                 
                 {{ if $details.wikipedia }}<p><a href="{{ $details.wikipedia }}">Read more on Wikipedia.</a></p>{{ end }}
+
+                <div class="additional-info collapsed">
+                    <hr>
+                    <ul>
+                        <li>Official jobs page: <span class="text-grey" id="additional-link-jobs">[missing data]</span></li>
+                        <li>Official blog: <span class="text-grey" id="additional-link-blog">[missing data]</span></li>
+                    </ul>
+                </div>
+
+                <button title="expand" id="expandInfoBoxBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden width="37" height="37" fill="currentColor" class="bi bi-chevron-compact-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"/>
+                    </svg>
+                </button>
             </div>
 
             <div class="center-text action-boxes">
@@ -199,6 +213,16 @@ if (dataTable) {
     downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
+const expandInfoBoxBtn = document.querySelector('#expandInfoBoxBtn');
+expandInfoBoxBtn.addEventListener('click', () => {
+    const additionalInfo = document.querySelector('.additional-info');
+    if (additionalInfo.classList.contains('collapsed')) {
+        additionalInfo.classList.remove('collapsed');
+        expandInfoBoxBtn.style.display = 'none';
+        document.querySelector('.infobox').style.paddingBottom = '2em';
+    }
+});
+
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
 const wikidataEndpoint = 'https://www.wikidata.org/w/api.php?action=wbgetentities&origin=*&format=json&props=claims&ids=';
 const recentAccountsElm = document.querySelector('#recent-accounts');
@@ -210,7 +234,12 @@ if (document.querySelector('table.container')) {
     existingTableText = document.querySelector('table.container').innerHTML;
 }
 
-const props = {
+const additionalLinks = {
+    P10311: 'additional-link-jobs',
+    P1581: 'additional-link-blog',
+};
+
+const socialProps = {
     P2397: ['YouTube', 'https://www.youtube.com/channel/'],
     P4264: ['LinkedIn', 'https://www.linkedin.com/company/'],
     P2013: ['Facebook', 'https://www.facebook.com/'],
@@ -221,7 +250,7 @@ const props = {
     P3267: ['Flickr', 'https://www.flickr.com/photos/'],
     P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
 };
-const propKeys = Object.keys(props);
+const propKeys = Object.keys(socialProps);
 
 if (pageQID) {
     fetch(wikidataEndpoint + pageQID)
@@ -230,7 +259,7 @@ if (pageQID) {
           const claims = Object.keys(data.entities[pageQID].claims);
           let updatedAny = false;
           claims.forEach(claim => {
-            const isOldClaim = claim
+            const isOldClaim = claim;
             if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
                 // check if the claim is old because it has a P582 qualifier
                 if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
@@ -239,18 +268,25 @@ if (pageQID) {
 
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
-                tdNameElm.innerText = props[claim][0];
+                tdNameElm.innerText = socialProps[claim][0];
                 const account = data.entities[pageQID].claims[claim][0].mainsnak.datavalue.value;
                 const tdLinkElm = document.createElement('TD');
                 const aElm = document.createElement('A');
                 aElm.innerText = account;
-                aElm.href = props[claim][1] + account;
+                aElm.href = socialProps[claim][1] + account;
                 aElm.rel = 'nofollow';
                 tdLinkElm.appendChild(aElm);
                 trElm.appendChild(tdNameElm);
                 trElm.appendChild(tdLinkElm);
                 recentAccountsElm.after(trElm);
                 updatedAny = true;
+            } else if (Object.keys(additionalLinks).includes(claim)) {
+                const additionalLinkElm = document.getElementById(additionalLinks[claim]);
+                if (additionalLinkElm) {
+                    const url = data.entities[pageQID].claims[claim][0].mainsnak.datavalue.value;
+                    const displayText = url.replace('http://', '').replace('https://', '').replace(/\/$/, '');
+                    additionalLinkElm.innerHTML = `<a href="${url}">${displayText}</a>`;
+                }
             }
           });
           if (updatedAny) {
