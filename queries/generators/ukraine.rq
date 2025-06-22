@@ -1,4 +1,4 @@
-# expected_result_count: 47
+# expected_result_count: 46
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -10,7 +10,7 @@ WHERE {
   BIND(wd:Q212 AS ?country)
 
   VALUES ?type {
-    wd:Q7878545 # ministries (20)
+    wd:Q7878545 # ministries (19)
     wd:Q3348196 # oblast (24)
     wd:Q84823091 # region (1)
     wd:Q5124045  # city with special status (2)
