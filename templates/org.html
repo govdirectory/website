@@ -199,8 +199,9 @@ if (dataTable) {
     downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
+const recentOrginizationsQuery = '{{ read_file "queries/account-data.rq" }}';
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
-const wikidataEndpoint = 'https://www.wikidata.org/w/api.php?action=wbgetentities&origin=*&format=json&props=claims&ids=';
+const wikidataEndpoint = 'https://query.wikidata.org/sparql';
 const recentAccountsElm = document.querySelector('#recent-accounts');
 const spinnerElm = document.querySelector('.spinner');
 const recentContainerElm = document.querySelector('#recent-details');
@@ -210,41 +211,28 @@ if (document.querySelector('table.container')) {
     existingTableText = document.querySelector('table.container').innerHTML;
 }
 
-const props = {
-    P2397: ['YouTube', 'https://www.youtube.com/channel/'],
-    P4264: ['LinkedIn', 'https://www.linkedin.com/company/'],
-    P2013: ['Facebook', 'https://www.facebook.com/'],
-    P2002: ['X', 'https://x.com/'],
-    P2003: ['Instagram', 'https://www.instagram.com/'],
-    P2037: ['Github', 'https://github.com/'],
-    P4015: ['Vimeo', 'https://vimeo.com/'],
-    P3267: ['Flickr', 'https://www.flickr.com/photos/'],
-    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
-};
-const propKeys = Object.keys(props);
-
 if (pageQID) {
-    fetch(wikidataEndpoint + pageQID)
+    {{/* Isn't this Snowman escaping lovely? */}}
+    let sparqlQuery = recentOrginizationsQuery.replace('{{"{{"}}.{{"}}"}}', pageQID);
+    fetch(wikidataEndpoint + '?query=' + encodeURIComponent(sparqlQuery), {
+        headers: {
+            'Accept': 'application/sparql-results+json'
+        },
+    })
       .then(response => response.json())
       .then(data => {
-          const claims = Object.keys(data.entities[pageQID].claims);
+          const results = data.results.bindings;
           let updatedAny = false;
-          claims.forEach(claim => {
-            const isOldClaim = claim
-            if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
-                // check if the claim is old because it has a P582 qualifier
-                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
-                    return;
-                }
-
+          results.forEach(result => {
+            if (!(existingTableText && existingTableText.includes(result.property.value))) {
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
-                tdNameElm.innerText = props[claim][0];
-                const account = data.entities[pageQID].claims[claim][0].mainsnak.datavalue.value;
+                tdNameElm.innerText = result.platformLabel.value;
+                const account = result.account.value;
                 const tdLinkElm = document.createElement('TD');
                 const aElm = document.createElement('A');
                 aElm.innerText = account;
-                aElm.href = props[claim][1] + account;
+                aElm.href = result.url.value;
                 aElm.rel = 'nofollow';
                 tdLinkElm.appendChild(aElm);
                 trElm.appendChild(tdNameElm);
