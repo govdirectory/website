@@ -49,12 +49,12 @@
     <meta property="og:title" content="Govdirectory" />
     <meta property="og:description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
 
-    <meta name="generator" content="Snowman v0.6.1-development">
+    <meta name="generator" content="Snowman v0.6.0-development">
     <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
 
     <meta name="fediverse:creator" content="@govdirectory@wikis.world" />
 
-    <meta name="description" content="municipality and town of Portugal">
+    <meta name="description" content="municipality of Portugal">
 
     <noscript>
         <style>
@@ -83,7 +83,7 @@
             <a class="btn rounded" href="/portugal/">Portugal</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q679642" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q679642%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="">Figueiró dos Vinhos</h1><p lang="">municipality and town of Portugal</p><div class="header-lower">
+        <h1 lang="">Figueiró dos Vinhos</h1><p lang="">municipality of Portugal</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Official website: <a href="https://www.cm-figueirodosvinhos.pt/">www.cm-figueirodosvinhos.pt/</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
@@ -188,7 +188,7 @@
 {
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
-  "description": "municipality and town of Portugal","additionalType": "http://www.wikidata.org/entity/Q13217644",
+  "description": "municipality of Portugal","additionalType": "http://www.wikidata.org/entity/Q13217644",
   "url": "https://www.govdirectory.org/portugal/Q679642",
   "sameAs": ["https://www.instagram.com/municipiodefigueiro/","https://www.facebook.com/MunicipiodeFigueirodosVinhos","https://www.youtube.com/channel/UCwBqp8hd5HtTIM6Jc07t5kQ","http://wikidata.org/entity/Q679642"],
   "name": "Figueiró dos Vinhos"
@@ -221,8 +221,9 @@ if (dataTable) {
     downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
+const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
-const wikidataEndpoint = 'https://www.wikidata.org/w/api.php?action=wbgetentities&origin=*&format=json&props=claims&ids=';
+const wikidataEndpoint = 'https://query.wikidata.org/sparql';
 const recentAccountsElm = document.querySelector('#recent-accounts');
 const spinnerElm = document.querySelector('.spinner');
 const recentContainerElm = document.querySelector('#recent-details');
@@ -232,41 +233,28 @@ if (document.querySelector('table.container')) {
     existingTableText = document.querySelector('table.container').innerHTML;
 }
 
-const props = {
-    P2397: ['YouTube', 'https://www.youtube.com/channel/'],
-    P4264: ['LinkedIn', 'https://www.linkedin.com/company/'],
-    P2013: ['Facebook', 'https://www.facebook.com/'],
-    P2002: ['X', 'https://x.com/'],
-    P2003: ['Instagram', 'https://www.instagram.com/'],
-    P2037: ['Github', 'https://github.com/'],
-    P4015: ['Vimeo', 'https://vimeo.com/'],
-    P3267: ['Flickr', 'https://www.flickr.com/photos/'],
-    P4033: ['Mastodon', 'https://fedirect.toolforge.org/?id='],
-};
-const propKeys = Object.keys(props);
-
 if (pageQID) {
-    fetch(wikidataEndpoint + pageQID)
+    
+    let sparqlQuery = recentOrginizationsQuery.replace('{{.}}', pageQID);
+    fetch(wikidataEndpoint + '?query=' + encodeURIComponent(sparqlQuery), {
+        headers: {
+            'Accept': 'application/sparql-results+json'
+        },
+    })
       .then(response => response.json())
       .then(data => {
-          const claims = Object.keys(data.entities[pageQID].claims);
+          const results = data.results.bindings;
           let updatedAny = false;
-          claims.forEach(claim => {
-            const isOldClaim = claim
-            if (propKeys.includes(claim) && !(existingTableText && existingTableText.includes(claim))) {
-                
-                if (data.entities[pageQID].claims[claim][0].qualifiers && data.entities[pageQID].claims[claim][0].qualifiers.P582) {
-                    return;
-                }
-
+          results.forEach(result => {
+            if (!(existingTableText && existingTableText.includes(result.property.value))) {
                 const trElm = document.createElement('TR');
                 const tdNameElm = document.createElement('TD');
-                tdNameElm.innerText = props[claim][0];
-                const account = data.entities[pageQID].claims[claim][0].mainsnak.datavalue.value;
+                tdNameElm.innerText = result.platformLabel.value;
+                const account = result.account.value;
                 const tdLinkElm = document.createElement('TD');
                 const aElm = document.createElement('A');
                 aElm.innerText = account;
-                aElm.href = props[claim][1] + account;
+                aElm.href = result.url.value;
                 aElm.rel = 'nofollow';
                 tdLinkElm.appendChild(aElm);
                 trElm.appendChild(tdNameElm);
