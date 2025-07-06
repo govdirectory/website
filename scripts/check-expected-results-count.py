@@ -88,29 +88,45 @@ def verify_result_counts(path, endpoint):
                     stats["pass"] += 1
                 else:
                     if actual_count < expected_count:
-                        results.append(
-				                    [
-				                        filepath,
-				                        "FAIL",
-				                        expected_count,
-				                        actual_count,
-				                        "Too few orgs found",
-				                    ]
-				                )
-                    else:
-                        results.append(
-                        [
-                            filepath,
-                            "FAIL",
-                            expected_count,
-                            actual_count,
-                            "Too many orgs found",
-                        ]
-                    )
-                    stats["fail"] += 1
-            except requests.RequestException as e:
-                results.append([filepath, "ERROR", "-", "-", str(e)])
-                stats["error"] += 1
+                   try:
+    if actual_count == expected_count:
+        results.append([
+            filepath,
+            "PASS",
+            expected_count,
+            actual_count,
+            "Counts match"
+        ])
+        stats["pass"] += 1
+    elif actual_count < expected_count:
+        results.append([
+            filepath,
+            "FAIL",
+            expected_count,
+            actual_count,
+            "Too few orgs found"
+        ])
+        stats["fail"] += 1
+    else:
+        results.append([
+            filepath,
+            "FAIL",
+            expected_count,
+            actual_count,
+            "Too many orgs found"
+        ])
+        stats["fail"] += 1
+
+except requests.RequestException as e:
+    results.append([
+        filepath,
+        "ERROR",
+        "-",
+        "-",
+        str(e)
+    ])
+    stats["error"] += 1
+
 
     # Sort results by status priority and then by filename
     results.sort(key=lambda x: (get_status_priority(x[1]), x[0]))
