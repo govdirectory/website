@@ -1,4 +1,4 @@
-# expected_result_count: 2164
+# expected_result_count: 2154
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -12,7 +12,7 @@ WHERE {
   VALUES ?type {
     wd:Q113015553 # federal ministry of switzerland (7)
     wd:Q23058 # canton of switzerland (26)
-    wd:Q70208 # municipality of Switzerland (2131)
+    wd:Q70208 # municipality of Switzerland (2121)
   }
   ?org wdt:P31 ?type .
 
