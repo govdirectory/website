@@ -1,4 +1,4 @@
-# expected_result_count: 173
+# expected_result_count: 169
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -20,7 +20,7 @@ WHERE {
       wd:Q941036 # territorial authority of New Zealand (67)
       wd:Q125959397 # Autonomous Crown Entity (16)
       wd:Q126041101 # Independent Crown Entity (19)
-      wd:Q1141791 # Crown Research Institute (7)     
+      wd:Q134467041 # public research organisation (3)
     }
 
     ?org wdt:P31 ?type; wdt:P17 ?country .
