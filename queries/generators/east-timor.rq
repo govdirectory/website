@@ -1,4 +1,4 @@
-# expected_result_count: 553
+# expected_result_count: 566
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -11,10 +11,10 @@ WHERE {
 
   VALUES ?type {
     wd:Q110813527 # ministries (20)
-    wd:Q741821 # municipalities (13)
+    wd:Q741821 # municipalities (14)
     wd:Q111127635 # special administrative region (1)
-    wd:Q1512109 # administrative posts (67)
-    wd:Q22044663  # sucos (452)
+    wd:Q1512109 # administrative posts (70)
+    wd:Q22044663  # sucos (461)
   }
   ?org wdt:P31 ?type .
 
