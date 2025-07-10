@@ -10,10 +10,10 @@ WHERE {
   BIND(wd:Q40 AS ?country)
 
   VALUES ?type {
-   wd:Q18683469 # Austrian government federal ministry (Bundesministerium) (12)
+   wd:Q18683469 # Austrian government federal ministry (Bundesministerium) (13)
    wd:Q261543 # Austrian federated states (Bundeländer) (9)
    wd:Q871419 #Austrian regional districts (94)
-   wd:Q667509 # municipality of Austria (2093)
+   wd:Q667509 # municipality of Austria (2092)
   }
   ?org wdt:P31 ?type .
 
@@ -23,7 +23,15 @@ WHERE {
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P31 wd:Q19953632 }
   MINUS { ?org wdt:P31 wd:Q15893266 }
-  MINUS { ?org p:P31 ?p. ?p ps:P31 wd:Q667509; pq:P582 [] }
+  MINUS { ?org p:P31 ?p.
+          ?p ps:P31 wd:Q667509;
+             pq:P582 [] .
+          MINUS { ?org p:P31 ?s.
+                  ?s ps:P31 wd:Q667509;
+                     pq:P580 ?start .
+                  FILTER NOT EXISTS { ?s pq:P582 []}
+                }
+        }
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
