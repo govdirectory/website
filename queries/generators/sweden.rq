@@ -22,7 +22,8 @@ WHERE {
       wd:Q10330441 # state level departments (10) ✔
       wd:Q341627 # court of appeal (6) ✔
       wd:Q2065704 # tingsrätt (48) ✔
-      wd:Q190752 # supreme court (2) ✔
+      wd:Q190752 # supreme court (1) ✔
+      wd:Q135399035 # administrative supreme court (1) ✔
       wd:Q1289455 # administrative court of appeal (4) ✔
       wd:Q18292311 # migration court (4) ✔
       wd:Q10530889 # regional rent tribunal (8) ✔
