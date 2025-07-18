@@ -28,14 +28,25 @@ WHERE {
 
   OPTIONAL { ?org wdt:P749 ?parentOrg }
 
-  OPTIONAL {
-    ?org wdt:P2388|wdt:P1313 ?office .
-    ?positionStatement ps:P39 ?office .
-    ?person p:P39 ?positionStatement .
-    ?person wdt:P31 wd:Q5 .
-    MINUS { ?positionStatement pq:P582 ?endtime }
-    MINUS { ?person wdt:P570 [] }
-    FILTER ( ?office != wd:Q30185 )
+    OPTIONAL {
+    {
+      ?org wdt:P2388|wdt:P1313 ?office .
+      ?positionStatement ps:P39 ?office .
+      ?person p:P39 ?positionStatement .
+      ?person wdt:P31 wd:Q5 .
+      MINUS { ?positionStatement pq:P582 ?endtime }
+      MINUS { ?person wdt:P570 [] }
+      FILTER ( ?office != wd:Q30185 )
+    }
+    UNION
+    {
+      { ?org wdt:P488 ?person } UNION
+      { ?org wdt:P169 ?person } UNION
+      { ?org wdt:P1037 ?person } UNION
+      { ?org wdt:P3975 ?person }
+      ?person wdt:P31 wd:Q5 .
+      MINUS { ?person wdt:P570 [] }
+    }
   }
 
   OPTIONAL {
