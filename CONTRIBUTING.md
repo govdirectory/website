@@ -36,6 +36,7 @@ Every Friday at 15.00 CEST we have an open session in [Jitsi](https://meet.jit.s
 ## Documentation and code in pull requests
 
 If you want to add to the documentation or code of one of our projects you should make a pull request.
+You don't need to get an issue assigned to you to be allowed to work on it (in fact, we will just delete comments asking for an issue to be assigned to them).
 
 If you never used GitHub, get up to speed with one of the great free interactive courses in the [GitHub learning lab](https://lab.github.com/) on working with GitHub and working with MarkDown, the syntax this project's documentation is in.
 
