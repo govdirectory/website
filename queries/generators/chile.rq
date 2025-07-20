@@ -1,0 +1,42 @@
+# expected_result_count: 171
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+  ?cofog
+WHERE {
+  BIND(wd:Q298 AS ?country)
+{
+    # agencies with country set to Chile
+  VALUES ?type {
+    wd:Q55593474 # ministry (25)
+    wd:Q6134925 # undersecretariat of Chile (40)
+    wd:Q590080 # region (16)
+    wd:Q54830696 # regional coincil (16)
+  }
+  ?org wdt:P31 ?type ;
+       wdt:P17 ?country .
+} UNION {
+    # Chilean agencies which does not necessarily have country set to Chile
+    VALUES ?type {
+      wd:Q3917681 # embassies (74)
+    }
+    ?org wdt:P31 ?type; wdt:P137 ?country .
+}
+  MINUS { ?org wdt:P3999 [] }
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  OPTIONAL {
+    ?org wdt:P9798/wdt:P279* ?cofog .
+    MINUS { ?cofog wdt:P279 [] }
+  }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,es". }
+}
+ORDER BY ?type ?orgLabel
