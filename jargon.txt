@@ -22,6 +22,7 @@ cffinit
 cameroon
 changelog
 CHANGELOG
+chile
 citizensInitiatives
 civictech
 codebase

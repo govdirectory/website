@@ -153,6 +153,9 @@ views:
   - output: "uruguay/{{qid}}/index.html"
     query: "generators/uruguay.rq"
     template: "org.html"
+  - output: "chile/{{qid}}/index.html"
+    query: "generators/chile.rq"
+    template: "org.html"
 
   - output: "united-kingdom/{{qid}}/index.html"
     query: "generators/united-kingdom.rq"
