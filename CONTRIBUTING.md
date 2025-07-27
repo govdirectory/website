@@ -24,7 +24,7 @@ As a more detailed help, and to see what we already have planned, checkout our [
 
 You as a contributor are ultimately responsible for both the quality of the work you submit and that you have the rights to submit said content under CC0.
 
-As a general guideline, AI contributions that can't be recognized as originating from AI are wellcome. If your comments, code or other forms of contributions can be recognized as being AI generated you will be blocked and get your contributions marked as `spam`. We regularly report users who aren't respectful of other contributors' time and efforts.
+As a general guideline, AI contributions that can't be recognized as originating from AI are welcome. If your comments, code or other forms of contributions can be recognized as being AI generated you will be blocked and get your contributions marked as `spam`. We regularly report users who aren't respectful of other contributors' time and efforts.
 
 ## Problems, suggestions and questions in issues
 
