@@ -6,8 +6,9 @@ SELECT DISTINCT
   ?type
   ?typeLabel
   ?country
-  ?cofog
-WHERE { BIND(wd:Q211 AS ?country)
+  (GROUP_CONCAT(DISTINCT ?fieldOfWork; separator=",") AS ?fieldOfWorkList)
+WHERE {
+  BIND(wd:Q211 AS ?country)
   {
     VALUES ?type {
       wd:Q3345345 # Municipality of Latvia (35)
@@ -27,11 +28,14 @@ WHERE { BIND(wd:Q211 AS ?country)
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P3999 [] }
+
   OPTIONAL {
-    ?org wdt:P9798/wdt:P279* ?cofog .
-    MINUS { ?cofog wdt:P279 [] }
+    ?org wdt:P101 ?fieldOfWork .
+    # TODO: check for end date
   }
+
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,lv,mul". }
 }
+GROUP BY ?qid ?orgLabel ?orgDescription ?type ?typeLabel ?country
 ORDER BY ?type ?topic
