@@ -1,0 +1,8 @@
+SELECT DISTINCT * WHERE {
+  VALUES (?field) {
+    (wd:Q11190)
+    (wd:Q31207)
+    (wd:Q334911)
+    (wd:Q317309)
+  }
+}

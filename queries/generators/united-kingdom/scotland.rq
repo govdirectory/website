@@ -6,7 +6,7 @@ SELECT DISTINCT
   ?type
   ?typeLabel
   ?country
-  ?cofog
+  (GROUP_CONCAT(DISTINCT ?fieldOfWork; separator=",") AS ?fieldOfWorkList)
 WHERE {
   BIND(wd:Q145 AS ?country)
 
@@ -61,10 +61,11 @@ WHERE {
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
   OPTIONAL {
-    ?org wdt:P9798/wdt:P279* ?cofog .
-    MINUS { ?cofog wdt:P279 [] }
+    ?org wdt:P101 ?fieldOfWork .
+    # TODO: check for end date
   }
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sco,gd,mul" }
 }
+GROUP BY ?qid ?orgLabel ?orgDescription ?type ?typeLabel ?country
 ORDER BY ?type ?orgLabel
