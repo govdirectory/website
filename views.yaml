@@ -156,6 +156,9 @@ views:
   - output: "chile/{{qid}}/index.html"
     query: "generators/chile.rq"
     template: "org.html"
+  - output: "cyprus/{{qid}}/index.html"
+    query: "generators/cyprus.rq"
+    template: "org.html"
 
   - output: "united-kingdom/{{qid}}/index.html"
     query: "generators/united-kingdom.rq"
