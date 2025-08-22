@@ -75,7 +75,7 @@ def check_for_missing_labels(path, endpoint):
                 stats["errors"] += 1
 
     if missing_labels:
-        print("Missing Labels Found:")
+        print("Found items with missing labels:")
         print(format_table(headers, missing_labels))
     else:
         print("No missing labels found.")
