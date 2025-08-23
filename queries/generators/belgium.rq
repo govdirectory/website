@@ -1,4 +1,4 @@
-# expected_result_count: 971
+# expected_result_count: 973
 SELECT DISTINCT
 ?qid
 ?orgLabel
@@ -36,7 +36,7 @@ UNION
   VALUES ?type {
     wd:Q121856465 # delegations (8)
     wd:Q112307194 # consulate generals (15)
-    wd:Q3917681 # embassies (83)
+    wd:Q3917681 # embassies (85)
     wd:Q5244910 #  de facto embassy (1)
 }
 ?org wdt:P31 ?type; wdt:P137 ?country .
@@ -48,6 +48,6 @@ UNION
   
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl,fr,de,mul" }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,nl,fr,de" }
 }
 ORDER BY ?typeLabel ?orgLabel
