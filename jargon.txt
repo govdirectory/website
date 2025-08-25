@@ -51,6 +51,8 @@ currentCountry
 currentCountryName
 currentCountrySafeName
 currentOrg
+cy
+cyprus
 cz
 czech
 dataset
