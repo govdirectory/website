@@ -50,6 +50,7 @@ WHERE {
     (wd:Q241 'Cuba' 'cuba' 'Current content includes ministries, regular provinces.' '')
     (wd:Q77 'Uruguay' 'uruguay' 'Current content includes ministries and departments.' '')
     (wd:Q298 'Chile' 'chile' 'Current content includes ministries, undersecreteriats, embassies, regions and legislatures of regions.' '')
+    (wd:Q229 'Cyprus' 'cyprus' 'Current content includes ministries, deputy ministries, government departments, government agencies, districts and municipalities.' '')
 
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments.' 'Scotland|scotland')
     (wd:Q22 'Scotland' 'united-kingdom/scotland' 'Executive agencies, local authorities, NHS boards, NDPBs, courts, public corporations, tribunals, parole boards, Queen\'s printer, non-ministerial government departments, commissioners, ombudsmen and Health and social care partnerships.' '')

@@ -1,0 +1,32 @@
+# expected_result_count: 198
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q229 AS ?country)
+
+  VALUES ?type {
+    wd:Q135489653 # government agency of Cyprus (63)
+    wd:Q86689447 # deputy ministry of Cyprus (6)
+    wd:Q66488868 # ministry of Cyprus (12)
+    wd:Q16739079 # municipality of Cyprus (39)
+    wd:Q135905403 # government departments of Cyprus (72)
+    wd:Q59136 # district of Cyprus (6)
+  }
+  ?org wdt:P31 ?type .
+
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P31 wd:Q59136 ; wdt:P361 ?part . ?part wdt:P31 wd:Q59136 }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,el" }
+}
+ORDER BY ?type ?orgLabel
