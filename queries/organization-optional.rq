@@ -1,58 +1,17 @@
-SELECT
-  # note that SAMPLE in Blazegraph always picks the first object
-  (SAMPLE(?website) AS ?website)
-  (SAMPLE(?email) AS ?email)
-  (SAMPLE(?phone) AS ?phone)
-  (SAMPLE(?citizensInitiatives ) AS ?citizensInitiatives)
-  (SAMPLE(?foiUrl) AS ?foiUrl)
-  (SAMPLE(?contactPage) AS ?contactPage)
-  (SAMPLE(?regulatoryText ) AS ?regulatoryText)
-  (SAMPLE(?regulatoryTextTitle ) AS ?regulatoryTextTitle)
-  (SAMPLE(?personLabel) AS ?leadBy)
-  (SAMPLE(?parentOrg) AS ?parent)
-  ?wikipedia
+SELECT ?org ?orgLabel ?leader ?leaderLabel ?country ?countryLabel ?website
 WHERE {
-  BIND(wd:{{.}} AS ?org)
+  ?org wdt:P31/wdt:P279* wd:Q43229.  # instance of organization (or subclasses)
 
-  OPTIONAL { ?org wdt:P856 ?website }
-  OPTIONAL { ?org wdt:P968 ?email }
-  OPTIONAL { ?org wdt:P9732 ?citizensInitiatives }
-  OPTIONAL { ?org wdt:P11266 ?contactPage }
-  OPTIONAL { ?org wdt:P10214 ?foiUrl }
+  OPTIONAL { ?org wdt:P17 ?country. }   # country
+  OPTIONAL { ?org wdt:P856 ?website. }  # official website
 
-  OPTIONAL {
-    ?org wdt:P92 ?regulatoryTextItem .
-    ?regulatoryTextItem wdt:P953 ?regulatoryText ;
-                        wdt:P1476 ?regulatoryTextTitle .
-  }
+  # --- leader fallback logic ---
+  OPTIONAL { ?org wdt:P488 ?leader_p488. }    # chairperson
+  OPTIONAL { ?org wdt:P169 ?leader_p169. }    # chief executive officer
+  OPTIONAL { ?org wdt:P1037 ?leader_p1037. }  # director / manager
 
-  OPTIONAL { ?org wdt:P749 ?parentOrg }
+  BIND(COALESCE(?leader_p488, ?leader_p169, ?leader_p1037) AS ?leader)
 
-  OPTIONAL {
-    ?org wdt:P2388|wdt:P1313 ?office .
-    ?positionStatement ps:P39 ?office .
-    ?person p:P39 ?positionStatement .
-    ?person wdt:P31 wd:Q5 .
-    MINUS { ?positionStatement pq:P582 ?endtime }
-    MINUS { ?person wdt:P570 [] }
-    FILTER ( ?office != wd:Q30185 )
-  }
-
-  OPTIONAL {
-    ?org wdt:P1329 ?phone .
-    ?org p:P1329 ?phoneStatement .
-        ?phoneStatement (ps:P1329) [] .
-        FILTER(EXISTS { ?phoneStatement prov:wasDerivedFrom ?reference. })
-  }
-
-  OPTIONAL {
-    ?wikipedia schema:about ?org ;
-               schema:isPartOf <https://en.wikipedia.org/> .
-  }
-
-  SERVICE wikibase:label {
-    # this might need to be updated when new countries are added
-    bd:serviceParam wikibase:language "en,sv,mul" .
-    ?person rdfs:label ?personLabel .
-  }
-} GROUP BY ?wikipedia
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT 100
