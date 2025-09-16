@@ -78,6 +78,11 @@ Specifically, we want to acknowledge all the help our coach [Fabian Gampp](https
 
 [Wikimedia Sverige](https://github.com/Wikimedia-Sverige) is graciously providing us with Matomo analytics. [The dashboard](https://matomo.wikimedia.se/index.php?module=CoreHome&idSite=7) has been made publicly accessible.
 
+### NLnet Foundation
+
+This project has been made possible with the generous support of the
+[NLnet Foundation](https://nlnet.nl/) through their NGI Zero Core program.
+
 ## Contributing
 
 We are looking for people like you to [contribute](CONTRIBUTING.md) to this project by suggesting improvements and helping develop it. Get started by reading our [contributors guide](CONTRIBUTING.md).
