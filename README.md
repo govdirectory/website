@@ -78,10 +78,9 @@ Specifically, we want to acknowledge all the help our coach [Fabian Gampp](https
 
 [Wikimedia Sverige](https://github.com/Wikimedia-Sverige) is graciously providing us with Matomo analytics. [The dashboard](https://matomo.wikimedia.se/index.php?module=CoreHome&idSite=7) has been made publicly accessible.
 
-### NLnet Foundation
+### Open Social Fund
 
-This project has been made possible with the generous support of the
-[NLnet Foundation](https://nlnet.nl/) through their NGI Zero Core program.
+This project has received a grant to highlight Fediverse aspects from [NLnet Foundation](https://nlnet.nl/) through their Open Social Fund.
 
 ## Contributing
 
