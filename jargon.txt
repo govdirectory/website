@@ -78,6 +78,7 @@ english
 eq
 facto
 federalSubjects
+Fediverse
 ffffff
 fi
 FileCopyrightText
@@ -156,6 +157,7 @@ ne
 nepal
 netherlands
 nl
+NLnet
 norway
 np
 nz
