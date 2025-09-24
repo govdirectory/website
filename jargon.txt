@@ -116,8 +116,10 @@ inlining
 intendedAudience
 io
 ireland
+japan
 javascript
 Jitsi
+jp
 json
 landingURL
 lang
