@@ -1,0 +1,33 @@
+# expected_result_count: 229
+SELECT DISTINCT
+?qid
+?orgLabel
+?orgDescription
+?type
+?typeLabel
+?country
+WHERE {
+   BIND(wd:Q17 AS ?country)
+{
+  VALUES ?type {
+    wd:Q15409298 # Ministries of Japan (11)
+    wd:Q50337 # prefectures of Japan (47)
+}
+?org wdt:P31 ?type; wdt:P17 ?country .
+}
+UNION
+{
+  VALUES ?type {
+    wd:Q3917681 # embassies (158)
+    wd:Q2360219 # permanent missions (13)
+}
+?org wdt:P31 ?type; wdt:P137 ?country .
+}
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,ja" }
+}
+ORDER BY ?typeLabel ?orgLabel
