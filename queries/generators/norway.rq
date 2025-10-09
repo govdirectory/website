@@ -32,8 +32,12 @@ WHERE {
   }
 
   MINUS { ?org wdt:P576 [] }
-  MINUS { ?org wdt:P1366 [] MINUS { ?org p:P1366 ?s. ?s pq:P582 [] } }
+  MINUS { ?org wdt:P1366 [] .
+          MINUS { ?org p:P1366 ?s. ?s pq:P582 [] }
+          MINUS { ?org p:P1366 ?t . ?t pq:P585 ?time . FILTER (?time > NOW()) }
+        }
   MINUS { ?org wdt:P3999 [] }
+  MINUS { ?org wdt:P571 ?incept . FILTER (?incept > NOW()) }
 
   OPTIONAL {
     ?org wdt:P9798/wdt:P279* ?cofog .
