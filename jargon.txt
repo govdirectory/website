@@ -13,7 +13,9 @@ authorsFile
 availableLanguages
 belgium
 bermuda
+bg
 biotop
+bulgaria
 canada
 CEST
 CET

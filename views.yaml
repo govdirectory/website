@@ -162,6 +162,9 @@ views:
   - output: "japan/{{qid}}/index.html"
     query: "generators/japan.rq"
     template: "org.html"
+  - output: "bulgaria/{{qid}}/index.html"
+    query: "generators/bulgaria.rq"
+    template: "org.html"
 
   - output: "united-kingdom/{{qid}}/index.html"
     query: "generators/united-kingdom.rq"
