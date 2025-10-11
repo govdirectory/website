@@ -169,3 +169,7 @@ views:
   - output: "united-kingdom/scotland/{{qid}}/index.html"
     query: "generators/united-kingdom/scotland.rq"
     template: "org.html"
+
+  - output: "united-states/{{qid}}/index.html"
+    query: "generators/united-states.rq"
+    template: "org.html"
