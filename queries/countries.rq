@@ -52,6 +52,7 @@ WHERE {
     (wd:Q298 'Chile' 'chile' 'Current content includes ministries, undersecreteriats, embassies, regions and legislatures of regions.' '')
     (wd:Q229 'Cyprus' 'cyprus' 'Current content includes ministries, deputy ministries, government departments, government agencies, districts and municipalities.' '')
     (wd:Q17 'Japan' 'japan' 'Current content includes ministries, prefectures, embassies and permanent missions.' '')
+    (wd:Q219 'Bulgaria' 'bulgaria' 'Current content includes ministries, state agencies, executive agencies, administrative structures, oblasts, municipalities, kmetstvos, municipal districts and specialized local administrations.' '')
 
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments.' 'Scotland|scotland')
     (wd:Q22 'Scotland' 'united-kingdom/scotland' 'Executive agencies, local authorities, NHS boards, NDPBs, courts, public corporations, tribunals, parole boards, Queen\'s printer, non-ministerial government departments, commissioners, ombudsmen and Health and social care partnerships.' '')

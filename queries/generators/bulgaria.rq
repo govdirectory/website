@@ -1,0 +1,39 @@
+# expected_result_count: 3638
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q219 AS ?country)
+  {
+    VALUES ?type {
+      wd:Q136069342 # Ministries (19)
+      wd:Q12279293 # state agency (10)
+      wd:Q121881025 # executove agency (32)
+      wd:Q136410955 # independent goverenment agency (16)
+      wd:Q136405773 # administrative structures (48)
+      wd:Q209824 # oblasts (28)
+      wd:Q1906268 # municipalities (265)
+      wd:Q4224624 # kmetstvo (3041)
+      wd:Q7553685 # municipal districts (35)
+    }
+    ?org wdt:P31 ?type ;
+         wdt:P17 ?country .
+  }
+  UNION
+  {
+    VALUES ?type {
+      wd:Q136083525 # specialized local administration (144)
+    }
+    ?org wdt:P31/wdt:P279* ?type .
+  }
+
+  MINUS { ?org wdt:P576 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,bg". }
+}
+ORDER BY ?type ?orgLabel
