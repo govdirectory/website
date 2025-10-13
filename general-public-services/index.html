@@ -156,7 +156,7 @@
                         <td lang="en">directorate in Norway</td>
                         <td><a class="btn rounded" href="/norway/">Norway</a></td>
                     </tr><tr>
-                        <td lang="en"><a href="/norway/Q61743788">Norwegian Customs</a></td>
+                        <td lang="en"><a href="/norway/Q61743788">Norwegian Customs Service</a></td>
                         <td><ul><li><a rel="nofollow" title="Website" href="http://www.toll.no/"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/website.svg" /></a></li><li><a rel="nofollow" title="Instagram" href="https://www.instagram.com/tolletaten/"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/instagram.svg" /></a></li><li><a rel="nofollow" title="Facebook" href="https://www.facebook.com/tolletaten"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/facebook.svg" /></a></li><li><a rel="nofollow" title="LinkedIn" href="https://www.linkedin.com/company/tolletaten1"><img loading="lazy" width="20" height="20" aria-hidden="true" src="/social-icons/linkedin.svg" /></a></li></ul></td>
                         <td lang="en">directorate in Norway</td>
                         <td><a class="btn rounded" href="/norway/">Norway</a></td>
@@ -534,22 +534,22 @@
 <script>
 const dataTable = document.querySelector('table');
 
-let tsv = '"Name","Govdirectory URL","Type","Accounts"\n';
+let tsv = '"Name"\t"Govdirectory URL"\t"Type"\t"Website"\n';
 Array.from(dataTable.children[0].children).forEach((row, index) => {
     if (index === 0) return; 
     const name = row.children[0].innerText;
     const qid = row.children[0].firstChild.href;
     const type = row.children[2].innerText;
-    var accounts;
+    var website = '';
     if (row.children[1].firstChild) {
-        accounts = Array.from(row.children[1].firstChild.children).map(item => {
-            return item.firstChild.href.split('/').pop();
-        }).join('|');
-    } else {
-        accounts = '';
+        Array.from(row.children[1].firstChild.children).map(item => {
+            if (item.firstChild.title === 'Website') {
+                website = item.firstChild.href;
+                return;
+            }
+        });
     }
-
-    const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + accounts + '"\n';
+    const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + website + '"' + '\n';
     tsv += tsvRow;
 });
 

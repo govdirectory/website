@@ -164,22 +164,22 @@
 <script>
 const dataTable = document.querySelector('table');
 
-let tsv = '"Name","Govdirectory URL","Type","Accounts"\n';
+let tsv = '"Name"\t"Govdirectory URL"\t"Type"\t"Website"\n';
 Array.from(dataTable.children[0].children).forEach((row, index) => {
     if (index === 0) return; 
     const name = row.children[0].innerText;
     const qid = row.children[0].firstChild.href;
     const type = row.children[2].innerText;
-    var accounts;
+    var website = '';
     if (row.children[1].firstChild) {
-        accounts = Array.from(row.children[1].firstChild.children).map(item => {
-            return item.firstChild.href.split('/').pop();
-        }).join('|');
-    } else {
-        accounts = '';
+        Array.from(row.children[1].firstChild.children).map(item => {
+            if (item.firstChild.title === 'Website') {
+                website = item.firstChild.href;
+                return;
+            }
+        });
     }
-
-    const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + accounts + '"\n';
+    const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + website + '"' + '\n';
     tsv += tsvRow;
 });
 
