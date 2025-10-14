@@ -10,10 +10,10 @@ WHERE {
   BIND(wd:Q219 AS ?country)
   {
     VALUES ?type {
-      wd:Q136069342 # Ministries (19)
+      wd:Q136069342 # ministries (19)
       wd:Q12279293 # state agency (10)
-      wd:Q121881025 # executove agency (32)
-      wd:Q136410955 # independent goverenment agency (16)
+      wd:Q121881025 # executive agency (32)
+      wd:Q136410955 # independent government agency (16)
       wd:Q136405773 # administrative structures (48)
       wd:Q209824 # oblasts (28)
       wd:Q1906268 # municipalities (265)
@@ -34,6 +34,6 @@ WHERE {
   MINUS { ?org wdt:P576 [] }
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,bg". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,bg". }
 }
 ORDER BY ?type ?orgLabel
