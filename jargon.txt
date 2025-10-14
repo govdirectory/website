@@ -17,6 +17,7 @@ bg
 biotop
 bulgaria
 canada
+carolina
 CEST
 CET
 cff

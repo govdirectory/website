@@ -176,3 +176,6 @@ views:
   - output: "united-states/{{qid}}/index.html"
     query: "generators/united-states.rq"
     template: "org.html"
+  - output: "united-states/north-carolina/{{qid}}/index.html"
+    query: "generators/united-states/north-carolina.rq"
+    template: "org.html"
