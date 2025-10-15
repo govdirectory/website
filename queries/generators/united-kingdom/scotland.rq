@@ -28,7 +28,7 @@ WHERE {
             wd:Q3044788 # non-ministerial government departments (2)
             wd:Q7139410 # parole board (1)
             wd:Q1412224 # tribunal (10)
-            wd:Q16931297 # Queen's printer (1)
+            wd:Q16931297 # King's printer (1)
 		}
 		?org wdt:P31 | wdt:P1454 ?type ;
 	       wdt:P1001 wd:Q22 .
