@@ -50,6 +50,7 @@ WHERE {
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P3999 [] }
+  MINUS { ?org wdt:P361/wdt:P31 wd:Q5244910 }
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
 }
