@@ -161,6 +161,7 @@ nd
 ne
 nepal
 netherlands
+new
 nl
 NLnet
 norway
@@ -279,6 +280,7 @@ WikiProject
 xml
 yaml
 yml
+york
 za
 zealand
 usr
