@@ -1,0 +1,19 @@
+- name: Epic
+  color: B60205
+  description: Large feature or group of related tasks
+
+- name: UI/UX
+  color: D4C5F9
+  description: User interface or user experience improvement
+
+- name: Blocked/wait
+  color: FEF2C0
+  description: Task is blocked or waiting on another issue
+
+- name: Frontend/Backend
+  color: 1D76DB
+  description: Related to frontend or backend development
+
+- name: New contact point
+  color: 0E8A16
+  description: Adding or updating a contact point
