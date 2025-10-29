@@ -8,7 +8,7 @@ SELECT
   (SAMPLE(?contactPage) AS ?contactPage)
   (SAMPLE(?regulatoryText ) AS ?regulatoryText)
   (SAMPLE(?regulatoryTextTitle ) AS ?regulatoryTextTitle)
-  (SAMPLE(?personLabel) AS ?leadBy)
+  (SAMPLE(COALESCE(?personLabel, "Not Available")) AS ?leadBy)
   (SAMPLE(?parentOrg) AS ?parent)
   ?wikipedia
 WHERE {
@@ -29,7 +29,7 @@ WHERE {
   OPTIONAL { ?org wdt:P749 ?parentOrg }
 
   OPTIONAL {
-    ?org wdt:P2388|wdt:P1313 ?office .
+    ?org wdt:P2388|wdt:P1313|wdt:P488|wdt:P169|wdt:P1037|wdt:P3975 ?office .
     ?positionStatement ps:P39 ?office .
     ?person p:P39 ?positionStatement .
     ?person wdt:P31 wd:Q5 .
