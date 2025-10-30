@@ -29,7 +29,7 @@ WHERE {
   OPTIONAL { ?org wdt:P749 ?parentOrg }
 
   OPTIONAL {
-    ?org wdt:P2388|wdt:P1313|wdt:P488|wdt:P169|wdt:P1037|wdt:P3975 ?office .
+    ?org wdt:P2388|wdt:P1313 ?office .
     ?positionStatement ps:P39 ?office .
     ?person p:P39 ?positionStatement .
     ?person wdt:P31 wd:Q5 .
@@ -37,6 +37,12 @@ WHERE {
     MINUS { ?person wdt:P570 [] }
     FILTER ( ?office != wd:Q30185 )
   }
+
+  OPTIONAL {
+
+    ?org wdt:P488|wdt:P169|wdt:P1037|wdt:P3975 ?person .
+  }
+
 
   OPTIONAL {
     ?org wdt:P1329 ?phone .
