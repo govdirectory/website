@@ -119,7 +119,8 @@ Most data is pulled from Wikidata without any particular requirements, however, 
 | Data | Requirement |
 |--------|--------|
 | Phone number | For a phone number to be displayed it must be supported by one or more references. |
-| Main regulatory text | For a main regulatory text to be displayed the item describing the regulatory text must have both _full work available online at_ and _title_ statements. | 
+| Email address | For an email address to be displayed it must be supported by one or more references. |
+| Main regulatory text | For a main regulatory text to be displayed the item describing the regulatory text must have both _full work available online at_ and _title_ statements. |
 
 You can test if an organization on Wikidata matches these requirements using the following SPARQL-query: 
 
