@@ -80,7 +80,6 @@ endif
 english
 eq
 facto
-federalSubjects
 Fediverse
 ffffff
 fi
@@ -236,6 +235,8 @@ spdx
 src
 st
 state
+subnationalGovernment
+subnationalGovernments
 Sverige
 svg
 sweden
