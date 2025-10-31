@@ -140,7 +140,7 @@ SELECT
   ?name
   ?safeName
   ?description
-  ?federalSubjects
+  ?parts
   (SAMPLE(?website) AS ?website)
   (SAMPLE(?nativeLabel) AS ?nativeLabel)
   (GROUP_CONCAT(DISTINCT ?typeOfGovLabel; separator=",") AS ?typeOfGovList)
@@ -149,7 +149,7 @@ SELECT
   ?geoshape
   ?wikipedia
 WHERE {
-  VALUES (?uri ?name ?safeName ?description ?federalSubjects) {
+  VALUES (?uri ?name ?safeName ?description ?parts) {
     (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included.' '')
     (wd:Q223 'Greenland' 'greenland' 'Current content includes municipalities.' '')
   }
@@ -181,7 +181,7 @@ WHERE {
     ?typeOfGov rdfs:label ?typeOfGovLabel .
   }
 }
-GROUP BY ?uri ?name ?safeName ?description ?federalSubjects ?headOfGovLabel ?headOfStateLabel ?geoshape ?wikipedia
+GROUP BY ?uri ?name ?safeName ?description ?parts ?headOfGovLabel ?headOfStateLabel ?geoshape ?wikipedia
 ORDER BY ?name
 ```
 

@@ -46,13 +46,13 @@
     <p class="timestamp">Data last updated <time datetime="{{ now.Format "2006-01-02" }}">{{ now.Format "2006-01-02" }}</time>.</p>
     </header>
 
-    {{- if gt (len .federalSubjects.String) 0 -}}
+    {{- if gt (len .parts.String) 0 -}}
     <details>
-        <summary>Federal subjects</summary>
+        <summary>Parts of {{ .name }}</summary>
         <ul class="box-list">
-            {{- range split .federalSubjects "," -}}
-                {{- $federal_subject_details := split . "|" -}}
-                <li><a href="{{ index $federal_subject_details 1 }}">{{ index $federal_subject_details 0 }}</a></li>
+            {{- range split .parts "," -}}
+                {{- $part_details := split . "|" -}}
+                <li><a href="{{ index $part_details 1 }}">{{ index $part_details 0 }}</a></li>
             {{- end -}}
         </ul>
     </details>
