@@ -6,7 +6,6 @@ SELECT DISTINCT
   ?type
   ?typeLabel
   ?country
-  ?cofog
 WHERE {
   BIND(wd:Q20 AS ?country)
 
@@ -40,12 +39,13 @@ WHERE {
   MINUS { ?org wdt:P571 ?incept . FILTER (?incept > NOW()) }
 
   OPTIONAL {
-    ?org wdt:P9798/wdt:P279* ?cofog .
-    MINUS { ?cofog wdt:P279 [] }
+    ?org wdt:P101 ?fieldOfWork .
+    # TODO: check for end date
   }
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nb,no,nn,mul". }
 }
+GROUP BY ?qid ?orgLabel ?orgDescription ?type ?typeLabel ?country
 ORDER BY ?type ?topic

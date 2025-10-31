@@ -1,14 +1,8 @@
 SELECT DISTINCT * WHERE {
-  VALUES (?class ?safeName ?name) {
-    (wd:Q108107925 "general-public-services" "General Public Services")
-    (wd:Q108107955 "defense" "Defense")
-    (wd:Q108107969 "public-order-safety" "Public order and safety")
-    (wd:Q108107990 "economic-affairs" "Economic affairs")
-    (wd:Q108108058 "environmental-protection" "Environmental protection")
-    (wd:Q108108075 "housing-community-amenities" "Housing and community amenities")
-    (wd:Q108108099 "health" "Health")
-    (wd:Q108108141 "recreation-culture-religion" "Recreation, culture, and religion")
-    (wd:Q108108158 "education" "Education")
-    (wd:Q108108190 "social-protection" "Social protection")
+  VALUES (?safeName ?name) {
+    ("defense" "Defense")
+    ("environmental-protection" "Environmental protection")
+    ("health" "Health")
+    ("education" "Education")
   }
 } ORDER BY ?class
