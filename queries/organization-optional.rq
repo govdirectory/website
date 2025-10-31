@@ -8,7 +8,7 @@ SELECT
   (SAMPLE(?contactPage) AS ?contactPage)
   (SAMPLE(?regulatoryText ) AS ?regulatoryText)
   (SAMPLE(?regulatoryTextTitle ) AS ?regulatoryTextTitle)
-  (SAMPLE(COALESCE(?personLabel, "Not Available")) AS ?leadBy)
+  (SAMPLE(?personLabel) AS ?leadBy)
   (SAMPLE(?parentOrg) AS ?parent)
   ?wikipedia
 WHERE {
