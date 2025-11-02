@@ -63,6 +63,18 @@ a, a:hover {
     color: var(--color-white);
 }
 
+a {
+    font-size: 27px;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #002f5e;
+    transition: all 0.3s ease;
+}
+
 summary {
     font-size: 1.5rem;
     font-weight: 800;
@@ -72,6 +84,18 @@ summary {
 .no-decoration, .no-decoration:hover, .no-decoration:focus {
     text-decoration: none;
 }
+
+.no-decoration {
+    transition: all 0.3s ease;
+    border-radius: 40px;
+}
+
+.no-decoration:hover {
+    font-weight: 800;
+}
+
+
+
 
 .dark-link, .dark-link:hover, .dark-link:focus {
     text-decoration: underline;
@@ -146,6 +170,8 @@ input {
 .landing-page-image {
     max-width: 100%;
     object-fit: contain;
+    border-radius: 20px;
+    filter: brightness(1.2);
 }
 
 /* SECTIONS FOR CONTENT */
@@ -239,6 +265,7 @@ nav a:hover {
     padding: 1em;
     color: var(--color-white);
     border-radius: 5px;
+    text-align: center;
 }
 
 /* FOOTER */
@@ -338,7 +365,7 @@ table th:not(.js-sort-none):hover {
     text-align: center;
     padding: 7px 21px;
     line-height: 18px;
-    border-radius: 3px;
+    border-radius: 13px;
     display: inline-block;
     margin-bottom: .5em;
     margin-top: .5em;
@@ -348,7 +375,10 @@ table th:not(.js-sort-none):hover {
 .btn:hover, .btn:focus {
     background: var(--color-primary-light);
     text-decoration: none;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
 }
+
 
 .btn.rounded {
     border-radius: 20px;
@@ -427,6 +457,9 @@ table th:not(.js-sort-none):hover {
 
 .topic-list a {
     color: var(--color-black);
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: overline !important;
 }
 
 /* HEADER */
