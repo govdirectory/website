@@ -1,4 +1,4 @@
-# expected_result_count: 505
+# expected_result_count: 507
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -37,6 +37,16 @@ WHERE {
     }
    ?org wdt:P31 ?type ;
         wdt:P361 ?part .
+  }
+  UNION
+  { VALUES ?org { wd:Q7054438 }
+    VALUES ?type { wd:Q640506 } # cabinet (1)
+   ?org wdt:P31 ?type .
+  }
+  UNION
+  { VALUES ?org { wd:Q7054461 }
+    VALUES ?type { wd:Q3687335 } # council of state (1)
+   ?org wdt:P31 ?type .
   }
 
   MINUS { ?org wdt:P1366 [] }
