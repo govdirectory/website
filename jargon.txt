@@ -80,7 +80,6 @@ endif
 english
 eq
 facto
-federalSubjects
 Fediverse
 ffffff
 fi
