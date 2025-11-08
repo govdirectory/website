@@ -52,6 +52,7 @@ This project is [licensed CC-0](LICENSE.md), which essentially means that the pr
 
 In this project we use branches for changes and don't usually commit direct to the main branch.
 When you've forked this repository, please make sure to create a feature branch.
+
 - Create a [fork](https://github.com/govdirectory/website/fork) of the repository
 - Create or Use an existing feature branch to commit changes
 - Add your changes in commits with a useful commit [message](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
@@ -66,11 +67,11 @@ These are the standards that Govdirectory uses.
 We encourage you to submit your contribution even if you are not sure it is fully compliant.
 We will work with you to make your contribution aligned before it is merged.
 
-* [Web Content Accessibility Guidelines 2.2](https://www.w3.org/TR/WCAG22/)
-* [Standard Readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md) (applicable for the README file only)
-* [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) extended format for dates (e.g. 2023-09-17)
+- [Web Content Accessibility Guidelines 2.2](https://www.w3.org/TR/WCAG22/)
+- [Standard Readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md) (applicable for the README file only)
+- [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) extended format for dates (e.g. 2023-09-17)
 
-For icons, we are using the libraries [Maki](https://labs.mapbox.com/maki-icons/) and [Temaki](https://ideditor.github.io/temaki/docs/) for a consistent style. If you can't find a usable icon in those sets, try to emulate their style or find other icons similar to it.
+For icons, we are using the libraries [Maki](https://labs.mapbox.com/maki-icons/) and [Temaki](https://rapideditor.github.io/temaki/docs/) for a consistent style. If you can't find a usable icon in those sets, try to emulate their style or find other icons similar to it.
 
 For static bitmap images, we prefer using the `.webp` file format to optimize and compress images efficiently. Please consider converting new images to the `.webp` format using tools like TinyPNG or similar. This helps ensure that static images are optimized for website usage from the start, contributing to a faster and more efficient browsing experience.
 
@@ -110,7 +111,7 @@ Here is what we know that we need right now:
 1. Add all public agencies. You can start with the ones in you country. Public agencies are notable so you don't need to worry about that. Please add sources and/or external identifiers so that it is possible to verify their existence.
 2. Make sure it's possible to differentiate active agencies in contrast to historic agencies in a query.
 3. Add basic properties like country (P17) and which administrative level they are on (state, regional, local etc.). How this is modeled may vary by country. If possible add what type of agency it is (like environmental protection or taxes).
-4. Add the online platforms you can find for them. Common ones are YouTube channel (P2397), Facebook (P2013), Twitter (P2002), Instagram (P2003) and LinkedIn (P4264). These are also the one that is shown with icons in the directory. But others that they are active on (that have properties in Wikidata) are also good to add and they will show on the institution page.
+4. Add the online platforms you can find for them. Common ones are YouTube channel (P2397), Facebook (P2013), X (formerly Twitter) (P2002), Instagram (P2003) and LinkedIn (P4264). These are also the one that is shown with icons in the directory. But others that they are active on (that have properties in Wikidata) are also good to add and they will show on the institution page.
 
 ### Special data requirements
 
@@ -119,10 +120,9 @@ Most data is pulled from Wikidata without any particular requirements, however, 
 | Data | Requirement |
 |--------|--------|
 | Phone number | For a phone number to be displayed it must be supported by one or more references. |
-| Main regulatory text | For a main regulatory text to be displayed the item describing the regulatory text must have both _full work available online at_ and _title_ statements. | 
+| Main regulatory text | For a main regulatory text to be displayed the item describing the regulatory text must have both _full work available online at_ and _title_ statements. |
 
-You can test if an organization on Wikidata matches these requirements using the following SPARQL-query: 
-
+You can test if an organization on Wikidata matches these requirements using the following SPARQL-query:
 [organization-optional.rq](https://github.com/govdirectory/website/blob/main/queries/organization-optional.rq)
 
 ## Add a country in the interface
