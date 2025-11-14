@@ -16,6 +16,7 @@ WHERE {
   ?statement ?propValuePredicate ?value .
 
   MINUS { ?statement pq:P582 [] }
+  MINUS { ?statement pq:P2241 [] }
 
   BIND(IRI(REPLACE(?formatter, '\\$1', ?value)) AS ?url)
 
