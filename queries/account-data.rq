@@ -11,6 +11,7 @@ WHERE {
             wdt:P9073 ?platform .
 
   MINUS { ?property wdt:P31 wd:Q60457486 }
+  MINUS { ?property wdt:P11245 [] } # Temporary workaround until modeling on Wikidata is fixed
 
   wd:{{.}} ?wdtClaimPredicate ?statement .
   ?statement ?propValuePredicate ?value .
