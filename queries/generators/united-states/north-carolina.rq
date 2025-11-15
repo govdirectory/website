@@ -1,4 +1,4 @@
-# expected_result_count: 507
+# expected_result_count: 607
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -48,10 +48,15 @@ WHERE {
     VALUES ?type { wd:Q3687335 } # council of state (1)
    ?org wdt:P31 ?type .
   }
+  UNION
+  { VALUES ?type { wd:Q935741 } # election boards (100)
+   ?org wdt:P31 ?type ;
+        wdt:P1001/wdt:P31 wd:Q13414758 .
+  }
 
   MINUS { ?org wdt:P1366 [] }
   MINUS { ?org wdt:P576 [] }
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
 }
-ORDER BY DESC(?type) ?orgLabel
+ORDER BY ?typeLabel ?orgLabel
