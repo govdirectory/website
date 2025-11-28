@@ -96,7 +96,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2025-11-08">2025-11-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-11-28">2025-11-28</time>.</p>
     </header>
 </div>
 
@@ -117,6 +117,10 @@
         <td lang="en">Rutube</td>
         <td><a rel="nofollow" href="https://rutube.ru/channel/25589704/">25589704</a></td>
     </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P11245">
+        <td lang="en">YouTube</td>
+        <td><a rel="nofollow" href="https://www.youtube.com/@%d0%bc%d0%b8%d0%bd%d1%81%d0%b5%d0%bb%d1%8c%d1%85%d0%be%d0%b7%d1%80%d1%84-%d0%b68%d0%b6">минсельхозрф-ж8ж</a></td>
+    </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="en">X</td>
         <td><a rel="nofollow" href="https://x.com/mcx_rf">mcx_rf</a></td>
@@ -126,7 +130,7 @@
         <td><a rel="nofollow" href="https://www.instagram.com/mcx_rf/">mcx_rf</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
-        <td lang="mul">Facebook</td>
+        <td lang="en">Facebook</td>
         <td><a rel="nofollow" href="https://www.facebook.com/minselhoz">minselhoz</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
@@ -142,7 +146,7 @@
         <td><a rel="nofollow" href="https://t.me/s/mcx_ru">mcx_ru</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P4003">
-        <td lang="mul">Facebook</td>
+        <td lang="en">Facebook</td>
         <td><a rel="nofollow" href="https://www.facebook.com/pages/%d0%9c%d0%b8%d0%bd%d0%b8%d1%81%d1%82%d0%b5%d1%80%d1%81%d1%82%d0%b2%d0%be-%d1%81%d0%b5%d0%bb%d1%8c%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d1%85%d0%be%d0%b7%d1%8f%d0%b9%d1%81%d1%82%d0%b2%d0%b0-%d0%a0%d0%be%d1%81%d1%81%d0%b8%d0%b9%d1%81%d0%ba%d0%be%d0%b9-%d0%a4%d0%b5%d0%b4%d0%b5%d1%80%d0%b0%d1%86%d0%b8%d0%b8/162754797121848">Министерство-сельского-хозяйства-Российской-Федерации/162754797121848</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P5163">
@@ -214,7 +218,7 @@
   "@type": "GovernmentOrganization",
   "description": "cabinet-level agency in Russia","additionalType": "http://www.wikidata.org/entity/Q4481741",
   "url": "https://www.govdirectory.org/russia/Q4294685",
-  "sameAs": ["https://rutube.ru/channel/25589704/","https://x.com/mcx_rf","https://www.instagram.com/mcx_rf/","https://www.facebook.com/minselhoz","https://www.youtube.com/channel/UCdY3x3y6iCO_W1jbUEqKixg","https://vk.com/minselhoz","https://t.me/s/mcx_ru","https://www.facebook.com/pages/Министерство-сельского-хозяйства-Российской-Федерации/162754797121848","https://ok.ru/group/58417191780400","http://wikidata.org/entity/Q4294685"],
+  "sameAs": ["https://rutube.ru/channel/25589704/","https://www.youtube.com/@минсельхозрф-ж8ж","https://x.com/mcx_rf","https://www.instagram.com/mcx_rf/","https://www.facebook.com/minselhoz","https://www.youtube.com/channel/UCdY3x3y6iCO_W1jbUEqKixg","https://vk.com/minselhoz","https://t.me/s/mcx_ru","https://www.facebook.com/pages/Министерство-сельского-хозяйства-Российской-Федерации/162754797121848","https://ok.ru/group/58417191780400","http://wikidata.org/entity/Q4294685"],
   "name": "Ministry of Agriculture"
 }
 </script>
@@ -245,7 +249,7 @@ if (dataTable) {
     downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
-const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
+const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  MINUS { ?property wdt:P11245 [] } # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
 const wikidataEndpoint = 'https://query.wikidata.org/sparql';
 const recentAccountsElm = document.querySelector('#recent-accounts');

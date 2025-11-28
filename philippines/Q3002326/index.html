@@ -96,7 +96,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2025-11-08">2025-11-08</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-11-28">2025-11-28</time>.</p>
     </header>
 </div>
 
@@ -117,6 +117,10 @@
         <td lang="en">Viber</td>
         <td><a rel="nofollow" href="https://invite.viber.com/?g2=AQAYsuTqRav0MkrjTK09QU3X3NnUXshXw2SrJU5kbuo4XRV3BTWZYGXwQ&#43;z8zn6b">AQAYsuTqRav0MkrjTK09QU3X3NnUXshXw2SrJU5kbuo4XRV3BTWZYGXwQ&#43;z8zn6b</a></td>
     </tr>
+    <tr data-wd-prop="http://www.wikidata.org/entity/P11245">
+        <td lang="en">YouTube</td>
+        <td><a rel="nofollow" href="https://www.youtube.com/@departmentoffinanceph">departmentoffinanceph</a></td>
+    </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2002">
         <td lang="en">X</td>
         <td><a rel="nofollow" href="https://x.com/dof_ph">dof_ph</a></td>
@@ -126,7 +130,7 @@
         <td><a rel="nofollow" href="https://www.instagram.com/dof_ph/">dof_ph</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
-        <td lang="mul">Facebook</td>
+        <td lang="en">Facebook</td>
         <td><a rel="nofollow" href="https://www.facebook.com/DOFPH">DOFPH</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
@@ -198,7 +202,7 @@
   "@type": "GovernmentOrganization",
   "description": "national executive department of the Philippines","additionalType": "http://www.wikidata.org/entity/Q111188397",
   "url": "https://www.govdirectory.org/philippines/Q3002326",
-  "sameAs": ["https://invite.viber.com/?g2=AQAYsuTqRav0MkrjTK09QU3X3NnUXshXw2SrJU5kbuo4XRV3BTWZYGXwQ+z8zn6b","https://x.com/dof_ph","https://www.instagram.com/dof_ph/","https://www.facebook.com/DOFPH","https://www.youtube.com/channel/UCVI6xxn51j0p6l8O3UXEW3A","http://wikidata.org/entity/Q3002326"],
+  "sameAs": ["https://invite.viber.com/?g2=AQAYsuTqRav0MkrjTK09QU3X3NnUXshXw2SrJU5kbuo4XRV3BTWZYGXwQ+z8zn6b","https://www.youtube.com/@departmentoffinanceph","https://x.com/dof_ph","https://www.instagram.com/dof_ph/","https://www.facebook.com/DOFPH","https://www.youtube.com/channel/UCVI6xxn51j0p6l8O3UXEW3A","http://wikidata.org/entity/Q3002326"],
   "name": "Department of Finance"
 }
 </script>
@@ -229,7 +233,7 @@ if (dataTable) {
     downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
-const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
+const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  MINUS { ?property wdt:P11245 [] } # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
 const wikidataEndpoint = 'https://query.wikidata.org/sparql';
 const recentAccountsElm = document.querySelector('#recent-accounts');
