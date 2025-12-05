@@ -12,6 +12,9 @@ Govdirectory aims to become a global directory of government agencies and their 
 Wikidata's community, sourceability, versioning, and potential custom tooling that we create will ensure that not only should the information be correct but when it isn't, because of vandalism or something else, users will be able, and suggested, to validate the information.
 The goal is for this directory to be useful to journalists, web-archivists, researchers and many others, certainly including regular citizens.
 
+> [!TIP]
+> Every Friday at 15.00 CEST we have an open session in [Jitsi](https://meet.jit.si/GovdirectoryCollabHour) where we hack and work on the data together. Everyone is welcome and it's open for questions.
+
 ## Development setup
 
 Govdirectory is a static site meaning that it already has all of its pages generated when a visitor visits it. Govdirectory uses Snowman and [SPARQL](https://www.w3.org/TR/sparql11-query/) to do this.
