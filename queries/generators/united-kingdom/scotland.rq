@@ -1,4 +1,4 @@
-# expected_result_count: 214
+# expected_result_count: 215
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -23,7 +23,7 @@ WHERE {
   UNION
   { # More Scottish organizations
 		VALUES ?type {
-			wd:Q3343298  # NDPBs (45)
+			wd:Q3343298  # NDPBs (46)
 			wd:Q55657615 wd:Q524778 wd:Q169180 # commissioners and ombudsmen (7)
             wd:Q3044788 # non-ministerial government departments (2)
             wd:Q7139410 # parole board (1)
