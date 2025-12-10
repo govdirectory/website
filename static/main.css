@@ -118,6 +118,10 @@ summary {
     text-align: center;
 }
 
+.center-content {
+    align-content: center;
+}
+
 input {
   padding: .375rem .75rem;
   font-size: 1rem;
