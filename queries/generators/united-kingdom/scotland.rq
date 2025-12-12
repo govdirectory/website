@@ -11,10 +11,10 @@ WHERE {
   BIND(wd:Q145 AS ?country)
   {
 	  VALUES ?type {
-		  wd:Q21451686 # Scottish local authorities (32)
-		  wd:Q83425186 # Scottish NHS boards (14)
-		  wd:Q20667323 # Scottish Health and social care partnerships (31)
-		  wd:Q108838260 # Scottish executive agencies (10)
+	  wd:Q21451686 # Scottish local authorities (32)
+	  wd:Q83425186 # Scottish NHS boards (14)
+	  wd:Q20667323 # Scottish Health and social care partnerships (31)
+	  wd:Q108838260 # Scottish executive agencies (10)
       wd:Q137322982 # Scottish executive non-departmental public bodies (46)
       wd:Q137324408 # Scottish advisory non-departmental public bodies (9)
       wd:Q137325036 # Scottish non-ministerial offices (10)
