@@ -1,4 +1,4 @@
-# expected_result_count: 215
+# expected_result_count: 232
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -9,13 +9,16 @@ SELECT DISTINCT
   ?cofog
 WHERE {
   BIND(wd:Q145 AS ?country)
-
   {
 	  VALUES ?type {
-		wd:Q21451686 # Scottish local authorities (32)
-		wd:Q83425186 # Scottish NHS boards (14)
-		wd:Q20667323 # Scottish Health and social care partnerships (31)
-		wd:Q108838260 # Scottish executive agencies (9)
+		  wd:Q21451686 # Scottish local authorities (32)
+		  wd:Q83425186 # Scottish NHS boards (14)
+		  wd:Q20667323 # Scottish Health and social care partnerships (31)
+		  wd:Q108838260 # Scottish executive agencies (10)
+      wd:Q137322982 # Scottish executive non-departmental public bodies (46)
+      wd:Q137324408 # Scottish advisory non-departmental public bodies (9)
+      wd:Q137325036 # Scottish non-ministerial offices (10)
+      wd:Q137366971 # Scottish public corporations (4)
 	  }
       ?org wdt:P31 ?type ;
            wdt:P17 ?country .
@@ -23,12 +26,11 @@ WHERE {
   UNION
   { # More Scottish organizations
 		VALUES ?type {
-			wd:Q3343298  # NDPBs (46)
 			wd:Q55657615 wd:Q524778 wd:Q169180 # commissioners and ombudsmen (7)
-            wd:Q3044788 # non-ministerial government departments (2)
             wd:Q7139410 # parole board (1)
             wd:Q1412224 # tribunal (10)
             wd:Q16931297 # King's printer (1)
+            wd:Q7188 # government (Scotland) (1)
 		}
 		?org wdt:P31 | wdt:P1454 ?type ;
 	       wdt:P1001 wd:Q22 .
@@ -49,22 +51,10 @@ WHERE {
 	  ?org wdt:P361 wd:Q4993654 ;
          wdt:P31 ?type .
 	}
-	UNION
-	{ # Scottish public Corporations (6)
-	  ?org wdt:P31 wd:Q270791 ;
-         wdt:P127 wd:Q32521 ;
-         wdt:P31 ?type .
-	}
-
   MINUS { ?org wdt:P576 [] }
-
-  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
-
-  OPTIONAL {
-    ?org wdt:P9798/wdt:P279* ?cofog .
+  OPTIONAL { ?org wdt:P9798/wdt:P279* ?cofog .
     MINUS { ?cofog wdt:P279 [] }
   }
-
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sco,gd,mul" }
-}
-ORDER BY ?type ?orgLabel
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,sco,gd" }
+}ORDER BY ?type ?orgLabel
