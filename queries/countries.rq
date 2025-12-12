@@ -59,7 +59,7 @@ WHERE {
 
     (wd:Q30 'United States' 'united-states' 'Current content includes departments, Executive Office of the President, legislative branch agencies, representations, consulates, consulate generals and embassies.' 'New York|new-york,North Carolina|north-carolina')
     (wd:Q1454 'North Carolina' 'united-states/north-carolina' 'Current content includes the general assembly, cabinet, council of state, counties, county election boards, state agencies, supreme and appellate courts.' '')
-    (wd:Q1384 'New York' 'united-states/new-york' 'State agencies and counties.' '')
+    (wd:Q1384 'New York' 'united-states/new-york' 'Current content includes state agencies and counties.' '')
 
   }
 
