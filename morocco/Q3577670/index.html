@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="Govdirectory" />
     <meta name="description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
-    <title>École Hassania des travaux publics</title>
+    <title>Hassania School of Public Works</title>
 
     <link rel="canonical" href="https://www.govdirectory.org/morocco/Q3577670/">
 
@@ -54,7 +54,7 @@
 
     <meta name="fediverse:creator" content="@govdirectory@wikis.world" />
 
-    <meta name="description" content="school in Casablanca, Morocco">
+    <meta name="description" content="university in Casablanca, Morocco">
 
     <noscript>
         <style>
@@ -83,7 +83,7 @@
             <a class="btn rounded" href="/morocco/">Morocco</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q3577670" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q3577670%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="en">École Hassania des travaux publics</h1><p lang="en">school in Casablanca, Morocco</p><div class="header-lower">
+        <h1 lang="en">Hassania School of Public Works</h1><p lang="en">university in Casablanca, Morocco</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Official website: <a href="http://www.ehtp.ac.ma/">www.ehtp.ac.ma/</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
@@ -96,7 +96,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2025-11-28">2025-11-28</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-12-15">2025-12-15</time>.</p>
     </header>
 </div>
 
@@ -105,7 +105,7 @@
 
     <section class="bg-grey">
         <div class="container move-away">
-            <h2 class="m0">Platforms and accounts</h2><a id="download" download="École Hassania des travaux publics - Q3577670.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
+            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Hassania School of Public Works - Q3577670.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
     </section>
 
     
@@ -113,11 +113,7 @@
     <tr>
       <th class="js-sort-none">Platform</th>
       <th class="js-sort-none">Account</th>
-    </tr><tr data-wd-prop="http://www.wikidata.org/entity/P11245">
-        <td lang="en">YouTube</td>
-        <td><a rel="nofollow" href="https://www.youtube.com/@ecole.hassania.tp_1971">ecole.hassania.tp_1971</a></td>
-    </tr>
-    <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
+    </tr><tr data-wd-prop="http://www.wikidata.org/entity/P2003">
         <td lang="en">Instagram</td>
         <td><a rel="nofollow" href="https://www.instagram.com/ehtp_officiel/">ehtp_officiel</a></td>
     </tr>
@@ -196,10 +192,10 @@
 {
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
-  "description": "school in Casablanca, Morocco","additionalType": "http://www.wikidata.org/entity/Q121614922",
+  "description": "university in Casablanca, Morocco","additionalType": "http://www.wikidata.org/entity/Q121614922",
   "url": "https://www.govdirectory.org/morocco/Q3577670",
-  "sameAs": ["https://www.youtube.com/@ecole.hassania.tp_1971","https://www.instagram.com/ehtp_officiel/","https://www.facebook.com/Ecole.Hassania","https://www.youtube.com/channel/UCsJl6hES7cqrOBfj9LpNiYA","https://www.linkedin.com/company/ecole-hassania-des-travaux-publics-ehtp","http://wikidata.org/entity/Q3577670"],
-  "name": "École Hassania des travaux publics"
+  "sameAs": ["https://www.instagram.com/ehtp_officiel/","https://www.facebook.com/Ecole.Hassania","https://www.youtube.com/channel/UCsJl6hES7cqrOBfj9LpNiYA","https://www.linkedin.com/company/ecole-hassania-des-travaux-publics-ehtp","http://wikidata.org/entity/Q3577670"],
+  "name": "Hassania School of Public Works"
 }
 </script>
 
@@ -229,7 +225,7 @@ if (dataTable) {
     downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
-const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  MINUS { ?property wdt:P11245 [] } # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
+const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  FILTER(?property != wd:P11245) # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
 const wikidataEndpoint = 'https://query.wikidata.org/sparql';
 const recentAccountsElm = document.querySelector('#recent-accounts');

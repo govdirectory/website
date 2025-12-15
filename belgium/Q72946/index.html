@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="Govdirectory" />
     <meta name="description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
-    <title>Forest - Vorst</title>
+    <title>Forest</title>
 
     <link rel="canonical" href="https://www.govdirectory.org/belgium/Q72946/">
 
@@ -83,9 +83,9 @@
             <a class="btn rounded" href="/belgium/">Belgium</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q72946" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q72946%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="en">Forest - Vorst</h1><p lang="en">municipality in the Brussels-Capital Region, Belgium</p><div class="header-lower">
+        <h1 lang="en">Forest</h1><p lang="en">municipality in the Brussels-Capital Region, Belgium</p><div class="header-lower">
             <div class="infobox">
-                <ul><li>Official website: <a href="http://www.forest.irisnet.be/">www.forest.irisnet.be/</a></li>
+                <ul><li>Official website: <a href="https://forest.brussels/">forest.brussels/</a></li>
                     <li>Phone: <a href="tel:&#43;32-2-370-22-11">&#43;32-2-370-22-11</a></li>
                     <li>Led by: Stéphane Roberti</li>
                     <li>Main regulatory text: <span class="text-grey">[missing data]</span></li>
@@ -98,7 +98,7 @@
                     <a class="btn" href="mailto:contact@forest.brussels">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2025-11-28">2025-11-28</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-12-15">2025-12-15</time>.</p>
     </header>
 </div>
 
@@ -107,7 +107,7 @@
 
     <section class="bg-grey">
         <div class="container move-away">
-            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Forest - Vorst - Q72946.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
+            <h2 class="m0">Platforms and accounts</h2><a id="download" download="Forest - Q72946.tsv" href="#" class="btn need-js">Download (as TSV)</a></div>
     </section>
 
     
@@ -185,7 +185,7 @@
   "description": "municipality in the Brussels-Capital Region, Belgium","additionalType": "http://www.wikidata.org/entity/Q493522",
   "url": "https://www.govdirectory.org/belgium/Q72946",
   "sameAs": ["https://www.facebook.com/Commune-de-Forest-Gemeente-Vorst-100082478326231","http://wikidata.org/entity/Q72946"],
-  "name": "Forest - Vorst"
+  "name": "Forest"
 }
 </script>
 
@@ -215,7 +215,7 @@ if (dataTable) {
     downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
-const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  MINUS { ?property wdt:P11245 [] } # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
+const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  FILTER(?property != wd:P11245) # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
 const wikidataEndpoint = 'https://query.wikidata.org/sparql';
 const recentAccountsElm = document.querySelector('#recent-accounts');

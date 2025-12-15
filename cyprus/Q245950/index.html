@@ -54,7 +54,7 @@
 
     <meta name="fediverse:creator" content="@govdirectory@wikis.world" />
 
-    <meta name="description" content="government department of Cyprus">
+    <meta name="description" content="armed forces and government department of Cyprus">
 
     <noscript>
         <style>
@@ -83,7 +83,7 @@
             <a class="btn rounded" href="/cyprus/">Cyprus</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q245950" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q245950%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="en">National Guard</h1><p lang="en">government department of Cyprus</p><div class="header-lower">
+        <h1 lang="en">National Guard</h1><p lang="en">armed forces and government department of Cyprus</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Parent organization: <a href="/cyprus/Q12885629">Ministry of Defense</a></li><li>Official website: <a href="https://www.gov.cy/army/">www.gov.cy/army/</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
@@ -98,7 +98,7 @@
                     <a class="btn" href="mailto:info@nationalguard.mil.cy">Send an email</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2025-11-28">2025-11-28</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2025-12-15">2025-12-15</time>.</p>
     </header>
 </div>
 
@@ -190,7 +190,7 @@
 {
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
-  "description": "government department of Cyprus","additionalType": "http://www.wikidata.org/entity/Q135905403",
+  "description": "armed forces and government department of Cyprus","additionalType": "http://www.wikidata.org/entity/Q135905403",
   "url": "https://www.govdirectory.org/cyprus/Q245950",
   "sameAs": ["https://x.com/NationalGuardCY","https://www.facebook.com/NationalGuardCY","https://www.youtube.com/channel/UC2_lzneVJ0RMFkRsTEz4acw","http://wikidata.org/entity/Q245950"],
   "name": "National Guard"
@@ -223,7 +223,7 @@ if (dataTable) {
     downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
-const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  MINUS { ?property wdt:P11245 [] } # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
+const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  FILTER(?property != wd:P11245) # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
 const wikidataEndpoint = 'https://query.wikidata.org/sparql';
 const recentAccountsElm = document.querySelector('#recent-accounts');
