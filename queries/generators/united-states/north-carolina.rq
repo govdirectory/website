@@ -1,4 +1,4 @@
-# expected_result_count: 607
+# expected_result_count: 643
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -12,6 +12,7 @@ WHERE {
     VALUES ?type {
       wd:Q133309046 # state agencies (400)
       wd:Q13414758 # counties (100)
+      wd:Q96397182 # OSDBUs (36)
     }
     ?org wdt:P31 ?type .
   }
@@ -59,4 +60,4 @@ WHERE {
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
 }
-ORDER BY ?typeLabel ?orgLabel
+ORDER BY LCASE(?typeLabel) ?orgLabel
