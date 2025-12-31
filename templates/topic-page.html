@@ -14,19 +14,19 @@
 
 <main>
 
-    {{ if .country }}
-    <div class="container">
-        <nav class="back-to-country">
-            <a href="{{> helpers/get-country-url .safeName }}">
-                ← Back to {{ .country.name }}
-            </a>
-        </nav>
-    </div>
-    {{ end }}
+   {{ if (strings.Contains .safeName "/") }}
+<div class="container">
+    <nav class="back-to-country">
+        <a href="{{> helpers/get-country-url .safeName }}">
+            ← Back to country
+        </a>
+    </nav>
+</div>
+{{ end }}
+
 
     <section class="bg-grey sticky-grey">
 
-    <section class="bg-grey sticky-grey">
         <div class="container">
 						<div class="move-away">
 								<div class="expand-mobile">
