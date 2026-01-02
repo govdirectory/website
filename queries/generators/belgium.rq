@@ -1,4 +1,4 @@
-# expected_result_count: 973
+# expected_result_count: 972
 SELECT DISTINCT
 ?qid
 ?orgLabel
@@ -11,7 +11,7 @@ WHERE {
 {
   VALUES ?type {
     wd:Q2288140 # Federal Scientific Institutes (13)
-    wd:Q107637441 # Public Institution of Social Security (12)
+    wd:Q107637441 # Public Institution of Social Security (11)
     wd:Q3356161 # Public Interest Organizations (16)
     wd:Q1846372 # Federal Public Service (11)
     wd:Q1788820 # defence ministry (1)
