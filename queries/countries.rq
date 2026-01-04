@@ -28,7 +28,7 @@ WHERE {
     (wd:Q574 'East Timor' 'east-timor' 'Current content includes ministries, municipalities, special administrative region, administrative posts and sucos.' '')
     (wd:Q928 'Philippines' 'philippines' 'Current content includes departments, regions, provinces, cities and municipalities.' '')
     (wd:Q668 'India' 'india' 'Current content includes ministries, states and union territories.' '')
-    (wd:Q31 'Belgium' 'belgium' 'Current content includes federal scientific institutes, public institutions of social security, public interest organizations, federal public services, public planning services, agencies abroad, language areas, communities, regions, extant provinces, police zones, emergency zones and municipalities.' '')
+    (wd:Q31 'Belgium' 'belgium' 'Current content includes federal scientific institutes, public institutions of social security, public interest organizations, federal public services, public planning services, agencies abroad, communities, regions, extant provinces, police zones, emergency zones and municipalities.' '')
     (wd:Q16 'Canada' 'canada' 'Current content includes ministerial departments, provinces and territories.' '')
     (wd:Q252 'Indonesia' 'indonesia' 'Current content includes ministries, provinces, cities and regencies.' '')
     (wd:Q32 'Luxembourg' 'luxembourg' 'Current content includes ministries, ministries departments, cantons and communes.' '')
