@@ -56,11 +56,33 @@
 <div class="container">
     <header class="item">
         <div class="btn-list">
-            <a class="btn rounded" href="/{{ $currentCountrySafeName }}/">{{ $currentCountryName }}</a>
-            {{- if .cofog -}}<a class="btn rounded" href="/{{ $cofogSafeName }}/">{{ $cofogLabel }}</a>{{- end -}}
-            <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/{{ .qid }}" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
-            <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+{{`{{`}}Q|{{ .qid }}{{`}}`}}&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
-        </div>
+    {{- if $parentOrgLabel -}}
+        <a class="btn rounded" href="/{{ $currentCountrySafeName }}/{{ $parentOrgQID }}">
+            {{ $parentOrgLabel }}
+        </a>
+    {{- else -}}
+        <a class="btn rounded" href="/{{ $currentCountrySafeName }}/">
+            {{ $currentCountryName }}
+        </a>
+    {{- end -}}
+
+    {{- if .cofog -}}
+        <a class="btn rounded" href="/{{ $cofogSafeName }}/">{{ $cofogLabel }}</a>
+    {{- end -}}
+
+    <a class="btn rounded wikidata-btn"
+       href="https://www.wikidata.org/wiki/{{ .qid }}"
+       title="Edit on Wikidata">
+        <img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10">
+    </a>
+
+    <a class="btn rounded wikidata-btn"
+       href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+{{`{{`}}Q|{{ .qid }}{{`}}`}}&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template"
+       title="Report a problem">
+        <img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18">
+    </a>
+</div>
+
         <h1 lang="{{ .orgLabel.Lang }}">{{ .orgLabel }}</h1>
         {{- if .orgDescription -}}
             <p lang="{{ .orgDescription.Lang }}">{{ .orgDescription }}</p>
