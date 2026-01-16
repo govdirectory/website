@@ -57,7 +57,7 @@ WHERE {
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments.' 'Scotland|scotland')
     (wd:Q22 'Scotland' 'united-kingdom/scotland' 'Current content includes executive agencies, executive non-departmental public bodies, advisory non-departmental public bodies, non-ministerial offices,local authorities, NHS boards, courts, public corporations, tribunals, parole boards, King\'s printer, commissioners, ombudsmen, Health and social care partnerships and government of Scotland.' '')
 
-    (wd:Q30 'United States' 'united-states' 'Current content includes departments, Executive Office of the President, legislative branch agencies, representations, consulates, consulate generals and embassies.' 'New York|new-york,North Carolina|north-carolina')
+    (wd:Q30 'United States' 'united-states' 'Current content includes departments, Executive Office of the President, legislative branch agencies, interstate compacts for low-level radioactive waste, representations, consulates, consulate generals and embassies.' 'New York|new-york,North Carolina|north-carolina')
     (wd:Q1454 'North Carolina' 'united-states/north-carolina' 'Current content includes the general assembly, cabinet, council of state, counties, county election boards, state agencies, supreme and appellate courts.' '')
     (wd:Q1384 'New York' 'united-states/new-york' 'Current content includes state agencies and counties.' '')
 
