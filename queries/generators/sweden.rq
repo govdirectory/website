@@ -1,4 +1,4 @@
-# expected_result_count: 774
+# expected_result_count: 772
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -13,7 +13,7 @@ WHERE {
   {
     # agencies with country set to Sweden
     VALUES ?type {
-      wd:Q68295960 # Swedish government agency (253) ✔
+      wd:Q68295960 # Swedish government agency (251) ✔
       wd:Q107407151 # Swedish government agency under the parliament (12) ✔
       wd:Q127448 # municipality of Sweden (290) ✔
       wd:Q1754161 # regional council in Sweden (20) ✔
