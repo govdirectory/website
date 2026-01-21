@@ -27,7 +27,7 @@ Govdirectory is a static site meaning that it already has all of its pages gener
 1\. Clone the project:
 
 ```shell
-git clone https://github.com/govdirectory/website
+git clone https://github.com/govdirectory/website --single-branch
 ```
 
 2\. Get a recent build cache copy:
