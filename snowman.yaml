@@ -1,3 +1,4 @@
+snowman_version: ">=0.8.0"
 sparql_client:
   endpoint: "https://query.wikidata.org/sparql"
   http_headers: 
