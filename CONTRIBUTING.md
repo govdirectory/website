@@ -133,3 +133,39 @@ The guide [Add a country](ADD_A_COUNTRY.md) gives instructions for how that is d
 ## Feedback
 
 You can also help by [telling us](https://github.com/govdirectory/website/discussions) how you would like to use a resource like this.
+
+## For maintainers
+
+The sections below are intended for maintainers who manage repositories, deployment and other administrative functions.
+
+### Deploying to govdirectory.org
+
+See [DEPLOY.md](DEPLOY.md).
+
+### Updating the `website-cache` repository
+
+The `website-cache` makes it so that developers can bootstrap their Snowman cache when they build the Govdirectory website locally. This greatly speed up their first build and saves thousands of issued queries against WDQS.
+
+```sh
+cd .snowman
+# remove unused cache
+snowman cache sparql clear --unused
+git add *
+git commit -m "updating cache"
+git push --force
+```
+
+### Mirroring the `website` repository to Codeberg.org
+
+Setting up your mirroring target:
+
+```sh
+git remote add codeberg https://codeberg.org/Govdirectory/website.git
+```
+
+Mirroring the main branch:
+
+```
+git push codeberg main
+```
+
