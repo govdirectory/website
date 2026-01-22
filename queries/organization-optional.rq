@@ -39,7 +39,6 @@ WHERE {
   }
 
   OPTIONAL {
-
     ?org wdt:P488|wdt:P169|wdt:P1037|wdt:P3975 ?person .
   }
 
