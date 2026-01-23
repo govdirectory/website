@@ -1,4 +1,4 @@
-# expected_result_count: 318
+# expected_result_count: 354
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -29,6 +29,7 @@ WHERE {
     VALUES ?type {
     wd:Q910252 # Departments (15)
     wd:Q115456878 # Legislative branch agencies in the USA (24)
+    wd:Q96397182 # OSDBUs (36)
     }
     ?org wdt:P31 ?type ;
          wdt:P17 ?country .
@@ -61,4 +62,4 @@ WHERE {
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
 }
-ORDER BY DESC(?type) ?orgLabel
+ORDER BY DESC(LCASE(?typeLabel)) ?orgLabel

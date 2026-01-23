@@ -19,8 +19,6 @@ The goal is for this directory to be useful to journalists, web-archivists, rese
 
 Govdirectory is a static site meaning that it already has all of its pages generated when a visitor visits it. Govdirectory uses Snowman and [SPARQL](https://www.w3.org/TR/sparql11-query/) to do this.
 
-Because each initial build of Snowman issues thousands (yes thousands) of SPARQL queries one should never make an **initial** build against `query.wikidata.org` but rather against a local Wikidata Query Service (WDQS) instance. However, because setting up a WDQS instance is not trivial, we provide a copy of a [Snowman build cache directory](https://github.com/govdirectory/website-cache). If in use, this will ensure Snowman only queries Wikidata when a query is updated.
-
 > [!TIP]
 > Some of the most common development commands are available through [Just](https://github.com/casey/just), if you do not use just you can still look in the `justfile` for hints.
 
@@ -28,15 +26,14 @@ Because each initial build of Snowman issues thousands (yes thousands) of SPARQL
 
 - [Git](https://git-scm.com/)
 - [Snowman](https://github.com/glaciers-in-archives/snowman)
-- **Optionally**: A local WDQS instance
 
 1\. Clone the project:
 
 ```shell
-git clone https://github.com/govdirectory/website
+git clone https://github.com/govdirectory/website --single-branch
 ```
 
-2\. Get a recent build cache:
+2\. Get a recent build cache copy:
 
 ```shell
 cd website
@@ -51,7 +48,6 @@ snowman build && snowman server
 
 ### Advanced topics
 
-- [Setting up your own WDQS instance](https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Standalone_service)
 - [Snowman: Working with cache](https://github.com/glaciers-in-archives/snowman#working-with-cache)
 
 ## Usage

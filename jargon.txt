@@ -31,6 +31,7 @@ civictech
 codebase
 codebase's
 codebases
+Codeberg
 cofog
 COFOG
 cofogLabel
