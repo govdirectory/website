@@ -39,6 +39,10 @@ WHERE {
   }
 
   OPTIONAL {
+    ?org wdt:P488|wdt:P169|wdt:P1037|wdt:P3975 ?person .
+  }
+
+  OPTIONAL {
     ?org wdt:P1329 ?phone .
     ?org p:P1329 ?phoneStatement .
         ?phoneStatement (ps:P1329) [] .
