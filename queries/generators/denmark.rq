@@ -18,7 +18,10 @@ WHERE {
        wdt:P17 ?country .
 
   MINUS { ?org wdt:P576 [] MINUS { ?org wdt:P576 ?dissolveddate . FILTER (?dissolveddate > NOW() )  } }
-  MINUS { ?org wdt:P1366 [] MINUS { ?org p:P1366 ?s . ?s pq:P585 ?replaced . FILTER (?replaced > NOW() )  } }
+  MINUS { ?org wdt:P1366 []
+	MINUS { ?org p:P1366 ?s . ?s pq:P585 ?replaced . FILTER (?replaced > NOW() ) }
+	MINUS { ?org p:P1366 ?st . ?st pq:P518 [] } # Accepts partially replaced orgs (ministries)
+	}
   MINUS { ?org wdt:P3999 [] }
   MINUS { ?org wdt:P571 ?start . FILTER (?start > NOW() ) }
 
