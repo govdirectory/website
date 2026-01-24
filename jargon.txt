@@ -88,6 +88,7 @@ FileCopyrightText
 findability
 findable
 finland
+Flickr
 foiUrl
 fontconfig
 fontname
