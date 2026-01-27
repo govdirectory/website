@@ -27,14 +27,12 @@ This guide is written for beginners, even if you are new to Git.
 
 #### Make sure you have the following installed:
 #### Git
-- Download and install Git from:
-- [Git](https://git-scm.com/)
+- Download and install Git from: [Git](https://git-scm.com/)
 - Verify installation by running the below command in your terminal:
   ```shell: 
   git --version
 #### Snowman 
-- Install Snowman by following the official guide:
-- [Snowman](https://github.com/glaciers-in-archives/snowman)
+- Install Snowman by following the official guide: [Snowman](https://github.com/glaciers-in-archives/snowman)
 - Verify installation by running the below command in your terminal:
   ```shell:
   snowman --version
@@ -58,7 +56,7 @@ This guide is written for beginners, even if you are new to Git.
   ```shell: 
   snowman build && snowman server
 - If everything works correctly, you should see a message indicating that the server is running.
-- Open your browser and visit:[URL](http://localhost:8000)
+- Open your browser and visit: [URL](http://localhost:8000)
 - (or use the URL shown in your terminal)
 
 ### Common issues:
