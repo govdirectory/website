@@ -17,38 +17,55 @@ The goal is for this directory to be useful to journalists, web-archivists, rese
 
 ## Development setup
 
-Govdirectory is a static site meaning that it already has all of its pages generated when a visitor visits it. Govdirectory uses Snowman and [SPARQL](https://www.w3.org/TR/sparql11-query/) to do this.
+Govdirectory is a static website. To run it locally, you need Git and Snowman.
+This guide is written for beginners, even if you are new to Git.
 
 > [!TIP]
 > Some of the most common development commands are available through [Just](https://github.com/casey/just), if you do not use just you can still look in the `justfile` for hints.
 
 ### Prerequisites
 
-- [Git](https://git-scm.com/)
-- [Snowman](https://github.com/glaciers-in-archives/snowman)
+#### Make sure you have the following installed:
+  ### Git
+    - Download and install Git from:(https://git-scm.com/)
+    - Verify installation by running the below command in your terminal:
+      ```shell: 
+      git --version
+  ### Snowman 
+    - Install Snowman by following the official guide:
+    - [Snowman](https://github.com/glaciers-in-archives/snowman)
+    - Verify installation by running the below command in your terminal:
+      ```shell:
+      snowman --version
 
-1\. Clone the project:
+## Step 1: Clone the repository
+- Open a terminal and run:
+  ```shell:
+  git clone https://github.com/govdirectory/website --single-branch
+- This will create a folder called website.
+- Move into the project folder:
+  ```shell: 
+  cd website
+## Step 2: Download the Snowman cache
+- Snowman requires a cache folder to build the site.
+- Run the following command inside the website folder:
+  ```shell: 
+  git clone https://github.com/govdirectory/website-cache .snowman
+- This will create a hidden folder called .snowman.
+## Step 3: Build and run the website
+- Build the site and start the local server:
+  ```shell: 
+  snowman build && snowman server
+- If everything works correctly, you should see a message indicating that the server is running.
+- Open your browser and visit: 
+- [URL](http://localhost:8000)
+- (or use the URL shown in your terminal)
 
-```shell
-git clone https://github.com/govdirectory/website --single-branch
-```
+### Common issues:
 
-2\. Get a recent build cache copy:
-
-```shell
-cd website
-git clone https://github.com/govdirectory/website-cache .snowman
-```
-
-3\. Build the website and run the development server:
-
-```shell
-snowman build && snowman server
-```
-
-### Advanced topics
-
-- [Snowman: Working with cache](https://github.com/glaciers-in-archives/snowman#working-with-cache)
+- If cd website fails, make sure you are in the correct directory.
+- If snowman is not recognized, ensure it is installed and added to your system PATH.
+- If the build fails, try running snowman build separately to see detailed errors.
 
 ## Usage
 
