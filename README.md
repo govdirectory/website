@@ -26,19 +26,19 @@ This guide is written for beginners, even if you are new to Git.
 ### Prerequisites
 
 #### Make sure you have the following installed:
-  ### Git
-    - Download and install Git from:(https://git-scm.com/)
-    - Verify installation by running the below command in your terminal:
-      ```shell: 
-      git --version
-  ### Snowman 
-    - Install Snowman by following the official guide:
-    - [Snowman](https://github.com/glaciers-in-archives/snowman)
-    - Verify installation by running the below command in your terminal:
-      ```shell:
-      snowman --version
+#### Git
+- Download and install Git from:(https://git-scm.com/)
+- Verify installation by running the below command in your terminal:
+  ```shell: 
+  git --version
+#### Snowman 
+- Install Snowman by following the official guide:
+- [Snowman](https://github.com/glaciers-in-archives/snowman)
+- Verify installation by running the below command in your terminal:
+  ```shell:
+  snowman --version
 
-## Step 1: Clone the repository
+### Step 1: Clone the repository
 - Open a terminal and run:
   ```shell:
   git clone https://github.com/govdirectory/website --single-branch
@@ -46,19 +46,18 @@ This guide is written for beginners, even if you are new to Git.
 - Move into the project folder:
   ```shell: 
   cd website
-## Step 2: Download the Snowman cache
+### Step 2: Download the Snowman cache
 - Snowman requires a cache folder to build the site.
 - Run the following command inside the website folder:
   ```shell: 
   git clone https://github.com/govdirectory/website-cache .snowman
 - This will create a hidden folder called .snowman.
-## Step 3: Build and run the website
+### Step 3: Build and run the website
 - Build the site and start the local server:
   ```shell: 
   snowman build && snowman server
 - If everything works correctly, you should see a message indicating that the server is running.
-- Open your browser and visit: 
-- [URL](http://localhost:8000)
+- Open your browser and visit:(http://localhost:8000)
 - (or use the URL shown in your terminal)
 
 ### Common issues:
