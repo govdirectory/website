@@ -80,6 +80,7 @@ endfor
 endif
 english
 eq
+european
 facto
 Fediverse
 ffffff

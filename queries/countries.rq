@@ -48,6 +48,7 @@ WHERE {
     (wd:Q45 'Portugal' 'portugal' 'Current content includes ministries, districts, autonomous regions, municipalities and the parliament.' '')
     (wd:Q211 'Latvia' 'latvia' 'Current content includes ministries, municipalities and agencies abroad.' '')
     (wd:Q241 'Cuba' 'cuba' 'Current content includes ministries, regular provinces.' '')
+    (wd:Q458 'European Union' 'european-union' 'Current content includes institutions, interinstitutional services, common foreign and security policy agencies, euratom agencies, joint undertakings and delegations of the European Union.' '')
     (wd:Q77 'Uruguay' 'uruguay' 'Current content includes ministries and departments.' '')
     (wd:Q298 'Chile' 'chile' 'Current content includes ministries, undersecreteriats, embassies, regions and legislatures of regions.' '')
     (wd:Q229 'Cyprus' 'cyprus' 'Current content includes ministries, deputy ministries, government departments, government agencies, districts and municipalities.' '')
@@ -77,7 +78,10 @@ WHERE {
   OPTIONAL { ?uri wdt:P122 ?typeOfGov }
   OPTIONAL { ?uri wdt:P1705 ?nativeLabel . ?lang wdt:P424 ?langCode . FILTER(LANG(?nativeLabel)=?langCode) }
 
-  ?uri wdt:P3896 ?geoshape .
+  OPTIONAL {
+    ?uri wdt:P3896 ?geoshape .
+  }
+
   OPTIONAL {
     ?wikipedia schema:about ?uri ;
                schema:isPartOf <https://en.wikipedia.org/> .
