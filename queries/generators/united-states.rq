@@ -1,0 +1,65 @@
+# expected_result_count: 354
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q30 AS ?country)
+  {
+    VALUES ?eotype {
+      wd:Q327333
+      wd:Q31728
+      wd:Q20857065
+      wd:Q1752939
+    }
+    VALUES ?type {
+      wd:Q1355327 # Parts of the Executive Office of the President (6)
+    }
+    ?org wdt:P31 ?eotype ;
+         wdt:P17 ?country ;
+         p:P749 ?s .
+    ?s ps:P749 wd:Q1355327 .
+    MINUS { ?s pq:P582 [] }
+  }
+  UNION
+  {
+    VALUES ?type {
+    wd:Q910252 # Departments (15)
+    wd:Q115456878 # Legislative branch agencies in the USA (24)
+    wd:Q96397182 # OSDBUs (36)
+    }
+    ?org wdt:P31 ?type ;
+         wdt:P17 ?country .
+  }
+  UNION
+  {
+    VALUES ?type {
+      wd:Q2360219 # Representations (should be 12)
+      wd:Q372690 # Consulate Generals (should be 72)
+      wd:Q113065939 # US embassies (should be 167)
+      wd:Q7843791 # Consulates (should be 11)
+      wd:Q5244910 # de facto embassy (should be 1)
+    }
+    ?org wdt:P31 ?type ;
+         wdt:P137 wd:Q30 .
+  }
+  UNION
+  { VALUES ?type { wd:Q106583901 } # interstate compacts
+    VALUES ?fieldofwork { wd:Q6692765 } # low-level radioactive waste (10)
+   ?org wdt:P31 ?type ;
+        wdt:P101 ?fieldofwork ;
+        wdt:P17 wd:Q30 .
+  }
+
+  MINUS { ?org wdt:P31 wd:Q4164871 }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P3999 [] }
+  MINUS { ?org wdt:P361/wdt:P31 wd:Q5244910 }
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+ORDER BY DESC(LCASE(?typeLabel)) ?orgLabel

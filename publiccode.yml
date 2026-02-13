@@ -43,10 +43,13 @@ intendedAudience:
   countries:
     - at
     - be
+    - bg
     - ca
     - ch
+    - cl
     - cm
     - cu
+    - cy
     - cz
     - de
     - dk
@@ -58,6 +61,7 @@ intendedAudience:
     - ie
     - in
     - is
+    - jp
     - lu
     - lv
     - ma
@@ -75,6 +79,8 @@ intendedAudience:
     - sg
     - tl
     - ua
+    - us
+    - uy
     - za
   
   scope:

@@ -1,0 +1,23 @@
+# expected_result_count: 159
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q30 AS ?country)
+  VALUES ?type {
+    wd:Q134016126 # state agencies (97)
+    wd:Q13414757 # counties (62)
+  }
+  ?org wdt:P31 ?type .
+  ?org wdt:P17 ?country .
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul" }
+}
+ORDER BY ?type ?orgLabel

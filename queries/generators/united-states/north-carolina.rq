@@ -1,0 +1,62 @@
+# expected_result_count: 607
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q30 AS ?country)
+  {
+    VALUES ?type {
+      wd:Q133309046 # state agencies (400)
+      wd:Q13414758 # counties (100)
+    }
+    ?org wdt:P31 ?type .
+  }
+  UNION
+  {
+    VALUES ?type {
+      wd:Q18608569 # lower house (1)
+      wd:Q15891112 # upper house (1)
+    }
+    ?org wdt:P361 wd:Q10566263 ;
+         wdt:P31 ?type .
+  }
+  UNION
+  { VALUES ?org { wd:Q10566263 }
+    VALUES ?type { wd:Q3270264 } # legislature (1)
+   ?org wdt:P31 ?type .
+  }
+  UNION
+  { VALUES ?part { wd:Q5178756 } # courts of North Carolina
+    VALUES ?type {
+      wd:Q4959031 # appellate court (1)
+      wd:Q7603882 # U.S. state supreme court (1)
+    }
+   ?org wdt:P31 ?type ;
+        wdt:P361 ?part .
+  }
+  UNION
+  { VALUES ?org { wd:Q7054438 }
+    VALUES ?type { wd:Q640506 } # cabinet (1)
+   ?org wdt:P31 ?type .
+  }
+  UNION
+  { VALUES ?org { wd:Q7054461 }
+    VALUES ?type { wd:Q3687335 } # council of state (1)
+   ?org wdt:P31 ?type .
+  }
+  UNION
+  { VALUES ?type { wd:Q935741 } # election boards (100)
+   ?org wdt:P31 ?type ;
+        wdt:P1001/wdt:P31 wd:Q13414758 .
+  }
+
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P576 [] }
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+ORDER BY ?typeLabel ?orgLabel

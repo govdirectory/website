@@ -1,4 +1,4 @@
-# expected_result_count: 971
+# expected_result_count: 968
 SELECT DISTINCT
 ?qid
 ?orgLabel
@@ -11,12 +11,11 @@ WHERE {
 {
   VALUES ?type {
     wd:Q2288140 # Federal Scientific Institutes (13)
-    wd:Q107637441 # Public Institution of Social Security (12)
+    wd:Q107637441 # Public Institution of Social Security (11)
     wd:Q3356161 # Public Interest Organizations (16)
     wd:Q1846372 # Federal Public Service (11)
     wd:Q1788820 # defence ministry (1)
     wd:Q21004446 # Public Planning Service (3)
-    wd:Q17373496 # language areas (4)
     wd:Q89934 # communities (3)
     wd:Q83057 # regions (3)
     wd:Q83116 # extant provinces (10)
@@ -36,7 +35,7 @@ UNION
   VALUES ?type {
     wd:Q121856465 # delegations (8)
     wd:Q112307194 # consulate generals (15)
-    wd:Q3917681 # embassies (83)
+    wd:Q3917681 # embassies (85)
     wd:Q5244910 #  de facto embassy (1)
 }
 ?org wdt:P31 ?type; wdt:P137 ?country .
@@ -48,6 +47,6 @@ UNION
   
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl,fr,de,mul" }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,nl,fr,de" }
 }
 ORDER BY ?typeLabel ?orgLabel

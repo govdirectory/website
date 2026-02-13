@@ -1,4 +1,4 @@
-# expected_result_count: 96
+# expected_result_count: 95
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -10,7 +10,7 @@ SELECT DISTINCT
 WHERE { BIND(wd:Q211 AS ?country)
   {
     VALUES ?type {
-      wd:Q3345345 # Municipality of Latvia (36)
+      wd:Q3345345 # Municipality of Latvia (35)
       wd:Q131579945 # ministry of Latvia (14)
     }
     ?org wdt:P31 ?type ;

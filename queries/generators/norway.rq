@@ -1,4 +1,4 @@
-# expected_result_count: 479
+# expected_result_count: 595
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -14,7 +14,11 @@ WHERE {
     VALUES ?type {
       wd:Q755707 # Municipality of Norway (357)
       wd:Q109644271 # ministry of Norway (17)
-      wd:Q16973854 # district court (23)
+      wd:Q16973854 # district court (28)
+      wd:Q101244256 # directorates (72)
+      wd:Q11979280 # land consolidation court (19)
+      wd:Q1769285 # corts of appeals (6)
+      wd:Q5177805 # county municipalities (14)
     }
 
     ?org wdt:P31 ?type ;
@@ -28,8 +32,12 @@ WHERE {
   }
 
   MINUS { ?org wdt:P576 [] }
-  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P1366 [] .
+          MINUS { ?org p:P1366 ?s. ?s pq:P582 [] }
+          MINUS { ?org p:P1366 ?t . ?t pq:P585 ?time . FILTER (?time > NOW()) }
+        }
   MINUS { ?org wdt:P3999 [] }
+  MINUS { ?org wdt:P571 ?incept . FILTER (?incept > NOW()) }
 
   OPTIONAL {
     ?org wdt:P9798/wdt:P279* ?cofog .

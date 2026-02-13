@@ -1,4 +1,4 @@
-# expected_result_count: 775
+# expected_result_count: 768
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -13,7 +13,7 @@ WHERE {
   {
     # agencies with country set to Sweden
     VALUES ?type {
-      wd:Q68295960 # Swedish government agency (254) ✔
+      wd:Q68295960 # Swedish government agency (247) ✔
       wd:Q107407151 # Swedish government agency under the parliament (12) ✔
       wd:Q127448 # municipality of Sweden (290) ✔
       wd:Q1754161 # regional council in Sweden (20) ✔
@@ -22,7 +22,8 @@ WHERE {
       wd:Q10330441 # state level departments (10) ✔
       wd:Q341627 # court of appeal (6) ✔
       wd:Q2065704 # tingsrätt (48) ✔
-      wd:Q190752 # supreme court (2) ✔
+      wd:Q190752 # supreme court (1) ✔
+      wd:Q135399035 # administrative supreme court (1) ✔
       wd:Q1289455 # administrative court of appeal (4) ✔
       wd:Q18292311 # migration court (4) ✔
       wd:Q10530889 # regional rent tribunal (8) ✔

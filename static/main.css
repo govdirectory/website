@@ -118,6 +118,10 @@ summary {
     text-align: center;
 }
 
+.center-content {
+    align-content: center;
+}
+
 input {
   padding: .375rem .75rem;
   font-size: 1rem;
@@ -604,8 +608,8 @@ header.topic {
         table-layout: fixed;
     }
 
-    table td:not(.statitstics-table),
-    table th:not(.statitstics-table) {
+    table td:not(.statistics-table),
+    table th:not(.statistics-table) {
         text-wrap: balance;
     }
 }

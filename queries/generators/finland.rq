@@ -1,4 +1,4 @@
-# expected_result_count: 339
+# expected_result_count: 429
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -8,16 +8,25 @@ SELECT DISTINCT
   ?country
 WHERE {
   BIND(wd:Q33 AS ?country)
-
+  {
   VALUES ?type {
     wd:Q193512 # Region (19)
     wd:Q10495402 # Ministries (12)
     wd:Q856076 # Municipalities (308)
   }
-  ?org wdt:P31 ?type .
-
-  ?org wdt:P17 ?country .
-
+?org wdt:P31 ?type; wdt:P17 ?country .
+}
+UNION
+{
+  VALUES ?type {
+    wd:Q2360219 # delegations (6)
+    wd:Q372690 # consulate generals (5)
+    wd:Q3917681 # embassies (77)
+    wd:Q5244910 #  de facto embassy (1)
+    wd:Q64779402 # liaison office (1)
+}
+?org wdt:P31 ?type; wdt:P137 ?country .
+}
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
 

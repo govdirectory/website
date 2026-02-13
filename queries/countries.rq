@@ -3,7 +3,7 @@ SELECT
   ?name
   ?safeName
   ?description
-  ?federalSubjects
+  ?parts
   (SAMPLE(?website) AS ?website)
   (SAMPLE(?nativeLabel) AS ?nativeLabel)
   (GROUP_CONCAT(DISTINCT ?typeOfGovLabel; separator=",") AS ?typeOfGovList)
@@ -12,23 +12,23 @@ SELECT
   ?geoshape
   ?wikipedia
 WHERE {
-  VALUES (?uri ?name ?safeName ?description ?federalSubjects) {
+  VALUES (?uri ?name ?safeName ?description ?parts) {
     (wd:Q34 'Sweden' 'sweden' 'All Swedish government agencies are included.' '')
     (wd:Q223 'Greenland' 'greenland' 'Current content includes municipalities.' '')
     (wd:Q35 'Denmark' 'denmark' 'Current content includes, ministries, regions and municipalities.' '')
-    (wd:Q20 'Norway' 'norway' 'Current content includes municipalities, district courts, ministries and embassies.' '')
+    (wd:Q20 'Norway' 'norway' 'Current content includes municipalities, county municipalities, district courts, land consolidation courts, courts of appeal, ministries, directorates and embassies.' '')
     (wd:Q117 'Ghana' 'ghana' 'Current content includes regions and districts.' '')
     (wd:Q183 'Germany' 'germany' 'Current content includes ministries, agencies abroad, federated states and governmental districts.' '')
     (wd:Q258 'South Africa' 'south-africa' 'Current content includes departments, independent constitutional bodies, provinces and municipalities.' '')
     (wd:Q55 'Netherlands' 'netherlands' 'Current content includes ministries, courts, water boards, the Kings cabinet, provinces and municipalities.' '')
     (wd:Q664 'New Zealand' 'new-zealand' 'Current content includes public service departments, departmental agencies, wānangas, state-owned enterprises, regional councils, territorial authorities, autonomous crown entities, independent crown entities and crown research institutes.' '')
-    (wd:Q33 'Finland' 'finland' 'Current content includes ministries, regions and municipalities.' '')
+    (wd:Q33 'Finland' 'finland' 'Current content includes ministries, regions, municipalities and agencies abroad.' '')
     (wd:Q212 'Ukraine' 'ukraine' 'Current content includes ministries and first level administrative units.' '')
     (wd:Q159 'Russia' 'russia' 'Current content includes the government and ministries.' '')
     (wd:Q574 'East Timor' 'east-timor' 'Current content includes ministries, municipalities, special administrative region, administrative posts and sucos.' '')
-    (wd:Q928 'Philippines' 'philippines' 'Current content includes departments, regions, provinces and cities.' '')
+    (wd:Q928 'Philippines' 'philippines' 'Current content includes departments, regions, provinces, cities and municipalities.' '')
     (wd:Q668 'India' 'india' 'Current content includes ministries, states and union territories.' '')
-    (wd:Q31 'Belgium' 'belgium' 'Current content includes federal scientific institutes, public institutions of social security, public interest organizations, federal public services, public planning services, agencies abroad, language areas, communities, regions, extant provinces, police zones, emergency zones and municipalities.' '')
+    (wd:Q31 'Belgium' 'belgium' 'Current content includes federal scientific institutes, public institutions of social security, public interest organizations, federal public services, public planning services, agencies abroad, communities, regions, extant provinces, police zones, emergency zones and municipalities.' '')
     (wd:Q16 'Canada' 'canada' 'Current content includes ministerial departments, provinces and territories.' '')
     (wd:Q252 'Indonesia' 'indonesia' 'Current content includes ministries, provinces, cities and regencies.' '')
     (wd:Q32 'Luxembourg' 'luxembourg' 'Current content includes ministries, ministries departments, cantons and communes.' '')
@@ -44,14 +44,23 @@ WHERE {
     (wd:Q1028 'Morocco' 'morocco' 'Current content includes ministries, public institutions, embassies, regional councils, provinces and prefectures.' '')
     (wd:Q39 'Switzerland' 'switzerland' 'Current content includes federal ministries, cantons and municipalities.' '')
     (wd:Q1009 'Cameroon' 'cameroon' 'Current content includes ministries, regions, senate, lower house and supreme court.' '')
-    (wd:Q27 'Ireland' 'ireland' 'Current content includes departments of state.' '')
+    (wd:Q27 'Ireland' 'ireland' 'Current content includes departments of state and embassies.' '')
     (wd:Q45 'Portugal' 'portugal' 'Current content includes ministries, districts, autonomous regions, municipalities and the parliament.' '')
     (wd:Q211 'Latvia' 'latvia' 'Current content includes ministries, municipalities and agencies abroad.' '')
     (wd:Q241 'Cuba' 'cuba' 'Current content includes ministries, regular provinces.' '')
     (wd:Q458 'European Union' 'european-union' 'Current content includes institutions, interinstitutional services, common foreign and security policy agencies, euratom agencies, joint undertakings and delegations of the European Union.' '')
+    (wd:Q77 'Uruguay' 'uruguay' 'Current content includes ministries and departments.' '')
+    (wd:Q298 'Chile' 'chile' 'Current content includes ministries, undersecreteriats, embassies, regions and legislatures of regions.' '')
+    (wd:Q229 'Cyprus' 'cyprus' 'Current content includes ministries, deputy ministries, government departments, government agencies, districts and municipalities.' '')
+    (wd:Q17 'Japan' 'japan' 'Current content includes ministries, prefectures, embassies and permanent missions.' '')
+    (wd:Q219 'Bulgaria' 'bulgaria' 'Current content includes ministries, state agencies, executive agencies, administrative structures, oblasts, municipalities, kmetstvos, municipal districts and specialized local administrations.' '')
 
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments.' 'Scotland|scotland')
-    (wd:Q22 'Scotland' 'united-kingdom/scotland' 'Executive agencies, local authorities, NHS boards, NDPBs, courts, public corporations, tribunals, parole boards, Queen\'s printer, non-ministerial government departments, commissioners, ombudsmen and Health and social care partnerships.' '')
+    (wd:Q22 'Scotland' 'united-kingdom/scotland' 'Current content includes executive agencies, executive non-departmental public bodies, advisory non-departmental public bodies, non-ministerial offices,local authorities, NHS boards, courts, public corporations, tribunals, parole boards, King\'s printer, commissioners, ombudsmen, Health and social care partnerships and government of Scotland.' '')
+
+    (wd:Q30 'United States' 'united-states' 'Current content includes departments, Executive Office of the President, legislative branch agencies, interstate compacts for low-level radioactive waste, offices of small and disadvantaged business utilization, representations, consulates, consulate generals and embassies.' 'New York|new-york,North Carolina|north-carolina')
+    (wd:Q1454 'North Carolina' 'united-states/north-carolina' 'Current content includes the general assembly, cabinet, council of state, counties, county election boards, state agencies, supreme and appellate courts.' '')
+    (wd:Q1384 'New York' 'united-states/new-york' 'Current content includes state agencies and counties.' '')
 
   }
 
@@ -67,7 +76,7 @@ WHERE {
   OPTIONAL { ?uri wdt:P35 ?headOfState }
   OPTIONAL { ?uri wdt:P6 ?headOfGov }
   OPTIONAL { ?uri wdt:P122 ?typeOfGov }
-  OPTIONAL { ?uri wdt:P1705 ?nativeLabel }
+  OPTIONAL { ?uri wdt:P1705 ?nativeLabel . ?lang wdt:P424 ?langCode . FILTER(LANG(?nativeLabel)=?langCode) }
 
   ?uri wdt:P3896 ?geoshape .
   OPTIONAL {
@@ -82,5 +91,5 @@ WHERE {
     ?typeOfGov rdfs:label ?typeOfGovLabel .
   }
 }
-GROUP BY ?uri ?name ?safeName ?description ?federalSubjects ?headOfGovLabel ?headOfStateLabel ?geoshape ?wikipedia
+GROUP BY ?uri ?name ?safeName ?description ?parts ?headOfGovLabel ?headOfStateLabel ?geoshape ?wikipedia
 ORDER BY ?name
