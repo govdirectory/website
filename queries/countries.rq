@@ -78,7 +78,10 @@ WHERE {
   OPTIONAL { ?uri wdt:P122 ?typeOfGov }
   OPTIONAL { ?uri wdt:P1705 ?nativeLabel . ?lang wdt:P424 ?langCode . FILTER(LANG(?nativeLabel)=?langCode) }
 
-  ?uri wdt:P3896 ?geoshape .
+  OPTIONAL {
+    ?uri wdt:P3896 ?geoshape .
+  }
+
   OPTIONAL {
     ?wikipedia schema:about ?uri ;
                schema:isPartOf <https://en.wikipedia.org/> .

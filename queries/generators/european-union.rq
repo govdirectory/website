@@ -7,6 +7,7 @@ SELECT DISTINCT
   ?typeLabel
   ?country
 WHERE {
+  BIND(wd:Q458 AS ?country)
 
   VALUES ?type {
     wd:Q748720 # EU institution (7)
@@ -17,8 +18,6 @@ WHERE {
     wd:Q130417640 # EU delegation (144)
   }
   ?org wdt:P31 ?type .
-
-  ?org wdt:P17 ?country .
 
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
