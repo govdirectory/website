@@ -1,4 +1,4 @@
-# expected_result_count: 354
+# expected_result_count: 358
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -48,7 +48,12 @@ WHERE {
   }
   UNION
   { VALUES ?type { wd:Q106583901 } # interstate compacts
-    VALUES ?fieldofwork { wd:Q6692765 } # low-level radioactive waste (10)
+    VALUES ?fieldofwork {
+      wd:Q6692765 # low-level radioactive waste (10)
+      wd:Q4531977 # energy system (2)
+      wd:Q1805337 # energy politics (1)
+      wd:Q862571 # oil industry (1)
+    }
    ?org wdt:P31 ?type ;
         wdt:P101 ?fieldofwork ;
         wdt:P17 wd:Q30 .
