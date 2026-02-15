@@ -1,4 +1,4 @@
-# expected_result_count: 170
+# expected_result_count: 206
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -16,6 +16,7 @@ WHERE {
     wd:Q112828482 # Euratom agency (2)
     wd:Q64623553 # EU joint undertaking (10)
     wd:Q130417640 # EU delegation (144)
+    wd:Q112827555 # EU decentralized agency (36)
   }
   ?org wdt:P31 ?type .
 
