@@ -1,4 +1,4 @@
-# expected_result_count: 600
+# expected_result_count: 739
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -9,19 +9,34 @@ SELECT DISTINCT
 WHERE {
   BIND(wd:Q252 AS ?country)
 
-  VALUES ?type {
-    wd:Q17417403 # ministries (48)
-    wd:Q5098     # provinces / provinsi (38)
-    wd:Q4272761  # administrative city of Indonesia / kota (5)
-    wd:Q3199141  # city of Indonesia / kota (93)
-    wd:Q3191695  # regency / kabupaten (416)
+  {
+    # agencies with country set to Indonesia
+    VALUES ?type {
+        wd:Q17417403 # ministry of indonesia (49) ✔
+        wd:Q5098     # province of indonesia (38) ✔
+        wd:Q3199141  # city of Indonesia (93) ✔
+        wd:Q4272761  # administrative city of Indonesia (5) ✔
+        wd:Q3191695  # regency of Indonesia (415) ✔
+        wd:Q11127777 # administrative regency of Indonesia (1) ✔
+    }
+    ?org wdt:P31 ?type . ?org wdt:P17 ?country .
+  } UNION
+  {
+    # diplomatic missions with operator set to Indonesia
+    VALUES ?type {
+      wd:Q2360219  # permanent mission (3) ✔
+      wd:Q3917681  # embassy (95) ✔
+      wd:Q372690   # consulate general (30) ✔
+      wd:Q7843791  # consulate (4) ✔
+      wd:Q23891529 # honorary consulate (5) ✔
+      wd:Q5244910  # de facto embassy (1) ✔
+    }
+    ?org wdt:P31 ?type; wdt:P137 ?country .
   }
-  ?org wdt:P31 ?type .
-
-  ?org wdt:P17 ?country .
 
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P3999 [] }
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
