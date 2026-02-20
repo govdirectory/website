@@ -48,7 +48,7 @@ WHERE {
     (wd:Q45 'Portugal' 'portugal' 'Current content includes ministries, districts, autonomous regions, municipalities and the parliament.' '')
     (wd:Q211 'Latvia' 'latvia' 'Current content includes ministries, municipalities and agencies abroad.' '')
     (wd:Q241 'Cuba' 'cuba' 'Current content includes ministries, regular provinces.' '')
-    (wd:Q458 'European Union' 'european-union' 'Current content includes decentralized agencies, institutions, interinstitutional services, common foreign and security policy agencies, euratom agencies, joint undertakings and delegations of the European Union.' '')
+    (wd:Q458 'European Union' 'european-union' 'Current content includes bodies, common foreign and security policy agencies, decentralized agencies, delegations of the European Union, euratom agencies, European Commission Directorate-Generals, executive agencies, institutions, interinstitutional services and joint undertakings.' '')
     (wd:Q77 'Uruguay' 'uruguay' 'Current content includes ministries and departments.' '')
     (wd:Q298 'Chile' 'chile' 'Current content includes ministries, undersecreteriats, embassies, regions and legislatures of regions.' '')
     (wd:Q229 'Cyprus' 'cyprus' 'Current content includes ministries, deputy ministries, government departments, government agencies, districts and municipalities.' '')
