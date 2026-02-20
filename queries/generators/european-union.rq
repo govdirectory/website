@@ -1,4 +1,4 @@
-# expected_result_count: 206
+# expected_result_count: 263
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -12,11 +12,14 @@ WHERE {
   VALUES ?type {
     wd:Q748720 # EU institution (7)
     wd:Q112842785 # EU Interinstitutional Service (4)
-    wd:Q112828372 # EU common foreign and security policy agency (3)
+    wd:Q112828372 # EU common foreign and security policy agency (4)
     wd:Q112828482 # Euratom agency (2)
     wd:Q64623553 # EU joint undertaking (10)
     wd:Q130417640 # EU delegation (144)
     wd:Q112827555 # EU decentralized agency (36)
+    wd:Q131376155 # European Commission Directorate-General (40)
+    wd:Q4936585 # EU body (10)
+    wd:Q2826637 # EU executive agency (6)
   }
   ?org wdt:P31 ?type .
 
