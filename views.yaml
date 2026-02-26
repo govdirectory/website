@@ -17,6 +17,9 @@ views:
     query: "countries.rq"
     template: "statistics.svg"
     unsafe: true
+  - output: "fediverse/index.html"
+    query: "countries.rq"
+    template: "fediverse.html"
 
   - output: "topics/index.html"
     query: "topics.rq"
