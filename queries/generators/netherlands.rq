@@ -1,4 +1,4 @@
-# expected_result_count: 414
+# expected_result_count: 429
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -36,6 +36,10 @@ WHERE {
     ?org wdt:P31 wd:Q947233 . # high council of the state (6)
     BIND("High Council of State" AS ?typeLabel)
   }
+  UNION {
+    ?org wdt:P31 wd:Q138643360 . # inspectorates (15)
+    BIND("Inspectorate" AS ?typeLabel)
+  }
 
   MINUS { ?org wdt:P576 [] . MINUS { ?item rdf:type wdno:P576 } }
   MINUS { ?org wdt:P1366 [] }
@@ -62,4 +66,4 @@ WHERE {
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,nl,mul" }
 }
-ORDER BY ?type ?orgLabel
+ORDER BY ?type ?typeLabel ?orgLabel
