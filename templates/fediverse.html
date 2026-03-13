@@ -1,0 +1,165 @@
+{{ template "layout" . }}
+
+{{ define "title" }}Fediverse{{ end }}
+
+{{ define "canonical" }}/fediverse/{{ end }}
+
+{{ define "main" }}
+{{- range . -}}
+    {{- $country := .safeName.String -}}
+    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+{{- end -}}
+
+<header class="splash">
+  <div class="container">
+    <h1 class="h1-lg text-orange">Fediverse</h1>
+    <p>The public organizations using federated social platforms<span class="text-orange">.</span></p>
+  </div>
+</header>
+
+<main>
+  <section class="bg-grey">
+    <div class="container">
+      <div class="half">
+        <div class="center-text">
+          <img loading="lazy" class="landing-page-image" aria-hidden="true" src="../fediverse.svg" width="450" height="450"/>
+        </div>
+        <div class="padding">
+          <h2>What is the Fediverse?</h2>
+          <p>The Fediverse is a decentralized and federated network of social platforms. Public organizations can run their own servers which can work as verification for official accounts. This puts them in control over content and moderation rather than being at the mercy of billionaires.</p>
+          <p>More and more public organizations are getting active on the Fediverse. Mostly on Mastodon, a microblogging platform, but also on PeerTube, a video platform. The most common way to use it is to have an official account for the entire organization. Often there are also accounts for departments, services, projects and offices. Sometimes even employees can have accounts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <h2>Find agencies by Fediverse platform</h2>
+      <section class="bg-grey sticky-grey">
+        <div class="container">
+			<div class="move-away">
+					<div class="expand-mobile">
+							<h2 class="m0 expand-mobile">Agencies</h2>
+							<input id="filter-input" type="text" placeholder="Search" aria-label="Search/filter table" aria-controls="mainOrgTable" class="need-js expand-mobile"/>
+					</div>
+					<a id="download" download="TO_DO.tsv" href="#" class="btn need-js expand-mobile">Download (as TSV)</a>
+			</div>
+	</div>
+      </section>
+      <!--Platform list and content should be generated, not be static like in this placeholder-->
+      <h3>Mastodon</h3>
+      <table class="container">
+        <tr>
+          <th class="js-sort-none">Organization</th>
+          <th class="js-sort-none">Account</th>
+        </tr>
+        <tr>
+          <td>Org name placeholder</td>
+          <td><a rel="nofollow" href="#">Link placeholder</a></td>
+        </tr>
+      </table>
+      <h3>PeerTube</h3>
+      <table class="container">
+        <tr>
+          <th class="js-sort-none">Organization</th>
+          <th class="js-sort-none">Account</th>
+        </tr>
+        <tr>
+          <td>Org name placeholder</td>
+          <td><a rel="nofollow" href="#">Link placeholder</a></td>
+        </tr>
+      </table>
+      <h3>Threads</h3>
+      <table class="container">
+        <tr>
+          <th class="js-sort-none">Organization</th>
+          <th class="js-sort-none">Account</th>
+        </tr>
+        <tr>
+          <td>Org name placeholder</td>
+          <td><a rel="nofollow" href="#">Link placeholder</a></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+  <section class="bg-orange">
+    <div class="container">
+      <p class="call-out">
+        Would you like to see more accounts and platforms added? <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Help us get the data in shape here.</a>
+      </p>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <h2>Statistics</h2>
+      <p>Last updated <time datetime="{{ now.Format "2006-01-02" }}">{{ now.Format "2006-01-02" }}</time>.</p>
+      <div class="grid number-container">
+        <div class="number">
+            <div><!-- $platform_count -->3</div>Fediverse platforms
+        </div>
+
+        <div class="number">
+            <div><!-- $fediverse_org_count -->200</div>organizations on the Fediverse
+        </div>
+
+        <div class="number">
+            <div><!-- $fediverse_count -->500</div>accounts on the Fediverse
+        </div>
+      </div>
+      <table class="statistics-table">
+        <tr>
+            <th class="js-sort-none">Country</th>
+            <th class="js-sort-none">Organizations on the Fediverse</th>
+            <th class="js-sort-none">Accounts on the Fediverse</th>
+        <tr>
+        {{- range . -}}
+        {{- $country := .safeName.String -}}
+        <!-- Add counting logic -->
+        <td lang="{{ .description.Lang }}"><a href="../{{ .safeName }}/">{{ .name }}</a></td>
+        <td><!-- $country_fediverse_org_count -->?</td>
+        <td><!-- $country_fediverse_count -->?</td>
+        </tr>
+        {{- end -}}
+    </table>
+    </div>
+  </section>
+</main>
+{{ end }}
+
+{{ define "javascript" }}
+<script>
+const dataTable = document.querySelector('table');
+
+let tsv = '"Name"\t"Govdirectory URL"\t"Type"\t"Website"\n';
+Array.from(dataTable.children[1].children).forEach((row, index) => {
+    const name = row.children[0].innerText;
+    const qid = row.children[0].firstChild.href;
+    const type = row.children[2].innerText;
+    var website = '';
+    if (row.children[1].firstChild) {
+        Array.from(row.children[1].firstChild.children).map(item => {
+            if (item.firstChild.title === 'Website') {
+                website = item.firstChild.href;
+                return;
+            }
+        });
+    }
+    const tsvRow = '"' + name + '"\t"' + qid + '"\t"' + type + '"\t"' + website + '"\n"';
+    tsv += tsvRow;
+});
+
+const downloadElm = document.querySelector('#download');
+downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
+
+var filterInput = document.querySelector('#filter-input');
+var tbody = document.querySelector('tbody');
+filterInput.addEventListener('input', function(e) {
+    Array.from(tbody.rows).forEach(function(row) {
+        var textContent = row.textContent.toLowerCase();
+        var filter = e.target.value.toLowerCase();
+        row.style.display = textContent.includes(filter) ? '' : 'none';
+    });
+});
+</script>
+<script src="/thirdparty/sort-table/sort-table.js"></script>
+{{ end }}
