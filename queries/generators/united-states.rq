@@ -1,4 +1,4 @@
-# expected_result_count: 358
+# expected_result_count: 359
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -39,7 +39,7 @@ WHERE {
     VALUES ?type {
       wd:Q2360219 # Representations (should be 12)
       wd:Q372690 # Consulate Generals (should be 72)
-      wd:Q113065939 # US embassies (should be 167)
+      wd:Q113065939 # US embassies (should be 168)
       wd:Q7843791 # Consulates (should be 11)
       wd:Q5244910 # de facto embassy (should be 1)
     }
