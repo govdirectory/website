@@ -80,6 +80,7 @@ endfor
 endif
 english
 eq
+eswatini
 european
 facto
 Fediverse
