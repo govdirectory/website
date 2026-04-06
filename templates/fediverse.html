@@ -93,6 +93,7 @@
     <div class="container">
       <h2>Statistics</h2>
       <p>Last updated <time datetime="{{ now.Format "2006-01-02" }}">{{ now.Format "2006-01-02" }}</time>.</p>
+      <h3>Overview</p>
       <div class="grid number-container">
         <div class="number">
             <div><!-- $platform_count -->3</div>Fediverse platforms
@@ -106,11 +107,13 @@
             <div><!-- $fediverse_count -->500</div>accounts on the Fediverse
         </div>
       </div>
+      <h3>By country</h3>
       <table class="statistics-table">
         <tr>
             <th class="js-sort-none">Country</th>
             <th class="js-sort-none">Organizations on the Fediverse</th>
             <th class="js-sort-none">Accounts on the Fediverse</th>
+        </tr>
         <tr>
         {{- range . -}}
         {{- $country := .safeName.String -}}
@@ -120,7 +123,31 @@
         <td><!-- $country_fediverse_count -->?</td>
         </tr>
         {{- end -}}
-    </table>
+      </table>
+      <h3>By platform</h3>
+      <table class="statistics-table">
+        <tr>
+            <th class="js-sort-none">Platform</th>
+            <th class="js-sort-none">Organizations on this platform</th>
+            <th class="js-sort-none">Accounts on this platform</th>
+        </tr>
+        <!-- Add counting logic -->
+        <tr>
+        <td>Mastodon</td>
+        <td><!-- $platform_fediverse_org_count -->?</td>
+        <td><!-- $platform_fediverse_count -->?</td>
+        </tr>
+        <tr>
+        <td>PeerTube</td>
+        <td><!-- $platform_fediverse_org_count -->?</td>
+        <td><!-- $platform_fediverse_count -->?</td>
+        </tr>
+        <tr>
+        <td>Threads</td>
+        <td><!-- $platform_fediverse_org_count -->?</td>
+        <td><!-- $platform_fediverse_count -->?</td>
+        </tr>
+      </table>
     </div>
   </section>
 </main>
