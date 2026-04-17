@@ -84,6 +84,7 @@ eswatini
 european
 facto
 Fediverse
+fediverse
 ffffff
 fi
 FileCopyrightText
@@ -158,6 +159,7 @@ maskable
 Matomo
 md
 mentorship
+microblogging
 modularity
 nativeLabel
 nd
@@ -190,6 +192,7 @@ pdf
 PDFs
 pe
 peru
+PeerTube
 ph
 philippines
 platformLabel
