@@ -31,7 +31,12 @@ WHERE {
          wdt:P137 ?country .
   }
 
-  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P576 ?dissolved .
+          MINUS {
+          ?org wdt:P576 ?dissolved .
+          FILTER ( ?dissolved > NOW() )
+          }
+  }
   MINUS { ?org wdt:P1366 [] .
           MINUS { ?org p:P1366 ?s. ?s pq:P582 [] }
           MINUS { ?org p:P1366 ?t . ?t pq:P585 ?time . FILTER (?time > NOW()) }

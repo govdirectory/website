@@ -1,0 +1,39 @@
+# expected_result_count: 98
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q1050 AS ?country)
+  {
+  VALUES ?type {
+    wd:Q138877126 # ministry of Eswatini (20/20)
+    wd:Q1069042 # region of Eswatini (4/4)
+    wd:Q2280192 # inkhundla (59/59)
+    # wd:Q284663 # umphakatsi (0/385)
+  }
+  ?org wdt:P31 ?type .
+  }
+  UNION
+  {
+  VALUES ?type {
+    wd:Q3917681 # embassy (8/8)
+    wd:Q2360219 # permanent mission (2/2)
+    wd:Q7843791 # consulate (1/1)
+    wd:Q12143816 # commisson (4/4)
+  }
+  ?org wdt:P31 ?type ;
+       wdt:P137 ?country .
+  }
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+  MINUS { ?org wdt:P582 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul" }
+}
+ORDER BY ?type ?orgLabel
