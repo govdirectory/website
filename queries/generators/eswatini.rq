@@ -1,4 +1,4 @@
-# expected_result_count: 79
+# expected_result_count: 98
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -6,16 +6,27 @@ SELECT DISTINCT
   ?typeLabel
   ?country
 WHERE {
-   BIND(wd:Q1050 AS ?country)
-
+  BIND(wd:Q1050 AS ?country)
+  {
   VALUES ?type {
     wd:Q138877126 # ministry of Eswatini (20/20)
     wd:Q1069042 # region of Eswatini (4/4)
-    wd:Q2280192 # inkhundla (55/55)
+    wd:Q2280192 # inkhundla (59/59)
     # wd:Q284663 # umphakatsi (0/385)
   }
-
   ?org wdt:P31 ?type .
+  }
+  UNION
+  {
+  VALUES ?type {
+    wd:Q3917681 # embassy (8/8)
+    wd:Q2360219 # permanent mission (2/2)
+    wd:Q7843791 # consulate (1/1)
+    wd:Q12143816 # commisson (4/4)
+  }
+  ?org wdt:P31 ?type ;
+       wdt:P137 ?country .
+  }
 
   MINUS { ?org wdt:P576 [] }
   MINUS { ?org wdt:P1366 [] }
