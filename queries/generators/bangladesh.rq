@@ -1,0 +1,41 @@
+# expected_result_count: 698
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q902 AS ?country)
+
+  { # agencies with country set to Bangladesh
+  VALUES ?type {
+    wd:Q121295309 # ministry of Bangladesh (39)
+    wd:Q121295885 # ministerial divisions (26)
+    wd:Q878040 # divisions of Bangladesh (8)
+    wd:Q152732 # districts of Bangladesh (64)
+    wd:Q620471 # upazila of Bangladesh (495)
+  }
+  ?org wdt:P31 ?type .
+  ?org wdt:P17 ?country .
+  } UNION {
+    # Bangladesh agencies which does not necessarily have country set to Sweden
+    VALUES ?type {
+      wd:Q2360219 # permanent missions (4)
+      wd:Q3917681 # embassies (45)
+      wd:Q12143816 # high commissions (13)
+      wd:Q73088858 # assistant High Commissions (4)
+    }
+
+    ?org wdt:P31 ?type; wdt:P137 ?country .
+  } 
+
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 [] }
+
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,bn" }
+}
+ORDER BY ?typeLabel ?orgLabel

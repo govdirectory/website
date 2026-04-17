@@ -11,6 +11,7 @@ Arial
 austria
 authorsFile
 availableLanguages
+bangladesh
 belgium
 bermuda
 bg

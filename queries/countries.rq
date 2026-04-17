@@ -54,6 +54,7 @@ WHERE {
     (wd:Q229 'Cyprus' 'cyprus' 'Current content includes ministries, deputy ministries, government departments, government agencies, districts and municipalities.' '')
     (wd:Q17 'Japan' 'japan' 'Current content includes ministries, prefectures, embassies and permanent missions.' '')
     (wd:Q219 'Bulgaria' 'bulgaria' 'Current content includes ministries, state agencies, executive agencies, administrative structures, oblasts, municipalities, kmetstvos, municipal districts and specialized local administrations.' '')
+    (wd:Q902 'Bangladesh' 'bangladesh' 'Current content includes ministries, ministerial divisions, divisions, districts, upazilas, embassies, permanent missions, high commissions and assistant high commissions.' '')
     (wd:Q1050 'Eswatini' 'eswatini' 'Current content includes ministries, agencies abroad, regions and tinkhundla' '')
 
     (wd:Q145 'United Kingdom' 'united-kingdom' 'Current content includes ministerial departments.' 'Scotland|scotland')
