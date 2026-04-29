@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<h1>{{ name }}</h1>
+
+<p><strong>Type:</strong> Intergovernmental Organization</p>
+
+{% if description %}
+<p>{{ description }}</p>
+{% endif %}
+
+{% if inception %}
+<p><strong>Founded:</strong> {{ inception }}</p>
+{% endif %}
+
+{% if headquarters %}
+<p><strong>Headquarters:</strong> {{ headquarters }}</p>
+{% endif %}
+
+{% if members %}
+<h2>Members</h2>
+<ul>
+  {% for member in members %}
+    <li>{{ member }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if leadership %}
+<h2>Leadership</h2>
+<ul>
+  {% for leader in leadership %}
+    <li>{{ leader }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if website %}
+<p><strong>Official Website:</strong> 
+  <a href="{{ website }}" target="_blank">{{ website }}</a>
+</p>
+{% endif %}
