@@ -79,7 +79,7 @@ Specifically, we want to acknowledge all the help our coach [Fabian Gampp](https
 
 ### Open Social Fund
 
-This project has received a grant to highlight Fediverse aspects from [NLnet Foundation](https://nlnet.nl/) through their Open Social Fund.
+This project has [received a grant](https://nlnet.nl/project/Govdirectory/) to highlight Fediverse aspects from [NLnet Foundation](https://nlnet.nl/) through their Open Social Fund.
 
 ## Contributing
 
