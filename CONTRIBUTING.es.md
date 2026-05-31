@@ -1,5 +1,8 @@
 # Contribuir a Govdirectory
 
+Idioma:
+[Ingles](CONTRIBUTING.md) | [Español](CONTRIBUTING.es.md)
+
 🙇‍♀️ Gracias por contribuir!
 
 Nos encantan los issues y pull request de cualquier persona.

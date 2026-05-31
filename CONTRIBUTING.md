@@ -1,6 +1,6 @@
 # Contributing to Govdirectory
 
-Languague
+Languague:
 [English](CONTRIBUTING.md) | [Spanish](CONTRIBUTING.es.md)
 
 🙇‍♀️ Thank you for contributing!
