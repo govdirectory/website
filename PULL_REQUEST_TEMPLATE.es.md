@@ -18,6 +18,7 @@ Por favor, **Asegurate** de los cambios antes de enviar el PR:
 - [ ] El código sigue los estándares y convenciónes del proyecto.
 - [ ] He **actualizado la documentación relevante** (si era necesario).
 - [ ] He añadido **pruebas** o realizado pruebas manuales cuando fue necesario.
+- [ ] Notifica @JMMaok cuando envies un PR en español
 
 ## Capturas de pantalla (si aplica cambios en la interfaz del usuario)
 

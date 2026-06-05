@@ -3,7 +3,7 @@
 Idioma:
 [Ingles](CODE_OF_CONDUCT.md) | [Español](CODE_OF_CONDUCT.es.md)
 
-## Nuestro comprmiso
+## Nuestro compromiso
 
 Como miembros, colaboradores y líderes, nos comprometemos a hacer que la participación en nuestra comunidad sea una experiencia libre de acoso para todas las personas, independientemente de su edad, tamaño corporal, discapacidad visible o invisible, origen étnico, características sexuales, identidad y expresión de género, nivel de experiencia, educación, situación socioeconómica, nacionalidad, apariencia personal, raza, religión, identidad sexual u orientación sexual.
 

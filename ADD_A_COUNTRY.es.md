@@ -19,7 +19,7 @@ Cada consulta está asociada a una View, una parte de la configuración que cone
 
 ### La consulta generadora del país
 
-La creación de la consulta del país es la parte más compleja y delicada del proceso de añadir un país a Govdirectory. En cualquiero momento puedes solicitar ayuda a través de nuestro  [foro de discusiónes de GitHub](https://github.com/govdirectory/website/discussions) o en [Wikidata](https://www.wikidata.org/wiki/Wikidata_talk:WikiProject_Govdirectory).
+La creación de la consulta del país es la parte más compleja y delicada del proceso de añadir un país a Govdirectory. En cualquier momento puedes solicitar ayuda a través de nuestro  [foro de discusiónes de GitHub](https://github.com/govdirectory/website/discussions) o en [Wikidata](https://www.wikidata.org/wiki/Wikidata_talk:WikiProject_Govdirectory).
 
 Comencemos observando la consulta existente para Suecia:
 
@@ -123,7 +123,7 @@ Es posible que no todas las organizaciones gubernamentales de un país tengan un
 
 Ten en cuenta que, incluso después de realizar estos cambios, la consulta podría requerir información adicional, como cláusulas `MINUS` , `FILTER` o patrones de triples.
 
-Por último, asegúrate de definir un criterio de ordenación adecuado para las agencias, Esto puede variar según el país, pero una buena opción inicial suele ser ordenar primero por tipo y después por etiqueta.
+Por último, asegúrate de definir un criterio de ordenación adecuado para las agencias, esto puede variar según el país, pero una buena opción inicial suele ser ordenar primero por tipo y después por etiqueta.
 
 ```sparql
   ORDER BY ?type ?orgLabel
@@ -205,7 +205,7 @@ query: "generators/sweden.rq"
 template: "org.html"
 ```
 
-Lo único que debe hacerse aquí es crear una sección similar a la anterior y sustituir "sweden"(en ambos lugares) por el slug de URL del país correspondiente(tal como fue definido en la configuración del país). Puedes encontrar más ejemplos de [vistas en el archivo "views.yaml" actual](https://github.com/govdirectory/website/blob/main/views.yaml#L37).
+Lo único que debe hacerse aquí es crear una sección similar a la anterior y sustituir "sweden"(en ambos lugares) por el slug de URL del país correspondiente (tal como fue definido en la configuración del país). Puedes encontrar más ejemplos de [vistas en el archivo "views.yaml" actual](https://github.com/govdirectory/website/blob/main/views.yaml#L37).
 
 ## Obtener ayuda
 

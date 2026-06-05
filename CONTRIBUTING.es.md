@@ -31,7 +31,7 @@ Como regla general, las contribuciones realizadas con IA que no puedan identific
 
 ## Problemas, sugerencias y preguntas en los issues
 
-Por favos, ayuda al desarrollo reportando problemas, sugiriendo cambios y realizando preguntas.
+Por favor, ayuda al desarrollo reportando problemas, sugiriendo cambios y realizando preguntas.
 Para hacer eso puedes [Crear un issue en GitHub](https://help.github.com/articles/creating-an-issue/) para este proyecto a través de [Issues de GitHub para la página web](https://github.com/govdirectory/website/issues/new).
 
 En particular, utilizamos las etiquetas [good first issue](https://github.com/govdirectory/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) para que puedas identificar por dónde empezar, y [help wanted](https://github.com/govdirectory/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) para señalar aquellas tareas en donde todavia necesitamos colaboración.
@@ -40,7 +40,7 @@ En particular, utilizamos las etiquetas [good first issue](https://github.com/go
 
 ## Hora semanal de colaboración
 
-Todos los viernesa a las 15.00 CEST realizamos una sesión abierta en [Jitsi](https://meet.jit.si/GovdirectoryCollabHour) donde trabajamos conjuntamente en el proyecto y en los datos. Todas las personas son bienvenidas y el espacio está abierto para preguntas.
+Todos los viernes a las 15.00 CEST realizamos una sesión abierta en [Jitsi](https://meet.jit.si/GovdirectoryCollabHour) donde trabajamos conjuntamente en el proyecto y en los datos. Todas las personas son bienvenidas y el espacio está abierto para preguntas.
 
 ## Documentación y código mediante pull request
 
@@ -59,7 +59,7 @@ Una vez que hayas hecho un fork de este repositorio, asegúrate de crear una ram
 - Crea un [fork](https://github.com/govdirectory/website/fork) del repositorio.
 - Crea o utiliza una rama de funcionalidad (feature branch) existente para realizar tus commits.
 - Agrega tus cambios mediante commits con [mensajes descriptivos y útiles](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
-    Incluye en el mensaje del commit las decisiones o elecciones de documentación que hayas tomado, Esto permitirá que otras personas comprendan dichas decisiones en el futuro.
+    Incluye en el mensaje del commit las decisiones o elecciones de documentación que hayas tomado. Esto permitirá que otras personas comprendan dichas decisiones en el futuro.
 
 - Si agregas código, añade y actualiza la **documentation** relevante y las pruebas correspondientes antes de enviar tu pull request.
 - Asegúrate de escribir pruebas que demuestren el comportamiento del código nuevo o modificado.
@@ -71,10 +71,10 @@ Te animamos a enviar tu contribución incluso si no estás seguro de que cumpla 
 Trabajaremos contigo para alinear tu contribución antes de que sea fusionada.
 
 - [Web Content Accessibility Guidelines 2.2](https://www.w3.org/TR/WCAG22/)
-- [standard readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md) (aplicabe únicamente al archivo README)
+- [standard readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md) (aplicable únicamente al archivo README)
 - [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formato extendido de fechas (por ejemplo, 2023-09-17)
 
-Para lo íconos utilizamos las bibliotecas [Maki](https://labs.mapbox.com/maki-icons/) y [Temaki](https://rapideditor.github.io/temaki/docs/) con el fin de mantener un estilo consistente. Si no encuentras un icono adecuado en esos conjuntos, intenta emular su estilo o utilizar otros iconos similares.
+Para los íconos utilizamos las bibliotecas [Maki](https://labs.mapbox.com/maki-icons/) y [Temaki](https://rapideditor.github.io/temaki/docs/) con el fin de mantener un estilo consistente. Si no encuentras un icono adecuado en esos conjuntos, intenta emular su estilo o utilizar otros iconos similares.
 
 Para las imágenes estáticas de mapa de bits, preferimos utilizar el formato .webp, ya que permite optimizar y comprimir imágenes de forma eficiente. Considera convertir las nuevas imágenes al formato .webp utilizando herramientas como TinyPNG o similares. Esto ayuda a garantizar que las imágenes estén optimizadas para su uso en el sitio web desde el principio, contribuyendo a una experiencia de navegación más rápida y eficiente.
 
@@ -113,7 +113,7 @@ Comprueben también que las consultas nuevas o modificadas produzcan los resulta
 
 ## Mejorar los datos en wikidata
 
-Tambien puedes ayudar al proyecto mejorando los datos sobre organismos púbilos en wikidata [Wikidata](https://wikidata.org).
+Tambien puedes ayudar al proyecto mejorando los datos sobre organismos públicos en wikidata [Wikidata](https://wikidata.org).
 Actualmente necesitamos lo siguiente:
 
 1. Agregar todos los organismos públicos. Puedes comenzar con los de tu país. Los organismos públicos son entidades relevantes por naturaleza, por lo que no necesitas preocuparte por eso. Añade fuentes y/o identificadores externos para que sea posible verificar su existencia.
