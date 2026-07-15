@@ -21,7 +21,9 @@ WHERE {
 
   BIND(IRI(REPLACE(?formatter, '\\$1', ?value)) AS ?url)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul" }
+  OPTIONAL { ?platform rdfs:label ?platformLabelEn FILTER(LANG(?platformLabelEn) = "en") }
+  OPTIONAL { ?platform rdfs:label ?platformLabelMul FILTER(LANG(?platformLabelMul) = "mul") }
+  BIND(COALESCE(?platformLabelEn, ?platformLabelMul, STR(?platform)) AS ?platformLabel)
 }
 # we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of "importance" we have
 ORDER BY ?property
