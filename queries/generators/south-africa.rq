@@ -33,6 +33,46 @@ WHERE {
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,af,zu,nr,nso,st,ss,ts,tn,ve,xh,mul". }
+  OPTIONAL { ?org rdfs:label ?orgLabelEn FILTER(LANG(?orgLabelEn) = "en") }
+  OPTIONAL { ?org rdfs:label ?orgLabelAf FILTER(LANG(?orgLabelAf) = "af") }
+  OPTIONAL { ?org rdfs:label ?orgLabelZu FILTER(LANG(?orgLabelZu) = "zu") }
+  OPTIONAL { ?org rdfs:label ?orgLabelNr FILTER(LANG(?orgLabelNr) = "nr") }
+  OPTIONAL { ?org rdfs:label ?orgLabelNso FILTER(LANG(?orgLabelNso) = "nso") }
+  OPTIONAL { ?org rdfs:label ?orgLabelSt FILTER(LANG(?orgLabelSt) = "st") }
+  OPTIONAL { ?org rdfs:label ?orgLabelSs FILTER(LANG(?orgLabelSs) = "ss") }
+  OPTIONAL { ?org rdfs:label ?orgLabelTs FILTER(LANG(?orgLabelTs) = "ts") }
+  OPTIONAL { ?org rdfs:label ?orgLabelTn FILTER(LANG(?orgLabelTn) = "tn") }
+  OPTIONAL { ?org rdfs:label ?orgLabelVe FILTER(LANG(?orgLabelVe) = "ve") }
+  OPTIONAL { ?org rdfs:label ?orgLabelXh FILTER(LANG(?orgLabelXh) = "xh") }
+  OPTIONAL { ?org rdfs:label ?orgLabelMul FILTER(LANG(?orgLabelMul) = "mul") }
+  BIND(COALESCE(?orgLabelEn, ?orgLabelAf, ?orgLabelZu, ?orgLabelNr, ?orgLabelNso, ?orgLabelSt, ?orgLabelSs, ?orgLabelTs, ?orgLabelTn, ?orgLabelVe, ?orgLabelXh, ?orgLabelMul, STR(?org)) AS ?orgLabel)
+
+  OPTIONAL { ?org schema:description ?orgDescriptionEn FILTER(LANG(?orgDescriptionEn) = "en") }
+  OPTIONAL { ?org schema:description ?orgDescriptionAf FILTER(LANG(?orgDescriptionAf) = "af") }
+  OPTIONAL { ?org schema:description ?orgDescriptionZu FILTER(LANG(?orgDescriptionZu) = "zu") }
+  OPTIONAL { ?org schema:description ?orgDescriptionNr FILTER(LANG(?orgDescriptionNr) = "nr") }
+  OPTIONAL { ?org schema:description ?orgDescriptionNso FILTER(LANG(?orgDescriptionNso) = "nso") }
+  OPTIONAL { ?org schema:description ?orgDescriptionSt FILTER(LANG(?orgDescriptionSt) = "st") }
+  OPTIONAL { ?org schema:description ?orgDescriptionSs FILTER(LANG(?orgDescriptionSs) = "ss") }
+  OPTIONAL { ?org schema:description ?orgDescriptionTs FILTER(LANG(?orgDescriptionTs) = "ts") }
+  OPTIONAL { ?org schema:description ?orgDescriptionTn FILTER(LANG(?orgDescriptionTn) = "tn") }
+  OPTIONAL { ?org schema:description ?orgDescriptionVe FILTER(LANG(?orgDescriptionVe) = "ve") }
+  OPTIONAL { ?org schema:description ?orgDescriptionXh FILTER(LANG(?orgDescriptionXh) = "xh") }
+  OPTIONAL { ?org schema:description ?orgDescriptionMul FILTER(LANG(?orgDescriptionMul) = "mul") }
+  BIND(COALESCE(?orgDescriptionEn, ?orgDescriptionAf, ?orgDescriptionZu, ?orgDescriptionNr, ?orgDescriptionNso, ?orgDescriptionSt, ?orgDescriptionSs, ?orgDescriptionTs, ?orgDescriptionTn, ?orgDescriptionVe, ?orgDescriptionXh, ?orgDescriptionMul) AS ?orgDescription)
+
+  OPTIONAL { ?type rdfs:label ?typeLabelEn FILTER(LANG(?typeLabelEn) = "en") }
+  OPTIONAL { ?type rdfs:label ?typeLabelAf FILTER(LANG(?typeLabelAf) = "af") }
+  OPTIONAL { ?type rdfs:label ?typeLabelZu FILTER(LANG(?typeLabelZu) = "zu") }
+  OPTIONAL { ?type rdfs:label ?typeLabelNr FILTER(LANG(?typeLabelNr) = "nr") }
+  OPTIONAL { ?type rdfs:label ?typeLabelNso FILTER(LANG(?typeLabelNso) = "nso") }
+  OPTIONAL { ?type rdfs:label ?typeLabelSt FILTER(LANG(?typeLabelSt) = "st") }
+  OPTIONAL { ?type rdfs:label ?typeLabelSs FILTER(LANG(?typeLabelSs) = "ss") }
+  OPTIONAL { ?type rdfs:label ?typeLabelTs FILTER(LANG(?typeLabelTs) = "ts") }
+  OPTIONAL { ?type rdfs:label ?typeLabelTn FILTER(LANG(?typeLabelTn) = "tn") }
+  OPTIONAL { ?type rdfs:label ?typeLabelVe FILTER(LANG(?typeLabelVe) = "ve") }
+  OPTIONAL { ?type rdfs:label ?typeLabelXh FILTER(LANG(?typeLabelXh) = "xh") }
+  OPTIONAL { ?type rdfs:label ?typeLabelMul FILTER(LANG(?typeLabelMul) = "mul") }
+  BIND(COALESCE(?typeLabelEn, ?typeLabelAf, ?typeLabelZu, ?typeLabelNr, ?typeLabelNso, ?typeLabelSt, ?typeLabelSs, ?typeLabelTs, ?typeLabelTn, ?typeLabelVe, ?typeLabelXh, ?typeLabelMul, STR(?type)) AS ?typeLabel)
 }
 ORDER BY DESC(?type)
