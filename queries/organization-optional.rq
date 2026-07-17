@@ -15,6 +15,7 @@ WHERE {
   VALUES ?org { wd:{{.}} }
 
   OPTIONAL {
+    # ensures we get the most relevant(the latest) position
     ?org wdt:P1313 ?position .
     {
       SELECT ?position (MAX(?startDate) AS ?latestStart_) WHERE {
