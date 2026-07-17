@@ -1,4 +1,8 @@
 # expected_result_count: 766
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -45,7 +49,7 @@ WHERE {
       wd:Q10475844 # domstolsverket (1) ✔
     }
 
-    BIND("courts administration agency" AS ?typeLabel)
+    BIND("courts administration agency" AS ?typeLabelSpecial)
   }
 
   MINUS { ?org wdt:P576 [] }
@@ -72,5 +76,5 @@ WHERE {
   OPTIONAL { ?type rdfs:label ?typeLabelEn FILTER(LANG(?typeLabelEn) = "en") }
   OPTIONAL { ?type rdfs:label ?typeLabelSv FILTER(LANG(?typeLabelSv) = "sv") }
   OPTIONAL { ?type rdfs:label ?typeLabelMul FILTER(LANG(?typeLabelMul) = "mul") }
-  BIND(COALESCE(?typeLabelEn, ?typeLabelSv, ?typeLabelMul, STR(?type)) AS ?typeLabel)
+  BIND(COALESCE(?typeLabelSpecial, ?typeLabelEn, ?typeLabelSv, ?typeLabelMul, STR(?type)) AS ?typeLabel)
 } ORDER BY ?typeLabel
