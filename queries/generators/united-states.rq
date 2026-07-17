@@ -1,4 +1,4 @@
-# expected_result_count: 359
+# expected_result_count: 374
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -53,6 +53,7 @@ WHERE {
       wd:Q4531977 # energy system (2)
       wd:Q1805337 # energy politics (1)
       wd:Q862571 # oil industry (1)
+      wd:Q7075804 # occupational licensing (15)
     }
    ?org wdt:P31 ?type ;
         wdt:P101 ?fieldofwork ;
