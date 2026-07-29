@@ -54,7 +54,7 @@
 
     <meta name="fediverse:creator" content="@govdirectory@wikis.world" />
 
-    <meta name="description" content="city and region of Belgium">
+    <meta name="description" content="federal region of Belgium including the City of Brussels">
 
     <noscript>
         <style>
@@ -83,7 +83,7 @@
             <a class="btn rounded" href="/belgium/">Belgium</a><a class="btn rounded wikidata-btn" href="https://www.wikidata.org/wiki/Q240" title="Edit on Wikidata"><img loading="lazy" src="/wikidata.svg" aria-hidden="true" width="18" height="10"></a>
             <a class="btn rounded wikidata-btn" href="https://www.wikidata.org/w/index.php?action=edit&title=Wikidata:WikiProject_Govdirectory/Error_reports&section=new&preloadtitle=Error+regarding+%7b%7bQ|Q240%7d%7d&preload=Wikidata%3AWikiProject_Govdirectory%2FError_reports%2FError_report_template" title="Report a problem"><img loading="lazy" src="/flag.svg" aria-hidden="true" width="18" height="18"></a>
         </div>
-        <h1 lang="en">Brussels-Capital Region</h1><p lang="en">city and region of Belgium</p><div class="header-lower">
+        <h1 lang="en">Brussels-Capital Region</h1><p lang="en">federal region of Belgium including the City of Brussels</p><div class="header-lower">
             <div class="infobox">
                 <ul><li>Official website: <a href="https://be.brussels">be.brussels</a></li>
                     <li>Phone: <span class="text-grey">[missing data]</span></li>
@@ -96,7 +96,7 @@
 
             <div class="center-text action-boxes"></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2026-04-06">2026-04-06</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2026-07-29">2026-07-29</time>.</p>
     </header>
 </div>
 
@@ -118,7 +118,7 @@
         <td><a rel="nofollow" href="https://x.com/rbc_bhg">rbc_bhg</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
-        <td lang="en">Facebook</td>
+        <td lang="mul">Facebook</td>
         <td><a rel="nofollow" href="https://www.facebook.com/RegionBruxelloise.BrusselsGewest">RegionBruxelloise.BrusselsGewest</a></td>
     </tr>
     </table>
@@ -173,7 +173,7 @@
         <div class="container footer-end">
             <a title="Go to Govdirectory's main page" href="/"><img loading="lazy" aria-hidden="true" src="/logo-white.svg" alt="" height="60" width="50"></a>
             <div>
-                <a title="Digital Public Goods" href="https://www.digitalpublicgoods.net/r/govdirectory"><img loading="lazy" aria-hidden="true" height="33" width="69" src="/dpgbadge.svg"></a>
+                <a title="Digital Public Goods" href="https://www.digitalpublicgoods.net/r/govdirectory"><img loading="lazy" aria-hidden="true" height="33" width="69" src="/dpgbadge-w.svg"></a>
                 <a title="Powered by Wikidata" href="https://www.wikidata.org"><img loading="lazy" aria-hidden="true" height="33" width="120" class="white-bg" src="/wikidatafooter.svg"></a>
             </div>
         </div>
@@ -184,7 +184,7 @@
 {
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
-  "description": "city and region of Belgium","additionalType": "http://www.wikidata.org/entity/Q83057",
+  "description": "federal region of Belgium including the City of Brussels","additionalType": "http://www.wikidata.org/entity/Q83057",
   "url": "https://www.govdirectory.org/belgium/Q240",
   "sameAs": ["https://x.com/rbc_bhg","https://www.facebook.com/RegionBruxelloise.BrusselsGewest","http://wikidata.org/entity/Q240"],
   "name": "Brussels-Capital Region"
@@ -217,7 +217,7 @@ if (dataTable) {
     downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
-const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  FILTER(?property != wd:P11245) # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
+const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\n  ?isFediverse\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  FILTER(?property != wd:P11245) # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  BIND(IF(?property IN (wd:P4033, wd:P12622, wd:P11892), true, false) AS ?isFediverse)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
 const wikidataEndpoint = 'https://query.wikidata.org/sparql';
 const recentAccountsElm = document.querySelector('#recent-accounts');

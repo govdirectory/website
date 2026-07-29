@@ -98,7 +98,7 @@
                     <a class="btn" href="https://commission.europa.eu/about/contact_en">Visit contact page</a>
                 </div></div>
         </div>
-    <p class="timestamp">Data last updated <time datetime="2026-04-06">2026-04-06</time>.</p>
+    <p class="timestamp">Data last updated <time datetime="2026-07-29">2026-07-29</time>.</p>
     </header>
 </div>
 
@@ -132,15 +132,15 @@
         <td><a rel="nofollow" href="https://x.com/EU_Commission">EU_Commission</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2003">
-        <td lang="en">Instagram</td>
+        <td lang="mul">Instagram</td>
         <td><a rel="nofollow" href="https://www.instagram.com/europeancommission/">europeancommission</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2013">
-        <td lang="en">Facebook</td>
+        <td lang="mul">Facebook</td>
         <td><a rel="nofollow" href="https://www.facebook.com/EuropeanCommission">EuropeanCommission</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P2397">
-        <td lang="en">YouTube</td>
+        <td lang="mul">YouTube</td>
         <td><a rel="nofollow" href="https://www.youtube.com/channel/UCMPaviJxybo1RTdzvYcU91A">UCMPaviJxybo1RTdzvYcU91A</a></td>
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P3789">
@@ -161,7 +161,7 @@
     </tr>
     <tr data-wd-prop="http://www.wikidata.org/entity/P4264">
         <td lang="en">LinkedIn</td>
-        <td><a rel="nofollow" href="https://www.linkedin.com/company/european-commission">european-commission</a></td>
+        <td><a rel="nofollow" href="https://www.linkedin.com/company/european-commission/">european-commission</a></td>
     </tr>
     </table>
 
@@ -215,7 +215,7 @@
         <div class="container footer-end">
             <a title="Go to Govdirectory's main page" href="/"><img loading="lazy" aria-hidden="true" src="/logo-white.svg" alt="" height="60" width="50"></a>
             <div>
-                <a title="Digital Public Goods" href="https://www.digitalpublicgoods.net/r/govdirectory"><img loading="lazy" aria-hidden="true" height="33" width="69" src="/dpgbadge.svg"></a>
+                <a title="Digital Public Goods" href="https://www.digitalpublicgoods.net/r/govdirectory"><img loading="lazy" aria-hidden="true" height="33" width="69" src="/dpgbadge-w.svg"></a>
                 <a title="Powered by Wikidata" href="https://www.wikidata.org"><img loading="lazy" aria-hidden="true" height="33" width="120" class="white-bg" src="/wikidatafooter.svg"></a>
             </div>
         </div>
@@ -228,7 +228,7 @@
   "@type": "GovernmentOrganization",
   "description": "executive branch of the European Union","additionalType": "http://www.wikidata.org/entity/Q748720",
   "url": "https://www.govdirectory.org/european-union/Q8880",
-  "sameAs": ["https://www.threads.com/@europeancommission","https://wikidata-externalid-url.toolforge.org/?p=12361&amp;url_prefix=https://bsky.app/profile/&amp;id=ec.europa.eu","https://www.whatsapp.com/channel/0029VaXvWDtJJhzgUwbbCX1X","https://x.com/EU_Commission","https://www.instagram.com/europeancommission/","https://www.facebook.com/EuropeanCommission","https://www.youtube.com/channel/UCMPaviJxybo1RTdzvYcU91A","https://t.me/s/europeancommission","https://medium.com/@europeancommission","https://giphy.com/channel/EuropeanCommission","https://fedirect.toolforge.org/?id=EUCommission@ec.social-network.europa.eu","https://www.linkedin.com/company/european-commission","http://wikidata.org/entity/Q8880"],
+  "sameAs": ["https://www.threads.com/@europeancommission","https://wikidata-externalid-url.toolforge.org/?p=12361&amp;url_prefix=https://bsky.app/profile/&amp;id=ec.europa.eu","https://www.whatsapp.com/channel/0029VaXvWDtJJhzgUwbbCX1X","https://x.com/EU_Commission","https://www.instagram.com/europeancommission/","https://www.facebook.com/EuropeanCommission","https://www.youtube.com/channel/UCMPaviJxybo1RTdzvYcU91A","https://t.me/s/europeancommission","https://medium.com/@europeancommission","https://giphy.com/channel/EuropeanCommission","https://fedirect.toolforge.org/?id=EUCommission@ec.social-network.europa.eu","https://www.linkedin.com/company/european-commission/","http://wikidata.org/entity/Q8880"],
   "name": "European Commission"
 }
 </script>
@@ -259,7 +259,7 @@ if (dataTable) {
     downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
 }
 
-const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  FILTER(?property != wd:P11245) # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
+const recentOrginizationsQuery = 'SELECT DISTINCT\n  ?platformLabel\n  ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata\n  ?url\n  (?value AS ?account)\n  ?isFediverse\nWHERE {\n  ?property wdt:P31 wd:Q105388954 ;\n            wikibase:statementProperty ?propValuePredicate ;\n            wikibase:claim ?wdtClaimPredicate  ;\n            wdt:P1630 ?formatter ;\n            wdt:P9073 ?platform .\n\n  MINUS { ?property wdt:P31 wd:Q60457486 }\n  FILTER(?property != wd:P11245) # Temporary workaround until modeling on Wikidata is fixed\n\n  wd:{{.}} ?wdtClaimPredicate ?statement .\n  ?statement ?propValuePredicate ?value .\n\n  MINUS { ?statement pq:P582 [] }\n  MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }\n\n  BIND(IRI(REPLACE(?formatter, \u0027\\\\$1\u0027, ?value)) AS ?url)\n\n  BIND(IF(?property IN (wd:P4033, wd:P12622, wd:P11892), true, false) AS ?isFediverse)\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \u0022en,mul\u0022 }\n}\n# we order by property to ensure a consistent order, we use the URI as its incremental ID is the best indication of \u0022importance\u0022 we have\nORDER BY ?property\n';
 const pageQID = window.location.toString().match(/(Q\d+)\/$/g)[0].slice(0, -1);
 const wikidataEndpoint = 'https://query.wikidata.org/sparql';
 const recentAccountsElm = document.querySelector('#recent-accounts');
