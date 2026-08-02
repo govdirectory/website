@@ -7,59 +7,62 @@
 {{ define "main" }}
 {{- $org_count := 0 -}}
 {{- range . -}}
-    {{- $country := .safeName.String -}}
-    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
-    {{- $org_count = add (len $orgs) $org_count -}}
+{{- $country := .safeName.String -}}
+{{- $orgs := query (join "" "generators/" $country ".rq") -}}
+{{- $org_count = add (len $orgs) $org_count -}}
 {{- end -}}
 
 {{- $country_count := 0 -}}
 {{- range . -}}
-    {{- if contains .safeName "/" -}}
-        {{- continue -}}
-    {{- end -}}
-    {{- $country_count = add1 $country_count -}}
+{{- if contains .safeName "/" -}}
+{{- continue -}}
+{{- end -}}
+{{- $country_count = add1 $country_count -}}
 {{- end -}}
 
 {{- $social_count := 0 -}}
 {{- range . -}}
-    {{- $country := .safeName.String -}}
-    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
-    {{- range $orgs -}}
-        {{ $social_count = add (len (query "account-data.rq" .qid.String)) $social_count }}
-    {{- end -}}
+{{- $country := .safeName.String -}}
+{{- $orgs := query (join "" "generators/" $country ".rq") -}}
+{{- range $orgs -}}
+{{ $social_count = add (len (query "account-data.rq" .qid.String)) $social_count }}
+{{- end -}}
 {{- end -}}
 
 {{- $other_contact_points := 0 -}}
 {{- range . -}}
-    {{- $country := .safeName.String -}}
-    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
-    {{- range $orgs -}}
-        {{- $org_details := index (query "organization-optional.rq" .qid.String) 0 -}}
+{{- $country := .safeName.String -}}
+{{- $orgs := query (join "" "generators/" $country ".rq") -}}
+{{- range $orgs -}}
+{{- $org_details := index (query "organization-optional.rq" .qid.String) 0 -}}
 
-        {{- if $org_details.email -}}
-            {{- $other_contact_points = add1 $other_contact_points -}}
-        {{- end -}}
+{{- if $org_details.email -}}
+{{- $other_contact_points = add1 $other_contact_points -}}
+{{- end -}}
 
-        {{- if $org_details.website -}}
-            {{- $other_contact_points = add1 $other_contact_points -}}
-        {{- end -}}
+{{- if $org_details.website -}}
+{{- $other_contact_points = add1 $other_contact_points -}}
+{{- end -}}
 
-        {{- if $org_details.phone -}}
-            {{- $other_contact_points = add1 $other_contact_points -}}
-        {{- end -}}
+{{- if $org_details.phone -}}
+{{- $other_contact_points = add1 $other_contact_points -}}
+{{- end -}}
 
-        {{- if $org_details.contactPage -}}
-            {{- $other_contact_points = add1 $other_contact_points -}}
-        {{- end -}}
+{{- if $org_details.contactPage -}}
+{{- $other_contact_points = add1 $other_contact_points -}}
+{{- end -}}
 
-        {{- if $org_details.citizensInitiatives -}}
-            {{- $other_contact_points = add1 $other_contact_points -}}
-        {{- end -}}
-    {{- end -}}
+{{- if $org_details.citizensInitiatives -}}
+{{- $other_contact_points = add1 $other_contact_points -}}
+{{- end -}}
+{{- end -}}
 {{- end -}}
 <main class="container">
     <h1>Statistics</h1>
-    <p>Last updated <time datetime="{{ now.Format "2006-01-02" }}">{{ now.Format "2006-01-02" }}</time>. Live website usage statistics are publicly accessible through <a class="dark-link" href="https://matomo.wikimedia.se/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#?idSite=7&period=day&date=yesterday&segment=&category=Dashboard_Dashboard&subcategory=1">Matomo</a>.</p>
+    <p>Last updated <time datetime="{{ now.Format " 2006-01-02" }}">{{ now.Format "2006-01-02" }}</time>. Live website
+        usage statistics are publicly accessible through <a class="dark-link"
+            href="https://matomo.wikimedia.se/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#?idSite=7&period=day&date=yesterday&segment=&category=Dashboard_Dashboard&subcategory=1">Matomo</a>.
+    </p>
 
     <div class="grid number-container">
         <div class="number">
@@ -76,55 +79,63 @@
     </div>
 
     <h2>Coverage overview</h2>
-    <p>In the table below we have listed the types of organizations that are covered for each country. The amount of information about those organizations and contact points for them varies and is also improved over time.</p>
+    <p>In the table below we have listed the types of organizations that are covered for each country. The amount of
+        information about those organizations and contact points for them varies and is also improved over time.</p>
 
-    <table class="statistics-table">
-        <tr>
-            <th class="js-sort-none">Country</th>
-            <th class="js-sort-none">Contains</th>
-            <th class="js-sort-none">Organizations</th>
-            <th class="js-sort-none">Contact points</th>
-        <tr>
-        {{- range . -}}
-        {{- $social_cp_count := 0 -}}
-        {{- $other_cp := 0 -}}
-        {{- $country_org_count := 0 -}}
-        {{- $country := .safeName.String -}}
+    <table class="statistics-table js-sort-table">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th class="js-sort-none">Contains</th>
+                <th class="js-sort-number">Organizations</th>
+                <th class="js-sort-number">Contact points</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{- range . -}}
+            {{- $social_cp_count := 0 -}}
+            {{- $other_cp := 0 -}}
+            {{- $country_org_count := 0 -}}
+            {{- $country := .safeName.String -}}
             {{- $orgs := query (join "" "generators/" $country ".rq") -}}
             {{- $country_org_count = add (len $orgs) $country_org_count -}}
             {{- range $orgs -}}
-                {{ $social_cp_count = add (len (query "account-data.rq" .qid.String)) $social_cp_count }}
-                {{- $org_details := index (query "organization-optional.rq" .qid.String) 0 -}}
+            {{ $social_cp_count = add (len (query "account-data.rq" .qid.String)) $social_cp_count }}
+            {{- $org_details := index (query "organization-optional.rq" .qid.String) 0 -}}
 
-                    {{- if $org_details.email -}}
-                        {{- $other_cp = add1 $other_cp -}}
-                    {{- end -}}
-
-                    {{- if $org_details.website -}}
-                        {{- $other_cp = add1 $other_cp -}}
-                    {{- end -}}
-
-                    {{- if $org_details.phone -}}
-                        {{- $other_cp = add1 $other_cp -}}
-                    {{- end -}}
-
-                    {{- if $org_details.contactPage -}}
-                        {{- $other_cp = add1 $other_cp -}}
-                    {{- end -}}
-
-                    {{- if $org_details.citizensInitiatives -}}
-                        {{- $other_cp = add1 $other_cp -}}
-                    {{- end -}}
+            {{- if $org_details.email -}}
+            {{- $other_cp = add1 $other_cp -}}
             {{- end -}}
-            <td lang="{{ .description.Lang }}"><a href="../{{ .safeName }}/">{{ .name }}</a></td>
-            <td lang="{{ .description.Lang }}">{{ .description }}</td>
-            <td>{{ $country_org_count }}</td>
-            <td>{{ add $social_cp_count $other_cp }}</td>
-        </tr>
-        {{- end -}}
+
+            {{- if $org_details.website -}}
+            {{- $other_cp = add1 $other_cp -}}
+            {{- end -}}
+
+            {{- if $org_details.phone -}}
+            {{- $other_cp = add1 $other_cp -}}
+            {{- end -}}
+
+            {{- if $org_details.contactPage -}}
+            {{- $other_cp = add1 $other_cp -}}
+            {{- end -}}
+
+            {{- if $org_details.citizensInitiatives -}}
+            {{- $other_cp = add1 $other_cp -}}
+            {{- end -}}
+            {{- end -}}
+            <tr>
+                <td lang="{{ .description.Lang }}"><a href="../{{ .safeName }}/">{{ .name }}</a></td>
+                <td lang="{{ .description.Lang }}">{{ .description }}</td>
+                <td>{{ $country_org_count }}</td>
+                <td>{{ add $social_cp_count $other_cp }}</td>
+            </tr>
+            {{- end -}}
+        </tbody>
     </table>
 
 </main>
 {{ end }}
 
-{{ define "javascript" }}{{""}}{{ end }}
+{{ define "javascript" }}
+<script src="/thirdparty/sort-table/sort-table.js"></script>
+{{ end }}
