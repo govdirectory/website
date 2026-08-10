@@ -1,0 +1,172 @@
+
+{{ template "layout" . }}
+
+{{ define "title" }}Fediverse Statistics - Govdirectory{{ end }}
+
+{{ define "canonical" }}/fediverse/statistics/{{ end }}
+
+{{ define "main" }}
+
+<header class="splash">
+  <div class="container">
+    <h1 class="h1-lg text-orange">Fediverse</h1>
+    <p>The public organizations using federated social platforms<span class="text-orange">.</span></p>
+  </div>
+</header>
+
+{{- $org_count := 0 -}}
+{{- $platform_counts := dict_create -}}
+{{- range . -}}
+    {{- $country := .safeName.String -}}
+    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+    {{- range $orgs -}}
+        {{- $accounts := query "account-data.rq" .qid.String -}}
+        {{- $has_fediverse := false -}}
+        {{- range $accounts -}}
+            {{- if eq .isFediverse.String "true" -}}
+                {{- $has_fediverse = true -}}
+                {{- $platform := .platformLabel.String -}}
+                {{- $current := 0 -}}
+                {{- if dict_has_key $platform_counts $platform -}}
+                    {{- $current = dict_get $platform_counts $platform -}}
+                {{- end -}}
+                {{- $platform_counts = dict_set $platform_counts $platform (add1 $current) -}}
+            {{- end -}}
+        {{- end -}}
+        {{- if $has_fediverse -}}
+            {{- $org_count = add1 $org_count -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $platform_total_count := 0 -}}
+{{- range dict_values $platform_counts -}}
+    {{- $platform_total_count = add1 $platform_total_count -}}
+{{- end -}}
+
+{{- $country_count := 0 -}}
+{{- range . -}}
+    {{- if contains .safeName "/" -}}
+        {{- continue -}}
+    {{- end -}}
+    {{- $country := .safeName.String -}}
+    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+    {{- $has_fediverse_org := false -}}
+    {{- range $orgs -}}
+        {{- $accounts := query "account-data.rq" .qid.String -}}
+        {{- range $accounts -}}
+            {{- if eq .isFediverse.String "true" -}}
+                {{- $has_fediverse_org = true -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if $has_fediverse_org -}}
+        {{- $country_count = add1 $country_count -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $fediverse_account_count := 0 -}}
+{{- range . -}}
+    {{- $country := .safeName.String -}}
+    {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+    {{- range $orgs -}}
+        {{- $accounts := query "account-data.rq" .qid.String -}}
+        {{- range $accounts -}}
+            {{- if eq .isFediverse.String "true" -}}
+                {{- $fediverse_account_count = add1 $fediverse_account_count -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+<main>
+    <section class="bg-grey">
+        <div class="container">
+            <div class="half">
+                <div class="center-text">
+                    <img loading="lazy" class="landing-page-image" aria-hidden="true" src="/fediverse.svg" width="450" height="450"/>
+                </div>
+                <div class="padding">
+                    <h2>What is the Fediverse?</h2>
+                    <p>The Fediverse is a decentralized and federated network of social platforms. Public organizations can run their own servers which can work as verification for official accounts. This puts them in control over content and moderation rather than being at the mercy of billionaires.</p>
+                    <p>More and more public organizations are getting active on the Fediverse. Mostly on Mastodon, a microblogging platform, but also on PeerTube, a video platform. The most common way to use it is to have an official account for the entire organization. Often there are also accounts for departments, services, projects and offices. Sometimes even employees can have accounts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <h1>Fediverse Adoption Statistics</h1>
+        <p>Last updated <time datetime="{{ now.Format "2006-01-02" }}">{{ now.Format "2006-01-02" }}</time>. This page tracks government organizations that have adopted the Fediverse.</p>
+
+        <div class="grid number-container">
+            <div class="number">
+                <div>{{ $platform_total_count }}</div>platforms
+            </div>
+
+            <div class="number">
+                <div>{{ $org_count }}</div>organizations
+            </div>
+
+            <div class="number">
+                <div>{{ $fediverse_account_count }}</div>accounts
+            </div>
+        </div>
+
+        <h2>Platform popularity</h2>
+        <p>The following Fediverse platforms are being used by government organizations:</p>
+        <table class="statistics-table">
+            <tr>
+                <th class="js-sort-none">Platform</th>
+                <th class="js-sort-none">Accounts</th>
+            </tr>
+            {{- range dict_keys $platform_counts -}}
+            {{- $platform := . -}}
+            {{- $count := dict_get $platform_counts $platform -}}
+            <tr>
+                <td>{{ $platform }}</td>
+                <td>{{ $count }}</td>
+            </tr>
+            {{- end -}}
+        </table>
+
+        <h2>Coverage by country</h2>
+        <p>The table below shows which countries have government organizations using the Fediverse, along with the number of organizations and Fediverse accounts per country.</p>
+
+        <table class="statistics-table">
+            <tr>
+                <th class="js-sort-none">Country</th>
+                <th class="js-sort-none">Contains</th>
+                <th class="js-sort-none">Organizations</th>
+                <th class="js-sort-none">Accounts</th>
+            <tr>
+            {{- range . -}}
+            {{- $country_fediverse_count := 0 -}}
+            {{- $country_org_count := 0 -}}
+            {{- $country := .safeName.String -}}
+            {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+            {{- range $orgs -}}
+                {{- $accounts := query "account-data.rq" .qid.String -}}
+                {{- $has_fediverse := false -}}
+                {{- range $accounts -}}
+                    {{- if eq .isFediverse.String "true" -}}
+                        {{- $has_fediverse = true -}}
+                        {{- $country_fediverse_count = add1 $country_fediverse_count -}}
+                    {{- end -}}
+                {{- end -}}
+                {{- if $has_fediverse -}}
+                    {{- $country_org_count = add1 $country_org_count -}}
+                {{- end -}}
+            {{- end -}}
+            {{- if gt $country_org_count 0 -}}
+                <td lang="{{ .description.Lang }}"><a href="../../{{ .safeName }}/">{{ .name }}</a></td>
+                <td lang="{{ .description.Lang }}">{{ .description }}</td>
+                <td>{{ $country_org_count }}</td>
+                <td>{{ $country_fediverse_count }}</td>
+            </tr>
+            {{- end -}}
+            {{- end -}}
+        </table>
+    </section>
+</main>
+{{ end }}
+
+{{ define "javascript" }}{{""}}{{ end }}

@@ -84,6 +84,7 @@ eq
 eswatini
 european
 facto
+fediverse
 Fediverse
 ffffff
 fi
@@ -124,6 +125,7 @@ inlining
 intendedAudience
 io
 ireland
+isFediverse
 japan
 javascript
 Jitsi
@@ -159,6 +161,7 @@ maskable
 Matomo
 md
 mentorship
+microblogging
 modularity
 nativeLabel
 nd
@@ -190,6 +193,7 @@ pathlib
 pdf
 PDFs
 pe
+PeerTube
 peru
 ph
 philippines

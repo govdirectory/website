@@ -3,6 +3,7 @@ SELECT DISTINCT
   ?property # we include the property as we can use it to link directly to the relevant statement in Wikidata
   ?url
   (?value AS ?account)
+  ?isFediverse
 WHERE {
   ?property wdt:P31 wd:Q105388954 ;
             wikibase:statementProperty ?propValuePredicate ;
@@ -20,6 +21,8 @@ WHERE {
   MINUS { ?statement wikibase:rank wikibase:DeprecatedRank }
 
   BIND(IRI(REPLACE(?formatter, '\\$1', ?value)) AS ?url)
+
+  BIND(IF(?property IN (wd:P4033, wd:P12622, wd:P11892), true, false) AS ?isFediverse)
 
   OPTIONAL { ?platform rdfs:label ?platformLabelEn FILTER(LANG(?platformLabelEn) = "en") }
   OPTIONAL { ?platform rdfs:label ?platformLabelMul FILTER(LANG(?platformLabelMul) = "mul") }
