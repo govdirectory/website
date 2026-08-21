@@ -102,16 +102,7 @@ Array.from(dataTable.children[1].children).forEach((row, index) => {
 
 const downloadElm = document.querySelector('#download');
 downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tsv' }));
-
-var filterInput = document.querySelector('#filter-input');
-var tbody = document.querySelector('tbody');
-filterInput.addEventListener('input', function(e) {
-    Array.from(tbody.rows).forEach(function(row) {
-        var textContent = row.textContent.toLowerCase();
-        var filter = e.target.value.toLowerCase();
-        row.style.display = textContent.includes(filter) ? '' : 'none';
-    });
-});
 </script>
+<script src="/table-filter.js"></script>
 <script src="/thirdparty/sort-table/sort-table.js"></script>
 {{ end }}
