@@ -136,6 +136,7 @@ lang
 Larsson
 Latvia
 latvia
+lcase
 leadBy
 Lectorate
 len
@@ -193,6 +194,7 @@ pathlib
 pdf
 PDFs
 pe
+peertube
 PeerTube
 peru
 ph
