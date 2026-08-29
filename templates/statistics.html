@@ -29,7 +29,6 @@
     {{- $country := .safeName.String -}}
     {{- $orgs := query (join "" "generators/" $country ".rq") -}}
     {{- range $orgs -}}
-        {{ $social_count = add (len (query "account-data.rq" .qid.String)) $social_count }}
         {{- $accounts := query "account-data.rq" .qid.String -}}
         {{ $social_count = add (len $accounts) $social_count }}
         {{- range $accounts -}}
