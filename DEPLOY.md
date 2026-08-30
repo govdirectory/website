@@ -1,5 +1,8 @@
 # Deployment instructions
 
+Idioma:
+[English](DEPLOY.md) | [Spanish](DEPLOY.es.md)
+
 ## Overview
 
 Govdirectory is a static site, meaning that all files are generated pre-deployment. Govdirectory is generated using [Snowman](https://github.com/glaciers-in-archives/snowman) and its `build` command. Using the build command generates a `site` directory. This folder contains all files necessary for the govdirectory.org website.
