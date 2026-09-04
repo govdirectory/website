@@ -178,6 +178,9 @@ views:
   - output: "eswatini/{{qid}}/index.html"
     query: "generators/eswatini.rq"
     template: "org.html"
+  - output: "poland/{{qid}}/index.html"
+    query: "generators/poland.rq"
+    template: "org.html"
 
   - output: "united-kingdom/{{qid}}/index.html"
     query: "generators/united-kingdom.rq"

@@ -1,0 +1,32 @@
+# expected_result_count: 240
+SELECT DISTINCT
+  ?qid
+  ?orgLabel
+  ?orgDescription
+  ?type
+  ?typeLabel
+  ?country
+WHERE {
+  BIND(wd:Q36 AS ?country)
+  {
+  VALUES ?type {
+    wd:Q9367288 # central government agency of Poland (34)
+    wd:Q6866556 # ministry of Poland (19)
+    wd:Q150093 # voivodeship of Poland (16)
+    wd:Q9367292 # marshal's office of voivodeship (16)
+    wd:Q675911 # voivodeship sejmik (16)
+  }
+  ?org wdt:P31 ?type .
+  ?org wdt:P17 ?country .
+  } UNION { VALUES ?type {
+      wd:Q2360219 # permanent mission (11)
+      wd:Q3917681 # embassy (95)
+      wd:Q372690 # consulate general (33)
+    }
+    ?org wdt:P31 ?type; wdt:P137 ?country .} 
+  MINUS { ?org wdt:P576 [] }
+  MINUS { ?org wdt:P1366 pq:P582 }
+  BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,pl" }
+}
+ORDER BY ?typeLabel ?orgLabel

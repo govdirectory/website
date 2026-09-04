@@ -201,6 +201,7 @@ ph
 philippines
 platformLabel
 png
+poland
 portugal
 pre
 printf
