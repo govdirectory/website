@@ -32,6 +32,20 @@ WHERE { BIND(wd:Q211 AS ?country)
     MINUS { ?cofog wdt:P279 [] }
   }
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,lv,mul". }
+
+  OPTIONAL { ?org rdfs:label ?orgLabelEn FILTER(LANG(?orgLabelEn) = "en") }
+  OPTIONAL { ?org rdfs:label ?orgLabelLv FILTER(LANG(?orgLabelLv) = "lv") }
+  OPTIONAL { ?org rdfs:label ?orgLabelMul FILTER(LANG(?orgLabelMul) = "mul") }
+  BIND(COALESCE(?orgLabelEn, ?orgLabelLv, ?orgLabelMul, STR(?org)) AS ?orgLabel)
+
+  OPTIONAL { ?org schema:description ?orgDescriptionEn FILTER(LANG(?orgDescriptionEn) = "en") }
+  OPTIONAL { ?org schema:description ?orgDescriptionLv FILTER(LANG(?orgDescriptionLv) = "lv") }
+  OPTIONAL { ?org schema:description ?orgDescriptionMul FILTER(LANG(?orgDescriptionMul) = "mul") }
+  BIND(COALESCE(?orgDescriptionEn, ?orgDescriptionLv, ?orgDescriptionMul) AS ?orgDescription)
+
+  OPTIONAL { ?type rdfs:label ?typeLabelEn FILTER(LANG(?typeLabelEn) = "en") }
+  OPTIONAL { ?type rdfs:label ?typeLabelLv FILTER(LANG(?typeLabelLv) = "lv") }
+  OPTIONAL { ?type rdfs:label ?typeLabelMul FILTER(LANG(?typeLabelMul) = "mul") }
+  BIND(COALESCE(?typeLabelEn, ?typeLabelLv, ?typeLabelMul, STR(?type)) AS ?typeLabel)
 }
 ORDER BY ?type ?topic

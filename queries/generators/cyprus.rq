@@ -27,6 +27,19 @@ WHERE {
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,el" }
+  OPTIONAL { ?org rdfs:label ?orgLabelEn FILTER(LANG(?orgLabelEn) = "en") }
+  OPTIONAL { ?org rdfs:label ?orgLabelMul FILTER(LANG(?orgLabelMul) = "mul") }
+  OPTIONAL { ?org rdfs:label ?orgLabelEl FILTER(LANG(?orgLabelEl) = "el") }
+  BIND(COALESCE(?orgLabelEn, ?orgLabelMul, ?orgLabelEl, STR(?org)) AS ?orgLabel)
+
+  OPTIONAL { ?org schema:description ?orgDescEn FILTER(LANG(?orgDescEn) = "en") }
+  OPTIONAL { ?org schema:description ?orgDescMul FILTER(LANG(?orgDescMul) = "mul") }
+  OPTIONAL { ?org schema:description ?orgDescEl FILTER(LANG(?orgDescEl) = "el") }
+  BIND(COALESCE(?orgDescEn, ?orgDescMul, ?orgDescEl) AS ?orgDescription)
+
+  OPTIONAL { ?type rdfs:label ?typeLabelEn FILTER(LANG(?typeLabelEn) = "en") }
+  OPTIONAL { ?type rdfs:label ?typeLabelMul FILTER(LANG(?typeLabelMul) = "mul") }
+  OPTIONAL { ?type rdfs:label ?typeLabelEl FILTER(LANG(?typeLabelEl) = "el") }
+  BIND(COALESCE(?typeLabelEn, ?typeLabelMul, ?typeLabelEl, STR(?type)) AS ?typeLabel)
 }
 ORDER BY ?type ?orgLabel

@@ -33,6 +33,19 @@ UNION
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,ga,mul". }
+  OPTIONAL { ?org rdfs:label ?orgLabelEn FILTER(LANG(?orgLabelEn) = "en") }
+  OPTIONAL { ?org rdfs:label ?orgLabelGa FILTER(LANG(?orgLabelGa) = "ga") }
+  OPTIONAL { ?org rdfs:label ?orgLabelMul FILTER(LANG(?orgLabelMul) = "mul") }
+  BIND(COALESCE(?orgLabelEn, ?orgLabelGa, ?orgLabelMul, STR(?org)) AS ?orgLabel)
+
+  OPTIONAL { ?org schema:description ?orgDescEn FILTER(LANG(?orgDescEn) = "en") }
+  OPTIONAL { ?org schema:description ?orgDescGa FILTER(LANG(?orgDescGa) = "ga") }
+  OPTIONAL { ?org schema:description ?orgDescMul FILTER(LANG(?orgDescMul) = "mul") }
+  BIND(COALESCE(?orgDescEn, ?orgDescGa, ?orgDescMul) AS ?orgDescription)
+
+  OPTIONAL { ?type rdfs:label ?typeLabelEn FILTER(LANG(?typeLabelEn) = "en") }
+  OPTIONAL { ?type rdfs:label ?typeLabelGa FILTER(LANG(?typeLabelGa) = "ga") }
+  OPTIONAL { ?type rdfs:label ?typeLabelMul FILTER(LANG(?typeLabelMul) = "mul") }
+  BIND(COALESCE(?typeLabelEn, ?typeLabelGa, ?typeLabelMul, STR(?type)) AS ?typeLabel)
 }
 ORDER BY ?type ?topic

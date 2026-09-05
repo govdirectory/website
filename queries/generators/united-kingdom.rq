@@ -25,6 +25,16 @@ WHERE {
     MINUS { ?cofog wdt:P279 [] }
   }
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul" }
+  OPTIONAL { ?org rdfs:label ?orgLabelEn FILTER(LANG(?orgLabelEn) = "en") }
+  OPTIONAL { ?org rdfs:label ?orgLabelMul FILTER(LANG(?orgLabelMul) = "mul") }
+  BIND(COALESCE(?orgLabelEn, ?orgLabelMul, STR(?org)) AS ?orgLabel)
+
+  OPTIONAL { ?org schema:description ?orgDescriptionEn FILTER(LANG(?orgDescriptionEn) = "en") }
+  OPTIONAL { ?org schema:description ?orgDescriptionMul FILTER(LANG(?orgDescriptionMul) = "mul") }
+  BIND(COALESCE(?orgDescriptionEn, ?orgDescriptionMul) AS ?orgDescription)
+
+  OPTIONAL { ?type rdfs:label ?typeLabelEn FILTER(LANG(?typeLabelEn) = "en") }
+  OPTIONAL { ?type rdfs:label ?typeLabelMul FILTER(LANG(?typeLabelMul) = "mul") }
+  BIND(COALESCE(?typeLabelEn, ?typeLabelMul, STR(?type)) AS ?typeLabel)
 }
 ORDER BY ?type ?orgLabel
