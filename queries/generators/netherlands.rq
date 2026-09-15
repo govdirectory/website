@@ -7,10 +7,9 @@ SELECT DISTINCT
   ?typeLabel
   ?country
 WHERE {
-  BIND(wd:Q55 AS ?country)
+  BIND(wd:Q55 AS ?country) # agencies with country set to the Netherlands
 
   {
-  # agencies with country set to the Netherlands
   VALUES ?type {
     wd:Q3143387 # ministries (12)
     wd:Q4500821 # appeals court (4)
@@ -20,25 +19,24 @@ WHERE {
     wd:Q702081 # water boards (21)
     wd:Q2039348 # municipalities (342)
     wd:Q26934845 # integral overseas territory (3)
+    wd:Q947233 # High Council of State (6)
   }
   ?org wdt:P31 ?type .
 
   ?org wdt:P17 ?country .
-  } UNION {
+  }
+  UNION {
     # special case without a unique type
     VALUES ?org {
       wd:Q1857094 # cabinet of the King (1)
     }
-
-    BIND("cabinet of the King" AS ?typeLabel)
-  }
-  UNION {
-    ?org wdt:P31 wd:Q947233 . # high council of the state (6)
-    BIND("High Council of State" AS ?typeLabel)
+    BIND(wd:Q1857094 AS ?type)  # bind custom type to ?type first
+    BIND("cabinet of the King" AS ?typeLabel2)
   }
   UNION {
     ?org wdt:P31 wd:Q138643360 . # inspectorates (15)
-    BIND("Inspectorate" AS ?typeLabel)
+    BIND(wd:Q138643360 AS ?type)
+    BIND("Inspectorate" AS ?typeLabel2)
   }
 
   MINUS { ?org wdt:P576 [] . MINUS { ?item rdf:type wdno:P576 } }
@@ -77,6 +75,6 @@ WHERE {
   OPTIONAL { ?type rdfs:label ?typeLabelEn FILTER(LANG(?typeLabelEn) = "en") }
   OPTIONAL { ?type rdfs:label ?typeLabelNl FILTER(LANG(?typeLabelNl) = "nl") }
   OPTIONAL { ?type rdfs:label ?typeLabelMul FILTER(LANG(?typeLabelMul) = "mul") }
-  BIND(COALESCE(?typeLabelEn, ?typeLabelNl, ?typeLabelMul, STR(?type)) AS ?typeLabel)
+  BIND(COALESCE(?typeLabel2, ?typeLabelEn, ?typeLabelNl, ?typeLabelMul, STR(?type)) AS ?typeLabel)
 }
 ORDER BY ?type ?typeLabel ?orgLabel
