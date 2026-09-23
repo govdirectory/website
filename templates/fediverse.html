@@ -1,0 +1,121 @@
+{{ template "layout" . }}
+
+{{ define "title" }}Fediverse{{ end }}
+
+{{ define "canonical" }}/fediverse/{{ end }}
+
+{{ define "main" }}
+
+<header class="splash">
+  <div class="container">
+    <h1 class="h1-lg text-orange">Fediverse</h1>
+    <p>The public organizations using federated social platforms<span class="text-orange">.</span></p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="half">
+        <div class="center-text">
+          <img loading="lazy" class="landing-page-image" aria-hidden="true" src="../fediverse.svg" width="450" height="450"/>
+        </div>
+        <div class="padding">
+          <h2>What is the Fediverse?</h2>
+          <p>The Fediverse is a decentralized and federated network of social platforms. Public organizations can run their own servers which can work as verification for official accounts. This puts them in control over content and moderation rather than being at the mercy of billionaires.</p>
+          <p>More and more public organizations are getting active on the Fediverse. Mostly on Mastodon, a microblogging platform, but also on PeerTube, a video platform. The most common way to use it is to have an official account for the entire organization. Often there are also accounts for departments, services, projects and offices. Sometimes even employees can have accounts. Here, only accounts for the organizations are listed.</p>
+          <p>Also check our page with <a class="dark-link" href="../statistics/fediverse/">Fediverse statistics</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-grey sticky-grey">
+    <div class="container">
+      <h2>All Fediverse accounts by country, agency and platform</h2>
+
+        <div class="container">
+			<div class="move-away">
+					<div class="expand-mobile">
+							<h2 class="m0 expand-mobile">Filter</h2>
+							<input id="filter-input" type="text" placeholder="Filter" aria-label="Search/filter table" aria-controls="mainOrgTable" class="need-js expand-mobile"/>
+					</div>
+					<a id="download" download="fediverse.tsv" href="#" class="btn need-js expand-mobile">Download (as TSV)</a>
+			</div>
+	</div>
+      </section>
+
+      <section>
+      <table class="container js-sort-table">
+        <thead style="top: 240px">
+          <tr>
+            <th>Organization</th>
+            <th>Platform</th>
+            <th>Country</th>
+            <th class="js-sort-none">Account</th>
+          </tr>
+        </thead>
+        <tbody id="mainOrgTable">
+        {{- range . -}}
+            {{- $country := .safeName.String -}}
+            {{- $country_name := .name.String -}}
+            {{- $orgs := query (join "" "generators/" $country ".rq") -}}
+
+            {{- range $orgs -}}
+                {{- $organization := .orgLabel.String -}}
+                {{- $qid := .qid -}}
+                {{- $accounts := query "account-data.rq" .qid.String -}}
+
+                {{- range $accounts -}}
+                    {{- if eq .isFediverse.String "true" -}}
+                    <tr>
+                        <td lang="{{ .orgLabel.Lang }}"><a href="../{{ $country }}/{{ $qid }}">{{ $organization }}</a></td>
+                        <td lang="{{ .platformLabel.Lang }}">{{ .platformLabel }}</td>
+                        <td lang="{{ .name.Lang }}"><a href="../{{ $country }}">{{ $country_name }}</a></td>
+                        <td><a rel="nofollow" href="{{ .url }}">{{ .account }}</a></td>
+                    </tr>
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+        </tbody>
+      </table>
+    </section>
+
+  <section class="bg-orange">
+    <div class="container">
+      <p class="call-out">
+        Would you like to see more accounts and platforms added? <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Help us get the data in shape here.</a>
+      </p>
+    </div>
+  </section>
+</main>
+{{ end }}
+
+{{ define "javascript" }}
+<script>
+const dataTable = document.querySelector('table');
+let tsv = '"Organization"\t"Platform"\t"Country"\t"Account"\n';
+Array.from(dataTable.querySelectorAll('tbody tr')).forEach(row => {
+    const columns = Array.from(row.children);
+    const values = columns.map(column => {
+        return column.innerText.trim().replace(/"/g, '""');
+    });
+    tsv += values.map(value => '"' + value + '"').join('\t') + '\n';
+});
+
+const downloadElm = document.querySelector('#download');
+downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tab-separated-values' }));
+
+var filterInput = document.querySelector('#filter-input');
+var tbody = document.querySelector('tbody');
+filterInput.addEventListener('input', function(e) {
+    Array.from(tbody.rows).forEach(function(row) {
+        var textContent = row.textContent.toLowerCase();
+        var filter = e.target.value.toLowerCase();
+        row.style.display = textContent.includes(filter) ? '' : 'none';
+    });
+});
+</script>
+<script src="/thirdparty/sort-table/sort-table.js"></script>
+{{ end }}

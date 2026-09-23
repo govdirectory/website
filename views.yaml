@@ -21,6 +21,9 @@ views:
   - output: "/statistics/fediverse/index.html"
     query: "countries.rq"
     template: "fediverse-statistics.html"
+  - output: "/fediverse/index.html"
+    query: "countries.rq"
+    template: "fediverse.html"
 
   - output: "topics/index.html"
     query: "topics.rq"
