@@ -1,0 +1,1117 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Govdirectory" />
+    <meta name="description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
+    <title>Fediverse</title>
+
+    <link rel="canonical" href="https://www.govdirectory.org/fediverse/">
+
+    <link rel="preload" href="/font/ubuntu-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: "Ubuntu";
+            src: url("/font/ubuntu-regular.woff2") format("woff2"),
+                 url("/font/ubuntu-regular.woff") format("woff"),
+                 url("/font/ubuntu-regular.ttf") format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Ubuntu";
+            src: url("/font/ubuntu-light.woff2") format("woff2"),
+                 url("/font/ubuntu-light.woff") format("woff"),
+                 url("/font/ubuntu-light.ttf") format("truetype");
+            font-weight: 100;
+            font-display: swap;
+        }
+    </style>
+    <link rel="stylesheet" href="/main.css">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon-orange.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#00264d"/>
+
+    <meta property="og:image" content="/og-banner.jpg" />
+    <meta property="og:image:width" content="628" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.govdirectory.org/" />
+    <meta property="og:title" content="Govdirectory" />
+    <meta property="og:description" content="Govdirectory is a crowdsourced and fact checked directory of official governmental online accounts and services." />
+
+    <meta name="generator" content="Snowman v0.8.0-development">
+    <link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
+
+    <meta name="fediverse:creator" content="@govdirectory@wikis.world" />
+
+    
+
+    <noscript>
+        <style>
+            .need-js {
+                display: none;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body>
+
+    <nav>
+        <ul class="container">
+            <li><a class="no-decoration" href="/"><img loading="eager" title="Home" src="/logo-white.svg" width="20" height="24"><span aria-hidden="true" class="hide-mobile">Govdirectory</span></a></li>
+            <li><a class="no-decoration" href="/countries/">Countries</a></li>
+            <li><a class="no-decoration" href="/topics/">Topics</a></li>
+            <li><a class="no-decoration" href="/about/">About</a></li>
+        </ul>
+    </nav>
+
+    
+
+<header class="splash">
+  <div class="container">
+    <h1 class="h1-lg text-orange">Fediverse</h1>
+    <p>The public organizations using federated social platforms<span class="text-orange">.</span></p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="half">
+        <div class="center-text">
+          <img loading="lazy" class="landing-page-image" aria-hidden="true" src="../fediverse.svg" width="450" height="450"/>
+        </div>
+        <div class="padding">
+          <h2>What is the Fediverse?</h2>
+          <p>The Fediverse is a decentralized and federated network of social platforms. Public organizations can run their own servers which can work as verification for official accounts. This puts them in control over content and moderation rather than being at the mercy of billionaires.</p>
+          <p>More and more public organizations are getting active on the Fediverse. Mostly on Mastodon, a microblogging platform, but also on PeerTube, a video platform. The most common way to use it is to have an official account for the entire organization. Often there are also accounts for departments, services, projects and offices. Sometimes even employees can have accounts. Here, only accounts for the organizations are listed.</p>
+          <p>Also check our page with <a class="dark-link" href="../statistics/fediverse/">Fediverse statistics</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-grey sticky-grey">
+    <div class="container">
+      <h2>All Fediverse accounts by country, agency and platform</h2>
+
+        <div class="container">
+			<div class="move-away">
+					<div class="expand-mobile">
+							<h2 class="m0 expand-mobile">Filter</h2>
+							<input id="filter-input" type="text" placeholder="Filter" aria-label="Search/filter table" aria-controls="mainOrgTable" class="need-js expand-mobile"/>
+					</div>
+					<a id="download" download="fediverse.tsv" href="#" class="btn need-js expand-mobile">Download (as TSV)</a>
+			</div>
+	</div>
+      </section>
+
+      <section>
+      <table class="container js-sort-table">
+        <thead style="top: 240px">
+          <tr>
+            <th>Organization</th>
+            <th>Platform</th>
+            <th>Country</th>
+            <th class="js-sort-none">Account</th>
+          </tr>
+        </thead>
+        <tbody id="mainOrgTable"><tr>
+                        <td lang=""><a href="../austria/Q642938">Federal Ministry for European and International Affairs</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../austria">Austria</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@mfa_austria">mfa_austria</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../belgium/Q1421339">Royal Observatory of Belgium</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../belgium">Belgium</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=ORB_KSB@mastodon.social">ORB_KSB@mastodon.social</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../belgium/Q55508919">Sciensano</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../belgium">Belgium</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@sciensano">sciensano</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../belgium/Q815502">Embassy of Belgium, Berlin</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../belgium">Belgium</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@belgiumingermany">belgiumingermany</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../belgium/Q104528572">Embassy of Belgium, Brasília</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../belgium">Belgium</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@embaixadadabelgica">embaixadadabelgica</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../belgium/Q104523186">Embassy of Belgium, Canberra</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../belgium">Belgium</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@belgiuminoz">belgiuminoz</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../belgium/Q5369570">Embassy of Belgium, Washington, D.C.</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../belgium">Belgium</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@belgium_unitedstates">belgium_unitedstates</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../belgium/Q1127">Province of Liege</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../belgium">Belgium</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@provincedeliegeofficiel">provincedeliegeofficiel</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../belgium/Q1355042">Senate of Belgium</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../belgium">Belgium</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@senatbesenaat">senatbesenaat</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../bulgaria/Q136401060">Regional Health Inspectorate - Veliko Tarnovo</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../bulgaria">Bulgaria</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@rzi_vt">rzi_vt</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../czech-republic/Q11781505">Ministry of Education, Youth and Sports</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../czech-republic">Czech Republic</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@msmtcr">msmtcr</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../czech-republic/Q1661653">Ministry of Justice of the Czech Republic</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../czech-republic">Czech Republic</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=SpravedlnostCZ@mastodonczech.cz">SpravedlnostCZ@mastodonczech.cz</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../czech-republic/Q12037741">Ministry of the Environment of the Czech Republic</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../czech-republic">Czech Republic</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@ministerstvo_zp">ministerstvo_zp</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q918501">European Centre for Disease Prevention and Control</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@ecdc.eu">ecdc.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q56296301">European Labour Authority</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=ELA@social.network.europa.eu">ELA@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q4002697">European Union Agency for Asylum</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@euasylumagency">euasylumagency</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q48790">European Union Agency for Fundamental Rights</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=FRA@social.network.europa.eu">FRA@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q4440501">European Union Agency for the Operational Management of Large-Scale IT Systems in the Area of Freedom, Security and Justice</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=EULISA@social.network.europa.eu">EULISA@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q55610347">European Union Agency for the Space Programme</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=EUSPA@social.network.europa.eu">EUSPA@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q792534">European Union Intellectual Property Office</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=EUIPO@social.network.europa.eu">EUIPO@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q333743">Translation Centre for the Bodies of the European Union</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=CDT@social.network.europa.eu">CDT@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q28920096">Computer Emergency Response Team of the European Union</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=cert_eu@infosec.exchange">cert_eu@infosec.exchange</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q131381428">Delegation of the European Union to Panama</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@ueenpanama">ueenpanama</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q5280596">Directorate-General for Digital Services</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=EC_DIGIT@ec.social-network.europa.eu">EC_DIGIT@ec.social-network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q1378040">Directorate-General for European Civil Protection and Humanitarian Aid Operations</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=EC_ECHO@social.network.europa.eu">EC_ECHO@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q3606472">European Research Executive Agency</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=REA@ec.social-network.europa.eu">REA@ec.social-network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q1377705">European Data Protection Supervisor</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=EDPS@social.edps.europa.eu">EDPS@social.edps.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q331024">European Economic and Social Committee</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=EESC@social.network.europa.eu">EESC@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q672941">European External Action Service</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=EEAS@social.network.europa.eu">EEAS@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q192247">European Investment Bank</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=eib@social.network.europa.eu">eib@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q220893">European Ombudsman</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@euombudsman">euombudsman</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q220893">European Ombudsman</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=ombudsman@social.network.europa.eu">ombudsman@social.network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q118695652">Innovative Health Initiative Joint Undertaking</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=IHIEurope@mastodon.social">IHIEurope@mastodon.social</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q133886014">Smart Networks and Services Joint Undertaking</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=6G_SNS@eupolicy.social">6G_SNS@eupolicy.social</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q8896">Council of the European Union</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@eucouncil">eucouncil</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q4951">Court of Justice of the European Union</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@eucourtofjustice">eucourtofjustice</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q4951">Court of Justice of the European Union</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=Curia_fr@curia.social-network.europa.eu">Curia_fr@curia.social-network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q4951">Court of Justice of the European Union</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=Curia@curia.social-network.europa.eu">Curia@curia.social-network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q8901">European Central Bank</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@europeancentralbank">europeancentralbank</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q8880">European Commission</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@europeancommission">europeancommission</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q8880">European Commission</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=EUCommission@ec.social-network.europa.eu">EUCommission@ec.social-network.europa.eu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q8900">European Court of Auditors</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@euauditors">euauditors</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q8900">European Court of Auditors</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=EUauditors@mastodon.social">EUauditors@mastodon.social</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../european-union/Q8889">European Parliament</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../european-union">European Union</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@europeanparliament">europeanparliament</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../finland/Q10677814">Prime Minister&#39;s Office</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../finland">Finland</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@finnishgovernment">finnishgovernment</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../finland/Q106315657">embassy of Finland in Singapore</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../finland">Finland</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@finlandinsingapore">finlandinsingapore</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../finland/Q1757">Helsinki</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../finland">Finland</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@helsinki">helsinki</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q980">Bavaria</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@bayern.de">bayern.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q985">Baden-Württemberg</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=RegierungBW@xn--baw-joa.social">RegierungBW@xn--baw-joa.social</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q1194">Schleswig-Holstein</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=landesregierung@social.schleswig-holstein.de">landesregierung@social.schleswig-holstein.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q1198">North Rhine-Westphalia</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@land.nrw">land.nrw</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q1199">Hesse</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=landesregierung@social.hessen.de">landesregierung@social.hessen.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q1205">Thuringia</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=thueringen@freistaat-thueringen.social">thueringen@freistaat-thueringen.social</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q1209">Bremen</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=Rathaus_Bremen@norden.social">Rathaus_Bremen@norden.social</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q834465">Embassy of Germany, Prague</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@nemecke_velvyslanectvi">nemecke_velvyslanectvi</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q835031">Embassy of Germany, London</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@germanyinuk">germanyinuk</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q835031">Embassy of Germany, London</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=germanyinuk@social.bund.de">germanyinuk@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q1202231">Embassy of Germany, Ankara</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=AlmanyaBE@social.bund.de">AlmanyaBE@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q14906554">Embassy of Germany, Athens</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@germanyingreece">germanyingreece</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q15953187">Embassy of Germany, Paris</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@allemagnediplo">allemagnediplo</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q22226879">Embassy of Germany, Rome</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@germaniainitalia">germaniainitalia</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q31886708">Embassy of Germany, Jakarta</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@germanembassyjkt">germanembassyjkt</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q58206068">Embassy of Germany, New Delhi</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@germanyinindia">germanyinindia</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q58581912">Embassy of Germany, Quito</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@alemaniaenecuador">alemaniaenecuador</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q59277899">Embassy of Germany, Hanoi</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@germanembassyhanoi">germanembassyhanoi</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q60143853">Embassy of Germany, Singapore</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@germanyinsingapore">germanyinsingapore</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q60315412">Embassy of Germany, Guatemala</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@embajadaalemana.gt">embajadaalemana.gt</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q8167">Freiburg Government Region</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=RPFreiburg@baw%c3%bc.social">RPFreiburg@bawü.social</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q488589">Federal Ministry for Economic Affairs and Energy</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@wirtschaftspolitik">wirtschaftspolitik</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q488589">Federal Ministry for Economic Affairs and Energy</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=BMWK@social.bund.de">BMWK@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q491637">Federal Ministry for Transport</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=bmdv@social.bund.de">bmdv@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q491637">Federal Ministry for Transport</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=BMWSB_Bund@social.bund.de">BMWSB_Bund@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q492234">Federal Ministry of Research, Technology and Space</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@bmftr_bund">bmftr_bund</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q492234">Federal Ministry of Research, Technology and Space</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=bmftr_bund@social.bund.de">bmftr_bund@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q493344">Federal Ministry for the Environment, Climate Protection, Nature Conservation and Nuclear Safety</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=umweltministerium@social.bund.de">umweltministerium@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q498251">Federal Ministry of Justice and Consumer Protection</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@bundesjustizministerium">bundesjustizministerium</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q499118">Federal Ministry of Finance</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=bmf@social.bund.de">bmf@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q502698">Federal Ministry of the Interior</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@bmi_bund">bmi_bund</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q502698">Federal Ministry of the Interior</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=bmi@social.bund.de">bmi@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q684357">Federal Ministry for Economic Cooperation and Development</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=bmz@social.bund.de">bmz@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q699656">Federal Ministry of Agriculture, Food and Regional Identity</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@lebensministerium">lebensministerium</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q110021824">Federal Ministry for Housing, Urban Development and Building</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=BMWSB_Bund@social.bund.de">BMWSB_Bund@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q133894806">Federal Ministry for Digital Transformation and Government Modernisation</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=BMDS@social.bund.de">BMDS@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../germany/Q56034">Federal Foreign Office</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../germany">Germany</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=AuswaertigesAmt@social.bund.de">AuswaertigesAmt@social.bund.de</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../india/Q85785741">Ministry of Jal Shakti</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../india">India</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@ministry_of_jal_shakti">ministry_of_jal_shakti</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../indonesia/Q12490742">Ministry of Communication and Digital Affairs</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../indonesia">Indonesia</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@kemenkominfo">kemenkominfo</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../indonesia/Q50344678">consulate general of Indonesia, Osaka</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../indonesia">Indonesia</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@indonesiainosaka">indonesiainosaka</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../indonesia/Q2841589">embassy of Indonesia, Paris</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../indonesia">Indonesia</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@indonesiainparis">indonesiainparis</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../indonesia/Q74316703">embassy of Indonesia, Pretoria</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../indonesia">Indonesia</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@indonesianembassyza">indonesianembassyza</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../indonesia/Q45380967">embassy of Indonesia, Tokyo</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../indonesia">Indonesia</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@kbritokyo">kbritokyo</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../ireland/Q104836445">embassy of Ireland in South Africa</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../ireland">Ireland</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@irlembpretoria">irlembpretoria</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../ireland/Q4294883">Department of Justice of Ireland</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../ireland">Ireland</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@dept_justice_ireland">dept_justice_ireland</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../japan/Q47013110">Embassy of Japan, Brasília</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../japan">Japan</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@embaixadajapao">embaixadajapao</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../japan/Q108682166">Embassy of Japan, Doha</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../japan">Japan</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@japanemb_qatar">japanemb_qatar</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../japan/Q621455">Embassy of Japan, Seoul</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../japan">Japan</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@japan_embassy_korea">japan_embassy_korea</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../latvia/Q285178">Ministry of Foreign Affairs</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../latvia">Latvia</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@latvian_mfa">latvian_mfa</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../latvia/Q16361568">Ministry of Welfare</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../latvia">Latvia</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@labklajibas_ministrija">labklajibas_ministrija</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../latvia/Q12057117">Embassy of Latvia in Washington, D.C.</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../latvia">Latvia</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@latviainusa">latviainusa</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../latvia/Q21041993">Embassy of Latvia, Berlin</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../latvia">Latvia</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@botschaftlettland">botschaftlettland</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q1155243">Council of State</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=raadvanstate@social.overheid.nl">raadvanstate@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q2041110">Netherlands Court of Audit</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=rekenkamer@social.overheid.nl">rekenkamer@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q1907350">Dutch Authority for Digital Infrastructure</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=rdi@social.overheid.nl">rdi@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q14851575">Inspectie Justitie en Veiligheid</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=inspectiejenv@social.overheid.nl">inspectiejenv@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q2438990">Inspectie Leefomgeving en Transport</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=InspectieLenT@social.overheid.nl">InspectieLenT@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q772">Drenthe</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=provinciedrenthe@social.overheid.nl">provinciedrenthe@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q707">Flevoland</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=provincieflevoland@social.overheid.nl">provincieflevoland@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q1101">North Brabant</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=provincienoordbrabant@social.overheid.nl">provincienoordbrabant@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q701">North Holland</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@provincienh">provincienh</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q773">Overijssel</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=provincieoverijssel@social.overheid.nl">provincieoverijssel@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q694">South Holland</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=zuid_holland@social.overheid.nl">zuid_holland@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q705">Zeeland</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=ProvincieZeeland@social.overheid.nl">ProvincieZeeland@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q1155243">Council of State</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=raadvanstate@social.overheid.nl">raadvanstate@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q9899">Amsterdam</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=gemeenteamsterdam@social.amsterdam.nl">gemeenteamsterdam@social.amsterdam.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q9899">Amsterdam</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=gemeenteamsterdam@amsterdam.nl">gemeenteamsterdam@amsterdam.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q816699">Culemborg</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=GemeenteCulemborg@social.overheid.nl">GemeenteCulemborg@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q10002">Enschede</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=GemeenteEnschede@social.overheid.nl">GemeenteEnschede@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q1347872">Oldambt</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=gemeenteoldambt@social.overheid.nl">gemeenteoldambt@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q36600">The Hague</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=gemeentedenhaag@social.overheid.nl">gemeentedenhaag@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q26556">Westland</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=westland@social.overheid.nl">westland@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q898882">Ministry of Agriculture, Fisheries, Food Security and Nature</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=ministerielvvn@social.overheid.nl">ministerielvvn@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q1037511">Ministry of Finance</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@minfinancien">minfinancien</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q1037511">Ministry of Finance</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=minfinancien@social.overheid.nl">minfinancien@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q2188136">Ministry of Infrastructure and Water Management</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=minienw@social.overheid.nl">minienw@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q1041343">Ministry of Justice and Security</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@ministeriejenv">ministeriejenv</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../netherlands/Q2491421">Ministry of the Interior and Kingdom Relations</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../netherlands">Netherlands</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=minbzk@social.overheid.nl">minbzk@social.overheid.nl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/new-york/Q762266">City University of New York</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/new-york">New York</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@cunyedu">cunyedu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/new-york/Q136592949">New York State Council on Children and Families Services</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/new-york">New York</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@nysccf">nysccf</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/new-york/Q3339061">New York State Department of Environmental Conservation</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/new-york">New York</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@nysdec">nysdec</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/new-york/Q7014077">New York State Department of Health</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/new-york">New York</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@nysdoh">nysdoh</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/new-york/Q527769">New York State Department of Transportation</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/new-york">New York</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@nys_dot">nys_dot</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/new-york/Q116025120">New York State Office of General Services</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/new-york">New York</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@nysgeneralservices">nysgeneralservices</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/new-york/Q1140241">State University of New York</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/new-york">New York</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@suny">suny</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/north-carolina/Q43895498">North Carolina Department of Administration</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/north-carolina">North Carolina</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@nc.doa">nc.doa</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/north-carolina/Q85789497">North Carolina Department of Revenue</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/north-carolina">North Carolina</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@ncdor1">ncdor1</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/north-carolina/Q3438398">North Carolina Department of Transportation</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/north-carolina">North Carolina</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@ncdotcom">ncdotcom</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/north-carolina/Q7054646">North Carolina Wildlife Resources Commission</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states/north-carolina">North Carolina</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@ncwildlife">ncwildlife</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../norway/Q5369813">Embassy of Norway, Washington, D.C.</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../norway">Norway</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@norwayinusa">norwayinusa</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../norway/Q106357020">Embassy of Norway in Indonesia</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../norway">Norway</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@norwayinindonesia">norwayinindonesia</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../philippines/Q3550363">Department of Justice</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../philippines">Philippines</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@doj.ph">doj.ph</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../portugal/Q191135">Vila Nova de Gaia</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../portugal">Portugal</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@cm_gaia">cm_gaia</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-kingdom/scotland/Q5281500">Disclosure Scotland</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-kingdom/scotland">Scotland</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@disclosurescotland">disclosurescotland</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-kingdom/scotland/Q20713120">Food Standards Scotland</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-kingdom/scotland">Scotland</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@fsscot">fsscot</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../singapore/Q4294312">Ministry of Home Affairs, Singapore</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../singapore">Singapore</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@mhasingapore">mhasingapore</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../singapore/Q112960313">Marsiling-Yew Tee Town Council</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../singapore">Singapore</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@marsilingyewteetc">marsilingyewteetc</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q10685886">Permanent Mission of Sweden to the European Union</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swedenineu">swedenineu</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q185246">Uppsala University</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@uppsalauniversity">uppsalauniversity</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q782600">Linköping University</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@linkopings_universitet">linkopings_universitet</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q1144565">Umeå University</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@umeauniversitet">umeauniversitet</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q1751928">Linnaeus University</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@linneuniversitetet">linneuniversitetet</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q3110979">Södertörn University</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@sodertorns_hogskola">sodertorns_hogskola</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q1428725">Embassy of Sweden, Berlin</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swebotschaft">swebotschaft</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q2841849">Embassy of Sweden, Helsinki</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swedense">swedense</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q10686002">Embassy of Sweden, Buenos Aires</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swedeninarg">swedeninarg</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q10686008">Embassy of Sweden, Cairo</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swedeninegypt">swedeninegypt</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q10686025">Embassy of Sweden, Seoul</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swedeninkorea">swedeninkorea</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q18333529">Embassy of Sweden, Monrovia</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swedeninliberia">swedeninliberia</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q27588313">Embassy of Sweden, Vienna</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swedeninat">swedeninat</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q27588337">Embassy of Sweden, Washington, D.C.</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swedeninusa">swedeninusa</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q27588394">Embassy of Sweden, Santiago de Chile</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swedeninchile">swedeninchile</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q776570">Ministry for Foreign Affairs of Sweden</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@utrikesdep">utrikesdep</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../sweden/Q776570">Ministry for Foreign Affairs of Sweden</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../sweden">Sweden</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@swedishmfa">swedishmfa</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../switzerland/Q12146">Canton of Basel-Landschaft</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../switzerland">Switzerland</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@kantonbl">kantonbl</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../switzerland/Q12172">Canton of Basel-Stadt</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../switzerland">Switzerland</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=BaselStadt@tooting.ch">BaselStadt@tooting.ch</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../switzerland/Q12771">Canton of Vaud</a></td>
+                        <td lang="en">Mastodon</td>
+                        <td lang=""><a href="../switzerland">Switzerland</a></td>
+                        <td><a rel="nofollow" href="https://fedirect.toolforge.org/?id=etatdevaud@tooting.ch">etatdevaud@tooting.ch</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q501542">United States Department of Agriculture</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@usdagov">usdagov</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q11209">United States Department of Defense</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@deptofwar">deptofwar</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q11231">United States Department of Homeland Security</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@dhsgov">dhsgov</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q628807">United States Department of Labor</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@usdol">usdol</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q789915">United States Department of State</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@statedept">statedept</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q852211">United States Department of Transportation</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@usdot">usdot</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q592576">United States Department of Veterans Affairs</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@deptvetaffairs">deptvetaffairs</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q648666">United States Department of the Treasury</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@treasurydept">treasurydept</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q635012">Architect of the Capitol</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@uscapitol">uscapitol</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q7889655">Office of Congressional Workplace Rights</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@ocwr_legbranch">ocwr_legbranch</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q749118">United States Government Accountability Office</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@usgao">usgao</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q7570509">Southern States Energy Board</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@southernstatesenergyboard">southernstatesenergyboard</a></td>
+                    </tr><tr>
+                        <td lang=""><a href="../united-states/Q2331721">Embassy of the United States, Tokyo</a></td>
+                        <td lang="en">Threads</td>
+                        <td lang=""><a href="../united-states">United States</a></td>
+                        <td><a rel="nofollow" href="https://www.threads.com/@usembassytokyo">usembassytokyo</a></td>
+                    </tr></tbody>
+      </table>
+    </section>
+
+  <section class="bg-orange">
+    <div class="container">
+      <p class="call-out">
+        Would you like to see more accounts and platforms added? <a href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Help us get the data in shape here.</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+
+    <footer>
+        <div class="footer-table container">
+            <div class="column">
+                <p class="footer-header">Govdirectory</p>
+                <ul class="list-unstyled">
+                    <li><a class="no-decoration" href="/about/">About</a></li>
+                    <li><a class="no-decoration" href="/statistics/">Statistics</a></li>
+                    <li><a class="no-decoration" href="/fediverse/">Fediverse</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <p class="footer-header">Join the community</p>
+                <ul class="list-unstyled">
+                    <li><a class="no-decoration" href="https://github.com/govdirectory">GitHub</a></li>
+                    <li><a class="no-decoration"href="https://wikis.world/@govdirectory">Mastodon</a></li>
+                    <li><a class="no-decoration" href="https://t.me/Govdirectory">Telegram</a></li>
+                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory">Improve the data</a></li>
+                    <li><a class="no-decoration" href="https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory/Events">Events</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <p class="footer-header">License information</p>
+                <ul class="list-unstyled">
+
+                    <li>All data is licensed <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0 1.0 Universal</a>.</li>
+                    <li>For images and other resources, see <a href="https://github.com/govdirectory/website#license" rel="license">GitHub</a>.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-end">
+            <a title="Go to Govdirectory's main page" href="/"><img loading="lazy" aria-hidden="true" src="/logo-white.svg" alt="" height="60" width="50"></a>
+            <div>
+                <a title="Digital Public Goods" href="https://www.digitalpublicgoods.net/r/govdirectory"><img loading="lazy" aria-hidden="true" height="33" width="69" src="/dpgbadge-w.svg"></a>
+                <a title="Powered by Wikidata" href="https://www.wikidata.org"><img loading="lazy" aria-hidden="true" height="33" width="120" class="white-bg" src="/wikidatafooter.svg"></a>
+            </div>
+        </div>
+    </footer> 
+    
+<script>
+const dataTable = document.querySelector('table');
+let tsv = '"Organization"\t"Platform"\t"Country"\t"Account"\n';
+Array.from(dataTable.querySelectorAll('tbody tr')).forEach(row => {
+    const columns = Array.from(row.children);
+    const values = columns.map(column => {
+        return column.innerText.trim().replace(/"/g, '""');
+    });
+    tsv += values.map(value => '"' + value + '"').join('\t') + '\n';
+});
+
+const downloadElm = document.querySelector('#download');
+downloadElm.href = window.URL.createObjectURL(new Blob([tsv], { type: 'text/tab-separated-values' }));
+
+var filterInput = document.querySelector('#filter-input');
+var tbody = document.querySelector('tbody');
+filterInput.addEventListener('input', function(e) {
+    Array.from(tbody.rows).forEach(function(row) {
+        var textContent = row.textContent.toLowerCase();
+        var filter = e.target.value.toLowerCase();
+        row.style.display = textContent.includes(filter) ? '' : 'none';
+    });
+});
+</script>
+<script src="/thirdparty/sort-table/sort-table.js"></script>
+
+    
+    <script>
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://matomo.wikimedia.se/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '7']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true; g.src=u+'matomo.js'; g.crossorigin='anonymous'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
