@@ -10,6 +10,7 @@ SELECT
   (SAMPLE(?regulatoryTextTitle ) AS ?regulatoryTextTitle)
   (SAMPLE(?personLabel) AS ?leadBy)
   (SAMPLE(?parentOrg) AS ?parent)
+  (SAMPLE(?nativeLabel) AS ?nativeLabel)
   ?wikipedia
 WHERE {
   BIND(wd:{{.}} AS ?org)
@@ -53,6 +54,16 @@ WHERE {
     ?wikipedia schema:about ?org ;
                schema:isPartOf <https://en.wikipedia.org/> .
   }
+  
+  OPTIONAL {
+    ?org wdt:P1705 ?nativeLabel .
+
+    ?org wdt:P17 ?country .
+    ?country wdt:P37 ?lang .
+    ?lang wdt:P424 ?langCode .
+
+    FILTER(LANG(?nativeLabel) = ?langCode)
+}
 
   SERVICE wikibase:label {
     # this might need to be updated when new countries are added
