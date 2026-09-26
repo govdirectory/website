@@ -56,7 +56,10 @@ WHERE {
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,sv" }
+  OPTIONAL { ?org rdfs:label ?orgLabelEn FILTER(LANG(?orgLabelEn) = "en") }
+  OPTIONAL { ?org rdfs:label ?orgLabelMul FILTER(LANG(?orgLabelMul) = "mul") }
+  OPTIONAL { ?org rdfs:label ?orgLabelSv FILTER(LANG(?orgLabelSv) = "sv") }
+  BIND(COALESCE(?orgLabelEn, ?orgLabelMul, ?orgLabelSv, STR(?org)) AS ?orgLabel)
 }
 ORDER BY ?type ?orgLabel
 ```
@@ -108,7 +111,10 @@ These values are all of the various "instance of"/types the various government o
 
 
 ```sparql
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,sv" }
+  OPTIONAL { ?org rdfs:label ?orgLabelEn FILTER(LANG(?orgLabelEn) = "en") }
+  OPTIONAL { ?org rdfs:label ?orgLabelMul FILTER(LANG(?orgLabelMul) = "mul") }
+  OPTIONAL { ?org rdfs:label ?orgLabelSv FILTER(LANG(?orgLabelSv) = "sv") }
+  BIND(COALESCE(?orgLabelEn, ?orgLabelMul, ?orgLabelSv, STR(?org)) AS ?orgLabel)
 ```
 
 All government organizations in a country might not have a name in English and therefore one should configure one or more fallback languages. In the example above Swedish is set as a fallback language.
@@ -173,13 +179,23 @@ WHERE {
     ?wikipedia schema:about ?uri ;
                schema:isPartOf <https://en.wikipedia.org/> .
   }
-  SERVICE wikibase:label {
-    # this might need to be updated when new countries are added
-    bd:serviceParam wikibase:language "en,mul,sv,de" .
-    ?headOfState rdfs:label ?headOfStateLabel .
-    ?headOfGov rdfs:label ?headOfGovLabel .
-    ?typeOfGov rdfs:label ?typeOfGovLabel .
-  }
+  OPTIONAL { ?headOfState rdfs:label ?headOfStateLabelEn FILTER(LANG(?headOfStateLabelEn) = "en") }
+  OPTIONAL { ?headOfState rdfs:label ?headOfStateLabelMul FILTER(LANG(?headOfStateLabelMul) = "mul") }
+  OPTIONAL { ?headOfState rdfs:label ?headOfStateLabelSv FILTER(LANG(?headOfStateLabelSv) = "sv") }
+  OPTIONAL { ?headOfState rdfs:label ?headOfStateLabelDe FILTER(LANG(?headOfStateLabelDe) = "de") }
+  BIND(COALESCE(?headOfStateLabelEn, ?headOfStateLabelMul, ?headOfStateLabelSv, ?headOfStateLabelDe) AS ?headOfStateLabel)
+
+  OPTIONAL { ?headOfGov rdfs:label ?headOfGovLabelEn FILTER(LANG(?headOfGovLabelEn) = "en") }
+  OPTIONAL { ?headOfGov rdfs:label ?headOfGovLabelMul FILTER(LANG(?headOfGovLabelMul) = "mul") }
+  OPTIONAL { ?headOfGov rdfs:label ?headOfGovLabelSv FILTER(LANG(?headOfGovLabelSv) = "sv") }
+  OPTIONAL { ?headOfGov rdfs:label ?headOfGovLabelDe FILTER(LANG(?headOfGovLabelDe) = "de") }
+  BIND(COALESCE(?headOfGovLabelEn, ?headOfGovLabelMul, ?headOfGovLabelSv, ?headOfGovLabelDe) AS ?headOfGovLabel)
+
+  OPTIONAL { ?typeOfGov rdfs:label ?typeOfGovLabelEn FILTER(LANG(?typeOfGovLabelEn) = "en") }
+  OPTIONAL { ?typeOfGov rdfs:label ?typeOfGovLabelMul FILTER(LANG(?typeOfGovLabelMul) = "mul") }
+  OPTIONAL { ?typeOfGov rdfs:label ?typeOfGovLabelSv FILTER(LANG(?typeOfGovLabelSv) = "sv") }
+  OPTIONAL { ?typeOfGov rdfs:label ?typeOfGovLabelDe FILTER(LANG(?typeOfGovLabelDe) = "de") }
+  BIND(COALESCE(?typeOfGovLabelEn, ?typeOfGovLabelMul, ?typeOfGovLabelSv, ?typeOfGovLabelDe) AS ?typeOfGovLabel)
 }
 GROUP BY ?uri ?name ?safeName ?description ?parts ?headOfGovLabel ?headOfStateLabel ?geoshape ?wikipedia
 ORDER BY ?name

@@ -18,6 +18,25 @@ WHERE {
   MINUS { ?org wdt:P1366 [] }
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es,qu,ay,mul" }
+  OPTIONAL { ?org rdfs:label ?orgLabelEn FILTER(LANG(?orgLabelEn) = "en") }
+  OPTIONAL { ?org rdfs:label ?orgLabelEs FILTER(LANG(?orgLabelEs) = "es") }
+  OPTIONAL { ?org rdfs:label ?orgLabelQu FILTER(LANG(?orgLabelQu) = "qu") }
+  OPTIONAL { ?org rdfs:label ?orgLabelAy FILTER(LANG(?orgLabelAy) = "ay") }
+  OPTIONAL { ?org rdfs:label ?orgLabelMul FILTER(LANG(?orgLabelMul) = "mul") }
+  BIND(COALESCE(?orgLabelEn, ?orgLabelEs, ?orgLabelQu, ?orgLabelAy, ?orgLabelMul, STR(?org)) AS ?orgLabel)
+
+  OPTIONAL { ?org schema:description ?orgDescriptionEn FILTER(LANG(?orgDescriptionEn) = "en") }
+  OPTIONAL { ?org schema:description ?orgDescriptionEs FILTER(LANG(?orgDescriptionEs) = "es") }
+  OPTIONAL { ?org schema:description ?orgDescriptionQu FILTER(LANG(?orgDescriptionQu) = "qu") }
+  OPTIONAL { ?org schema:description ?orgDescriptionAy FILTER(LANG(?orgDescriptionAy) = "ay") }
+  OPTIONAL { ?org schema:description ?orgDescriptionMul FILTER(LANG(?orgDescriptionMul) = "mul") }
+  BIND(COALESCE(?orgDescriptionEn, ?orgDescriptionEs, ?orgDescriptionQu, ?orgDescriptionAy, ?orgDescriptionMul) AS ?orgDescription)
+
+  OPTIONAL { ?type rdfs:label ?typeLabelEn FILTER(LANG(?typeLabelEn) = "en") }
+  OPTIONAL { ?type rdfs:label ?typeLabelEs FILTER(LANG(?typeLabelEs) = "es") }
+  OPTIONAL { ?type rdfs:label ?typeLabelQu FILTER(LANG(?typeLabelQu) = "qu") }
+  OPTIONAL { ?type rdfs:label ?typeLabelAy FILTER(LANG(?typeLabelAy) = "ay") }
+  OPTIONAL { ?type rdfs:label ?typeLabelMul FILTER(LANG(?typeLabelMul) = "mul") }
+  BIND(COALESCE(?typeLabelEn, ?typeLabelEs, ?typeLabelQu, ?typeLabelAy, ?typeLabelMul, STR(?type)) AS ?typeLabel)
 }
 ORDER BY ?type ?orgLabel
