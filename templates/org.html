@@ -177,7 +177,7 @@
 const dataTable = document.querySelector('table.container');
 
 if (dataTable) {
-    let tsv = '"Platform","Account",\n';
+    let tsv = '"Platform"\t"Account",\n';
     Array.from(dataTable.children[0].children).forEach((row, index) => {
         if (index === 0) return; // header
         const columns = Array.from(row.children);
