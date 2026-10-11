@@ -49,4 +49,4 @@ UNION
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,nl,fr,de" }
 }
-ORDER BY ?typeLabel ?orgLabel
+ORDER BY LCASE(STR(?typeLabel)) LCASE(STR(?orgLabel))

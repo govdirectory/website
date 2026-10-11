@@ -57,4 +57,4 @@ WHERE {
   }
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,sco,gd" }
-}ORDER BY ?type ?orgLabel
+}ORDER BY ?type LCASE(STR(?orgLabel))

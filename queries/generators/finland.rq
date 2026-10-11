@@ -34,4 +34,4 @@ UNION
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,fi,sv,mul" }
 }
-ORDER BY ?type ?orgLabel
+ORDER BY ?type LCASE(STR(?orgLabel))

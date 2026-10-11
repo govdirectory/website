@@ -35,4 +35,4 @@ UNION
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,ga,mul". }
 }
-ORDER BY ?type ?topic
+ORDER BY ?type LCASE(STR(?orgLabel))
