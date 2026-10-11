@@ -32,6 +32,22 @@ UNION
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,fi,sv,mul" }
+  OPTIONAL { ?org rdfs:label ?orgLabelEn FILTER(LANG(?orgLabelEn) = "en") }
+  OPTIONAL { ?org rdfs:label ?orgLabelFi FILTER(LANG(?orgLabelFi) = "fi") }
+  OPTIONAL { ?org rdfs:label ?orgLabelSv FILTER(LANG(?orgLabelSv) = "sv") }
+  OPTIONAL { ?org rdfs:label ?orgLabelMul FILTER(LANG(?orgLabelMul) = "mul") }
+  BIND(COALESCE(?orgLabelEn, ?orgLabelFi, ?orgLabelSv, ?orgLabelMul, STR(?org)) AS ?orgLabel)
+
+  OPTIONAL { ?org schema:description ?orgDescEn FILTER(LANG(?orgDescEn) = "en") }
+  OPTIONAL { ?org schema:description ?orgDescFi FILTER(LANG(?orgDescFi) = "fi") }
+  OPTIONAL { ?org schema:description ?orgDescSv FILTER(LANG(?orgDescSv) = "sv") }
+  OPTIONAL { ?org schema:description ?orgDescMul FILTER(LANG(?orgDescMul) = "mul") }
+  BIND(COALESCE(?orgDescEn, ?orgDescFi, ?orgDescSv, ?orgDescMul) AS ?orgDescription)
+
+  OPTIONAL { ?type rdfs:label ?typeLabelEn FILTER(LANG(?typeLabelEn) = "en") }
+  OPTIONAL { ?type rdfs:label ?typeLabelFi FILTER(LANG(?typeLabelFi) = "fi") }
+  OPTIONAL { ?type rdfs:label ?typeLabelSv FILTER(LANG(?typeLabelSv) = "sv") }
+  OPTIONAL { ?type rdfs:label ?typeLabelMul FILTER(LANG(?typeLabelMul) = "mul") }
+  BIND(COALESCE(?typeLabelEn, ?typeLabelFi, ?typeLabelSv, ?typeLabelMul, STR(?type)) AS ?typeLabel)
 }
 ORDER BY ?type ?orgLabel
