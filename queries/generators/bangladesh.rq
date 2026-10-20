@@ -38,4 +38,4 @@ WHERE {
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul,bn" }
 }
-ORDER BY ?typeLabel ?orgLabel
+ORDER BY LCASE(STR(?typeLabel)) LCASE(STR(?orgLabel))
