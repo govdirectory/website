@@ -2,6 +2,9 @@
 
 This document describes how to add a country from [Wikidata:WikiProject Govdirectory](https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory).
 
+Languague:
+[English](ADD_A_COUNTRY.md) | [Spanish](ADD_A_COUNTRY.es.md)
+
 ## Background
 
 The contents at govdirectory.org are driven by a set of SPARQL queries which together return all the data displayed.
