@@ -42,4 +42,4 @@ WHERE {
   OPTIONAL { ?type rdfs:label ?typeLabelEl FILTER(LANG(?typeLabelEl) = "el") }
   BIND(COALESCE(?typeLabelEn, ?typeLabelMul, ?typeLabelEl, STR(?type)) AS ?typeLabel)
 }
-ORDER BY ?type ?orgLabel
+ORDER BY ?type LCASE(STR(?orgLabel))

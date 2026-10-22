@@ -43,4 +43,4 @@ UNION
   OPTIONAL { ?type rdfs:label ?typeLabelJa FILTER(LANG(?typeLabelJa) = "ja") }
   BIND(COALESCE(?typeLabelEn, ?typeLabelMul, ?typeLabelJa, STR(?type)) AS ?typeLabel)
 }
-ORDER BY ?typeLabel ?orgLabel
+ORDER BY LCASE(STR(?typeLabel)) LCASE(STR(?orgLabel))

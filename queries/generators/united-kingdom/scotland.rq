@@ -74,4 +74,4 @@ WHERE {
   OPTIONAL { ?type rdfs:label ?typeLabelSco FILTER(LANG(?typeLabelSco) = "sco") }
   OPTIONAL { ?type rdfs:label ?typeLabelGd FILTER(LANG(?typeLabelGd) = "gd") }
   BIND(COALESCE(?typeLabelEn, ?typeLabelMul, ?typeLabelSco, ?typeLabelGd, STR(?type)) AS ?typeLabel)
-}ORDER BY ?type ?orgLabel
+}ORDER BY ?type LCASE(STR(?orgLabel))

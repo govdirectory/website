@@ -21,6 +21,9 @@ views:
   - output: "/statistics/fediverse/index.html"
     query: "countries.rq"
     template: "fediverse-statistics.html"
+  - output: "/fediverse/index.html"
+    query: "countries.rq"
+    template: "fediverse.html"
 
   - output: "topics/index.html"
     query: "topics.rq"
@@ -177,6 +180,9 @@ views:
     template: "org.html"
   - output: "eswatini/{{qid}}/index.html"
     query: "generators/eswatini.rq"
+    template: "org.html"
+  - output: "poland/{{qid}}/index.html"
+    query: "generators/poland.rq"
     template: "org.html"
 
   - output: "united-kingdom/{{qid}}/index.html"
