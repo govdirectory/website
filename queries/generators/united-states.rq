@@ -1,4 +1,4 @@
-# expected_result_count: 386
+# expected_result_count: 397
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -55,6 +55,10 @@ WHERE {
       wd:Q862571 # oil industry (1)
       wd:Q7075804 # occupational licensing (15)
       wd:Q376799 # transport infrastructure (12)
+      wd:Q183129 # water pollution (4)
+      wd:Q3743137 # natural resource management (2)
+      wd:Q5454893 # fisheries management (4)
+      wd:Q628403 # conservation (1)
     }
    ?org wdt:P31 ?type ;
         wdt:P101 ?fieldofwork ;
