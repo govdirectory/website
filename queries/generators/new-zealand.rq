@@ -1,4 +1,4 @@
-# expected_result_count: 174
+# expected_result_count: 175
 SELECT DISTINCT
   ?qid
   ?orgLabel
@@ -12,7 +12,7 @@ WHERE {
 
     # agencies with country set to New Zealand
     VALUES ?type {
-      wd:Q116973815 # public service departments (31)
+      wd:Q55956765 # public service departments (32)
       wd:Q138750583 # non-public service departments (5)
       wd:Q130137120 # departemental agencies (7)
       wd:Q8041036 # wānanga (3)
