@@ -1,5 +1,8 @@
 # Govdirectory Security Policy
 
+Language
+[English](SECURITY.md) | [Spanish](SECURITY.es.md)
+
 ## Scope
 
 This policy is intended for all resources available on `*.govdirectory.org*` and any repository in the Govdirectory GitHub organization.
