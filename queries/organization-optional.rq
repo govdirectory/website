@@ -1,62 +1,66 @@
-SELECT
-  # note that SAMPLE in Blazegraph always picks the first object
-  (SAMPLE(?website) AS ?website)
-  (SAMPLE(?email) AS ?email)
-  (SAMPLE(?phone) AS ?phone)
-  (SAMPLE(?citizensInitiatives ) AS ?citizensInitiatives)
-  (SAMPLE(?foiUrl) AS ?foiUrl)
-  (SAMPLE(?contactPage) AS ?contactPage)
-  (SAMPLE(?regulatoryText ) AS ?regulatoryText)
-  (SAMPLE(?regulatoryTextTitle ) AS ?regulatoryTextTitle)
-  (SAMPLE(?personLabel) AS ?leadBy)
-  (SAMPLE(?parentOrg) AS ?parent)
-  ?wikipedia
-WHERE {
-  BIND(wd:{{.}} AS ?org)
+SELECT 
+  (SAMPLE(?website_) AS ?website)
+  (SAMPLE(?email_) AS ?email)
+  (SAMPLE(?citizensInitiatives_) AS ?citizensInitiatives)
+  (SAMPLE(?foiUrl_) AS ?foiUrl)
+  (SAMPLE(?contactPage_) AS ?contactPage)
+  (SAMPLE(?regulatoryText_) AS ?regulatoryText)
+  (SAMPLE(?regulatoryTextTitle_) AS ?regulatoryTextTitle)
+  (SAMPLE(?phone_) AS ?phone)
+  (SAMPLE(?ledByLabel_) AS ?ledByLabel)
+  (SAMPLE(?latestStart_) AS ?latestStart)
+  (SAMPLE(?wikipedia_) AS ?wikipedia)
 
-  OPTIONAL { ?org wdt:P856 ?website }
-  OPTIONAL { ?org wdt:P968 ?email }
-  OPTIONAL { ?org wdt:P9732 ?citizensInitiatives }
-  OPTIONAL { ?org wdt:P11266 ?contactPage }
-  OPTIONAL { ?org wdt:P10214 ?foiUrl }
+WHERE {
+  VALUES ?org { wd:{{.}} }
+
+  OPTIONAL {
+    # ensures we get the most relevant(the latest) position
+    ?org wdt:P1313 ?position .
+    {
+      SELECT ?position (MAX(?startDate) AS ?latestStart_) WHERE {
+        ?ledBy wdt:P31 wd:Q5 .
+        ?ledBy p:P39 ?posStatement .
+        ?posStatement ps:P39 ?position .
+        ?posStatement pq:P580 ?startDate .
+        FILTER NOT EXISTS { ?posStatement pq:P582 ?endDate . }
+      }
+      GROUP BY ?position
+    }
+    OPTIONAL {
+      ?ledBy wdt:P31 wd:Q5 .
+      ?ledBy p:P39 ?posStatement .
+      ?posStatement ps:P39 ?position .
+      ?posStatement pq:P580 ?latestStart_ .
+      FILTER NOT EXISTS { ?posStatement pq:P582 ?endDate . }
+      OPTIONAL { ?ledBy rdfs:label ?ledByLabelEn . FILTER(LANG(?ledByLabelEn) = "en") }
+      OPTIONAL { ?ledBy rdfs:label ?ledByLabelSv . FILTER(LANG(?ledByLabelSv) = "sv") }
+      OPTIONAL { ?ledBy rdfs:label ?ledByLabelMul . FILTER(LANG(?ledByLabelMul) = "mul") }
+      BIND(COALESCE(?ledByLabelEn, ?ledByLabelSv, ?ledByLabelMul, STR(?ledBy)) AS ?ledByLabel_)
+    }
+  }
+
+  OPTIONAL { ?org wdt:P856 ?website_ }
+  OPTIONAL { ?org wdt:P968 ?email_ }
+  OPTIONAL { ?org wdt:P9732 ?citizensInitiatives_ }
+  OPTIONAL { ?org wdt:P10214 ?foiUrl_ }
+  OPTIONAL { ?org wdt:P11266 ?contactPage_ }
 
   OPTIONAL {
     ?org wdt:P92 ?regulatoryTextItem .
-    ?regulatoryTextItem wdt:P953 ?regulatoryText ;
-                        wdt:P1476 ?regulatoryTextTitle .
-  }
-
-  OPTIONAL { ?org wdt:P749 ?parentOrg }
-
-  OPTIONAL {
-    ?org wdt:P2388|wdt:P1313 ?office .
-    ?positionStatement ps:P39 ?office .
-    ?person p:P39 ?positionStatement .
-    ?person wdt:P31 wd:Q5 .
-    MINUS { ?positionStatement pq:P582 ?endtime }
-    MINUS { ?person wdt:P570 [] }
-    FILTER ( ?office != wd:Q30185 )
+    ?regulatoryTextItem wdt:P953 ?regulatoryText_ ;
+                        wdt:P1476 ?regulatoryTextTitle_ .
   }
 
   OPTIONAL {
-    ?org wdt:P488|wdt:P169|wdt:P1037|wdt:P3975 ?person .
+    ?org wdt:P1329 ?phone_ .
+    ?org p:P1329 ?phone_Statement .
+    ?phone_Statement (ps:P1329) [] .
+    FILTER(EXISTS { ?phone_Statement prov:wasDerivedFrom ?reference. })
   }
 
   OPTIONAL {
-    ?org wdt:P1329 ?phone .
-    ?org p:P1329 ?phoneStatement .
-        ?phoneStatement (ps:P1329) [] .
-        FILTER(EXISTS { ?phoneStatement prov:wasDerivedFrom ?reference. })
-  }
-
-  OPTIONAL {
-    ?wikipedia schema:about ?org ;
+    ?wikipedia_ schema:about ?org ;
                schema:isPartOf <https://en.wikipedia.org/> .
   }
-
-  SERVICE wikibase:label {
-    # this might need to be updated when new countries are added
-    bd:serviceParam wikibase:language "en,sv,mul" .
-    ?person rdfs:label ?personLabel .
-  }
-} GROUP BY ?wikipedia
+}
