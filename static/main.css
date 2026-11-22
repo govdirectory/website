@@ -270,6 +270,7 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-top: 1em !important; /* important needed as long as the target element got the container class */
+    align-items: flex-end;
 }
 
 footer li {
@@ -662,7 +663,7 @@ header.topic {
     }
 
     .footer-table {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto max-content;
     }
 
     .action-boxes {
